@@ -983,9 +983,9 @@ Seja \(T\in\mathcal{L}(\mathbb{R}^3)\) tal que\[[T]_{\text{can}}=\begin{pmatrix}
 3 & 1 & -1\\2 & 2 & -1\\ 2 & 2 & 0
 \end{pmatrix}.\]
 Então \begin{align*}
-p_T(\lambda)&=\text{det}\Big(\begin{pmatrix}
+p_T(\lambda)&=\text{det}\left(\begin{pmatrix}
 3-\lambda & 1 & -1\\2 & 2-\lambda & -1\\ 2 & 2 & -\lambda
-\end{pmatrix}\Big)\\&=(\lambda-1)^2(\lambda-2).
+\end{pmatrix}\right)\\&=(\lambda-1)^2(\lambda-2).
 \end{align*}
 Isso implica que \(\text{Spec}(T)=\{1,2\}\). Além disso, temos que
 \[V_T(1)=\text{Ker}(T-I)=\text{Ker}(\begin{pmatrix}
@@ -1003,7 +1003,7 @@ Seja \(T\in\mathcal{L}(\mathbb{R}^3)\) tal que
 \end{pmatrix}.\]
 Neste caso temos que \begin{align*}
 p_T(\lambda)&=\text{det}(\begin{pmatrix}
-1-\lambda & 2 & -1\\-2 & -3-\lambda & -1\\ 2 & 2 & -2-\lambda
+1- \lambda & 2 & -1\\-2 & -3 - \lambda & -1\\ 2 & 2 & -2-\lambda
 \end{pmatrix})\\&=(\lambda+1)^2(\lambda+2).    \end{align*}
 Isso implica que \(\text{Spec}(T)=\{-1,-2\}\) e ainda \[V_T(-1)=\langle\{ (1,0,2),(0,1,2)\}\rangle\] e
 \[V_T(-2)=\langle (1,-1,1)\rangle\].
@@ -1142,6 +1142,8 @@ p_T(t)=\det[tI-T]_B=
 
 \begin{observacao}
 O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T=I_V$ e seja $W$ um subespaço $T$-invariante, então $T_1=I_W$ e $T_2=I_{V/W}$ e aí $m_T(t)=m_{T_1}(t)=m_{T_2}(t)=t-1$.
+
+Teste: $2- 4=-2$
 \end{observacao}
 
 \printindex
