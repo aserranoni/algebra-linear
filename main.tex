@@ -932,7 +932,7 @@ Provaremos a primeira afirmação pois a segunda é análoga.
 Bláa blá blá
 
 \chapter{Formas Canônicas}
-\section{Autovalores e Autovetores}
+,\section{Autovalores e Autovetores}
  \begin{definicao}
 Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). Um vetor 
 \(v\in V\) é um \emph{vetor próprio} ou \emph{autovetor} de \(T\) se existe \(\lambda\in K\) tal que \(T(v)=\lambda v\). O escalar \(\lambda\) é um \emph{valor próprio} ou \emph{autovalor} do operador \(T\). Dizemos que \(v\) é um autovetor associado com o autovalor \(\lambda\).
@@ -943,7 +943,7 @@ Seja \(V=\mathbb{C}^1(\mathbb{R})\) e considere o operador linear \(T\in\mathcal
 \begin{definicao}
 Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). O \emph{spectrum} do operador \(T\) é o conjunto
 \[\text{Spec}(T)\coloneqq\{\lambda\in K\,\colon \lambda \text{ é autovalor de } T\}.\]
-Para cada \(\lambda\in\text{Spec}(T)\), denotamos o conjunto dos autovetores associador a \(\lambda\) como \(V_T(\lambda)\).
+Para cada \(\lambda\in\text{Spec}(T)\), denotamos o conjunto dos autovetores associados a \(\lambda\) como \(V_T(\lambda)\).
 \end{definicao}
  No contexto da definição anterior, considere
  \(\lambda\in\text{Spec}(T)\). Então
@@ -1028,10 +1028,42 @@ Seja \(\{\lambda_i\}_{i\in [k]}\subseteq\text{Spec}(T).\)
     \item Se \(B_i\subseteq V_T(\lambda_i)\) é L.I para cada \(i\in [k]\), então \(\bigcup_{i\in [k]}B_i\) é L.I.
 \end{enumerate}
 \end{lema}
-\begin{proof}[Demonstração do Lema]
+\begin{proof}[Demonstração do Lema]\hfill
 \begin{enumerate}
-    \item Considere \(\lambda_1(v_1+\ldots+v_k)\). Aplicando \(T\)..
-\end{enumerate}
+\item Vamos provar essa afirmação por indução em \(k\). Primeiro note que o
+      resultado é trivial quando \(k=1\). Agora seja \(k\in\mathbb{N}\) e
+      assuma  que o resultado vale para cada natural \(i < k\). Sejam
+      \(v_1,\ldots,v_k\) tais que \(v_i\in V_T(\lambda_i)\) para cada \(\i\in
+      [k]\) e \(v_1+\ldots + v_k=0\). Então temos que 
+      \begin{equation}\label{primeira}
+      \lambda_1(v_1+\ldots+v_k)=0\lambda_1=0.
+    \end{equation}
+    Além disso, é claro que
+      \begin{equation}\label{segunda}
+      T(v_1+\ldots +v_k)=\lambda_1v_1+\ldots +\lambda_kv_k=0.
+      \end{equation}
+      Subtraindo a Equação \ref{primeira} de \ref{segunda}, obtemos
+      \begin{equation}\label{terceira}
+       (\lambda_1-\lambda_1)v_1+(\lambda_2-\lambda_1)v_2+\ldots +(\lambda_k-\lambda_1)v_k=0.
+     \end{equation}
+     Agora notamos que cada termo no lado esquerdo é um autovetor de \(T\)     e
+     aplicamos a hipótese de indução para concluir que \(v_2=\ldots =v_k=0
+     \). Finalmente, como sabemos que \(v_1+\ldots +v_k=0\) e \(v_2=\ldots =
+     v_k=0\), obtemos que \(v_1=0\) também, o que conclui nossa prova.
+     \item Seja \(S\subseteq\bigcup_{i\in [k]}B_i\) finito e seja \(\alpha\colon S\to\mathbb{R}\). Note que
+       \(V_T(\lambda_i)\cap V_T(\lambda_j)=\{0\}\) sempre que \(i,j\in [k]\) e
+       \(i\not=j\) e então podemos escrever
+       \[\sum_{v\in S}\alpha_iv_i=\sum_{v\in S_1}\alpha_v v+\ldots+\sum_{v\in
+           S_k},\]
+       onde \(S_i\subseteq B_i\) é finito para cada \(i\in [k]\). Utilizan
+       do o fato de que o termo \mbox{\(\sum_{v\in S_i}\alpha_v v\in V_T(\lambda_i)\)}
+       para cada \(i\in [k]\) e aplicando o item anterior, obtemos que
+       \[\sum_{v\in S_1}\alpha_vv=\ldots=\sum_{v\in S_k}\alpha_vv=0.\]
+       Finalmente como como \(S_i\subseteq B_i\) para cada \(i\in [k]\) e
+       \(B_i\) é sempre L.I por hipótese segue que a restrição de \(\alpha\) a
+       cada \(S_i\) é identicamente nula. Como \(S=\bigcup_{i\in [k]}S_i\) segue
+       que \(\alpha\) é indenticamente nula.\qedhere
+    \end{enumerate}
 \end{proof}
 
 \begin{proof}
