@@ -1154,15 +1154,67 @@ Já sabemos que $m_T(t)=\left(\prod_{i\in r}(t-\lambda_i)^{k_i}\right)$ em que $
 \section{Subespaços Invariantes}
 
 \begin{definicao}
-Seja $T\in\mathcal{L}(V)$. Um subespaço $W\subseteq V$ chama-se \textbf{$T$-invariante} se $T[W]\subseteq W$.
+Seja $T\in\mathcal{L}(V)$. Um subespaço $W\subseteq V$ chama-se \textbf{$T$-invariante} se $T(W)\subseteq W$.
 \end{definicao}
 
 \begin{observacao}
 Um subespaço é $T$-invariante se e só se é um $K[t]$-submódulo.
 \end{observacao}
+\begin{exemplo}
+Seja \(V=\mathbb{C}(\mathbb{R})\) e considere o operador \(D\colon f\to
+f^\prime\). Então o subespaço\[P_n\coloneqq\{f(t)\in\mathbb{R}[t]\,\colon
+  \text{deg}(f)\leq n\}\] é \(D\)-invariante. 
+\end{exemplo}
+  \noindent
+Seja $\dim(V)=n$ e $T\in\mathcal{L}(V)$, $W\subseteq V$ um subespaço
+$T$-invariante. Escolhemos uma base $B_1=\{v_i\}_{i\in m}$ de $W$ e
+completemo-la até uma base $B=\{v_i\}_{i\in n}$ do espaço $V$. Qual é a matriz
+$[T]_B$?
 
-\noindent
-Seja $\dim(V)=n$ e $T\in\mathcal{L}(V)$, $W\subseteq V$ um subespaço $T$-invariante. Escolhemos uma base $B_1=\{v_i\}_{i\in m}$ de $W$ e completemo-la até uma base $B=\{v_i\}_{i\in n}$ do espaço $V$. Qual é a matriz $[T]_B$?
+Vamos começar notando que \(T\) é \(W\)-invariante e então 
+\begin{align*}
+&T(v_1)=\sum_{i\in m}\alpha_{1i}v_i\\&T(v_2)=\sum_{i\in m}\alpha_{2i}v_i\\&\ldots\\&T(v_m)=\sum_{i\in m}\alpha_{mi}v_i\\&T(v_{m+1})=\sum_{i\in n}\alpha_{(m+1)i}v_i\\&\ldots\\&T(v_n)=\sum_{i\in n}\alpha_{ni}v_i.
+\end{align*}
+
+Dessa forma segue que
+\[[T]_B=\begin{pmatrix}
+    \alpha_{11} & \ldots & \alpha_{1m} &\alpha_{1(m+1)}& \ldots & \alpha_{1n}
+    \\ \ldots & \ldots & \ldots & \ldots &\ldots & \ldots
+    \\\alpha_{m1} & \ldots & \alpha_{mm} & \alpha_{m(m+1)} & \ldots &
+    \alpha_{mn}\\ 0 & \ldots & 0 & \alpha_{(m+1)(m+1)}&\ldots &\alpha_{(m+1)n}\\
+    \ldots & \ldots & \ldots & \ldots &\ldots & \ldots \\ 0 & 0 & 0
+    &\alpha_{n(m+1)} & \ldots & \alpha_{nn}
+\end{pmatrix}.\]
+
+Isto é, a matriz de \(T\) na base \(B\) tem a forma
+
+\[[T]_B=\begin{pmatrix}
+    A & * \\ 0 & B\end{pmatrix},\]
+onde \(A\in M_m(K)\) e \(B\in M_{n-m}(K)\). Note que \(A\) é a matriz da
+restrição de \(T\) a \(W\) na base \(B_1\).
+
+Vamos agora considerar a restrição de \(T\) a \(W\), denotada por
+\(T\upharpoonright W\). Claramente, temos que \(T\upharpoonright
+W\in\mathcal{L}(W)\). Considere \(\bar{V}\coloneqq\frac{V}{W}\) e seja 
+\(\pi\colon V\to\bar{V}\) uma projeção. Seja \(\bar{T}\coloneqq \pi\circ T\).
+Então \(\bar{T}\in\mathcal{L}(V,\bar{V})\) e \(W\subseteq\text{Ker}(\bar{T})\).
+De fato, para cada \(w\in W\) temos \[\pi(T(w))\in \pi(W)=0.\]
+Além disso, \(\bar{T}\) induz um operador linear
+\(\tilde{T}\in\mathcal{L}(\bar{V})\) definido por \(\tilde{T}(v+W)=\bar{T}(v)\).
+
+\begin{proposicao}
+Seja \(V\) um espaço vetorial sobre um corpo \(K\), seja \(T\in\mathcal{L}(V)\)
+e seja \(W\) um subespaço \(T\)-invariante de \(V\). Considere \(B\coloneqq
+B_1\cup B_2\) onde \(B\) é uma base de \(V\) e \(B_1\) é uma base de \(W\).
+Então \[[T]_B=\begin{pmatrix}
+    A & * \\ 0 & X 
+  \end{pmatrix}\]
+onde \(A=[T\upharpoonright W]_{B_1}\) e \(X=[\tilde{T}]_{B_2}\).
+\end{proposicao}
+\begin{proof}
+\textcolor{red}{COMPLETAR}
+\end{proof}
+
 
 \begin{lema}
 Seja $\dim(V)=n$, $T\in\mathcal{L}(V)$ e $W\subseteq V$ um subsepaço $T$-invariante. Então:
@@ -1173,16 +1225,77 @@ em que $T_1\in\mathcal{L}(W)$ e $T_2\in\mathcal{L}(W)$ com $T_1(w)=T(w)$ e $T_2(
 \end{lema}
 \begin{proof}
 Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então:
-\[
-p_T(t)=\det[tI-T]_B=
-\]
+\begin{align*}
+  p_T(t)&=\det[tI-T]_B\\
+        &=\text{det}\begin{pmatrix}
+          tI_m-A & * \\ 0 & tI_{n-m}-B\end{pmatrix}\\
+        &=\text{det}(tI_m-A)\text{det}(tI_{n-m}-B)\\
+        &=p_A(t)p_B(t)=p_{T_1}(t)p_{T_2}(t)
+\begin{align*}
 \end{proof}
 
 \begin{observacao}
-O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T=I_V$ e seja $W$ um subespaço $T$-invariante, então $T_1=I_W$ e $T_2=I_{V/W}$ e aí $m_T(t)=m_{T_1}(t)=m_{T_2}(t)=t-1$.
-
+O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T=I_V$ e seja $W$ um subespaço $T$-invariante (De fato, quando \(T\) é a identidade, todo subespaço de \(V\) é \(T\)-invariante), então $T_1=I_W$ e $T_2=I_{V/W}$ e aí $m_T(t)=m_{T_1}(t)=m_{T_2}(t)=t-1$.
 \end{observacao}
 
-\printindex
+  \begin{teorema}[Teorema da Cayley-Hamilton]
+   Seja \(V\) um espaço vetorial de dimensão finita sobre um corpo \(K\), e seja \(T\in\mathcal{L}(V)\). Então \(p_T(T)=0\), onde \(p_T(t)\in K[t]\) é um polinômio característico de \(T\). 
+  \end{teorema}
+   \begin{proof}
+     Basta provar que \(p_T(T)(v)=0\) para cada \(v\in V\). Se \(v=0\) o resultado é evidente.
+     Então seja \(0\not=v\in V\).
+     Note que como \(V\) tem dimensão finita temos que existe um \(m \leq n = \text{dim}(V)\) mínimo tal que existem coeficientes \(\alpha_0,\ldots,\alpha_{m-1}\) tais que \(T^m(v)=\sum_{i=0}^{m-1}\alpha_iT^i(v)\). Para tal \(m\in\mathbb{N}\), considere o conjunto
+     \(\{v,T(v),\ldots, T^{m-1}\}\) e seja \(W\) o subespaço gerado por ele. Note que \(W\) é \(T\)-invariante e ainda
+     \[[T\upharpoonright W]_B]\begin{pmatrix}
+         0 & 0 & \ldots& 0 &\alpha_0
+         \\ 1 & 0 & \ldots & 0 & \alpha_1
+         \\ 0 & 1 & \ldots & 0 & \alpha_2
+         \\ \ldots & \ldots  & \ldots  & \ldots  & \ldots \
+         \\ 0 & 0 & \ldots & 1 & \alpha_{m-1} 
+       \end{pmatrix}=A.\]
+     Então, pelo Exercício 18 da lista 1, segue que \[p_A(t)=p_{T_{\upharpoonright W}}(t)= t^m -\alpha_{m-1}t^{m-1}- \ldots -\alpha_1t-\alpha_0.\]
+     E também
+     \[p_{T_{\upharpoonright W}}(T)=T^m-\alpha_{m-1}T^{m-1}-\ldots-\alpha_1 T-\alpha_o I.\]
+     Aplicando essa última função a \(v\) segue:
+     \[p_{T_{\upharpoonright W}}(T)(v)=T^m(v)-\alpha_{m-1}T^{m-1}(v)-\ldots-\alpha_1 T(v)-\alpha_o v=0.\]
+     Para concluir que \(p_t(T)(v)=0\) escrevemos \(p_T(T)=p_{T_{\upharpoonright W}}q(T).\)
+     \end{proof}
+     \begin{corolario}
+                                   Se \(A\in M_n(K)\) então \(P_A(A)=0\), onde \(P_A(t)=\text{det}(tI -A)\). 
+                                   \end{corolario}
+
+                                 \begin{exemplo}
+                                   Considere a matriz \[\begin{pmatrix}
+                                       a & b \\ c & d
+                                     \end{pmatrix}.\]
+                                   Então temos que \(p_A(t)=t^2-(a+d)t+(ad-bc)\) e também
+                                   \begin{align*}
+                                     P_A(A)&=A^2-(a+d)A+(ad-bc)I\\&=
+                                     \begin{pmatrix}
+                                       a^2+bc & ab+ad\\ac+dc & bc+d^2
+                                       \end{pmatrix}
+                                                               -\begin{pmatrix} a^2+ad & ab+bd \\ ac+dc & ad+d^2\end{pmatrix} + \text{det}(A)I
+                                                                 \\&=\begin{pmatrix}bc-ad & 0 \\ 0 & bc- ad\end{pmatrix} + \begin{pmatrix}ad-bc & 0 \\ 0 & ad - bc\end{pmatrix} = 0.
+                                     \end{align*}
+                                 \end{exemplo}
+                                                                                                                                                                       \begin{teorema}[Decomposição Primária]
+                     Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\). Suponhamos que \(f(T)=0\), onde \[f(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\] e cada \(p_i(t)\in K[t]\) é irredutícel. Então \(V=V_1\oplus\ldots\oplus V_r\) onde cada \(V_i\) é \(T\)-invariante e \(p_i^{k_i}(T_{\upharpoonright V_i})=0\).
+                     \end{teorema}
+                                                                                                                                                                        \begin{lema}
+                                                                                                                                                                          Seja \(f(T)=0\) onde \(f(t)=f_1(t)f_2(t)\) com \(f_1\) e \(f_2\) primas entre si. Então \(V=V_1\oplus V_2\) onde \(V_1\) e \(V_2\) são \(T\)-invariantes, \(f_1(T_{\upharpoonright V_1})=0\) e \(f_2(T_{\upharpoonright V_2})=0\)         \end{lema}
+
+                                                                                                                                                                        \begin{sublema}[Identidade de Bezout]
+                                                                                                                                                                          Se \(\text{m.d.c}(f_1(t),f_2(t))=1\) então existem
+                                                                                                                                                                          \mbox{\(r(t),s(t)\in K[t]\)} tais que
+                                                                                                                                                                          \[\f_1(t)r(t)+f_2(t)s(t)=1.\]                                                            \end{sublema}
+\begin{proof}[Demonstração do Lema]
+Considere \(V_1\coloneqq\text{Im}(f_1(T)) e \(V_2\coloneqq\text{Im}(f_1(T))\). Vamos verificar que \textcolor{continuardaqui}                                                                                                                                                    \end{proof}
+                                                                                                                                                                        \begin{proof}[Demonstração do Teorema]
+                                                                                                                                                                         
+                                                                                                                                                                        \end{proof}
+
+
+
+                                                                                                                                                                        \printindex
 
 \end{document}
