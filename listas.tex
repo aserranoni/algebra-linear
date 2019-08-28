@@ -1120,7 +1120,32 @@ A^{-1} + B^{-1} = (A + B)^{-1}
     (I - BA)^{-1} = I + B(I-AB)^{-1}A.
     \]
     
-        \solucao{}
+        \solucao{$(\Rightarrow )$ Suponha que  $1 - ab$ é inversível. Vamos mostrar que $b(1-ab)^{-1}a+1$ é o inverso de $1 - ba$. De fato,
+\begin{equation*} 
+\begin{split}
+(1-ba)(b(1-ab)^{-1}a+1) & = b(1-ab)^{-1}a+1-bab(1-ab)^{-1}a-ba	 \\
+ & = b((1-ab)^{-1}-ab(1-ab)^{-1})a+1-ba \\
+ & = b((1-ab)(1-ab)^{-1})a+1-ba	 \\
+ & = ba+1-ba	 \\
+  & = 1	
+\end{split}
+\end{equation*}
+Analogamente, mostra-se que $(b(1-ab)^{-1}a+1)(1-ba) = 1.$ Logo, $1 - ba$ é inversível.
+\newline
+$( \Leftarrow )$
+Suponha que  $1 - ba$ é inversível. Vamos mostrar que $a(1-ba)^{-1}b+1$ é o inverso de $1 - ab$. De fato,
+\begin{equation*} 
+\begin{split}
+(1-ab)(a(1-ba)^{-1}b+1) & = a(1-ba)^{-1}b+1-aba(1-ba)^{-1}b-ab	 \\
+ & = a((1-ba)^{-1}-ba(1-ba)^{-1})b+1-ab \\
+ & = a((1-ba)(1-ba)^{-1})b+1-ab	 \\
+ & = ab+1-ab	 \\
+  & = 1	
+\end{split}
+\end{equation*}
+Analogamente, mostra-se que $(a(1-ba)^{-1}b+1)(1-ab) = 1.$ Logo, $1 - ab$ é inversível.
+
+Como visto, temos que $(1 - ab)^{-1} = a(1-ba)^{-1}b+1.$}
    
     \exercicio{10}  Sejam $A, B \in \mathcal{M}_n(K).$ Prove que $AB$ e $BA$ têm os mesmos autovalores em $K.$ Elas têm o
 mesmo polinômio característico? E o minimal?
