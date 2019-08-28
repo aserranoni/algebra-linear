@@ -1231,7 +1231,7 @@ Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então
           tI_m-A & * \\ 0 & tI_{n-m}-B\end{pmatrix}\\
         &=\text{det}(tI_m-A)\text{det}(tI_{n-m}-B)\\
         &=p_A(t)p_B(t)=p_{T_1}(t)p_{T_2}(t)
-\begin{align*}
+\end{align*}
 \end{proof}
 
 \begin{observacao}
@@ -1261,35 +1261,35 @@ O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T
      Para concluir que \(p_t(T)(v)=0\) escrevemos \(p_T(T)=p_{T_{\upharpoonright W}}q(T).\)
      \end{proof}
      \begin{corolario}
-                                   Se \(A\in M_n(K)\) então \(P_A(A)=0\), onde \(P_A(t)=\text{det}(tI -A)\). 
-                                   \end{corolario}
+ Se \(A\in M_n(K)\) então \(P_A(A)=0\), onde \(P_A(t)=\text{det}(tI -A)\). 
+\end{corolario}
 
-                                 \begin{exemplo}
-                                   Considere a matriz \[\begin{pmatrix}
-                                       a & b \\ c & d
-                                     \end{pmatrix}.\]
-                                   Então temos que \(p_A(t)=t^2-(a+d)t+(ad-bc)\) e também
-                                   \begin{align*}
-                                     P_A(A)&=A^2-(a+d)A+(ad-bc)I\\&=
-                                     \begin{pmatrix}
+\begin{exemplo}
+Considere a matrix\[\begin{pmatrix}
+                    a & b \\ c & d
+                    \end{pmatrix}.\]
+ Então temos que \(p_A(t)=t^2-(a+d)t+(ad-bc)\) e também
+\begin{align*}
+P_A(A)&=A^2-(a+d)A+(ad-bc)I\\
+      &=
+\begin{pmatrix}
                                        a^2+bc & ab+ad\\ac+dc & bc+d^2
                                        \end{pmatrix}
                                                                -\begin{pmatrix} a^2+ad & ab+bd \\ ac+dc & ad+d^2\end{pmatrix} + \text{det}(A)I
                                                                  \\&=\begin{pmatrix}bc-ad & 0 \\ 0 & bc- ad\end{pmatrix} + \begin{pmatrix}ad-bc & 0 \\ 0 & ad - bc\end{pmatrix} = 0.
                                      \end{align*}
                                  \end{exemplo}
-                                                                                                                                                                       \begin{teorema}[Decomposição Primária]
-                     Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\). Suponhamos que \(f(T)=0\), onde \[f(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\] e cada \(p_i(t)\in K[t]\) é irredutícel. Então \(V=V_1\oplus\ldots\oplus V_r\) onde cada \(V_i\) é \(T\)-invariante e \(p_i^{k_i}(T_{\upharpoonright V_i})=0\).
+\begin{teorema}[Decomposição Primária]
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\). Suponhamos que \(f(T)=0\), onde \[f(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\] e cada \(p_i(t)\in K[t]\) é irredutícel. Então \(V=V_1\oplus\ldots\oplus V_r\) onde cada \(V_i\) é \(T\)-invariante e \(p_i^{k_i}(T_{\upharpoonright V_i})=0\).
                      \end{teorema}
-                                                                                                                                                                        \begin{lema}
-                                                                                                                                                                          Seja \(f(T)=0\) onde \(f(t)=f_1(t)f_2(t)\) com \(f_1\) e \(f_2\) primas entre si. Então \(V=V_1\oplus V_2\) onde \(V_1\) e \(V_2\) são \(T\)-invariantes, \(f_1(T_{\upharpoonright V_1})=0\) e \(f_2(T_{\upharpoonright V_2})=0\)         \end{lema}
-
-                                                                                                                                                                        \begin{sublema}[Identidade de Bezout]
-                                                                                                                                                                          Se \(\text{m.d.c}(f_1(t),f_2(t))=1\) então existem
-                                                                                                                                                                          \mbox{\(r(t),s(t)\in K[t]\)} tais que
-                                                                                                                                                                          \[\f_1(t)r(t)+f_2(t)s(t)=1.\]                                                            \end{sublema}
+\begin{lema}
+Seja \(f(T)=0\) onde \(f(t)=f_1(t)f_2(t)\) com \(f_1\) e \(f_2\) primas entre si. Então \(V=V_1\oplus V_2\) onde \(V_1\) e \(V_2\) são \(T\)-invariantes, \(f_1(T_{\upharpoonright V_1})=0\) e \(f_2(T_{\upharpoonright V_2})=0\)         \end{lema}
+\begin{sublema}[Identidade de Bezout]
+Se \(\text{m.d.c}(f_1(t),f_2(t))=1\) então existem
+\mbox{\(r(t),s(t)\in K[t]\)} tais que
+                    \[f_1(t)r(t)+f_2(t)s(t)=1.\]                                                            \end{sublema}
 \begin{proof}[Demonstração do Lema]
-Considere \(V_1\coloneqq\text{Im}(f_1(T)) e \(V_2\coloneqq\text{Im}(f_1(T))\). Vamos verificar que \textcolor{continuardaqui}                                                                                                                                                    \end{proof}
+Considere \(V_1\coloneqq\text{Im}(f_1(T))\) e \(V_2\coloneqq\text{Im}(f_1(T))\). Vamos verificar que \textcolor{red}{continuardaqui}                                  \end{proof}
                                                                                                                                                                         \begin{proof}[Demonstração do Teorema]
                                                                                                                                                                          
                                                                                                                                                                         \end{proof}
