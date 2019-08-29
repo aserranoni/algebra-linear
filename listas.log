@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.5)  29 AUG 2019 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.5)  29 AUG 2019 18:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -320,16 +320,13 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 \Gm@layoutvoffset=\dimen134
 \Gm@dimlist=\toks31
 )
-(/usr/share/texlive/texmf-dist/tex/latex/colorspace/colorspace.sty
-Package: colorspace 2016/10/05 v1.2.0 PDF color spaces (spot colors...) for pdf
-tex and luatex
-
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
+Package xcolor Info: Package option `usenames' ignored on input line 216.
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
@@ -344,24 +341,10 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 99.
-)
-\Gin@req@height=\dimen135
-\Gin@req@width=\dimen136
-)
 \symextraup=\mathgroup6
 
 (/usr/share/texlive/texmf-dist/tex/latex/gitinfo2/gitinfo2.sty
@@ -389,21 +372,21 @@ Package: gitexinfo 2015/11/22 v2.0.7 Auxiliary package for gitinfo2
 Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \c@tracingmulticols=\count124
 \mult@box=\box30
-\multicol@leftmargin=\dimen137
+\multicol@leftmargin=\dimen135
 \c@unbalance=\count125
 \c@collectmore=\count126
 \doublecol@number=\count127
 \multicoltolerance=\count128
 \multicolpretolerance=\count129
-\full@width=\dimen138
-\page@free=\dimen139
-\premulticols=\dimen140
-\postmulticols=\dimen141
+\full@width=\dimen136
+\page@free=\dimen137
+\premulticols=\dimen138
+\postmulticols=\dimen139
 \multicolsep=\skip55
 \multicolbaselineskip=\skip56
 \partial@page=\box31
 \last@line=\box32
-\maxbalancingoverflow=\dimen142
+\maxbalancingoverflow=\dimen140
 \mult@rightbox=\box33
 \mult@grightbox=\box34
 \mult@gfirstbox=\box35
@@ -427,9 +410,9 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \@tempa=\box53
 \c@columnbadness=\count130
 \c@finalcolumnbadness=\count131
-\last@try=\dimen143
-\multicolovershoot=\dimen144
-\multicolundershoot=\dimen145
+\last@try=\dimen141
+\multicolovershoot=\dimen142
+\multicolundershoot=\dimen143
 \mult@nat@firstbox=\box54
 \colbreak@box=\box55
 \mc@col@check@num=\count132
@@ -444,6 +427,23 @@ Package: calligra 2012/04/10 v1.9 LaTeX package calligra
 Package: euscript 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
@@ -470,10 +470,6 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box56
 \@float@everytoks=\toks33
 \@floatcapt=\box57
-)
-(/usr/share/texlive/texmf-dist/tex/latex/t2/mathtext.sty
-Package: mathtext 2018/04/14 v1.0 transparent text-and-math defs
-LaTeX Info: Redefining \halign on input line 121.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/commath/commath.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
@@ -786,6 +782,10 @@ File: tasks.cfg 2016/08/13 v0.12 tasks instances
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/t2/mathtext.sty
+Package: mathtext 2018/04/14 v1.0 transparent text-and-math defs
+LaTeX Info: Redefining \halign on input line 121.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -1192,11 +1192,11 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \Verbatim@Infile=\read5
 )
 \symmathb=\mathgroup8
-LaTeX Font Info:    Redeclaring symbol font `mathb' on input line 84.
+LaTeX Font Info:    Redeclaring symbol font `mathb' on input line 81.
 LaTeX Font Info:    Overwriting symbol font `mathb' in version `normal'
-(Font)                  U/mathb/m/n --> U/mathb/m/n on input line 84.
+(Font)                  U/mathb/m/n --> U/mathb/m/n on input line 81.
 LaTeX Font Info:    Overwriting symbol font `mathb' in version `bold'
-(Font)                  U/mathb/m/n --> U/mathb/m/n on input line 84.
+(Font)                  U/mathb/m/n --> U/mathb/m/n on input line 81.
 ) (./listas.aux)
 \openout1 = `listas.aux'.
 
@@ -1375,30 +1375,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--156
  []
 
 
-./listas.tex:156: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.156 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:156: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.156 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 198--198
 
  []
@@ -1417,213 +1393,19 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 262.
  [8]
-
-./listas.tex:262: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.262 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:262: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.262 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 370--370
 
  []
-
-
-./listas.tex:370: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.370     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:370: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.370     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:370: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.370     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:370: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.370     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:370: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.370     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:370: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.370     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 [9] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 416--416
 
  []
 
-
-./listas.tex:416: Package xcolor Error: Undefined color `Cyan'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:416: Package xcolor Error: Undefined color `Cyan'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:416: Package xcolor Error: Undefined color `Emerald'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:416: Package xcolor Error: Undefined color `Emerald'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [11]
-
-./listas.tex:416: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:416: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 434--434
 
  []
-
-
-./listas.tex:434: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.434 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:434: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.434 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 474--474
@@ -1640,452 +1422,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 485--527
 
  []
 
-[13]
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `RawSienna'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:527: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.527 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[14]
+[13] [14]
 Underfull \hbox (badness 10000) in paragraph at lines 532--555
 
  []
@@ -2100,133 +1437,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 718--718
 
  []
 
-
-./listas.tex:718: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:718: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:718: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:718: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:718: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:718: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718     }
-           
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [18] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 725--733
 
  []
 
 [20]
-
-./listas.tex:733: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.733 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:733: Package xcolor Error: Undefined color `Rhodamine'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.733 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:733: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.733 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:733: Package xcolor Error: Undefined color `Rhodamine'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.733 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 738--747
 
  []
@@ -2241,510 +1457,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 782--820
 
  []
 
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Mulberry'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Mulberry'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Mulberry'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Mulberry'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Mulberry'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Magenta'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Magenta'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Magenta'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Magenta'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Magenta'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `NavyBlue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Mulberry'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Magenta'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `NavyBlue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `PineGreen'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `NavyBlue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:820: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.820 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [22]
 Underfull \hbox (badness 10000) in paragraph at lines 823--833
 
@@ -2755,224 +1467,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 835--855
 
  []
 
-
-./listas.tex:855: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [23]
-
-./listas.tex:855: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:855: Package xcolor Error: Undefined color `Purple'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.855 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 859--873
 
  []
@@ -2981,30 +1476,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 859--873
 Underfull \hbox (badness 10000) in paragraph at lines 903--903
 
  []
-
-
-./listas.tex:903: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.903 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:903: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.903 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 905--907
@@ -3016,222 +1487,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 944--944
 
  []
 
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Green'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./listas.tex:944: Package xcolor Error: Undefined color `Blue'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.944 }
-       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [26]
 Underfull \hbox (badness 10000) in paragraph at lines 957--958
 
@@ -3241,18 +1496,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 957--958
 Underfull \hbox (badness 10000) in paragraph at lines 973--974
 
  []
-
-
-./listas.tex:976: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.976 ...\textcolor{Red}{Questões Suplementares}}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
 
 [27]
 Underfull \hbox (badness 10000) in paragraph at lines 991--994
@@ -3578,18 +1821,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1288--1289
 
  []
 
-
-./listas.tex:1291: Package xcolor Error: Undefined color `Red'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1291 ...textcolor{Red}{Questões Suplementares}}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [36]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1295.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1295.
@@ -3606,10 +1837,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1295.
  ) 
 Here is how much of TeX's memory you used:
- 32654 strings out of 492615
- 609175 string characters out of 6131391
- 886691 words of memory out of 5000000
- 35905 multiletter control sequences out of 15000+600000
+ 32607 strings out of 492615
+ 608710 string characters out of 6131391
+ 886304 words of memory out of 5000000
+ 35858 multiletter control sequences out of 15000+600000
  558391 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,15n,65p,1039b,821s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3646,7 +1877,7 @@ lic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm120
 0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/te
 xmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfti1095.pfb>
-Output written on listas.pdf (36 pages, 454718 bytes).
+Output written on listas.pdf (36 pages, 454684 bytes).
 PDF statistics:
  652 PDF objects out of 1000 (max. 8388607)
  579 compressed objects within 6 object streams
