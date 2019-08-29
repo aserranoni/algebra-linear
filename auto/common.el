@@ -2,7 +2,7 @@
  "common"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("babel" "portuguese") ("inputenc" "utf8") ("fontenc" "T1") ("geometry" "a4paper" "top=2.54cm" "bottom=2.0cm" "left=2.0cm" "right=2.54cm") ("xcolor" "dvipsnames")))
+                     '(("babel" "portuguese") ("fontenc" "T1") ("geometry" "a4paper" "top=2.54cm" "bottom=2.0cm" "left=2.0cm" "right=2.54cm") ("xcolor" "dvipsnames" "usenames")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
@@ -24,12 +24,12 @@
     "amsfonts"
     "enumitem"
     "geometry"
-    "colorspace"
-    "graphicx"
-    "color"
     "xcolor")
    (TeX-add-symbols
+    '("iprod" 2)
     '("m" 2)
+    '("rest" 2)
+    '("Lin" 1)
     '("negrito" 1)
     '("dropsign" 1)
     "varheart"
@@ -47,7 +47,12 @@
     "Spec"
     "Ker"
     "arctg"
-    "arcsen")
+    "arcsen"
+    "Im"
+    "Integers"
+    "Rationals"
+    "Naturals"
+    "Complex")
    (LaTeX-add-color-definecolors
     "Floresta"
     "Rosadif"
