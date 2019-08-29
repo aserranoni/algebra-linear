@@ -2,7 +2,7 @@
  "common"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("babel" "portuguese") ("inputenc" "utf8") ("fontenc" "T1") ("geometry" "a4paper" "top=2.54cm" "bottom=2.0cm" "left=2.0cm" "right=2.54cm")))
+                     '(("babel" "portuguese") ("inputenc" "utf8") ("fontenc" "T1") ("geometry" "a4paper" "top=2.54cm" "bottom=2.0cm" "left=2.0cm" "right=2.54cm") ("xcolor" "dvipsnames")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
