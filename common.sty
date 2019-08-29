@@ -1,0 +1,69 @@
+
+%------------------- General ---------------------%
+
+\usepackage[portuguese]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+% ------------------ Math -------------------------%
+
+\usepackage{mathtools}
+\usepackage{amsmath} 
+\usepackage{amsthm}  
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsfonts}
+%----------------- Aesthetic ------------------%
+
+\usepackage{enumitem}
+\usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} 
+
+%----------------- Colors ---------------------%
+
+\usepackage{colorspace}
+\usepackage{graphicx,color}
+%% -------- https://www.colorspire.com/rgb-color-wheel/ -------------%%
+\definecolor{Floresta}{rgb}{0.13,0.54,0.13}
+\definecolor{Rosadif}{rgb}{0.6196,0.1254,0.6980} %9E20B2
+\definecolor{Rosa}{rgb}{0.8705, 0.0862, 0.5058} %DE1681
+\definecolor{Verdeest}{rgb}{0.0549, 0.7529, 0.1450} %14C025
+\definecolor{Verde}{rgb}{0.1254,0.70196,0.1254} %20B320
+\definecolor{OrangeRed}{rgb}{0.9294,0.0509,0.3529} %ED135A
+\definecolor{Laranja}{rgb}{1,0.4352941176, 0}  %FF6F00
+\definecolor{Amarelo}{rgb}{0.9215, 0.8196, 0.18}   %EBD12E
+
+% ---------------- Naipes ----------------------%
+
+
+\DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
+\DeclareMathSymbol{\varheart}{\mathalpha}{extraup}{86}
+\DeclareMathSymbol{\vardiamond}{\mathalpha}{extraup}{87}
+\newcommand{\heart}{\ensuremath\heartsuit}
+\newcommand{\diamonde}{\ensuremath\diamondsuit}
+
+
+% ---------------- Git Info --------------------%
+
+\usepackage[mark,raisemark=0.97\paperheight]{gitinfo2}
+\renewcommand{\gitMark}{\gitAbbrevHash{} \textbullet{} \gitAuthorName{} \textbullet{} \gitAuthorIsoDate}
+
+%---------------- Notation ---------------------%
+
+
+\newcommand{\Conv}{{\rm Conv}}  %envória convexa
+\newcommand{\mdc}{{\rm mdc}}
+\newcommand{\sgn}{{\rm sgn}}
+\newcommand{\sen}{{\rm sen}}
+\newcommand{\tg}{{\rm tg}}
+\newcommand{\mmc}{{\rm mmc}}
+%\newcommand{\mdc}{{\rm mdc}}
+\newcommand{\cotg}{{\rm cotg}}
+\newcommand{\cossec}{{\rm cossec}}
+\newcommand{\Spec}{{\rm Spec}}
+\newcommand{\Ker}{{\rm Ker}}
+\newcommand{\arctg}{{\rm arctg}}
+\newcommand{\arcsen}{{\rm arcsen}}
+\newcommand{\dropsign}[1]{\smash{\llap{\raisebox{-.5\normalbaselineskip}{$#1$\hspace{2\arraycolsep}}}}}%divisão polinomial
+\newcommand{\negrito}[1]{\mbox{\boldmath{$#1$}}} 

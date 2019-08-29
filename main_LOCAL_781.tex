@@ -1231,7 +1231,7 @@ Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então
           tI_m-A & * \\ 0 & tI_{n-m}-B\end{pmatrix}\\
         &=\text{det}(tI_m-A)\text{det}(tI_{n-m}-B)\\
         &=p_A(t)p_B(t)=p_{T_1}(t)p_{T_2}(t)
-\end{align*}
+\begin{align*}
 \end{proof}
 
 \begin{observacao}
@@ -1253,159 +1253,49 @@ O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T
          \\ \ldots & \ldots  & \ldots  & \ldots  & \ldots \
          \\ 0 & 0 & \ldots & 1 & \alpha_{m-1} 
        \end{pmatrix}=A.\]
-     Então, pelo Exercício 18 da lista 1, segue que
-     \[p_A(t)=
-       p_{T_{\upharpoonright W}}(t)=
-       t^m -\alpha_{m-1}t^{m-1}- \ldots -\alpha_1t-\alpha_0.\]
+     Então, pelo Exercício 18 da lista 1, segue que \[p_A(t)=p_{T_{\upharpoonright W}}(t)= t^m -\alpha_{m-1}t^{m-1}- \ldots -\alpha_1t-\alpha_0.\]
      E também
-     \[p_{T_{\upharpoonright W}}(T)=
-       T^m-\alpha_{m-1}T^{m-1}-\ldots-\alpha_1 T-\alpha_o I.\]
+     \[p_{T_{\upharpoonright W}}(T)=T^m-\alpha_{m-1}T^{m-1}-\ldots-\alpha_1 T-\alpha_o I.\]
      Aplicando essa última função a \(v\) segue:
-     \[p_{T_{\upharpoonright W}}(T)(v)=
-       T^m(v)-\alpha_{m-1}T^{m-1}(v)-\ldots-\alpha_1 T(v)-\alpha_o v=0.\]
-     Para concluir que \(p_t(T)(v)=0\)
-     escrevemos \(p_T(T)=p_{T_{\upharpoonright W}}q(T).\)
+     \[p_{T_{\upharpoonright W}}(T)(v)=T^m(v)-\alpha_{m-1}T^{m-1}(v)-\ldots-\alpha_1 T(v)-\alpha_o v=0.\]
+     Para concluir que \(p_t(T)(v)=0\) escrevemos \(p_T(T)=p_{T_{\upharpoonright W}}q(T).\)
      \end{proof}
      \begin{corolario}
-       Se \(A\in M_n(K)\) então \(P_A(A)=0\),
-       onde \(P_A(t)=\text{det}(tI -A)\). \end{corolario}
+                                   Se \(A\in M_n(K)\) então \(P_A(A)=0\), onde \(P_A(t)=\text{det}(tI -A)\). 
+                                   \end{corolario}
 
-\begin{exemplo}
-Considere a matrix\[\begin{pmatrix}
-                    a & b \\ c & d
-                    \end{pmatrix}.\]
- Então temos que \(p_A(t)=t^2-(a+d)t+(ad-bc)\) e também
-\begin{align*}
-P_A(A)&=A^2-(a+d)A+(ad-bc)I\\
-      &=
-\begin{pmatrix} a^2+bc & ab+ad\\ac+dc & bc+d^2\end{pmatrix}
--\begin{pmatrix} a^2+ad & ab+bd \\ ac+dc & ad+d^2\end{pmatrix}
- + \text{det}(A)I
- \\&=\begin{pmatrix}bc-ad & 0 \\ 0 & bc- ad\end{pmatrix}
-   + \begin{pmatrix}ad-bc & 0 \\ 0 & ad - bc\end{pmatrix} = 0.
+                                 \begin{exemplo}
+                                   Considere a matriz \[\begin{pmatrix}
+                                       a & b \\ c & d
+                                     \end{pmatrix}.\]
+                                   Então temos que \(p_A(t)=t^2-(a+d)t+(ad-bc)\) e também
+                                   \begin{align*}
+                                     P_A(A)&=A^2-(a+d)A+(ad-bc)I\\&=
+                                     \begin{pmatrix}
+                                       a^2+bc & ab+ad\\ac+dc & bc+d^2
+                                       \end{pmatrix}
+                                                               -\begin{pmatrix} a^2+ad & ab+bd \\ ac+dc & ad+d^2\end{pmatrix} + \text{det}(A)I
+                                                                 \\&=\begin{pmatrix}bc-ad & 0 \\ 0 & bc- ad\end{pmatrix} + \begin{pmatrix}ad-bc & 0 \\ 0 & ad - bc\end{pmatrix} = 0.
                                      \end{align*}
                                  \end{exemplo}
-\begin{teorema}[Decomposição Primária]
-Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que
-\(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\). Suponhamos que
-\(f(T)=0\), onde \[f(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\] e cada
-\(p_i(t)\in
-K[t]\) é irredutível. Então \(V=V_1\oplus\ldots\oplus V_r\) onde
-cada \(V_i\) é \(T\)-invariante e \(p_i^{k_i}(T_{\upharpoonright V_i})=0\).
+                                                                                                                                                                       \begin{teorema}[Decomposição Primária]
+                     Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\). Suponhamos que \(f(T)=0\), onde \[f(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\] e cada \(p_i(t)\in K[t]\) é irredutícel. Então \(V=V_1\oplus\ldots\oplus V_r\) onde cada \(V_i\) é \(T\)-invariante e \(p_i^{k_i}(T_{\upharpoonright V_i})=0\).
                      \end{teorema}
-\begin{lema}
-  Seja \(f(T)=0\) onde \(f(t)=f_1(t)f_2(t)\) com
-  \(f_1\) e \(f_2\) primas entre si. Então \(V=V_1\oplus V_2\)
-  onde \(V_1\) e \(V_2\) são \(T\)-invariantes,
-  \(f_1(T_{\upharpoonright V_1})=0\) e \(f_2(T_{\upharpoonright V_2})=0\).
-\end{lema}
-\begin{sublema}[Identidade de Bezout]
-Se \(\text{m.d.c}(f_1(t),f_2(t))=1\) então existem
-\mbox{\(r(t),s(t)\in K[t]\)} tais que
-\[f_1(t)r(t)+f_2(t)s(t)=1.\]
-\end{sublema}
+                                                                                                                                                                        \begin{lema}
+                                                                                                                                                                          Seja \(f(T)=0\) onde \(f(t)=f_1(t)f_2(t)\) com \(f_1\) e \(f_2\) primas entre si. Então \(V=V_1\oplus V_2\) onde \(V_1\) e \(V_2\) são \(T\)-invariantes, \(f_1(T_{\upharpoonright V_1})=0\) e \(f_2(T_{\upharpoonright V_2})=0\)         \end{lema}
+
+                                                                                                                                                                        \begin{sublema}[Identidade de Bezout]
+                                                                                                                                                                          Se \(\text{m.d.c}(f_1(t),f_2(t))=1\) então existem
+                                                                                                                                                                          \mbox{\(r(t),s(t)\in K[t]\)} tais que
+                                                                                                                                                                          \[\f_1(t)r(t)+f_2(t)s(t)=1.\]                                                            \end{sublema}
 \begin{proof}[Demonstração do Lema]
-  Considere \(V_2\coloneqq\text{Im}(f_1(T))\)
-  e \(V_1\coloneqq\text{Im}(f_1(T))\).
-  Vamos verificar que que \(V_1\) e \(V_2\) são \(T\)-invariantes.
-  Seja \(v\in V_1\). Então \(v=f_2(T)(w)\) para algum \(w\in V\).
-  Dessa forma,
-  \begin{align*}
-    T(v) = T f_2(T)(w)=f_2(T)(T(w))=f_2(T)(T(w))\in\text{Im}(f_2(T))=V.
-  \end{align*}
-  e analogamente para \(V_2\). Além disso, mostremos que \(V=V_1+V_2\).
-  De fato, para cada \(v\in V\) temos \[v=f_1(T)r(T)(v)+f_2(T)s(T)(v).\]
-  Como \(f_1(T)r(T)(v)\in V_2\) e \(f_2(T)s(T)(v)\in V_1\)
-  concluímos que \(v\in V_1 + V_2\). Agora vamos mostrar que \(V_1\cap
-  V_2=\{0\}\). Para tal, vamos verificar que
-  \(V_1\subseteq\text{Ker}(f_1)(T)\)
-  e \(V_2\subseteq\text{Ker}(f_2(T)).\) Seja \(v\in V_1\). Então
-  \(v=f_2(T)(w)\) para algum \(w\in V\).
-  \[f1(T)(v)=f_1(T)f_2(T)(w)=f(T)(w)=0.\]
-  Também vejamos que que
-  \(\text{Ker}(f_1)(T)\cap\text{Ker}(f_2)(T)=\{0\}\). Seja
-  \(v\in\text{Ker}(f_1(T))\cap\text{Ker}(f_2(T))\).
-  Então temos por definição que \(f_1(T)(v)=f_2(T)(v)=0\). Segue
-  \[v=r(T)f_1(T)(v)+s(T)f_2(T)(v)=0\]. Assim concluímos que \(V=V_1\oplus
-  V_2\). Finalmente, note que como \(V_1\subseteq\text{Ker}(f_1(T))\) e
-  \(V_2\subseteq\text{Ker}(f_2(T))\) segue que  \(f_1(T_{\upharpoonright V_1})=0\) e \(f_2(T_{\upharpoonright V_2})=0\).
-\end{proof}
-\begin{proof}[Demonstração do Teorema]
-Vamos mostrar este resultado por indução sobre \(r\). Note que o resultado é
-óbvio para \(r=1\). Agora suponhamos que o resultado vale para
-o caso \(r-1\). Então consideramos \(f(t)=f_1(t)f(t)\),
-onde \(f_1(t)=p_1^{k_1}(t)\ldots p_{r-1}^{k_{r-1}}(t)\) e \(f_2(t)=p_r^{k_r}(t)\).
-Então \(\text{m.d.c}\{f_1(t),f_2(t)\}=1\).
-Aplicando o lema o resultado segue.
-\end{proof}
-\begin{corolario}
-  Seja \(V\) um espaço vetorial tal que \(\text{dim}(V)=n < \infty\),
-  seja \(T\in\mathcal{L}(V)\), e seja
-  \(m_T(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t) \) com \(p_i(t)\) irredutíveis e
-  primos entre si. Então \(V=V_1\oplus\ldots\oplus V_r\) onde \(V_i\)
-  são \(T\)-invariantes e \(m_{T_{\upharpoonright V_i}}(t)=p_i^{k_i}(t)\). 
- \end{corolario}
-\begin{proof}
-  Temos por definição que \(m_T(T)=0\). Portanto, pelo teorema temos
-  que \(V=V_1\oplus\ldots\oplus V_r\),
-  onde cada \(V_i\) é \(T\)-invariante.
-  Considere \(T_i\coloneqq T_{\upharpoonright V_i}\)
-  para cada \(i\in [r]\).
-  Temos que \(p_i^{k_i}(T_i)=0\). Então segue que \(M_{T_i}(v)\vert
-  p_i^{k_i}(t)\), ou seja,
-  \(m_{T_i}(t)=p_i(t)^{m_i}\), onde \(m_i\leq k_i\). Suponhamos que \(m_i <
-  k_i\) e consideremos \(g(t)=p_1^{k_1}(t)\ldots p_i^{m_i}(t)\ldots
-  p_r^{k_r}(t)\), e então \(\text{deg}(g(t))<\text{deg}(m_T(t))\). Provaremos
-  que \(g(T)=0\), o que irá contradizer a minimalidade do grau de \(m_t(t)\). Se
-  \(v\in V_j\) com \(j\not= i\) então \(p_j^{k_j}(v)=0\) e portanto
-  \(g(T)(v)=0\). Se \(v\in V_i\) então \(p_i^{m_i}(T)(v)=0\) e
-  \(g(T)(v)=0\).Assim concluímos que
-  \(g(T_k)=0\) para cada \(k=1,\ldots ,r\) e logo \(g(T)=0\).
-  Isso implica que \(g(T)\) é o polinômio minimal de \(T\), absurdo.
- \end{proof}
-\begin{corolario}
-  Seja \(V\) um espaço vetorial tal que \(\text{dim}(V)=n<\infty\), seja
-  \(T\in\mathcal{L}(V)\), e seja
-  \(p_t(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\) com
-  \(p_i(t)\) irredutíveis e primos entre si.
-  Então \(V=V_1\oplus\ldots\oplus
-  V_r\), com \(V_i\) \(T\)-invariantes e
-  \(p_{T_{\upharpoonright V_i}}(t)=p_i(t)^{k_i}\).
-  \end{corolario}
-  \begin{proof}
-    \textcolor{red}{PROF NÃO TERMINOU ESSA PROVA}
-    \end{proof}
-  \begin{corolario}
-    Um operador \(T\in\mathcal{L}(V)\) é diagonalizável se, e somente se
-    \(m_T=(t-\lambda_1)\ldots(t-\lambda_r)\) com
-    \(\lambda_i\not=\lambda_j\) sempre que \(i\not= j\).
-  \end{corolario}
-  \begin{proof}
-    A ida já foi provada em algum momento do passado, então
-    vamos mostrar apenas a volta. Pelo primeiro Corolário, temos que
-    \(V=V_1\oplus\ldots\oplus V_r\) com \(m_{T_{\upharpoonright
-        v_i}}=t-\lambda_i\), ou seja \(T_{\upharpoonright V_i}=\lambda_i
-    I_{V_i}\) e ainda \(V_i=V_T(\lambda_i)\). 
-  \end{proof}
-
-    Considere \(\{T_i\,\colon i\in I\}\subseteq\mathcal{L}(V)\).
-    Quando os operadores \(T_i\) podem ser diagonalizados simultaneamente?
-
-    \begin{teorema}
-      Um conjunto \(\{T_i\,\colon i \in I\}\) pode ser diagonalizado
-      simultaneamente se, e somente se cada \(T_i\) é diagonalizável e
-      \(T_iT_j=T_jT_i\) para todo \(i,j\in I\).
-      \end{teorema}
-      \begin{proof}
-        \textcolor{red}{PROF TB NÃO TERMINOU ESSA PROVA}
-        \end{proof}
-    
+Considere \(V_1\coloneqq\text{Im}(f_1(T)) e \(V_2\coloneqq\text{Im}(f_1(T))\). Vamos verificar que \textcolor{continuardaqui}                                                                                                                                                    \end{proof}
+                                                                                                                                                                        \begin{proof}[Demonstração do Teorema]
+                                                                                                                                                                         
+                                                                                                                                                                        \end{proof}
 
 
 
-
-
-
-    \printindex
+                                                                                                                                                                        \printindex
 
 \end{document}
