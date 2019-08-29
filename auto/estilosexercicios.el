@@ -2,11 +2,12 @@
  "estilosexercicios"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("euscript" "mathscr") ("xcolor" "dvipsnames") ("mdframed" "framemethod=TikZ")))
+                     '(("euscript" "mathscr") ("mdframed" "framemethod=TikZ")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
+    "Arquivos_de_figs_Exercicios/"
     "common"
     "multicol"
     "calligra"
@@ -14,25 +15,27 @@
     "euscript"
     "graphicx"
     "caption"
-    "xcolor"
     "float"
-    "tikz"
     "mathtext"
     "commath"
     "todo"
-    "bbm"
     "wrapfig"
     "cancel"
     "blindtext"
     "tasks"
-    "mathtools"
     "setspace"
+    "tikz"
     "lipsum"
     "pifont"
     "mdframed"
-    "fancybox"
-    "listings")
+    "fancybox")
    (TeX-add-symbols
+    '("figura" 1)
+    '("solucao" 1)
+    '("pers" 1)
+    '("dividiritensdiv" 2)
+    '("dividiritens" 1)
+    '("exercicio" 1)
     "Nil"
     "abxring")
    (LaTeX-add-environments
