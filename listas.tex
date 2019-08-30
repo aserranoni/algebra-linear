@@ -1222,11 +1222,88 @@ definido por $T(A) = A^t$. Mostre que $T$ é diagonalizável, determine os autov
             Encontre $p(t)$ tal que $p(A) = A^{-1}.$
                 }
 
-  \solucao{}
+  \solucao{
+        \dividiritensdiv{1}{     
+        \task[\pers{a}] Sabemos que a soma dos autovalores de uma matriz corresponde à seu traço, e o produto dos autovalores corresponde ao determinante. Pelo Teorema de Cayley-Hamilton, também é conhecido que $P_A(A) = 0.$ Assim, temos que
+        \[
+        p_A(\lambda) = \det(A - \lambda I) = (-1)^n \lambda^n - \tr(A) \lambda^{n-1} + \ldots + \det(A)
+        \]
+        
+        Sendo $A$ invertível, então $\det(A) \neq 0.$ Assim,
+            \[
+   A^n - \tr(A) A^{n-1} + \ldots + \det(A)I = 0
+        \]
+  Portanto, temos que 
+  \[
+   A \textcolor{PineGreen}{\frac1{\det(A)}\left(A^{n-1} - \tr(A)A^{n-2} + \cdots \right)} = I \Rightarrow A  \textcolor{PineGreen}{p(A)} = I \Rightarrow p(A) = A^{-1}.
+  \]
+  
+  Logo, sendo o polinômio caracerístico dado por $p_A(t) = t^n + a_{n-1}t^{n-1} + a_{n-2}t^{n-2} + \ldots + a_{1}t + a_0,$ temos que o polinômio $p(t) \in K[t],$ dado por
+  \[
+  p(t) = \frac{1}{a_0} (t^{n-1} + a_{n-1}t^{n-2} + a_{n-2}t^{n-3} + \ldots + a_{1})
+  \]
+  é tal que $p(A) = A^{-1}.$
+         \task[\pers{b}] Encontremos primeiramente o polinômio característico de $A:$
+         \[
+         p_A(\lambda) = \det(A - \lambda I) = \det \left(   \begin{pmatrix}
+                2 & 1 & 4 \\ 3 & 0 & 1 \\ 2 & 0 & 1
+                \end{pmatrix} -  \begin{pmatrix}
+                \lambda & 0 & 0 \\ 0 & \lambda & 0 \\ 0 & 0 & \lambda
+                \end{pmatrix}   \right) =  \det \left(   \begin{pmatrix}
+                2-\lambda & 1 & 4 \\ 3 & -\lambda & 1 \\ 2 & 0 & 1-\lambda
+                \end{pmatrix}    \right) = \]\[-\lambda^3 + 3\lambda^2+9\lambda -1 \Rightarrow p_A(\lambda) =  \lambda^3 - 3\lambda^2-9\lambda + 1 
+         \]
+         
+    Pelo item anterior, o polinômio $p(t)$ procurado é
+        \[      p(t) = \frac{1}{\det(A)}(t^2 - 3t - 9) \Rightarrow p(t) = \frac{1}{-1}(t^2 - 3t - 9) \Rightarrow \boxed{p(t) = -t^2 + 3t + 9}    \]
+        
+        De fato, temos que
+        \[  p(A) = - \textcolor{Magenta}{A}^2 + 3\textcolor{Magenta}{A} + 9 \Rightarrow   p(A) = - \textcolor{Magenta}{      \begin{pmatrix}        2 & 1 & 4 \\ 3 & 0 & 1 \\ 2 & 0 & 1
+                \end{pmatrix} }^2 + 3\textcolor{Magenta}{      \begin{pmatrix}
+                2 & 1 & 4 \\ 3 & 0 & 1 \\ 2 & 0 & 1
+                \end{pmatrix} } + 9 \textcolor{Magenta}{      \begin{pmatrix}
+                1 &0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+                \end{pmatrix} }            \Rightarrow \]\[
+                 p(A) = -  \begin{pmatrix}
+                15 & 2 & 13 \\ 8 & 3 & 13 \\ 6 & 2 & 9
+                \end{pmatrix} +    \begin{pmatrix}
+                6 & 3 & 12 \\ 9 & 0 & 3\\ 6 & 0 & 3
+                \end{pmatrix}  +   \begin{pmatrix}
+                9 &0 & 0 \\ 0 & 9 & 0 \\ 0 & 0 & 9
+                \end{pmatrix}            \Rightarrow p(A) =  \begin{pmatrix}
+                0 &1 & -1 \\ 1 & 6 & -10 \\ 0 & -2 &3 
+                \end{pmatrix}        \Rightarrow p(A) = A^{-1}  \]
+
+  
+        }
+  }
    
     \exercicio{21}  Determine todas as matrizes $A \in \m{2}{\mathbb{R}}$ nilpotentes e calcule  $\det(A + I)$ e $\det(A − I).$
     
-  \solucao{}
+  \solucao{
+  Suponha que a matriz $A \in \mathcal{M}_2(\mathbb{R})$ seja nilpotente. Então, sabemos que $\det(A) = 0,$ e portanto $0$ é um de seus autovalores. (de fato, como $Av = \lambda v$ implica $A^nv = \lambda^nv,$ temos $\lambda = 0$) Como a dimensão de $A$ é $2,$ o outro autovalor também é nulo, e o polinômio característico é $p(\lambda) \lambda^n.$ Logo, o traço de $A$ também é nulo, pois corresponde à soma dos autovalores. Daí, os dois elementos da diagonal principal devem ser inversos. Portanto, a matriz procurada deve ser da forma
+  \[
+  A=\begin{pmatrix}\alpha & \beta \\ \gamma & -\alpha\end{pmatrix},\quad \alpha \in\mathbb{R},\quad \beta \gamma=-\alpha^2. 
+  \]
+  De fato, temos que
+  \[
+  \begin{pmatrix}\alpha & \beta \\ \gamma & -\alpha\end{pmatrix}\cdot \begin{pmatrix}\alpha &  \beta \\ \gamma & -\alpha\end{pmatrix}=\begin{pmatrix}\alpha^2+ \beta \gamma & \alpha- \beta \alpha \\ \gamma\alpha-\alpha \gamma &  \beta \gamma+\alpha^2\end{pmatrix}=\begin{pmatrix}0 & 0 \\ 0 & 0\end{pmatrix}\cdot
+  \]
+  
+  Logo, toda matriz nilpotente em $\m{2}{\mathbb{R}}$ deve ter a forma
+    \[
+  A=\begin{pmatrix}\alpha & \beta \\ \gamma & -\alpha\end{pmatrix},\quad \alpha \in\mathbb{R},\quad \beta \gamma=-\alpha^2. 
+  \]
+  
+  Calculemos $\det(A + I)$ e $\det(A − I):$
+  \begin{itemize}
+      \item Temos \[\det(A + I) = \det\left( \begin{pmatrix}\alpha & \beta \\ \gamma & -\alpha\end{pmatrix} + \begin{pmatrix}1&0\\ 0& 1\end{pmatrix} \right) =  \det\left( \begin{pmatrix}\alpha+1 & \beta \\ \gamma & -\alpha+1\end{pmatrix} \right) = \]\[ \textcolor{Green}{(\alpha + 1)(1 - \alpha)} - \textcolor{Blue}{\beta \gamma} = \textcolor{Green}{1 - \alpha^2} - \textcolor{Blue}{(-\alpha^2)} =1 - \alpha^2 + \alpha^2 = 1 \Rightarrow \boxed{\det(A + I) = = 1}\]
+      
+      \item  Temos\[\det(A - I) = \det\left( \begin{pmatrix}\alpha & \beta \\ \gamma & -\alpha\end{pmatrix} - \begin{pmatrix}1&0\\ 0& 1\end{pmatrix} \right) =  \det\left( \begin{pmatrix}\alpha-1 & \beta \\ \gamma & -\alpha-1\end{pmatrix} \right) = \]\[ \textcolor{Green}{(\alpha - 1)(-1 - \alpha)} - \textcolor{Blue}{\beta \gamma} = \textcolor{Green}{1 - \alpha^2} - \textcolor{Blue}{(-\alpha^2)} =1 - \alpha^2 + \alpha^2 = 1 \Rightarrow \boxed{\det(A - I) = = 1}\]
+  \end{itemize}
+  
+  \textbf{Observação:} A argumentação acima mostra que toda matriz nilpotente em $\m{2}{\mathbb{R}}$ tem ordem $2.$
+  }
    
     \exercicio{22} Sejam $V$ um espaço vetorial sobre $\mathbb{R}$ e $\{e_1,e_2,e_3\}$ uma base de $V.$ Seja $T \colon V \to V$ o operador linear definido por
 \[T(e_1) = e_2 − e_1, T(e_2) = e_3 − e_1, T(e_3) = e_3 − e_2.\]
@@ -1294,7 +1371,7 @@ Prove que se $A$ é diagonalizável então $T_A$ é diagonalizável.
 \exercicio{31} 
 
 \newpage
-\section{\textcolor{Floresta}{Lista 2 (Provável)}}
+\section{\textcolor{Floresta}{Lista 3}}
 
 \exercicio{1} Seja
 \[
@@ -1304,7 +1381,39 @@ A = \begin{bmatrix} 6 & -3 & -2 \\
 \end{bmatrix} \in \mathcal{M}_3(\mathbb{R}).
 \]
 Seja $T \in \mathcal{L}(\mathbb{R}^3)$ tal que $[T]_{can} = A.$ Encontre a decomposição primária de $T.$
-  \solucao{}
+  \solucao{
+  Para encontrar a decomposição primária de $T,$ precisamos encontrar seu polinômio característico, escrevê-lo na forma $p(t) = (t - \lambda_1)^{n_1} \cdot(t - \lambda_2)^{n_2} \cdot  \ldots \cdot (t - \lambda_k)^{n_k},$ %e teremos $V = \bigoplus\limits_{i=1}^k \Ker(T -\lambda_i I)^{n_i}.$
+  
+\begin{itemize}
+    \item Encontrando o polinômio característico de $A:$
+    \[
+    p(\lambda) = \det\left(A - \lambda I  \right) \Rightarrow 
+        p(\lambda) = \det\left( \begin{bmatrix} 6 & -3 & -2 \\
+4 & -1 & -2 \\
+10 & -5 & -3 
+\end{bmatrix}  -  \begin{bmatrix} \lambda & 0 & 0 \\
+0 & \lambda& 0 \\
+0 &0 & \lambda 
+\end{bmatrix}   \right)  \Rightarrow 
+      \]\[  p(\lambda) = \det\left( \begin{bmatrix} 6-\lambda & -3 & -2 \\
+4 & -1-\lambda & -2 \\
+10 & -5 & -3-\lambda 
+\end{bmatrix}  \right)
+\Rightarrow 
+        p(\lambda) = -\lambda^3 + 2\lambda^2  - \lambda + 2
+        \Rightarrow 
+        p(\lambda) = (\lambda-2)(\lambda^2 + 1)
+    \]
+        \item Decompondo $V = \mathbb{R}^3$ em soma direta:
+    
+    Como $p(\lambda) = (\lambda-2)(\lambda^2 + 1),$ podemos escrever
+    \[
+    \mathbb{R}^{3} = V_1 \oplus V_2,
+    \]
+    onde $V_1 = \Ker(A - 2I)$ e $V_2=\Ker(A^2 + I).$
+\end{itemize}
+  
+  }
   
   \exercicio{2} Seja $V$ um espaço vetorial de dimensão finita sobre o corpo $K.$ Seja $\mathcal{F}$ uma família de operadores triangularizáveis que comutam. Prove que:
    \dividiritensdiv{1}{     
@@ -1409,7 +1518,7 @@ com $\lambda_i$ distintos.
          1 & 1 & 3 & 0\\
          5 & 2 & 6 & 0 \\
          -2 & -1 & -3 & 0 \\
-         0 & 0 & 0 & 7 \\
+         0 & 0 & 7 & 0 \\
          \end{bmatrix} 
          \]
          %https://www2.unifap.br/matematica/files/2017/06/TCC-Teorema-da-Decomposi%c3%a7%c3%a3o-Prim%c3%a1ria.-Max-Oliveira-2010.pdf
@@ -1418,6 +1527,10 @@ com $\lambda_i$ distintos.
          
          }
          
+         \textcolor{Red}{Questões Suplementares}
+         
+        \exercicio{12} O teorema de Fine-Herstein estabelece que a quantidade de matrizes nilpotentes em $\mathbb{M}_n(\mathbb{F}_q)$ é $q^{n^2 -n}.$ Prove-o. %https://math.stackexchange.com/questions/1298453/the-number-of-3-times-3-nilpotent-matrices-over-mathbbf-q-using-the-orbit
+ \solucao{}   
 
 \newpage
 \section{\textcolor{Floresta}{Lista 4}}
@@ -1428,6 +1541,6 @@ com $\lambda_i$ distintos.
 tem um vetor cíclico para $T_W,$ é verdade que existe um vetor cíclico para $T$?)
 }
 \solucao{}
-        
+
 
 \end{document} 
