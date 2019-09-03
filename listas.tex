@@ -1,6 +1,6 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage{estilosexercicios}
-
+\externaldocument{main}
 % ---------------------------------------------------
 \title{Álgebra Linear}
 \author{MAT5730}
@@ -21,9 +21,239 @@
 \section{\textcolor{Floresta}{Lista 0}}
 
 
-\exercicio{1}
+\exercicio{3} Seja \(S\) um subconjunto de um espaço vetorial \(V\)
+sobre um corpo \(K\). Recorde que o subespaço de \(V\) gerado por \(S\)
+é definido por
+\[\langle S\rangle\coloneqq\{\lambda_1v_1+\ldots+\lambda_nv_n\,\colon
+  n\in\Naturals, \lambda_i\in K, v_i\in S\},\]
+isto é, \(\langle S\rangle\) é o conjunto de todas as
+combinações lineares de vetores em \(S\).
 
+\dividiritens{
+    \task[\pers{a}] Mostre que \(\langle S\rangle\) é um subespaço de \(V\).
+   \task[\pers{b}] Seja \(W\) a interseção de todos os subespaços de \(V\) que
+   contém \(S\). Mostre que \(W=\langle S\rangle\).
+}
 
+\solucao{
+  \dividiritens{
+    \task[\pers{a}]
+     Primeiramente note que para qualquer conjunto \(S^\prime\subseteq S\) finito e \(\alpha\colon S^\prime\to\{0\}\) temos que
+\(\sum_{x\in S^\prime}\alpha_x x=0\) e logo \(0\in\langle S\rangle\). Além disso, se \(\lambda\in K\)
+e \(x\in\langle S\rangle\) temos que \(x=\sum_{x\in S^\prime}\alpha_xx\) para \(S^\prime\subseteq S\) finito e \(\alpha\colon B^\prime\to\Reals\). Então
+\[\lambda x =\sum_{x\in S^\prime}(\lambda\alpha_x)x\in \langle S\rangle.\]
+
+Por fim,  sejam \(x,y\in \langle S\rangle\). Então \(x=\sum_{I_x}\alpha_v v\)
+e \(y=\sum_{I_y}\beta_v v\) para conjuntos \(I_x, I_y\) finitos e funções
+\(\alpha\colon I_x\to\Reals\) e \(\beta\colon I_y\to\Reals\). Defina a função
+\(\bar{\alpha}\colon I_x\cup I_y\to\Reals\) dada por \[\bar{\alpha}_v\coloneqq\begin{cases}\alpha_v\,\text{ se } v\in I_x;\\
+0, \text{ caso contrário.}\end{cases}\] Similarmente, considere a função \(\bar{\beta}\colon I_x\cup I_y\to \Reals\) dada por \[\bar{\beta}_v\coloneqq\begin{cases}\beta_v\,\text{ se } v\in I_y;\\
+0, \text{ caso contrário.}\end{cases}\]Então temos que 
+\[x+y=\sum_{v\in I_x}\alpha_v v +\sum_{v\in I_y}\beta_v v=\sum_{v\in I_x\cup I_y}(\bar{\alpha}_v + \bar{\beta}_v) v.\] 
+Como \(I_x\cup I_y\) é finito e \(\bar{\alpha}_v+\bar{\beta}_v\in\Reals\) para cada \(v\in I_x\cup I_y\) segue que \(x+y\in \langle S\rangle\).
+Concluímos assim que \(0\in\langle S\rangle\), que \(\lamba s\in\langle S\rangle\) para cada \(\lambda\in K\) e cada \(s\in \langle S\rangle\) e que \(x+y\in\langle S\rangle\) sempre que \(x,y\in \langle S\rangle\).
+Isto é, \(\langle S\rangle\) é um subespaço. 
+
+     \task[\pers{b}] Considere o seguinte conjunto \[W\coloneqq\bigcap\{U\subseteq V\,\colon U \text{ é subespaço e } S\subseteq U\}.\]
+Seja \(U\) um subespaço de \(V\) que contém \(S\). Pela definição de subespaço, obtemos que \(U\) contém todas as combinações lineares de elementos de \(S\). Logo, \(\langle S\rangle\subseteq U\). Concluímos assim que \(\langle S\rangle\) está contido em cada subespaço de \(V\) que contém \(S\) e portanto \(\langle S\rangle\subseteq W\).
+
+ Por outro lado, se \(s\in W\) então \(s\) pertence a cada subespaço de \(V\) que contém \(S\). Pelo item a, temos que
+\(\langle S\rangle\) é um subespaço de \(V\) e claramente contém \(S\). Portanto \(s\in\langle S\rangle\).
+
+}}
+
+\exercicio{5} Sejam \(W_1\) e \(W_2\) subespaços de um espaço vetorial \(V\).
+\dividiritens{ \task[\pers{a}] Dê um exemplo mostrando que \(W_1\cup W_2\) pode
+  não ser um subespaço de \(V\).
+  \task[\pers{b}] Prove que \(W_1\cup W_2\) é um subespaço se, e somente se
+  \(W_1\subseteq W_2\) ou \(W_2\subseteq W_1\).
+ \task[\pers{c}] Mostre que \(W_1+W_2\) é o subespaço gerado por \(W_1\cup W_2\).}
+
+\solucao{
+  \dividiritens{
+    \task[\pers{a}]  Por exemplo, se \(V=\mathbb{R}^2\), \(W_1=\langle(1,0)\rangle\) e 
+ \(W_2=\langle(0,1)\rangle\) então \(W_1\cup W_2 \) não é um 
+ subespaço de \(V\).
+    \task[\pers{b}] Primeiro, suponha sem perda de generalidade que
+    \(W_1\subseteq W_2\). Neste caso, temos que \mbox{\(W_1\cup W_2=W_2\),} que é um
+    subespaço por hipótese. A outra implicação é a contrapositiva da Proposição
+    \ref{unotsubsp} das notas de aula. 
+    \task[\pers{c}]  Primeiramente vamos mostrar que \(W_1+W_2\subseteq\langle W_1\cup W_2\rangle\). Se \(w_1+w_2\in W_1+W_2\), então claramente
+  \[w_1+w_2=1w_1+1w_2 \text{ com } w_1\in W_1\text{ e }w_2\in W_2.\] 
+  Por outro lado,
+  seja \(w\in\langle W_1\cup W_2\rangle\). Então podemos escrever \[w=\sum_{v\in I_1\cup I_2}\alpha_vv=\sum_{v\in I_1}\alpha_vv+\sum_{v\in I_2}\alpha_vv,\]
+  onde \(I_1\subseteq W_1\) e \(I_2\subseteq W_2\), e \(\alpha\colon I_1\cup I_2\to\mathbb{R}\).  Como \(W_1\) e \(W_2\) são subespaços temos que \(\sum_{v\in I_1}\alpha_v v\in W_1\)
+  e \(\sum_{v\in I_2}\alpha_vv\in W_2\) e portanto \(w\in W_1 + W_2\).
+
+}}
+
+\exercicio{7} Seja \(\mathcal{F}=\{S_i\,\colon i \in I\}\) uma
+família não vazia de subespaços distintos de um \(K\)-espaço vetorial \(V\).
+Mostre que são equivalentes:
+\dividiritens{ \task[\pers{i}]
+  Para cada \(i\in I\), temos que \(S_i\cap \Big(\sum_{i\neq j} S_j\Big)=\{0\}\).
+  \task[\pers{ii}]
+  O vetor nulo não pode ser escrito como uma soma
+  de vetores não nulos, cada um pertencendo a um subespaço distinto
+  de \(\mathcal{F}\).
+  \task[\pers{iii}]
+  Todo vetor não nulo de \(\sum_{i\in I}S_i\) tem,
+  a menos da ordem, uma decomposição única como soma de vetores não nulos
+  \(v=s_1+\ldots +s_n\), com os vetores \(s_1,\ldots , s_n\)
+  pertencendo a subespaços distintos de \(\mathcal{F}\).
+  \task[\pers{P.S}]
+
+  Segue deste exercício que \(V=\sum_{i\in I}S_i\) é uma
+soma direta se, e somente se, uma das condições (i)-(iii) é satisfeita.}
+
+\solucao{
+  \dividiritens{\task[\pers{a}] \textbf{(i)$\implies$(ii)}: Assuma que existe uma família de elementos
+              não nulos \(v_i\in S_i\) tais que \mbox{\(\sum_{i\in I}v_i=0\).} Seja
+              \(i_0\in I\) e note que \(v_{i_0}=-\sum_{i\in I\setminus\{i_0\}}v_i\). Como \(S_i\) é um
+              subespaço para cada \(i\in I\) concluímos que
+              \(v_{i_0}\in\sum_{i\in I\setminus\{i_0\}}S_i\). Como temos que
+              \(v_{i_0}\in S_{i_0}\) por construção, concluímos que \(0\neq
+              v_{i_0}\in S_{i_0}\cap \Big(\sum_{i\neq i_0}S_i\Big)\) e portanto  a afirmação (i) é falsa.
+            \task[\pers{b}] \textbf{(ii) $\implies$ (i)}: Assuma que existe
+            \(i_0\in I\) tal que existe
+            \(0\neq v_{i_0}\in S_{i_0}\cap\Big(\sum_{i\neq  i_0}S_i\Big).\)
+            Neste caso, temos que existe uma família \(\{-v_i\}_{i\in
+              I\setminus\{i_0\}}\) com \(v_i\in S_i\) para cada \(i\in
+            I\setminus\{i_0\}\) e \(\sum_{i\in I\setminus\{i_0\}}v_i=v_{i_0}\). Dessa forma, temos que a família \(\{v_{i_0}\}\cup\{v_i\}_{i\in
+              I\setminus\{i_0\}}\) é uma família não nula com \(v_i\in S_i\)
+            para cada \(i\in I\) e \(\sum_{i\in I}v_i=0\). Isto é, a afirmação
+            (ii) é falsa.
+              \task[\pers{c}]\textbf{(iii) $\implies$ (i)}: Seja \(0\not=s\in\sum_{i\in I}S_i\) e seja
+            \(\{s_i\}_{i\in I}\) a única decomposição
+            de \(S\). Assuma que existe
+            \(0\not =v\in S_{i_0}\cap(\sum_{j\in I\setminus\{i_0\}}S_j)\) para
+            algum \(i_0\in I\).
+            Neste caso segue que
+    \[s=\sum_{i\in I}s_i=(s_{i_0}+v)+\sum_{j\in I\setminus\{i_0\}}s_i -v.\]
+    Isto é, \(s\) tem duas decomposições, o que
+    é uma contradição.
+           \task[\pers{d}]\textbf{(i) $\implies$ (iii)}: Seja \(0\neq
+           s\in\sum_{i\in I}S_i\) e assuma que existem duas famílias
+           \(\{s_i\}_{i\in I}\) e \(\{v_i\}_{i\in I}\) distintas tais
+           que \[\sum_{i\in I} s_i=\sum_{i\in I}v_i=s.\].
+           Seja \(i_0\in I\) tal que \(s_{i_0}\neq
+           v_{i_0}\). Então \begin{align*}0\not=v_{i_0}-s_{i_0}&=
+      \sum_{i\in I\setminus\{i_0\}}s_i-\sum_{i\in I\setminus\{i_0\}}v_i
+                              \\&=\sum_{i\in I\setminus\{i_0\}}s_i-v_i.
+                            \end{align*}
+Assim concluímos que \(0\neq v_{i_0}-s_{i_0}\in S_{i_0}\cap                                                             \Big(\sum_{i\neq
+                                                               i_0} S_i\Big)\).
+                                                             Isto é, a afirmação (i) é falsa.
+          
+                                                             \task[\pers{e}]\textbf{(ii) $\implies$ (iii)}: Seja
+                                                      \(0\neq s\in V\) e
+          assuma que existem duas famílias distintas \(\{v_i\}_{i\in I}\) e
+          \(\{s_i\}_{i\in I}\) tais que \[\sum_{i\in I} v_i=\sum_{i\in
+              I}s_i=s.\] Neste caso, obtemos que \begin{align*}
+                                                   0=s-s&=\sum_{i\in I}s_i-\sum_{i\in I}v_i\\&=\sum_{i \in I}s_i-v_i.
+                                                 \end{align*}
+                                                 Assim escrevemos o vetor nulo
+                                                 como uma soma não nula de
+                                                 vetores, cada um pertencendo a
+                                                 um subespaço \(S_i\). Isso
+                                                 implica que a afirmação (ii) é falsa.
+                                                 \task[\pers{f}]\textbf{(iii)$\implies$ (ii)}:
+                       Seja \(0\neq v\in V\), seja \(\{v_i\}_{i\in I}\) a única
+                       família tal que \(v_i\in S_i\) para cada \(i\in I\)e
+                       \(\sum_{i\in I}v_i=v\). Assuma que existe uma
+           família \(\{s_i\}_{i\in I}\) não nula de vetores onde \(s_i\in S_i\)
+           para cada \(i\in I\) e \(\sum_{i\in I}s_i=0\). Então temos
+           que \[v=v+0=\sum_{i\in I}v_i+s_i=\sum_{i\in I}v_i-s_i=v-0=v,\]
+           o que nos da uma contradição.
+          
+         }}
+
+\exercicio{8} Seja  \(V\) um \(K\)-espaço vetorial e seja \(S\) um subconjunto
+linearmente independente de \(V\). Mostre que, se \(v\in V\) não for combinação
+linear dos elementos de \(S\), então \(S\cup\{v\}\) é linearmente independente.
+
+\solucao{Assuma que \(v\) é combinação linear dos elementos de \(S\). Neste caso
+existe \(S^\prime\subseteq S\) finito e uma função \(\alpha\colon S^\prime\to\Reals\) tal que 
+\(\sum_{s\in S^\prime}\alpha_s s=v\). Defina \(\bar{\alpha}\colon S^\prime\cup\{v\}\to\Reals\) tal que
+\(\bar{\alpha}_s=\alpha_s\) para cada \(s\in S^\prime\) e \(\bar{\alpha}_v=-1\). Então segue que \(\sum_{s\inS^\prime\cup\{v\}}\bar{\alpha}_ss=0.\) Isto é, \(S\cup\{v\}\) é L.D.
+}
+
+\exercicio{9} Seja \(V\) um \(K\)-espaço vetorial de dimensão finita e sejam
+\(U\) e \(W\) subespaços de \(V\) tais que \(V=U+W\). Mostre que \(V=U\oplus
+W\), se e somente se, \(\dim (V)=\dim (U)+\dim (W)}.\)
+\solucao{ Utilizando o fato de
+  que \[\text{dim}(V)=\text{dim}(W)+\text{dim}(U)-\text{dim}(U\cap W)\]
+  e o Exercício 7,
+  vemos que as seguintes afirmações são equivalentes:
+  \begin{enumerate}
+  \item \(V=U\oplus W\);
+  \item \(\dim(V)=\dim(U)+\dim(W)\);
+  \item \(V=U+W\) e \(\dim(U\cap W)=0\);
+  \end{enumerate}
+}
+\exercicio{10} Seja \(V\) um \(K\)-espaço vetorial e seja \(W\) um subespaço de
+\(V\). Mostre que \(W\) possui complemento em \(V\), isto é, que existe um
+subespaço \(U\) de \(V\) tal que \(V=U\oplus W\).
+
+\solucao{  Seja \(B_1\) uma base de \(W\). Como \(B_1\) é L.I temos pelo Teorema 1
+  das notas de aula que existe uma base \(B\) de \(V\) tal que \(B_1\subseteq B\). Considere
+  o conjunto \(B_2\coloneqq B\setminus B_1\) e o subespaço \(U\coloneqq\langle B_2\rangle\). Pelo exercício 3 temos
+  que \(U\) é um subespaço e ainda temos do exercício 5 que \mbox{\(V= W+U\)}.
+  Resta mostrar que \(U\cap W=\{0\}\). Assuma que existe \(0\not= v\in U|cap
+  W\). Neste caso temos que existem conjuntos finitos \(B_1^\prime\subseteq
+  B_1\) e \(B_2^\prime\) e funções \(\alpha\colon B_1^\prime\to\Reals\) e
+  \(\beta\colon B_2\prime\to\Reals\) tais que
+  \[v=\sum_{b\in B_1^\prime}\alpha_bb=\sum_{b\in B_2^\prime}\beta_bb.\]
+  Seja \(i_0\in B_1^\prime\) tal que \(\alpha_{i_0}\neq 0 \), então
+  \[b_{i_0}=\frac{1}{\alpha_{i_0}}\Big(\sum_{b\in B_2^\prime}\beta_bw-\sum_{i\in
+      B_1^\prime\setminus\{i_0\}}\Big),\]
+que, pelo exercício 8 implica que \(B_1\cup B_2\) não é L.I. Contradição.
+}
+
+\exercicio{12} Seja \(V\) um espaço vetorial. Sejam \(S,U,T\) subespaços de
+\(V\). Mostre que se \(U\subseteq S\), então:
+\[S\cap(T+U)=(S\cap T)+(S\cap U).\]
+\solucao{
+  Primeiro, note que como \(U\subseteq S\) temos que \(S\cap U=U\) e portanto é
+  suficiente mostrar que \[S\cap(T+U)=(S\cap T)+ U.\]
+  Como \( U\subseteq U+T\) e \(U\subseteq S\) temos que
+  \begin{equation}\label{0.12.1}U\subseteq (U+T)\cap S.\end{equation} Além disso, como \(T\subseteq U+T\)
+  temos que \begin{equation}\label{0.12.2}T\cap S\subseteq (U+T)\cap
+    S.\end{equation}
+  Assim, juntando as Equações \ref{0.12.1} e \ref{0.12.2} obtemos que \(U+(T\cap
+  S)\subseteq (U+T)\cap S.\) Por outro lado, considere \(y\in (U+T)\cap S\).
+  Isto é, \(y=u+t=s\) para alguns \(u\in U\), \(t\in T\), e \(s\in S\). Como
+  \(U\subseteq S\) e \(S\) é subespaço, obtemos que \(t=s-u\in S\) e concluímos
+  que \(t\in T\cap S\). Dessa forma segue que \(y=u+t\in U+(T\cap S).\)  
+  
+  
+}\exercicio{13} Para quais espaços vetoriais \(V\) a lei distributiva
+\[S\cap(T+U)=(S\cap T)+(S\cap U)\]
+é verdadeira para todos os subespaços \(S,T,U\) de \(V\)?
+\solucao{
+Vamos iniciar notando que se \(\dim (V)\leq 1\) o resultado vale trivialmente.
+Se \(\dim (V)\geq 2\), tomamos dois vetores \(v_t\) e \(v_u\) linearmente
+independentes e consideramos \(T\coloneqq\langle v_t\rangle\),
+\(U\coloneqq\langle v_u\rangle\) e \(S\coloneqq\langle v_u+v_t\rangle\). Dessa
+forma temos \(S\subseteq U+T\) e portanto \(S\cap (U+T)=S\), mas por outro lado
+\((S\cap T)=(S\cap U)= 0.\)
+}
+
+\exercicio{14} Sejam \(U\) e \(V\) \(K\)-espaços vetoriais e seja \(T\colon U\to
+V\) uma transformação linear.
+\dividiritens{
+    \task[\pers{a}] Prove que \(T\) é injetora se, e somente se, \(T\) leva todo
+    subconjunto linearmente independente de \(U\) em um conjunto linearmente
+    independente de \(V\).
+   \task[\pers{b}] Prove que se o subconjunto \(\{T(u_1),\ldots , T(u_n)\}\) de \(V\) for
+   linearmente independente, então \(\{u_1,\ldots , u_n\}\) é um subconjunto
+   linearmente independente de \(U\).
+}
+
+   
+\solucao{
+
+}
 \newpage
 \section{\textcolor{Floresta}{Lista 1}}
 

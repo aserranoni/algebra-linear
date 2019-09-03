@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.5)  29 AUG 2019 18:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.5)  2 SEP 2019 20:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -175,6 +175,9 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks17
 \verbatim@line=\toks18
 \verbatim@in@stream=\read1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xr.sty
+Package: xr 2019/01/05 v5.04 eXternal References (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
@@ -1197,7 +1200,9 @@ LaTeX Font Info:    Overwriting symbol font `mathb' in version `normal'
 (Font)                  U/mathb/m/n --> U/mathb/m/n on input line 81.
 LaTeX Font Info:    Overwriting symbol font `mathb' in version `bold'
 (Font)                  U/mathb/m/n --> U/mathb/m/n on input line 81.
-) (./listas.aux)
+)
+Package xr Info: IMPORTING LABELS FROM main.aux on input line 3.
+ (./listas.aux)
 \openout1 = `listas.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -1335,18 +1340,18 @@ You may provide a definition with
 \DeclareUnicodeCharacter 
 
 (./listas.toc
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 42.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 43.
 
-LaTeX Font Info:    No file OMScmss.fd. on input line 42.
+LaTeX Font Info:    No file OMScmss.fd. on input line 43.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 42.
+(Font)              for symbol `textbullet' on input line 43.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -1355,532 +1360,866 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 \openout6 = `listas.toc'.
 
  [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 31--77
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 
  []
+
+./listas.tex:63: Undefined control sequence.
+<argument> ...n \langle S\rangle \), que \(\lamba 
+                                                  s\in \langle S\rangle \) p...
+l.63 }}
+       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 79--109
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 156--156
-
+Overfull \hbox (23.17648pt too wide) in paragraph at lines 88--88
+|\T1/cmr/m/n/10.95 Primeiro, su-po-nha sem perda de ge-ne-ra-li-dade que $\OML/
+cmm/m/it/10.95 W[] \OMS/cmsy/m/n/10.95 ^^R \OML/cmm/m/it/10.95 W[]$\T1/cmr/m/n/
+10.95 . Neste caso, te-mos que []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
+Overfull \hbox (3.18907pt too wide) in paragraph at lines 107--107
+|[]$[]$[] 
+ []
+
+
+Overfull \hbox (10.68883pt too wide) in paragraph at lines 107--107
+|[]$[]$[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 203--262
+[5] [6]
+./listas.tex:179: Undefined control sequence.
+<argument> ...\). Então segue que \(\sum _{s\inS 
+                                                  ^\prime \cup \{v\}}\bar {\...
+l.179 }
+       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+ []
+
+./listas.tex:183: Extra }, or forgotten $.
+l.183 ...somente se, \(\dim (V)=\dim (U)+\dim (W)}
+                                                  .\)
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
 
  []
 
 [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 262.
+Underfull \hbox (badness 10000) in paragraph at lines 215--230
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--241
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 245--291
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 293--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--412
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 417--476
+
+ []
+
+[12]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 476.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 262.
- [8]
-Underfull \hbox (badness 10000) in paragraph at lines 370--370
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 476.
+ [13]
+Underfull \hbox (badness 10000) in paragraph at lines 584--584
 
  []
 
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 416--416
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 434--434
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 474--474
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 479--481
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 485--527
-
- []
-
-[13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 532--555
-
- []
-
-[15]
+[14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 630--630
 
  []
 
-[16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 718--718
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--688
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 693--695
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--741
 
  []
 
 [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 725--733
+Underfull \hbox (badness 10000) in paragraph at lines 746--769
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 738--747
+Underfull \hbox (badness 10000) in paragraph at lines 844--844
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 754--775
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 782--820
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 932--932
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 823--833
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 835--855
-
- []
-
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 859--873
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 903--903
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 905--907
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 939--947
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 944--944
+Underfull \hbox (badness 10000) in paragraph at lines 952--961
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--989
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 957--958
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 973--974
+Underfull \hbox (badness 10000) in paragraph at lines 996--1034
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 991--994
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1047
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1019--1020
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1030--1031
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1033--1036
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1069
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1040--1043
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1087
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1060
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1068--1069
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1077
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1121
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1089--1090
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1093--1094
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1097--1098
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1128--1128
+Underfull \hbox (badness 10000) in paragraph at lines 1158--1158
 
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1133--1134
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1147--1148
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1179--1180
+Underfull \hbox (badness 10000) in paragraph at lines 1187--1188
 
  []
 
 [32]
-
-./listas.tex:1195: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1195 ...olinômio $c_0 + c_1t + \ldots + c_{n−
-                                                  1}t^{n−1} + t^n.$
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./listas.tex:1195: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1195 ... $c_0 + c_1t + \ldots + c_{n−1}t^{n−
-                                                  1} + t^n.$
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1195--1197
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1198--1200
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1203--1204
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1205--1208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1211--1212
+Underfull \hbox (badness 10000) in paragraph at lines 1233--1234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1244--1245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1247--1250
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1225--1226
+Underfull \hbox (badness 10000) in paragraph at lines 1254--1257
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1270--1271
 
  []
 
 
-./listas.tex:1227: Package inputenc Error: Unicode character − (U+2212)
+Underfull \hbox (badness 10000) in paragraph at lines 1272--1274
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1290--1291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1299--1300
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1311--1312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1342
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1347--1348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1393--1394
+
+ []
+
+[37]
+
+./listas.tex:1409: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1227 ...s e calcule  $\det(A + I)$ e $\det(A −
+l.1409 ...olinômio $c_0 + c_1t + \ldots + c_{n−
+                                                  1}t^{n−1} + t^n.$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./listas.tex:1409: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1409 ... $c_0 + c_1t + \ldots + c_{n−1}t^{n−
+                                                  1} + t^n.$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1409--1411
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1412--1414
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1417--1418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1422
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1425--1426
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 1493--1493
+
+ []
+
+
+Overfull \hbox (11.70108pt too wide) detected at line 1493
+\OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.9
+5 ) = \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmr/m/n/10.95 + [] + [] \OMS/cmsy/m/n/10.
+95 ) \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n
+/10.95 ) = [] \OMS/cmsy/m/n/10.95 ) \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 A[]
+ []
+
+[39]
+
+./listas.tex:1495: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1495 ...s e calcule  $\det(A + I)$ e $\det(A −
                                                    I).$
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1229--1230
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1520
 
  []
 
 
-./listas.tex:1232: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1520: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1232 \[T(e_1) = e_2 −
+l.1520   }
+          
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[40]
+
+./listas.tex:1523: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1523 \[T(e_1) = e_2 −
                           e_1, T(e_2) = e_3 − e_1, T(e_3) = e_3 − e_2.\]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./listas.tex:1232: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1523: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1232 \[T(e_1) = e_2 − e_1, T(e_2) = e_3 −
+l.1523 \[T(e_1) = e_2 − e_1, T(e_2) = e_3 −
                                                 e_1, T(e_3) = e_3 − e_2.\]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./listas.tex:1232: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1523: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1232 ..., T(e_2) = e_3 − e_1, T(e_3) = e_3 −
+l.1523 ..., T(e_2) = e_3 − e_1, T(e_3) = e_3 −
                                                    e_2.\]
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1239--1240
+Underfull \hbox (badness 10000) in paragraph at lines 1530--1531
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1243--1244
+Underfull \hbox (badness 10000) in paragraph at lines 1534--1535
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1248
+Underfull \hbox (badness 10000) in paragraph at lines 1538--1539
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1251--1252
-
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1260--1261
+Underfull \hbox (badness 10000) in paragraph at lines 1542--1543
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1267--1268
+Underfull \hbox (badness 10000) in paragraph at lines 1551--1552
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 1558--1559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1275--1276
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1283--1284
+Underfull \hbox (badness 10000) in paragraph at lines 1574--1575
 
  []
 
 
-./listas.tex:1286: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1577: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1286     \[p_A(t) = t^n + a_{n−
+l.1577     \[p_A(t) = t^n + a_{n−
                                    1}t^{n−1} + \ldots + a_1t + a_0\] o pol...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./listas.tex:1286: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1577: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1286     \[p_A(t) = t^n + a_{n−1}t^{n−
+l.1577     \[p_A(t) = t^n + a_{n−1}t^{n−
                                             1} + \ldots + a_1t + a_0\] o pol...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[35]
 
-./listas.tex:1286: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1577: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1286 ...acterístico de $A.$ Mostre que $a_{n−
+l.1577 ...acterístico de $A.$ Mostre que $a_{n−
                                                   1} = − \mbox{tr}(A),$ o ...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./listas.tex:1286: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1577: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1286 ...tico de $A.$ Mostre que $a_{n−1} = −
+l.1577 ...tico de $A.$ Mostre que $a_{n−1} = −
                                                    \mbox{tr}(A),$ o traço d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./listas.tex:1286: Package inputenc Error: Unicode character − (U+2212)
+./listas.tex:1577: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1286 ...{tr}(A),$ o traço de $A,$ e $a_0 = (−
+l.1577 ...{tr}(A),$ o traço de $A,$ e $a_0 = (−
                                                   1)^n \det(A).$
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1288--1289
+Underfull \hbox (badness 10000) in paragraph at lines 1579--1580
 
  []
 
-[36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1295.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1295.
+[42] [43]
+Underfull \hbox (badness 10000) in paragraph at lines 1596--1630
+
+ []
+
+./listas.tex:1645: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1645  }
+         
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+./listas.tex:1645: Package inputenc Error: Unicode character ∗ (U+2217)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1645  }
+         
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+./listas.tex:1645: Missing } inserted.
+<inserted text> 
+                }
+l.1645  }
+         
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1647--1648
+
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 1651--1652
+
+ []
+
+
+./listas.tex:1653: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1653 ... uma matriz não nula tal que $A^3 = −
+                                                  A.$ Mostre que $A$ é seme...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1662--1663
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1668--1670
+
+ []
+
+
+./listas.tex:1673: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1673 p_T(t) = (t −
+                       \lambda_1)^{n_1} (t −\lambda_2)^{n_2} \cdot \ldots ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./listas.tex:1673: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1673 p_T(t) = (t − \lambda_1)^{n_1} (t −
+                                              \lambda_2)^{n_2} \cdot \ldots ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./listas.tex:1673: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1673 ...mbda_2)^{n_2} \cdot \ldots \cdot  (t −
+                                                   \lambda_k)^{n_k}\]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./listas.tex:1675: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1675 \[m_T(t) = (t −
+                         \lambda_1)^{m_1} (t −\lambda_2)^{m_2} \cdot \ldot...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./listas.tex:1675: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1675 \[m_T(t) = (t − \lambda_1)^{m_1} (t −
+                                                \lambda_2)^{m_2} \cdot \ldot...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./listas.tex:1675: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1675 ...mbda_2)^{m_2} \cdot \ldots \cdot  (t −
+                                                   \lambda_k)^{m_k}, \]
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./listas.tex:1685: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1685         }
+                
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1687--1688
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 1691--1692
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1698--1699
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1711--1712
+
+ []
+
+
+./listas.tex:1713: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1713 ...o operador definido por $T_A(M) = AM −
+                                                   MA.$
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1720--1721
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1722--1742
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 1746--1748
+
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 1757--1758
+
+ []
+
+[48]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1760.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1760.
  (./listas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1295.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1295.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1760.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1760.
 
 Package rerunfilecheck Info: File `listas.out' has not changed.
-(rerunfilecheck)             Checksum: 8FDEA1E9E662DE96E71025F46665CF20;4388.
+(rerunfilecheck)             Checksum: D1FFED20ECE25B935B046A7A88250CA7;5747.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1295.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1760.
  ) 
 Here is how much of TeX's memory you used:
- 32606 strings out of 492615
- 608703 string characters out of 6131391
- 886330 words of memory out of 5000000
- 35857 multiletter control sequences out of 15000+600000
- 558391 words of font info for 99 fonts, out of 8000000 for 9000
+ 32696 strings out of 492615
+ 609765 string characters out of 6131391
+ 886683 words of memory out of 5000000
+ 35912 multiletter control sequences out of 15000+600000
+ 555621 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,15n,65p,1039b,821s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,15n,65p,1062b,821s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
+pdfTeX warning (dest): name{thm.1.13} has been referenced but does not exist, r
+eplaced by a fixed one
+
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/
 texmf-dist/fonts/enc/dvips/arev/arevoms.enc}</usr/share/texlive/texmf-dist/font
 s/type1/public/arev/ArevSans-Roman.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsf
-s10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/
-texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm06
-00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm120
-0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfti1095.pfb>
-Output written on listas.pdf (36 pages, 454775 bytes).
+e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfti1095.pfb>
+Output written on listas.pdf (48 pages, 481715 bytes).
 PDF statistics:
- 652 PDF objects out of 1000 (max. 8388607)
- 579 compressed objects within 6 object streams
- 108 named destinations out of 1000 (max. 500000)
- 557 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 826 PDF objects out of 1000 (max. 8388607)
+ 741 compressed objects within 8 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 733 words of extra memory for PDF output out of 10000 (max. 10000000)
 

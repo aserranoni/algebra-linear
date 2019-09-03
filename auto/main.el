@@ -22,6 +22,9 @@
     "sec:intro"
     "new-question"
     "tab:table1"
+    "lidef"
+    "existbase"
+    "unotsubsp"
     "primeira"
     "segunda"
     "terceira")

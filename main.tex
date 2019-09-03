@@ -4,7 +4,8 @@
 
 %%-----------------------%%%
 \documentclass[11pt,twoside,a4paper]{book}
-\usepackage{estilos} %Relacionado ao arquivo estilos.sty com os packages usados
+\usepackage{estilos} 
+\externaldocument{listas}
 \makeindex
 \title{Álgebra Linear \\  Douglas Smigly}
 \author{MAT5730}
@@ -13,7 +14,6 @@
 \maketitle
 \newpage
 \tableofcontents
-\newpage
 \newpage
 \chapter*{Infromações da Disciplina}
 \label{sec:intro}
@@ -66,7 +66,7 @@ Durante este capítulo, sempre adotaremos $K$ como sendo um corpo qualquer.
 
 \section{Base e Dimensão}
 
-\begin{definicao}\index{Espaço Vetorial!Base}
+\begin{definicao}\label{lidef}\index{Espaço Vetorial!Base}
 Seja $V \neq 0$ um espaço vetorial sobre um corpo $K$. Uma \emph{base} de \(V\) é um conjunto $B\subseteq V$ tal que:
 \begin{enumerate}[label=(\roman*)]
 \item $B$ é linearmente independente (LI).
@@ -82,49 +82,58 @@ $I\subseteq B$ é linearmente independente. Isto é, se \(\alpha\colon I\to\Real
 Além disso, dizemos que \(B\) gera \(V\) se para cada \(v\in V\) existem exatamente
 um subconjunto finito \(I_v\subseteq B\) e uma função \(\alpha\colon
 I_v\to\Reals\) tais que \[v=\sum_{b\in I_v}\alpha_bb.\]  
-\begin{teorema}
+\begin{teorema}\label{existbase}
 Seja $V$ um espaço vetorial e sejam $I\subseteq V$ linearmente independente e $S\subseteq V$ gerador de $V$ tais que $I\subseteq S$. Então existe uma base $B$ de $V$ tal que \[I\subseteq B\subseteq S.\]
 \end{teorema}
 \begin{proof}
 Consideremos o   conjunto:
 \[
-\mathcal{M}=\{M\subseteq S\mid M\text{ é linearmente independente e }I\subseteq M\}
+\mathcal{M}\coloneqq\{M\subseteq S\mid M\text{ é linearmente independente e }I\subseteq M\}
 \]
 Então $\langle \mathcal{M},\subseteq \rangle$ é um conjunto parcialmente ordenado indutivo (ou seja, todo subconjunto totalmente ordenado possui uma cota superior). De fato, $I\in\mathcal{M}$, o que nos mostra que $\mathcal{M} \neq \emptyset,$ e para subconjunto totalmente ordenado não vazio $\mathcal{C}\subseteq\mathcal{M}$ então $\bigcup\limits_{M \in \mathcal{C}} M \in\mathcal{M}.$ 
 
 Logo, pelo Lema de Zorn, $\mathcal{M}$ possui um elemento maximal $B$. Vamos provar que esse elemento maximal é de fato uma base para $V.$
-\begin{itemize}
+\begin{enumerate}[label=(\roman*)]
     \item \textbf{$B$ é linearmente independente:} segue da definição de $\mathcal{M}.$
-    \item \textbf{$B$ gera $V$:} Suponha por absurdo que $B$ não gera $V$. Então existe $v\in S$ que não é combinação linear de elementos de $B$, aí $B\cup\{v\}$ é linearmente independente e $I\subseteq B\cup\{v\}\subseteq S$. Então $B\cup\mathcal{v}\in\mathcal{M}$, uma contradição, pois $B$ já é um elemento maximal de $\mathcal{M}$ e obviamente $B \subseteq B \cup \{ v \}$. Logo $B$ gera $V$. Portanto, $B$ é uma base de $V$ e $I\subseteq B\subseteq S$.
-    \end{itemize}
+    \item \textbf{$B$ gera $V$:} Suponha por absurdo que $B$ não gera $V$. Então existe $v\in S$ que não é combinação linear de elementos de $B$, aí $B\cup\{v\}$ é linearmente independente e $I\subseteq B\cup\{v\}\subseteq S$. Então $B\cup\mathcal{v}\in\mathcal{M}$, uma contradição, pois $B$ já é um elemento maximal de $\mathcal{M}$ e obviamente $B \subseteq B \cup \{ v \}$. Logo $B$ gera $V$. Portanto, $B$ é uma base de $V$ e $I\subseteq B\subseteq S$.\qedhere
+    \end{enumerate}
 \end{proof}
 
 O resultado acima mostra que todo espaço vetorial tem base, bastando para isso tomar $I = \{ v \}$ e $S = V.$
 \begin{corolario}
-Temos o seguinte:
-\begin{itemize}
-\item Todo espaço vetorial $V$ tem uma base.
-\item Para todo $I\subseteq V$ linearmente independente, existe uma base $B$ de $V$ que contém $I$.
-\item Para todo $S\subseteq V$ gerador de $V$, existe uma base $B$ de $V$ tal que $B\subseteq S$.
-\end{itemize}
+  Seja \(V\) um espaço vetorial sobre um corpo \(K\),
+  seja \(I\subseteq V\) um
+  conjunto linearmente independente e seja \(S\subseteq V\)
+  um conjunto gerador de \(V\). Então
+\begin{enumerate}[label=(\roman*)]
+\item O espaço $V$ tem uma base;
+\item Existe uma base \(B\) de \(V\) tal que \(I\subseteq B\); 
+\item Existe uma base \(B\) de \(V\) tal que \(B\subseteq S\).
+\end{enumerate}
 \end{corolario}
 
 
-\begin{lema}
-Sejam $\{v_i\}_{i \in \mathbb{N}_{\le n}}$ linearmente independente e $\{u_j\}_{j\in \mathbb{N}_{\le m}}$ um conjunto gerador de $V$. Então $n\leq m$.
+\begin{lema} Seja \(V\) um espaço vetorial sobre um corpo \(K\).
+Sejam $\{v_i\}_{i \in \mathbb{N}_{\le n}}\subseteq V$ linearmente independente e
+$\{u_j\}_{j\in \mathbb{N}_{\le m}}\subseteq V$ um conjunto gerador de $V$. Então $n\leq m$.
 \end{lema}
 
-\begin{sublema}
-Um conjunto $\{v_i\}_{i \in \mathbb{N}_{\le n}}$ é linearmente dependente se e somente se existem $i\in  \mathbb{N}_{\le n}$ e um $\alpha: i\rightarrow K$ tais que \[v_i=\sum\limits_{j <i}\alpha_jv_j\]
-\begin{proof}
-Se $\{v_i\}_{i\in n}$ é linearmente dependente, então existe $\alpha:n\rightarrow K$ tal que $\exists i\in n:\alpha_n$ e $\sum_{i\in n}\alpha_iv_i=0$. Seja $i$ o maior elemento de $n$ tal que $\alpha_i\neq 0$. Então 
-\[
-\alpha_1 v_1 + \ldots + \alpha_i v_i = 0 \Rightarrow \alpha_1v_1 + \ldots + \alpha_{i-1} v_{i-1} = - \alpha_i v_i \Rightarrow
-\]
-\[v_i= - \sum\limits_{j\in i}\frac{\alpha_j}{\alpha_i}v_j\]
-\end{proof}
+\begin{sublema} Seja \(V\) um espaço vetorial sobre um corpo \(K\).
+Um conjunto $\{v_i\}_{i \in \mathbb{N}_{\le n}}\subseteq V$ é linearmente dependente se e somente se existem $i\in  \mathbb{N}_{\le n}$ e um $\alpha: i\rightarrow K$ tais que \[v_i=\sum\limits_{j <i}\alpha_jv_j.\]
 \end{sublema}
-
+\begin{proof}[Demonstração do Sublema]
+Se $\{v_i\}_{i\in n}$ é linearmente dependente, então existe
+$\alpha:n\rightarrow K$ não identicamente nula  tal que  $\sum_{i\in
+  n}\alpha_iv_i=0$. Seja $i$ o maior elemento de $n$ tal que $\alpha_i\neq 0$.
+Então segue que
+\begin{align*}
+&\alpha_1 v_1 + \ldots + \alpha_i v_i = 0 \\ \iff &  \alpha_1v_1 + \ldots + \alpha_{i-1} v_{i-1} = - \alpha_i v_i \\ \iff &
+v_i= - \sum\limits_{j\in i}\frac{\alpha_j}{\alpha_i}v_j.\qedhere
+\end{align*}
+\end{proof}
+\begin{proof}[Demonstração do Lema]
+\textcolor{red}{N TENDI}
+\end{proof}
 Vamos relembrar o que fizemos até aqui com um exemplo:
 \begin{exemplo}
 Considere $V = \mathbb{R}^4$ um $\mathbb{R}$-espaço vetorial. Sejam os vetores:
@@ -161,7 +170,8 @@ v_5 = \frac{5}{2}v_1 + \frac{1}{2} v_2 - \frac{1}{2}v_3 - \frac{3}{2} v_4
 
 
 
-Para trabalhar com a cardinalidade das bases, utilizaremos alguns fatos conhecidos, enunciados na
+Para trabalhar com a cardinalidade das bases, utilizaremos alguns fatos
+conhecidos, enunciados na próxima proposição:
 \begin{proposicao}
 Se $\lambda$ e $\mu$ são cardinais, então:
 \begin{itemize}
@@ -204,7 +214,7 @@ Se $S$ é subconjunto de $V$, então:
 \]
 \end{proposicao}
 A intersecção de subsespaços sempre é um subespaço, mas o mesmo não acontece com a união de subespaços.
-\begin{proposicao}
+\begin{proposicao}\label{unotsubsp}
 Se $A$ e $B$ são subespaços de $V$ tais que $A\nsubseteq B$ e $B\nsubseteq A$, então $A\cup B$ não é subespaço de $V$.
 \end{proposicao}
 \begin{proof}
@@ -331,11 +341,10 @@ Seja $V$ um espaço vetorial de dimensão finita. Seja $B$ uma base de $V$. Ent�
 \section{Definições}
 
 \begin{definicao}
-Uma função $T:U\rightarrow V$ se chama uma \textbf{transformação linear} se para quaisquer $\alpha,\beta\in K$ e $u,v\in V$ tivermos $T(\alpha u+\beta v)=\alpha T(u)+\beta T(v)$.
-\end{definicao}
-
-\begin{definicao}
-Para espaços vetoriais $U$ e $V$, denotamos o conjunto das transformações lineares de $U$ a $V$ por $\mathcal{L}(U,V).$
+Sejam \(U\) e \(V\) espaços vetoriais sobre um corpo \(K\).  uma
+\emph{transformação linear} é uma função $T:U\rightarrow V$ tal que  $$T(\alpha
+u+\beta v)=\alpha T(u)+\beta T(v)$$
+ para quaisquer $\alpha,\beta\in K$ e $u,v\in V$. Além disso, denotamos o conjunto das transformações lineares de $U$ a $V$ por $\mathcal{L}(U,V).$
 \end{definicao}
 
 \begin{teorema}
