@@ -1283,7 +1283,20 @@ A^{-1} + B^{-1} = (A + B)^{-1}
 
 \exercicio{1} Seja $V$ um espaço vetorial sobre um corpo $K$ e $T \in \mathcal{L}(V).$ Sejam $\lambda \in K$ um autovalor de $T$ e $f(t) \in K[t].$ Mostre que $f(\lambda)$ é um autovalor de $f(T).$
 
- \solucao{}
+ \solucao{ Considere $f(t) = \alpha^n t^n + \alpha^{n-1} t^{n-1} + \ldots + \alpha_0.$ Sendo $\lambda$ um autovalor de $T,$ sabemos que existem um $v \neq 0$ tal que $T(v) = \lambda v.$ Lembrando que $T^n(v) = \lambda^n v,$ temos que
+ \[
+ (f(T))(v) = (\alpha^n T^n + \alpha^{n-1} T^{n-1} + \ldots + \alpha_1T + \alpha_0)(v) =\]\[
+ \alpha^n \textcolor{Blue}{T^n(v)} + \alpha^{n-1} \textcolor{Green}{T^{n-1}(v)}+ \ldots + \alpha_1 \textcolor{Red}{T(v)} + \alpha_0 \textcolor{Violet}{I(v)} =
+ \]\[\alpha^n \textcolor{Blue}{\lambda^n v} + \alpha^{n-1} \textcolor{Green}{\lambda^{n-1} v}+ \ldots + \alpha_1 \textcolor{Red}{\lambda v} + \alpha_0 \textcolor{Violet}{\lambda^0 v} = 
+ \]\[
+ \alpha^n \lambda^n v + \alpha^{n-1} \lambda^{n-1} v+ \ldots + \alpha_1 \lambda v + \alpha_0 \lambda^0 v = 
+ \]\[
+ (\alpha^n \lambda^n  + \alpha^{n-1} \lambda^{n-1} + \ldots + \alpha_1 \lambda + \alpha_0)v = f(\lambda) v
+ \]
+ 
+ Portanto, concluímos que $(f(T))(v) = f(\lambda) v.$ Como $v \neq 0,$ temos que $f(\lambda)$ é autovalor de $f(T).$
+ 
+ }
  
  \exercicio{2} Seja $V$ um $K$-espaço de dimensão finita $n$ e seja $T \colon V \to V$ um operador linear. Mostre que se $T$ tem $n$ autovalores distintos então $T$ é diagonalizável.
   \solucao{}
@@ -1299,11 +1312,41 @@ A^{-1} + B^{-1} = (A + B)^{-1}
    
     \exercicio{4}  Seja
     \[
-    \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix}
+    A = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix}
     \]
     Calcule $A^{2019}.$
     
-      \solucao{}
+      \solucao{Calculemos o polinômio característico de $A:$
+\[
+p_A(\lambda) = \det(A - \lambda I) = \det \left(  \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} - \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix} \right) = 
+\]\[
+\det \left(  \begin{bmatrix} 1-\lambda & 2 \\ 4 & 3-\lambda \end{bmatrix}  \right) = \lambda^2 - 4\lambda -5
+\]
+Pelo Teorema de Cayley-Hamilton, temos que $p_A(A) = 0.$ Daí:
+\[
+\textcolor{RawSienna}{p_A(A)} = 0 \Rightarrow \textcolor{RawSienna}{A^2 - 4A - 5} = 0 \Rightarrow A^2 = 4A + 5I.
+\]
+Portanto, podemos utilizar essa identidade para obter $A^{n}$ em função de $A.$ Por exemplo:
+\[
+A^3 = \textcolor{Laranja}{A^2} \cdot A = \textcolor{Laranja}{(4A + 5I)} \cdot A = 4\textcolor{Emerald}{A^2} + 5A = 4\textcolor{Emerald}{(4A + 5I)} + 5A = 21A + 20I
+\]
+\[
+A^4 = \textcolor{Laranja}{A^3} \cdot A = \textcolor{Laranja}{(21A + 20I)} \cdot A = 21\textcolor{Emerald}{A^2} + 20A = 21\textcolor{Emerald}{(4A + 5I)} + 20A = 104A + 105I
+\]
+\[
+A^5 = \textcolor{Laranja}{A^4} \cdot A = \textcolor{Laranja}{(104A + 105I)} \cdot A = 104\textcolor{Emerald}{A^2} + 105A = 104\textcolor{Emerald}{(4A + 5I)} + 105A = 521A + 520I
+\]
+%\[A^6 = \textcolor{Laranja}{A^5} \cdot A = \textcolor{Laranja}{(521A + 520)} \cdot A = 521\textcolor{Emerald}{A^2} + 520A = 521\textcolor{Emerald}{(4A + 5)} + 520A = 521A + 520\]
+
+Em geral, pode-se verificar por indução que
+\[
+A^n = \left(\frac{5^n + 5(-1)^n}{6} + 1 \right)A + \frac{5^n + 5(-1)^n}{6}
+\]
+Logo, temos que
+\[
+A^{2019} = \left(\frac{5^{2019} - 5}{6} + 1 \right)A + \frac{5^{2019} - 5}{6}
+\]
+      }
    
     \exercicio{5}  Seja $V$ um espaço vetorial de dimensão finita e seja $T \colon V \to V$ um operador linear inversível. Prove que:
      \dividiritens{
@@ -1312,11 +1355,27 @@ A^{-1} + B^{-1} = (A + B)^{-1}
           \task[\pers{c}]  Se $\lambda$ é um valor próprio de $T,$ mostre que a multiplicidade algébrica de $\lambda$ é igual à multiplicidade algébrica de $\frac{1}{\lambda}.$
      }
     
-      \solucao{}
+      \solucao{
+          \dividiritens{
+     \task[\pers{a}] Se $\lambda$ é um autovalor de $T,$ então sabemos que existe $ \neq 0$ tal que $Tv = \lambda v.$ Como $T$ é inversível, temos que
+     \[
+     T^{-1}(T(v)) = T^{-1}(\lambda v)\Rightarrow v = \lambda T^{-1}(v)
+     \]
+     Sendo $v \neq 0,$ temos que $\lambda T^{-1}(v) \neq 0,$ o que implica $\lambda \neq 0.$
+     
+        \task[\pers{b}] $(\Rightarrow)$ Se $\lambda$ é autovalor de $T,$ existe $v \neq 0$ tal que $Tv = \lambda v.$ Temos então que
+        \[
+        T^{-1}(T(v)) = T^{-1}(\lambda v)\Rightarrow v = \lambda T^{-1}(v) \Rightarrow \lambda^{-1} v = \lambda^{-1} ( \lambda T^{-1}(v)) \Rightarrow T^{-1}(v) = \lambda^{-1} v
+        \]
+        Portanto, como $v \neq 0$ é tal que $T^{-1}(v) \lambda^{-1} v,$ temos que $\lambda^{-1}$ é autovalor de $T^{-1}.$ \\
+        $(\Leftarrow)$ Converse is the same
+     }
+      }
    
     \exercicio{6} Seja $V$ um espaço vetorial de dimensão $n$ e seja $T \in \mathcal{L}(V)$ de posto $1.$ Prove que ou $T$ é diagonalizável ou $T$ é nilpotente. 
     
      \solucao{}
+     %https://math.stackexchange.com/questions/1295305/a-linear-operator-of-rank-1
    
     \exercicio{7} Seja $A = (a_{ij}) \in \mathcal{M}_n(K)$ a matriz em que $a_{ij} = a \neq 0$ para todo $1 \le i, j \le n.$ A matriz $A$ é diagonalizável? Qual é o seu polinômio minimal?
     
