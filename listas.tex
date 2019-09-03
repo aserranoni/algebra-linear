@@ -51,7 +51,7 @@ e \(y=\sum_{I_y}\beta_v v\) para conjuntos \(I_x, I_y\) finitos e funções
 0, \text{ caso contrário.}\end{cases}\]Então temos que 
 \[x+y=\sum_{v\in I_x}\alpha_v v +\sum_{v\in I_y}\beta_v v=\sum_{v\in I_x\cup I_y}(\bar{\alpha}_v + \bar{\beta}_v) v.\] 
 Como \(I_x\cup I_y\) é finito e \(\bar{\alpha}_v+\bar{\beta}_v\in\Reals\) para cada \(v\in I_x\cup I_y\) segue que \(x+y\in \langle S\rangle\).
-Concluímos assim que \(0\in\langle S\rangle\), que \(\lamba s\in\langle S\rangle\) para cada \(\lambda\in K\) e cada \(s\in \langle S\rangle\) e que \(x+y\in\langle S\rangle\) sempre que \(x,y\in \langle S\rangle\).
+Concluímos assim que \(0\in\langle S\rangle\), que \(\lambda s\in\langle S\rangle\) para cada \(\lambda\in K\) e cada \(s\in \langle S\rangle\) e que \(x+y\in\langle S\rangle\) sempre que \(x,y\in \langle S\rangle\).
 Isto é, \(\langle S\rangle\) é um subespaço. 
 
      \task[\pers{b}] Considere o seguinte conjunto \[W\coloneqq\bigcap\{U\subseteq V\,\colon U \text{ é subespaço e } S\subseteq U\}.\]
@@ -175,12 +175,12 @@ linear dos elementos de \(S\), então \(S\cup\{v\}\) é linearmente independente
 \solucao{Assuma que \(v\) é combinação linear dos elementos de \(S\). Neste caso
 existe \(S^\prime\subseteq S\) finito e uma função \(\alpha\colon S^\prime\to\Reals\) tal que 
 \(\sum_{s\in S^\prime}\alpha_s s=v\). Defina \(\bar{\alpha}\colon S^\prime\cup\{v\}\to\Reals\) tal que
-\(\bar{\alpha}_s=\alpha_s\) para cada \(s\in S^\prime\) e \(\bar{\alpha}_v=-1\). Então segue que \(\sum_{s\inS^\prime\cup\{v\}}\bar{\alpha}_ss=0.\) Isto é, \(S\cup\{v\}\) é L.D.
+\(\bar{\alpha}_s=\alpha_s\) para cada \(s\in S^\prime\) e \(\bar{\alpha}_v=-1\). Então segue que \(\sum_{s\in S^\prime\cup\{v\}}\bar{\alpha}_ss=0.\) Isto é, \(S\cup\{v\}\) é L.D.
 }
 
 \exercicio{9} Seja \(V\) um \(K\)-espaço vetorial de dimensão finita e sejam
 \(U\) e \(W\) subespaços de \(V\) tais que \(V=U+W\). Mostre que \(V=U\oplus
-W\), se e somente se, \(\dim (V)=\dim (U)+\dim (W)}.\)
+W\), se e somente se, \(\dim (V)=\dim (U)+\dim (W).\)
 \solucao{ Utilizando o fato de
   que \[\text{dim}(V)=\text{dim}(W)+\text{dim}(U)-\text{dim}(U\cap W)\]
   e o Exercício 7,
