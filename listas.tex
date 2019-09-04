@@ -1469,27 +1469,27 @@ Como visto, temos que $(1 - ab)^{-1} = a(1-ba)^{-1}b+1.$}
     \exercicio{10}  Sejam $A, B \in \mathcal{M}_n(K).$ Prove que $AB$ e $BA$ têm os mesmos autovalores em $K.$ Elas têm o
 mesmo polinômio característico? E o minimal?
 
-       \solucao{ Se $AB$ e $BA$ satisfazem a mesma equação característica, então eles irão possuir os mesmos autovalores. Vamos então mostrar que $AB$ e $BA$ têm o mesmo polinômio característico. Temos:
-%       \[\begin{array}[ccc]
-%       p_{AB}(\lambda) & = & \det(AB - \lambda I) \\
-%       &=& \det( AB \textcolor{Mulberry}{AA^{-1}} - \lambda I  \textcolor{Mulberry}{AA^{-1}} \\
-%       &=& \det(A(BA - \lambda I)A^{-1}) \\
-%       &=& \det(A) \det(BA - \lambda I) \textcolor{Cerulean}{\det(A^{-1})} \\
-%       &=&  \det(A) \det(BA - \lambda I) \textcolor{Cerulean}{\frac{1}{\det(A)}} \\
-%       &=& \det(BA - \lambda I) \\
-%       &=& p_{BA} (\lambda)
-%       \end{array}       \]
-       Logo, $AB$ e $BA$ possuem o mesmo polinômio característico, e portanto os mesmos autovalores. 
-       
-       Vejamos que o mesmo não ocorre com o poinômio minimal.
-       %https://math.stackexchange.com/questions/311342/do-ab-and-ba-have-same-minimal-and-characteristic-polynomials?noredirect=1&lq=1
-       }
+\solucao{
+
+Se $AB$ e $BA$ satisfazem a mesma equação característica, então eles irão possuir os mesmos autovalores. Vamos então mostrar que $AB$ e $BA$ têm o mesmo polinômio característico. Temos:
+\iffalse
+\[
+\begin{array}[rcl]
+p_{AB}(\lambda) & = & \det(AB - \lambda I) \\&=& \det( AB \textcolor{Mulberry}{AA^{-1}} - \lambda I  \textcolor{Mulberry}{AA^{-1}} \\&=& \det(A(BA - \lambda I)A^{-1}) \\&=& \det(A) \det(BA - \lambda I)\textcolor{Cerulean}{\det(A^{-1})} \\&=&  \det(A) \det(BA - \lambda I) \textcolor{Cerulean}{\frac{1}{\det(A)}} \\&=& \det(BA - \lambda I) \\&=& p_{BA} (\lambda)
+\end{array}
+\]
+\fi
+Logo, $AB$ e $BA$ possuem o mesmo polinômio característico, e portanto os mesmos autovalores.
+
+Vejamos que o mesmo não ocorre com o poinômio minimal.
+%https://math.stackexchange.com/questions/311342/do-ab-and-ba-have-same-minimal-and-characteristic-polynomials?noredirect=1&lq=1
+}
    
-    \exercicio{11} Seja $A \in \mathcal{M}_n(K)$ uma matriz diagonalizável. Mostre que $A^r$ é diagonalizável para todo inteiro $r \ge 1.$ Exiba uma matriz \emph{não diagonalizável} tal que $A^2$ é diagonalizável.
-    
-       \solucao{}
+\exercicio{11} Seja $A \in \mathcal{M}_n(K)$ uma matriz diagonalizável. Mostre que $A^r$ é diagonalizável para todo inteiro $r \ge 1.$ Exiba uma matriz \emph{não diagonalizável} tal que $A^2$ é diagonalizável.
+
+\solucao{}
    
-    \exercicio{12} Seja $D \in \mathcal{M}_n(K)$ uma matriz diagonal com polinômio característico
+\exercicio{12} Seja $D \in \mathcal{M}_n(K)$ uma matriz diagonal com polinômio característico
 \[p_D(t) = (t - c_1)^{d_1} \cdots (t - c_k)^{d_k},
 \]
 em que $c_1, \ldots , c_k$ são distintos. Seja
