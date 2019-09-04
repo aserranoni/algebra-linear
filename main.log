@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.5)  2 SEP 2019 11:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.5)  4 SEP 2019 06:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1434,7 +1434,7 @@ ine 21.
 Cap\'{\i }tulo 1.
 [7]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 174.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
  [8] [9] [10] [11] [12
 
 ]
@@ -1444,7 +1444,7 @@ Cap\'{\i }tulo 3.
 [19
 
 ] [20]
-Overfull \hbox (1.80284pt too wide) in paragraph at lines 905--906
+Overfull \hbox (1.80284pt too wide) in paragraph at lines 908--909
 []\T1/cmr/m/n/10.95 Se $[]$ é in-ver-sí-vel, en-tão existe a in-versa $[][]$, a
 s-sim $1 = [][][] = [][][] = [][][] [][][][]$,
  []
@@ -1455,7 +1455,7 @@ s-sim $1 = [][][] = [][][] = [][][] [][][][]$,
 Cap\'{\i }tulo 4.
 [25] [26]
 
-LaTeX Warning: Command \i invalid in math mode on input line 1092.
+LaTeX Warning: Command \i invalid in math mode on input line 1095.
 
 [27] [28] [29] [30] [31] [32] [33] [34
 
@@ -1465,11 +1465,11 @@ runsystem(makeindex main.idx)...executed safely (allowed).
  (./main.ind) [35
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1466.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1466.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1469.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1469.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1466.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1466.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1469.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1469.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 0576837768170568698335FE7B11AE3B;1175.
@@ -1477,13 +1477,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1466.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1469.
  ) 
 Here is how much of TeX's memory you used:
- 38132 strings out of 492615
- 724206 string characters out of 6131391
- 810672 words of memory out of 5000000
- 41280 multiletter control sequences out of 15000+600000
+ 38133 strings out of 492615
+ 724214 string characters out of 6131391
+ 810745 words of memory out of 5000000
+ 41282 multiletter control sequences out of 15000+600000
  559823 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,15n,84p,1062b,998s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1508,10 +1508,10 @@ blic/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm10
 exmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti109
 5.pfb>
-Output written on main.pdf (35 pages, 397404 bytes).
+Output written on main.pdf (35 pages, 397818 bytes).
 PDF statistics:
- 564 PDF objects out of 1000 (max. 8388607)
- 483 compressed objects within 5 object streams
- 201 named destinations out of 1000 (max. 500000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 482 compressed objects within 5 object streams
+ 200 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
