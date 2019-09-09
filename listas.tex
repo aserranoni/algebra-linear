@@ -1001,8 +1001,12 @@ Assim, segue o resultado.
 \[
 \det \left[ \begin{array}{cccc} a & -b & -c & -d \\ b & a & -d & c \\ c & d & a & -b \\ d & -c & b & a \end{array} \right] = (a^2 + b^2 + c^2 + d^2)^2
 \]
-\solucao{
-Primeiramente, vamos mostrar que, para $A, B \in \mathcal{M}_n(\mathbb{C}),$ temos que
+\solucao{ 
+
+
+
+
+\textbf{\textcolor{Red}{Outra solução:}} (assumindo $K = \mathbb{C}$) Primeiramente, vamos mostrar que, para $A, B \in \mathcal{M}_n(\mathbb{C}),$ temos que
 \[
 \det \begin{bmatrix} A & -B \\ B & A \end{bmatrix} = \abs{\det(A + Bi)}^2
 \]
@@ -1206,16 +1210,19 @@ Desse modo,
 \[\det\left(  \begin{pmatrix}I_m&0\\A^T&I_n\end{pmatrix}\begin{pmatrix}I_m+AA^T&A\\0&I_n\end{pmatrix}\begin{pmatrix}I_m&0\\-A^T&I_n\end{pmatrix} \right) = \det\begin{pmatrix}I_m&A\\0&I_n+A^TA\end{pmatrix} \Rightarrow\]\[ \textcolor{Verde}{\det \begin{pmatrix}I_m&0\\A^T&I_n\end{pmatrix}}  \textcolor{Blue}{\det \begin{pmatrix}I_m+AA^T&A\\0&I_n\end{pmatrix}} \textcolor{Laranja}{\det \begin{pmatrix}I_m&0\\-A^T&I_n\end{pmatrix}}  = \textcolor{Rhodamine}{\det\begin{pmatrix}I_m&A\\0&I_n+A^TA\end{pmatrix} } \Rightarrow \]\[\textcolor{Verde}{\det(I_m) \det(I_n)}  \textcolor{Blue}{\det \left(I_m+AA^T\right) \det(I_n)} \textcolor{Laranja}{\det(I_m) \det(I_n)}  = \textcolor{Rhodamine}{\det(I_m) \det(I_n+A^TA)} \Rightarrow \]\[ \boxed{\det \left(I_m+AA^T\right) = \det(I_n+A^TA)}\]
 }
 \textbf{\textcolor{Red}{Outra solução:}} Vamos utilizar uma versão estendida do item a do exercício 15: Sendo $A \in \mathcal{M}_{n}(K)$ $B \in \mathcal{M}_{m \times n}(K),$ $C \in \mathcal{M}_{n \times m}(K)$ e $D \in \mathcal{M}_{n},$ com $D$ invertível, temos que
-\[\det \left[ \begin{array}{cc} A & B \\ C & D \end{array} \right] = \det(AD - BD^{-1}CD)\]
+\[\det \left[ \begin{array}{cc} A & B \\ C & D \end{array} \right] = \det(D) \det(A - BD^{-1}C)\]
 Daí, tomando $A = I_m,$ $B = A,$ $C = -A^t$ e $D = I_n,$ temos que
 
-\[\det \left[ \begin{array}{cc} \textcolor{JungleGreen}{I_m} & \textcolor{Magenta}{A} \\ \textcolor{MidnightBlue}{-A^t} & \textcolor{Bittersweet}{I_n} \end{array} \right] = \det( \textcolor{JungleGreen}{I_m} \textcolor{Bittersweet}{I_n} - \textcolor{Magenta}{A} \textcolor{Bittersweet}{I_n}^{-1}\textcolor{MidnightBlue}{(-A^t)}\textcolor{Bittersweet}{I_n}) = \det((I_m + AA^t)I_n) = \]\[ \det(I_m + AA^t) \underbrace{\det(I_n)}_{= 1}= \det(I_m + AA^t)\]
+\[\det \left[ \begin{array}{cc} \textcolor{JungleGreen}{I_m} & \textcolor{Magenta}{A} \\ \textcolor{MidnightBlue}{-A^t} & \textcolor{Bittersweet}{I_n} \end{array} \right] = 
+\det(\textcolor{Bittersweet}{I_n}) \det(\textcolor{JungleGreen}{I_m} -  \textcolor{Magenta}{A}\textcolor{Bittersweet}{I_n}^{-1}\textcolor{MidnightBlue}{(-A^t)}) = \underbrace{\det(I_n)}_{= 1}\det(I_m + AA^t) = \det(I_m + AA^t)\]
+
 Por outro lado, observando que
 \[
 \det \begin{bmatrix} A & B \\ C & D \end{bmatrix} = \det \begin{bmatrix} D & C \\ B & A \end{bmatrix}, 
 \]
 temos
-\[\det \left[ \begin{array}{cc} \textcolor{Bittersweet}{I_n}  & \textcolor{MidnightBlue}{-A^t} \\ \textcolor{Magenta}{A}  & \textcolor{JungleGreen}{I_m} \end{array} \right] = \det( \textcolor{Bittersweet}{I_n} \textcolor{JungleGreen}{I_m} - \textcolor{MidnightBlue}{(-A^t)} \textcolor{JungleGreen}{I_m}^{-1}\textcolor{Magenta}{A}\textcolor{JungleGreen}{I_m}) = \det((I_n + A^tA)I_m) = \]\[ \det(I_n + A^tA) \underbrace{\det(I_m)}_{= 1}= \det(I_n + A^tA)\]
+\[\det \left[ \begin{array}{cc} \textcolor{Bittersweet}{I_n}  & \textcolor{MidnightBlue}{-A^t} \\ \textcolor{Magenta}{A}  & \textcolor{JungleGreen}{I_m} \end{array} \right] = \det(\textcolor{JungleGreen}{I_m}) \det(\textcolor{Bittersweet}{I_n} - \textcolor{MidnightBlue}{(-A^t)}\textcolor{JungleGreen}{I_m}^{-1}\textcolor{Magenta}{A}) = \underbrace{\det(I_m)}_{= 1}\det(I_n + A^tA) = \det(I_n + A^tA)\]
+
 Portanto, concluímos que $\det(I_m + AA^t) =\det(I_n + A^tA).$
 
 \exercicio{17} Seja $\sigma \in S_n$ e defina 
@@ -2955,70 +2962,78 @@ A = \begin{bmatrix} 6 & -3 & -2 \\
 \end{bmatrix} \in \mathcal{M}_3(\mathbb{R}).
 \]
 Seja $T \in \mathcal{L}(\mathbb{R}^3)$ tal que $[T]_{can} = A.$ Encontre a decomposição primária de $T.$
-  \solucao{
-  Para encontrar a decomposição primária de $T,$ precisamos encontrar seu polinômio característico, escrevê-lo na forma $p(t) = (t - \lambda_1)^{n_1} \cdot(t - \lambda_2)^{n_2} \cdot  \ldots \cdot (t - \lambda_k)^{n_k},$ %e teremos $V = \bigoplus\limits_{i=1}^k \Ker(T -\lambda_i I)^{n_i}.$
-  
-\begin{itemize}
-    \item Encontrando o polinômio característico de $A:$
-    \[
-    p(\lambda) = \det\left(A - \lambda I  \right) \Rightarrow 
-        p(\lambda) = \det\left( \begin{bmatrix} 6 & -3 & -2 \\
-4 & -1 & -2 \\
-10 & -5 & -3 
-\end{bmatrix}  -  \begin{bmatrix} \lambda & 0 & 0 \\
+\solucao{
+Para encontrar a decomposição primária de $T,$ precisamos encontrar seu polinômio característico, escrevê-lo na forma $p(t) = p_1^{n_1} \cdot p_2^{n_2} \cdot \ldots \cdot p_k^{n_k},$ com $p_1,\dots,p_k$ irredutíveis mônicos distintos. %e teremos $V = \bigoplus\limits_{i=1}^k p_i^{n_i}.$
+
+\dividiritens{
+\task[\pers{a}] Encontrando o polinômio característico de $A:$
+\[
+\begin{array}{rcl}
+p(\lambda) &=& \det\left(A - \lambda I  \right) \\
+&=& \det\left( \begin{bmatrix} \lambda & 0 & 0 \\
 0 & \lambda& 0 \\
 0 &0 & \lambda 
-\end{bmatrix}   \right)  \Rightarrow 
-      \]\[  p(\lambda) = \det\left( \begin{bmatrix} 6-\lambda & -3 & -2 \\
-4 & -1-\lambda & -2 \\
-10 & -5 & -3-\lambda 
-\end{bmatrix}  \right)
-\Rightarrow 
-        p(\lambda) = -\lambda^3 + 2\lambda^2  - \lambda + 2
-        \Rightarrow 
-        p(\lambda) = (\lambda-2)(\lambda^2 + 1)
-    \]
-        \item Decompondo $V = \mathbb{R}^3$ em soma direta:
-    
-    Como $p(\lambda) = (\lambda-2)(\lambda^2 + 1),$ podemos escrever
-    \[
-    \mathbb{R}^{3} = V_1 \oplus V_2,
-    \]
-    onde $V_1 = \Ker(A - 2I)$ e $V_2=\Ker(A^2 + I).$ 
-    \item Encontrando geradores para $V_1$ e $V_2:$
-    Temos que
-    \[
-    \begin{bmatrix}
-    4 & -3 & -2 \\ 4 & -3 & -2 \\ 10 & -5 & -5
-    \end{bmatrix} \begin{bmatrix}
-    x_1 \\ x_2 \\ x_ 3
-    \end{bmatrix} = \begin{bmatrix}
-   0 \\ 0 \\ 0
-    \end{bmatrix} \Rightarrow \begin{cases} 4x_1 - 3x_2 - 2x_3 = 0 \\ 10x_1 - 5x_2 - 5x_3 = 0 \end{cases} \Rightarrow x_1 = \frac{x_3}{2}, x_2 = 0.
-    \]
-    Logo, se $v \in V_1 = \Ker(A - 2I),$ temos:
-    $v = \left(\frac{x_3}{2}, 0, x_3\right) = \left(\frac{1}{2}, 0, 1\right).$
-    
-    Podemos tomar $v_1 = \left(\frac{1}{2}, 0, 1\right),$ e temos que $V_1 = \langle v_1 \rangle,$ o que mostra que $V_1$ tem dimensão $2.$
-    E também temos que:
-       \[
-    \begin{bmatrix}
-    5 & -5 & 0 \\ 0 & 0 & 0 \\ 10 & -10 & 0
-    \end{bmatrix} \begin{bmatrix}
-    x_1 \\ x_2 \\ x_ 3
-    \end{bmatrix} = \begin{bmatrix}
-   0 \\ 0 \\ 0
-    \end{bmatrix} \Rightarrow \begin{cases} 5x_1 - 5x_2 = 0 \\ 10x_1 - 10x_2 = 0 \end{cases} \Rightarrow x_1 = x_2
-    \]
-    Logo, se $v \in V_1 = \Ker(A^2 + I),$ temos:
-    \[v = (x_2,x_2,x_3) = x_2(1,1,0) + x_3(0,0,1).\]
+\end{bmatrix} - \begin{bmatrix} 6 & -3 & -2 \\
+4 & -1 & -2 \\
+10 & -5 & -3 
+\end{bmatrix} \right) \\
+&=& \det\left( \begin{bmatrix} \lambda-6 & 3 & 2 \\
+-4 & \lambda+1 & 2 \\
+-10 & 5 & \lambda+3 
+\end{bmatrix}  \right) \\
+&=& \lambda^3 - 2\lambda^2  + \lambda - 2 \\
+&=& (\lambda-2)(\lambda^2 + 1)
+\end{array}
+\]
+
+\task[\pers{b}] Decompondo $V = \mathbb{R}^3$ em soma direta:
+Como $p(\lambda) = (\lambda-2)(\lambda^2 + 1),$ podemos escrever
+\[
+\mathbb{R}^{3} = V_1 \oplus V_2,
+\]
+onde $V_1 = \Ker(A - 2I)$ e $V_2=\Ker(A^2 + I).$
+
+\task[\pers{c}] Encontrando geradores para $V_1$ e $V_2:$
+Temos que
+\[
+\begin{bmatrix}
+4 & -3 & -2 \\ 4 & -3 & -2 \\ 10 & -5 & -5
+\end{bmatrix} \begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix} = \begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix} \Rightarrow \begin{cases} 4x_1 - 3x_2 - 2x_3 = 0 \\ 10x_1 - 5x_2 - 5x_3 = 0 \end{cases} \Rightarrow x_1 = \frac{x_3}{2}, x_2 = 0.
+\]
+Logo, se $v \in V_1 = \Ker(A - 2I),$ temos:
+$v = \left(\frac{x_3}{2}, 0, x_3\right) = \left(\frac{1}{2}, 0, 1\right).$
+
+\medskip
+\noindent
+Podemos tomar $v_1 = \left(\frac{1}{2}, 0, 1\right),$ e temos que $V_1 = \langle v_1 \rangle,$ o que mostra que $V_1$ tem dimensão $2.$
+
+\medskip
+\noindent
+E também temos que:
+\[
+\begin{bmatrix}
+5 & -5 & 0 \\ 0 & 0 & 0 \\ 10 & -10 & 0
+\end{bmatrix} \begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix} = \begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix} \Rightarrow \begin{cases} 5x_1 - 5x_2 = 0 \\ 10x_1 - 10x_2 = 0 \end{cases} \Rightarrow x_1 = x_2
+\]
+Logo, se $v \in V_1 = \Ker(A^2 + I),$ temos:
+\[
+v = (x_2,x_2,x_3) = x_2(1,1,0) + x_3(0,0,1).
+\]
 Daí, podemos escolher os vetores
 \[
 v_2 = (1,1,0) \quad \mbox{e} \quad v_3 = (0,0,1). 
 \]
 E então $V_2 = \langle v_2, v_3 \rangle.$ Além disso, $V_2$ tem dimensão $2.$ 
 
-\item Compor uma base com os geradores de $V_1$ e $V_2$ e escrever a matriz de $T$ nessa base:
+\task[\pers{d}] Compor uma base com os geradores de $V_1$ e $V_2$ e escrever a matriz de $T$ nessa base:
 
 Podemos considerar a base
 \[
@@ -3068,10 +3083,8 @@ O bloco $(2)$ corresponde à restrição de $T$ ao subespaço invariante $V_1 = 
 \end{pmatrix}
 \]
 é produzido pela restrição de $T$ ao subespaço invariante $V_2 = \Ker(T^2 + I).$
-\end{itemize}
-
 }
-
+}
 
 \exercicio{2} Seja $V$ um espaço vetorial de dimensão finita sobre o corpo $K.$ Seja $\mathcal{F}$ uma família de operadores triangularizáveis que comutam. Prove que:
 \dividiritens{     
@@ -3101,15 +3114,45 @@ invariante sob $T,$ para todo $T \in \mathcal{F}.$
 0 & 1 & 0
 \end{bmatrix}
 \]
- 
 \solucao{}
   
 \exercicio{5} Sejam $V$ um $K$-espaço vetorial de dimensão $n$ e $T \in \mathcal{L}(V)$ com polinômio minimal
 \[m_T(t) = p_1(t)^{m_1} \cdot \ldots \cdot p_k(t)^{m_k}, \]
 onde $p_i(t)$ são distintos e irredutíveis em $K[t].$ Seja $V = V_1 \oplus \ldots \oplus V_k$ a decomposição primária de $V,$ isto é, $V_i = \Ker(p_i(T)^{m_i}).$ Seja $W$ um subespaço $T$-invariante de $V.$ Mostre que
-\[W = (W \cap V_1) \oplus \ldots \oplus (W \cap V)k).
+\[W = (W \cap V_1) \oplus \ldots \oplus (W \cap V_k).\]
+\solucao{
+Seja:
+\[
+f_i(t)=\frac{m_T(t)}{p_i(t)^{m_i}}.
 \]
-\solucao{}
+Então $f_1,\dots,f_k$ são primos entre si, aí existem $g_1,\dots,g_k$ tais que:
+\[
+f_1g_1+\dots+f_kg_k=1.
+\]
+Assim, para $w\in W$, então:
+\[
+w=f_1(T)g_1(T)(w)+\dots+f_k(T)g_k(T)(w),
+\]
+e também:
+\[
+p_i(T)^{m_i}f_i(T)g_i(T)(w)=m_T(T)g_i(T)(w)=0,
+\]
+aí:
+\[
+f_i(T)g_i(T)(w)\in V_i,
+\]
+mas $W$ é $T$-invariante, aí:
+\[
+f_i(T)g_i(T)(w)\in W,
+\]
+aí:
+\[
+f_i(T)g_i(T)(w)\in W\cap V_i.
+\]
+Portanto:
+\[W = (W \cap V_1) + \ldots + (W \cap V_k),\]
+e é fácil ver que esta soma é direta.
+}
   
 \exercicio{6} Sejam $V$ um $K$-espaço vetorial de dimensão $n$ e $T \in \mathcal{L}(V)$ com polinômio característico
   \[
@@ -3148,168 +3191,264 @@ Se $K$ não for algebricamente fechado, podemos fazer uma extensão $L$ de $K$ d
 $TN = NT$. Prove que
 \dividiritens{
 \task[\pers{a}] $T$ é inversível se, e somente se, $T + N$ é inversível.
-\task[\pers{a}] $\det(T) = \det(T + N)$ e $p_T(t) = p_{T+N}(t)$.
+\task[\pers{b}] $\det(T) = \det(T + N)$ e $p_T(t) = p_{T+N}(t)$.
+}
+\solucao{
+\dividiritens{
+\task[\pers{a}] $(\Rightarrow)$ Como $N$ é nilpotente, sabemos que existe $m > 0$ tal que $N^m = 0.$ Assumindo que $N \neq 0$ (pois do contrário não há o que demonstrar), então $m > 1.$ 
+
+Se $T$ é inversível, podemos escrever
+\[
+T + N = T(I + T^{-1}N)
+\]
+
+Note também que 
+\[
+TN = NT \Rightarrow T^{-1}N = NT^{-1}.
+\]
+e consequentemente
+\[
+(-T^{-1}N)^m = (-1)^mT^{-m}N^m = 0.
+\]
+
+Lembrando da identidade polinomial
+\[
+x^m - 1 = (x - 1) \displaystyle \sum\limits_0^{m - 1} x^{m - 1 - i},
+\]
+que podemos reescrever como
+\[
+1 - x^m = (1 - x)  \displaystyle \sum_0^{m - 1} x^{m - 1 - i},
+\]
+podemos aplicá-la tomando $x = -T^{-1}N,$ obtendo
+\[
+1 - \textcolor{Green}{x}^m = (1 - \textcolor{Green}{x})  \displaystyle \sum_0^{m - 1} \textcolor{Green}{x}^{m - 1 - i} \Rightarrow 1 - \textcolor{Green}{-T^{-1}N}^m = (1 - \textcolor{Green}{(-T^{-1}N)})  \displaystyle \sum_0^{m - 1} \textcolor{Green}{(-T^{-1}N)}^{m - 1 - i} \Rightarrow  \]\[I - (-T^{-1}N)^m = (I + T^{-1}N) \displaystyle \sum_0^{m - 1} (-T^{-1}N)^{m - 1- i}.
+\]
+Mas por outro lado, temos que
+\[
+I - \textcolor{Mahogany}{(-T^{-1}N)^m} =  I - \textcolor{Mahogany}{0} = I,
+\]
+donde segue que
+\[
+ \textcolor{Blue}{I - (-T^{-1}N)^m} = (I + T^{-1}N) \displaystyle \sum_0^{m - 1} (-T^{-1}N)^{m - 1- i} \Rightarrow  \textcolor{Blue}{I} = (I + T^{-1}N) \displaystyle \sum_0^{m - 1} (-T^{-1}N)^{m - 1- i}.
+\]
+
+Logo, isso mostra que $(I + T^{-1}N)$ possui uma inversa (respectivamente, $\sum\limits_0^{m - 1} (-T^{-1}N)^{m - 1- i}.)$
+
+Daí, concluímos que ambos $T$ e $I + T^{-1}N$ são inversíveis; logo seu produto também o é. Mas
+\[
+T(I + T^{-1}N) = T + N.
+\]
+
+Portanto, segue que $T + N$ é inversível. \\
+
+$(\Leftarrow)$ 
+%https://math.mit.edu/~gs/linearalgebra/ila0205.pdf - pg 93
+\task[\pers{b}] 
+}
+%https://math.stackexchange.com/questions/2757872/let-t-n-v-to-v-n-is-nilpotent-t-is-invertible-and-nt-tn-prove-nt
+
+
+
 }
 
-\solucao{}
-  
-  \exercicio{9} Seja
-  \[
-  A = \begin{bmatrix}
-  3 & 1 & -1 \\
-  2 & 2 & -1 \\
-  2 & 2 & 0
-  \end{bmatrix} \in \mathcal{M}_3(\mathbb{R}).
-  \]
- 
- Seja $T \in \mathcal{L}(\mathbb{R}^3)$ tal que $[T]_{can} = A.$ Escreva $T = D + N,$ com $D$ diagonalizável, $N$ nilpotente e $DN = ND.$
- 
-      \solucao{Vamos encontrar a decomposição de Jordan-Chevalley de $A.$ Para isso, calculemos primeiramente o polinômio característico de $A:$
+\exercicio{9} Seja
 \[
-p_A(\lambda) = \det(A - \lambda I) = \det \left( \begin{bmatrix}
-  3 & 1 & -1 \\
-  2 & 2 & -1 \\
-  2 & 2 & 0
-  \end{bmatrix} - \begin{bmatrix}
-  \lambda & 0 & 0 \\
-  0 & \lambda & 0 \\
-  0 & 0 & \lambda
-  \end{bmatrix} \right) = \]\[ \det \left( \begin{bmatrix}
-  3-\lambda & 1 & -1 \\
-  2 & 2-\lambda & -1 \\
-  2 & 2 & -\lambda
-  \end{bmatrix} \right) = \lambda^3 - 5\lambda^2+8\lambda -4 = (\lambda - 2)^2(\lambda-1).
+A = \begin{bmatrix}
+3 & 1 & -1 \\
+2 & 2 & -1 \\
+2 & 2 & 0
+\end{bmatrix} \in \mathcal{M}_3(\mathbb{R}).
+\]
+Seja $T \in \mathcal{L}(\mathbb{R}^3)$ tal que $[T]_{can} = A.$ Escreva $T = D + N,$ com $D$ diagonalizável, $N$ nilpotente e $DN = ND.$
+\solucao{Vamos encontrar a decomposição de Jordan-Chevalley de $A.$ Para isso, calculemos primeiramente o polinômio característico de $A:$
+\[
+\begin{array}{rcl}
+p_A(\lambda) &=& \det(\lambda I - A)\\
+&=&\det\left(\begin{bmatrix}
+\lambda & 0 & 0 \\
+0 & \lambda & 0 \\
+0 & 0 & \lambda
+\end{bmatrix}-\begin{bmatrix}
+3 & 1 & -1 \\
+2 & 2 & -1 \\
+2 & 2 & 0
+\end{bmatrix}\right)\\
+&=&\det\left(\begin{bmatrix}
+\lambda-3 & -1 & 1 \\
+-2 & \lambda-2 & 1 \\
+-2 & -2 & \lambda
+\end{bmatrix}\right)\\
+&=&\lambda^3 - 5\lambda^2+8\lambda -4\\
+&=&(\lambda - 2)^2(\lambda-1).
+\end{array}
 \]
 Logo, os autovalores são $\lambda_1 = 2$ e $\lambda_2 = 1.$ Consideremos então para cada autovalor $\lambda_i,$ com $i = 1, 2, \ldots, k,$ os polinômios da forma $W_i(t) = \prod\limits_{\substack{j =1 \\  j \neq i}}^k (t - \lambda_j)^{\alpha_j}.$ Temos então
 \[
 W_1(t) = (t - 1) \quad \mbox{e} \quad W_2(t) = (t - 2)^2
 \]
-
 Vamos encontrar agora polinômios $Q_1(t)$ e $Q_2(t)$ tais que $Q_1(t)W_1(t) + Q_2(t)W_2(t) = 1.$
 
+\medskip
+\noindent
 Para este caso, observe que $(t-2)^2 = t^2 - 4t + 4 = (t-1)(t-3) + 1,$ o que pode ser obtido dividindo-se $W_2$ por $W_1.$ Daí, \[\textcolor{Blue}{(3-t)}(t-1) + \textcolor{Green}{1} \cdot (t-2)^2  = 1 \Rightarrow  \textcolor{Blue}{Q_1(t) = (3-t)} \quad \mbox{e} \quad \textcolor{Green}{Q_2(t) = 1}\]
 Calculemos o polinômio $D(t) = \sum\limits_{i=1}^k \lambda_iQ_i(t)W_i(t)$. Temos para nosso caso:
-
-\[D(t) = \sum\limits_{i=1}^2 \lambda_iQ_i(t)W_i(t) = \lambda_1 Q_1(t) W_1(t) + \lambda_2 Q_2(t) W_2(t) = 2(3-t)(t-1) + 1 \cdot (t-2)^2 \cdot 1 = -t^2 + 4t - 2
+\[
+\begin{array}{rcl}
+D(t) &=& \sum\limits_{i=1}^2 \lambda_iQ_i(t)W_i(t) \\
+&=& \lambda_1 Q_1(t) W_1(t) + \lambda_2 Q_2(t) W_2(t) \\
+&=& 2(3-t)(t-1) + 1 \cdot (t-2)^2 \cdot 1 \\
+&=& -t^2 + 4t - 2
+\end{array}
 \]
-
 Portanto, temos que
 \[
 D = D(A) = -A^2 + 4A - 2I = \begin{bmatrix}
-  -9 & -3 & 4 \\
-  -8 & -4 & 4 \\
-  -10 & -6 & 4
-  \end{bmatrix} + \begin{bmatrix}
-  12 & 4 & -4 \\
-  8 & 8 & -4 \\
-  8 & 8 & 0
-  \end{bmatrix} - \begin{bmatrix}
-  2 & 0 & 0 \\
-  0 & 2 & 0 \\
-  0 & 0 & 2
-  \end{bmatrix} =  \begin{bmatrix}
-  1 & 1 & 0 \\
-  0 & 2 & 0 \\
-  -2 & 2 & 2
-  \end{bmatrix}
+-9 & -3 & 4 \\
+-8 & -4 & 4 \\
+-10 & -6 & 4
+\end{bmatrix} + \begin{bmatrix}
+12 & 4 & -4 \\
+8 & 8 & -4 \\
+8 & 8 & 0
+\end{bmatrix} - \begin{bmatrix}
+2 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 2
+\end{bmatrix} =  \begin{bmatrix}
+1 & 1 & 0 \\
+0 & 2 & 0 \\
+-2 & 2 & 2
+\end{bmatrix}
 \]
 Daí,
-\[N = A - D =  \begin{bmatrix}
-  3 & 1 & -1 \\
-  2 & 2 & -1 \\
-  2 & 2 & 0
-  \end{bmatrix}  - \begin{bmatrix}
-  1 & 1 & 0 \\
-  0 & 2 & 0 \\
-  -2 & 2 & 2
-  \end{bmatrix} = \begin{bmatrix}
-  2 & 0 & -1 \\
-  2 & 0 & -1 \\
-  4 & 0 & -2\end{bmatrix} \]
-  
- De fato, pode-se verificar que $N^2 = 0,$ e que $D$ é diagonalizável. Além disso,
- \[
- DN =  \begin{bmatrix}
-  1 & 1 & 0 \\
-  0 & 2 & 0 \\
-  -2 & 2 & 2
-  \end{bmatrix} \begin{bmatrix}
-  2 & 0 & -1 \\
-  2 & 0 & -1 \\
-  4 & 0 & -2\end{bmatrix} = \begin{bmatrix}
-  4 & 0 & -2 \\
-  4 & 0 & -2 \\
-  8 & 0 & -4\end{bmatrix} = \begin{bmatrix}
-  2 & 0 & -1 \\
-  2 & 0 & -1 \\
-  4 & 0 & -2\end{bmatrix} \begin{bmatrix}
-  1 & 1 & 0 \\
-  0 & 2 & 0 \\
-  -2 & 2 & 2
-  \end{bmatrix} = ND
- \]
- Portanto, $A = D + N.$
- 
- \textbf{Observação:} Em resumo, o processo para se encontrar a decomposição de Jordan-Chevalley de uma matriz $A$ é o seguinte:
- \begin{itemize}
-     \item[$\clubsuit$] Encontre o polinômio característico de $A$ e seus respectivos autovalores $\lambda_1, \lambda_2, \ldots \lambda_k;$
-     \item[$\textcolor{Red}{\varheart}$] Para cada autovalor $\lambda_i,$ escreva um polinômio da forma
-     \[
-     W_i(t) = \prod\limits_{\substack{j=1 \\ j \neq i}}^k (t - \lambda_j)^{\alpha_j} = (t - \lambda_1)^{\alpha_1} \cdot  (t - \lambda_1)^{\alpha_1} \cdot \ldots \cdot  (t - \lambda_{i-1})^{\alpha_{i-1}} \cdot  (t - \lambda_{i+1})^{\alpha_{i+1}} \cdot \ldots \cdot  (t - \lambda_k)^{\alpha_k}
-     \]
-     \item[$\spadesuit$] Encontre polinômios $Q_1(t), Q_2(t), \ldots, Q_r(t)$ tais que
-     \[
-     Q_1(t)W_1(t) + Q_2(t)W_2(t) + \ldots + Q_k(t)W_k(t) = 1
-     \]
-         \item[$\textcolor{Red}{\varheart}$] Determine o polinômio 
-         \[
-         D(t) = \sum\limits_{i = 1}^k \lambda_i Q_i(t)W_i(t),
-         \]
+\[
+N = A - D =  \begin{bmatrix}
+3 & 1 & -1 \\
+2 & 2 & -1 \\
+2 & 2 & 0
+\end{bmatrix}  - \begin{bmatrix}
+1 & 1 & 0 \\
+0 & 2 & 0 \\
+-2 & 2 & 2
+\end{bmatrix} = \begin{bmatrix}
+2 & 0 & -1 \\
+2 & 0 & -1 \\
+4 & 0 & -2\end{bmatrix}
+\]
+De fato, pode-se verificar que $N^2 = 0,$ e que $D$ é diagonalizável. Além disso,
+\[
+DN =  \begin{bmatrix}
+1 & 1 & 0 \\
+0 & 2 & 0 \\
+-2 & 2 & 2
+\end{bmatrix} \begin{bmatrix}
+2 & 0 & -1 \\
+2 & 0 & -1 \\
+4 & 0 & -2\end{bmatrix} = \begin{bmatrix}
+4 & 0 & -2 \\
+4 & 0 & -2 \\
+8 & 0 & -4\end{bmatrix} = \begin{bmatrix}
+2 & 0 & -1 \\
+2 & 0 & -1 \\
+4 & 0 & -2\end{bmatrix} \begin{bmatrix}
+1 & 1 & 0 \\
+0 & 2 & 0 \\
+-2 & 2 & 2
+\end{bmatrix} = ND
+\]
+Portanto, $A = D + N.$
+
+\bigskip
+\noindent
+\textbf{Observação:} Em resumo, o processo para se encontrar a decomposição de Jordan-Chevalley de uma matriz $A$ é o seguinte:
+\begin{itemize}
+\item[$\clubsuit$] Encontre o polinômio característico de $A$ e seus respectivos autovalores $\lambda_1, \lambda_2, \ldots \lambda_k;$
+\item[$\textcolor{Red}{\varheart}$] Para cada autovalor $\lambda_i,$ escreva um polinômio da forma
+\[
+W_i(t) = \prod\limits_{\substack{j=1 \\ j \neq i}}^k (t - \lambda_j)^{\alpha_j} = (t - \lambda_1)^{\alpha_1} \cdot \ldots \cdot  (t - \lambda_{i-1})^{\alpha_{i-1}} \cdot  (t - \lambda_{i+1})^{\alpha_{i+1}} \cdot \ldots \cdot  (t - \lambda_k)^{\alpha_k}
+\]
+\item[$\spadesuit$] Encontre polinômios $Q_1(t), Q_2(t), \ldots, Q_r(t)$ tais que
+\[
+Q_1(t)W_1(t) + Q_2(t)W_2(t) + \ldots + Q_k(t)W_k(t) = 1
+\]
+\item[$\textcolor{Red}{\varheart}$] Determine o polinômio
+\[
+D(t) = \sum\limits_{i = 1}^k \lambda_i Q_i(t)W_i(t),
+\]
 e encontre $D = D(A).$
-         \item[$\maltese$] Calcule $N = A - D.$
- \end{itemize}
-      }
-  
-  \exercicio{10} Sejam $A \in \mathcal{M}_n(K)$ e $T_A \colon \mathcal{M}_n(K) \to \mathcal{M}_n(K)$ o operador definido por $T_A(M) = AM - MA.$
-    \dividiritensdiv{1}{     
-        \task[\pers{a}] Prove que se $A$ é nilpotente, então $T_A$ é nilpotente. Vale a recíproca?
-           \task[\pers{b}] Prove que se $K$ é algebricamente fechado e se $T_A$ é diagonalizável, então $A$ é diagonalizável.
-           (\emph{Sugestão}: Para cada matriz $M \in \mathcal{M}_n(K)$ seja $\tilde{M} \in \mathcal{L}(K^n)$ o operador tal que $[\tilde{M}]_{can} = M.$ Seja $v \in K^n$ um autovetor de $\tilde{A}.$ Considere a transformação linear $\varphi \colon \mathcal{M}_n(K) \to K^n$ definida por $\varphi(M) = \tilde{M}(v).$ Prove que $\varphi$ é sobrejetora.)
-           }
-           
-               \solucao{
-                 \dividiritensdiv{1}{     
-        \task[\pers{a}] Se $A$ é nilpotente, então existe um $r > 0$ tal que $A^r = 0.$ Observe que
-        \[
-        T_A^2(M) = T_A(\textcolor{Laranja}{T_A(M)}) = T_A(\textcolor{Laranja}{AM - MA}) = A(\textcolor{Laranja}{AM - MA}) - ((\textcolor{Laranja}{AM - MA}))A = A^2M - 2AMA + MA^2
-        \]
-        
-        Também temos que
-        \[
-        T_A^3(M) = T_A(\textcolor{RawSienna}{TA^2(M)}) = T_A(\textcolor{RawSienna}{A^2M - 2AMA + MA^2}) = A(\textcolor{RawSienna}{A^2M - 2AMA + MA^2}) - (\textcolor{RawSienna}{A^2M - 2AMA + MA^2})A = A^3M - 3A^2MA + 3AMA^2 - MA^3
-        \]
-      %  \[ T_A^4(M) = T_A(\textcolor{RawSienna}{TA^3(M)}) = T_A(\textcolor{RawSienna}{A^3M - 3A^2MA + 3AMA^2 - MA^3}) = A(\textcolor{RawSienna}{A^3M - 3A^2MA + 3AMA^2 - MA^3}) - (\textcolor{RawSienna}{A^3M - 3A^2MA + 3AMA^2 - MA^3})A = A^4M - 4A^3MA + 6A^2MA^2 - 4AMA^3  +MA^4 \]
-      
+\item[$\maltese$] Calcule $N = A - D.$
+\end{itemize}
+}
+
+\exercicio{10} Sejam $A \in \mathcal{M}_n(K)$ e $T_A \colon \mathcal{M}_n(K) \to \mathcal{M}_n(K)$ o operador definido por $T_A(M) = AM - MA.$
+\dividiritensdiv{1}{     
+\task[\pers{a}] Prove que se $A$ é nilpotente, então $T_A$ é nilpotente. Vale a recíproca?
+\task[\pers{b}] Prove que se $K$ é algebricamente fechado e se $T_A$ é diagonalizável, então $A$ é diagonalizável.
+(\emph{Sugestão}: Para cada matriz $M \in \mathcal{M}_n(K)$ seja $\tilde{M} \in \mathcal{L}(K^n)$ o operador tal que $[\tilde{M}]_{can} = M.$ Seja $v \in K^n$ um autovetor de $\tilde{A}.$ Considere a transformação linear $\varphi \colon \mathcal{M}_n(K) \to K^n$ definida por $\varphi(M) = \tilde{M}(v).$ Prove que $\varphi$ é sobrejetora.)
+}
+
+\solucao{
+\dividiritensdiv{1}{
+\task[\pers{a}] Se $A$ é nilpotente, então existe um $r > 0$ tal que $A^r = 0.$ Observe que
+\[
+\begin{array}{rcl}
+T_A^2(M) &=& T_A(\textcolor{Laranja}{T_A(M)}) \\
+&=& T_A(\textcolor{Laranja}{AM - MA}) \\
+&=& A(\textcolor{Laranja}{AM - MA}) - ((\textcolor{Laranja}{AM - MA}))A \\
+&=& A^2M - 2AMA + MA^2
+\end{array}
+\]
+Também temos que
+\[
+\begin{array}{rcl}
+T_A^3(M) &=& T_A(\textcolor{RawSienna}{TA^2(M)}) \\
+&=& T_A(\textcolor{RawSienna}{A^2M - 2AMA + MA^2}) \\
+&=& A(\textcolor{RawSienna}{A^2M - 2AMA + MA^2}) - (\textcolor{RawSienna}{A^2M - 2AMA + MA^2})A \\
+&=& A^3M - 3A^2MA + 3AMA^2 - MA^3
+\end{array}
+\]
+% \[ T_A^4(M) = T_A(\textcolor{RawSienna}{TA^3(M)}) = T_A(\textcolor{RawSienna}{A^3M - 3A^2MA + 3AMA^2 - MA^3}) = A(\textcolor{RawSienna}{A^3M - 3A^2MA + 3AMA^2 - MA^3}) - (\textcolor{RawSienna}{A^3M - 3A^2MA + 3AMA^2 - MA^3})A = A^4M - 4A^3MA + 6A^2MA^2 - 4AMA^3  +MA^4 \]
 Em geral, procedendo analogamente, temos que
 \[
 T_A^k(M) = \sum\limits_{i = 0}^k (-1)^i \binom{k}{i} A^{k-i}MA^k
 \]
-
 Logo, a menor potência de $A$ que aparecerá em $T_A^k(M)$ será $\left\lfloor \frac{k}{2} \right \rfloor.$
 
-Portanto, para $k \ge 2r,$ a menor potência de $A$ que aparecerá em $T_A^k(M)$ será no mínimo $\left\lfloor \frac{2r}{2} \right \rfloor = r.$ Portanto, teremos $T_A^k(M) = 0$ para todo $M,$ e portanto o operador $T_A$ será nilpotente. 
+\medskip
+\noindent
+Portanto, para $k \ge 2r,$ a menor potência de $A$ que aparecerá em $T_A^k(M)$ será no mínimo $\left\lfloor \frac{2r}{2} \right \rfloor = r.$ Portanto, teremos $T_A^k(M) = 0$ para todo $M,$ e portanto o operador $T_A$ será nilpotente.
 
-\task[\pers{b}] 
-        }
+Observe que a recíproca não é verdadeira. Tome por exemplo $A = I_n.$ Então nesse caso, temos que
+\[
+T_{I_n}(M) = I_n M - M I_n = 0.
+\]
+Logo, $T_{I_n} = 0,$ que obviamente é nilpotente, mas $A = I_n$ não é nilpotente.
+
+\task[\pers{b}]
+}
 
 \textbf{Observação:}  $T_A$ na verdade é um operador de derivação em $\mathcal{M}_n(K).$ Veja que $\forall M, N \in \mathcal{M}_n(K),$ temos que
-        \begin{itemize}
-            \item $T_A(M + N) = A(M+N) - (M + N)A = AM - MA + AN - NA = T_A(M) + T_A(N);$
-            
-            \item $T_A(MN) = AMN - MNA = AMN \textcolor{Emerald}{ - MAN + MAN} - MNA = (AMN - MAN) + (MAN - MNA) = T_A(M)N + MT_A(N).$
-        \end{itemize}
-        }
-  
+\begin{itemize}
+\item 
+\[
+\begin{array}{rcl}
+T_A(M + N) &=& A(M+N) - (M + N)A \\
+&=& AM - MA + AN - NA \\
+&=& T_A(M) + T_A(N);
+\end{array}
+\]
+\item 
+\[
+\begin{array}{rcl}
+T_A(MN) &=& AMN - MNA \\
+&=& AMN \textcolor{Emerald}{ - MAN + MAN} - MNA \\
+&=& (AMN - MAN) + (MAN - MNA) \\
+&=& T_A(M)N + MT_A(N).
+\end{array}
+\]
+\end{itemize}
+}
+
 \exercicio{11} Encontre duas matrizes nilpotentes de ordem $4$ que tenham o mesmo polinômio minimal, mas que não sejam semelhantes.
 \solucao{
 Sejam
@@ -3387,7 +3526,7 @@ aí fica fácil ver que $P$ não é inversível. Portanto, não existe matriz in
 \bigskip
 \noindent
 
-\textbf{Observação:} Para ver que $A$ e $B$ não são semelhantes, também podemos olhar sua forma normal de Jordan e observar que elas possuem decomposições em blocos distintas.
+\textbf{Observação:} Para ver que $A$ e $B$ não são semelhantes, também podemos olhar sua forma normal de Jordan e observar que elas possuem decomposições em blocos distintas.\\ \\
 \textcolor{Red}{Questões Suplementares}
 
 \exercicio{12} O teorema de Fine-Herstein estabelece que a quantidade de matrizes nilpotentes em $\mathbb{M}_n(\mathbb{F}_q)$ é $q^{n^2 -n}.$ Prove-o. %https://math.stackexchange.com/questions/1298453/the-number-of-3-times-3-nilpotent-matrices-over-mathbbf-q-using-the-orbit
@@ -3410,6 +3549,11 @@ A^2B + AB^2 = 2ABA
 \dividiritens{
 \task[\pers{a}] Para
 \[
+A = \begin{pmatrix}
+9 & 18 \\ -1 & 0
+\end{pmatrix} \quad \mbox{e} \quad B = \begin{pmatrix}
+0 & -9 \\ 2 & 9
+\end{pmatrix}
 \]
 encontre $k \in \mathbb{N}$ tal que $(AB - BA)^k = 0.$
 \task[\pers{b}] Prove que existe um inteiro $k$ tal que $(AB - BA)^k = 0.$
@@ -3420,13 +3564,51 @@ encontre $k \in \mathbb{N}$ tal que $(AB - BA)^k = 0.$
 }
 \newpage
 \section{\textcolor{Floresta}{Lista 4}}
-  \exercicio{1} Sejam $V$ um $K$-espaço vetorial de dimensão finita e $T \in \mathcal{L}(V).$
-    \dividiritensdiv{1}{     
-        \task[\pers{a}] Prove que se existe um vetor cíclico para $T$ então todo subespaço próprio $T$-invariante de $V$ também tem um vetor cíclico.
-        \task[\pers{b}] Vale a recíproca do item (a)? (Isto é, se todo subespaço próprio $T$-invariante $W$ de $V$
-tem um vetor cíclico para $T_W,$ é verdade que existe um vetor cíclico para $T$?)
-}
+
+   \exercicio{1} Sejam $V$ um $K$-espaço vetorial de dimensão finita e $T \in \mathcal{L}(V).$
+  
+  \dividiritens{  
+  \task[\pers{a}] Prove que se existe um vetor cíclico para $T$ então todo subespaço próprio $T$-invariante de $V$ também tem um vetor cíclico. 
+  
+  \task[\pers{b}] Vale a recíproca do item (a)? (Isto é, se todo subespaço próprio $T$-invariante $W$ de $V$tem um vetor cíclico para $T_W,$ é verdade que existe um vetor cíclico para $T$?)
+  
+  }
+
+\solucao{V}
+
+   \exercicio{2} Sejam $V$ um $K$-espaço vetorial de dimensão finita e $T \in \mathcal{L}(V).$ Prove que se $T^2$ tem um vetor
+cíclico, então $T$ tem um vetor cíclico. Vale a recíproca?
+  
 \solucao{}
+    \exercicio{3} Sejam $V$ um $K$-espaço vetorial de dimensão $n$ e $T \in \mathcal{L}(V)$ um operador diagonalizável.
+\dividiritens{
+\task[\pers{a}] Mostre que existe um vetor cíclico para $T$ se, e somente se, $T$ tem $n$ autovalores distintos.
+\task[\pers{b}] Mostre que se $T$ tem $n$ autovalores distintos e se $\{v_1, \ldots , v_n\}$ é uma base de autovetores de $T,$ então $v = v_1 + v_2 + \ldots + v_n$ é um vetor cíclico para $T.$  
+ } 
+ \solucao{}
+    \exercicio{4} Prove que duas matrizes de ordem $3$ são semelhantes se, e somente se, elas têm o mesmo polinômio característico e o mesmo polinômio minimal.
+ \solucao{}
+    \exercicio{5} Prove que toda matriz $A \in \mathcal{M}_n(K)$ é semelhante à sua transposta $A^t.$
+ \solucao{}
+    \exercicio{6} Sejam $V$ um $K$-espaço vetorial de dimensão $n$ e $T \in \mathcal{L}(V).$
+\dividiritens{
+\task[\pers{a}] Prove que $\mbox{Im } T$ tem um complementar $T$-invariante se, e somente se, $\mbox{Im } T \cap \Ker T = 0.$
+\task[\pers{b}] Se $\mbox{Im } T \cap \Ker T = 0,$ prove que $\Ker T$ é o único complementar de $\mbox{Im } T$ que é $T$-invariante.
+}
+ \solucao{}
+    \exercicio{7} 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document} 
