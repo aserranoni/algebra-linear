@@ -1002,7 +1002,40 @@ Assim, segue o resultado.
 \det \left[ \begin{array}{cccc} a & -b & -c & -d \\ b & a & -d & c \\ c & d & a & -b \\ d & -c & b & a \end{array} \right] = (a^2 + b^2 + c^2 + d^2)^2
 \]
 \solucao{ 
-
+Considere
+\[
+A = \begin{bmatrix} a & -b \\ b & a \end{bmatrix} \quad \mbox{ e } \quad B = \begin{bmatrix} c & d \\ d & -c \end{bmatrix},
+\]
+e seja
+\[
+C  = \det \begin{bmatrix} A & -B \\ B & A \end{bmatrix}
+\]
+Observe que a matriz $CC^t$ é diagonal, já que as colunas são ortogonais. Como $\det(C) = \det(C^t),$ temos que
+\[
+\det(C^2) = \det(C) \textcolor{Red}{\det(C)} = \det(C) \textcolor{Red}{\det(C^t)} = \det(CC^t)
+\]
+De fato, temos que
+\[
+CC^t = \left(\begin{matrix}
+a^2+b^2+c^2+d^2 & 0 & 0 & 0 \\
+0 & a^2+b^2+c^2+d^2 & 0 & 0 \\
+0 & 0 & a^2+b^2+c^2+d^2 & 0 \\
+0 & 0 & 0 & a^2+b^2+c^2+d^2
+\end{matrix}\right)
+\]
+Daí, 
+\[
+\det(CC^t) = (a^2+b^2+c^2+d^2)^4
+\]
+Portanto, 
+\[
+(\det(C))^2 = \det(CC^t) = (a^2+b^2+c^2+d^2)^4 \Rightarrow \det(C) = \pm (a^2+b^2+c^2+d^2)^2.
+\]
+Mas observe que o coeficiente de $a^4$ no determinante de $C$ deve ser $1,$ o que impossibilita a opção $\det(C) = - (a^2+b^2+c^2+d^2)^2,$ já que nesse caso o coeficiente de $a^4$ seria $-1$. Logo, segue que 
+\[
+\det(C) = (a^2+b^2+c^2+d^2)^2
+\]
+}
 
 
 
@@ -1027,7 +1060,6 @@ temos que
 \[
 \abs{\det(A + Bi)}^2 = \abs{\det \begin{bmatrix} a + ci & -b + di \\ b+di & a - ci \end{bmatrix}}^2 = \abs{(a+ci)(a-ci) - (di - b)(di+b)}^2  = \]\[\abs{a^2 + c^2 - (- b^2 - d^2)}^2 = \abs{a^2 + c^2 + b^2 + d^2}^2 = (a^2 + b^2 + c^2 + d^2)^2
 \]
-}
 
 
 \exercicio{14} Sejam $A, B \in \mathcal{M}_n(K).$ Mostre que se $A$ é inversível então existem no máximo $n$ escalares $c$
