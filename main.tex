@@ -179,7 +179,7 @@ Seja $V$ um espaço vetorial sobre um corpo $K$ e seja $S\subseteq V$ um conjunt
 Se $V$ é um espaço vetorial sobre um corpo $K$ e $u\in V$ é um elemento não nulo, então a função $v:\{0,1\}\rightarrow V$ dada por $v_0=u$ e $v_1=u$ é linearmente \textcolor{red}{dependente}, mas o conjunto $\{v_0,v_1\}=\{u\}$ é linearmente \textcolor{red}{independente}.
 \end{exemplo}
 
-\begin{definicao}\label{lideford}\index{Espaço Vetorial!Base Ordenada}
+\begin{definicao}\label{lideford}\index{Espaço Vetorial!Base ordenada}
 Seja $V$ um espaço vetorial sobre um corpo $K$ e seja $I$ um conjunto. Uma \textbf{base de $V$ ordenada por $I$} é uma função $b:I\rightarrow V$ tal que:
 \begin{enumerate}[label=(\roman*)]
 \item $b$ é linearmente independente.
@@ -504,15 +504,23 @@ Apesar de não podermos trabalhar com a união, podemos realizar a soma de subes
 \begin{definicao}
 Sejam $W_i \subseteq V$, $i \in I,$ subespaços de $V.$ Definimos:
 \[
-\sum\limits_{i \in I} W_i = \{ w_{i_1} + \ldots + w_{i_k} \mid k \in \mathbb{N}, w_i \in W_i \}
+\sum\limits_{i \in I} W_i = \{ w_{i_1} + \ldots + w_{i_k} \mid k \in \mathbb{N}, w_i \in W_i \}.
 \]
 \end{definicao}
 
 \noindent
-Pode-se mostrar que $\sum\limits_{i \in I} W_i $ é subespaço de $V$.
+Pode-se mostrar que o conjunto:
+\[
+\sum\limits_{i \in I} W_i
+\]
+é subespaço de $V$.
 
 \begin{definicao}\index{Espaço Vetorial!Soma direta}
-Uma soma $\sum\limits_{i \in I} W_i$ chama-se \textbf{soma direta} se para todo $i \in I$
+Uma soma:
+\[
+\sum\limits_{i \in I} W_i
+\]
+é dita uma \textbf{soma direta} se para todo $i \in I$ tivermos:
 \[
 W_i \cap \left( \sum\limits_{j \neq i} W_j \right) = 0
 \]
@@ -624,8 +632,8 @@ Seja $V$ um espaço vetorial de dimensão finita. Seja $B$ uma base de $V$. Ent�
 \section{Definições}
 
 \begin{definicao}
-Sejam \(U\) e \(V\) espaços vetoriais sobre um corpo \(K\).  uma
-\emph{transformação linear} é uma função $T:U\rightarrow V$ tal que  $$T(\alpha
+Sejam \(U\) e \(V\) espaços vetoriais sobre um corpo \(K\). Uma
+\textbf{transformação linear} é uma função $T:U\rightarrow V$ tal que  $$T(\alpha
 u+\beta v)=\alpha T(u)+\beta T(v)$$
  para quaisquer $\alpha,\beta\in K$ e $u,v\in V$. Além disso, denotamos o conjunto das transformações lineares de $U$ a $V$ por $\mathcal{L}(U,V).$
 \end{definicao}
@@ -652,11 +660,50 @@ Seja $T\in\mathcal{L}(U,V)$. Então:
 Seja $\mathcal{L}(U,V)$, seja $B$ uma base de $\mathrm{Ker}(T)$, e seja $C$ um conjunto tal que $T[C]$ seja base de $\mathrm{Im}(T)$. Então $B\cup C$ é base $V$.
 \end{teorema}
 \begin{proof}
-Para $v\in V$ então $T(v)\in\mathrm{Im}(T)$, então existem um conjunto finito $F\subseteq C$ e $\alpha:F\rightarrow K$ tais que $T(v)=\sum\limits_{w\in F}\alpha_wT(w)$, assim $T\left(v-\sum\limits_{w\in F}\alpha_ww\right)=0$, aí $v-\sum\limits_{w\in F}\alpha_ww\in\mathrm{Ker}(T)$, assim existem conjunto finito $E\subseteq B$ e função $\beta:B\rightarrow K$ tal que $v-\sum\limits_{w\in F}\alpha_ww=\sum\limits_{u\in E}\beta_uu$, aí $v=\sum\limits_{u\in E}\beta_uu+\sum\limits_{w\in F}\alpha_ww$.
-
-\medskip
-\noindent
-Por outro lado, para subconjunto finito $E\subseteq B\cup C$ e função $\alpha:E\rightarrow K$ tal que $\sum_{e\in E}\alpha_ee=0$, então $\sum_{e\in E\cap C}\alpha_eT(e)=0$, aí $\forall E\cap C:\alpha_e=0$, aí $bla$. 
+Para $v\in V$ então $T(v)\in\mathrm{Im}(T)$, então existem um conjunto finito $F\subseteq C$ e $\alpha:F\rightarrow K$ tais que:
+\[
+T(v)=\sum\limits_{w\in F}\alpha_wT(w),
+\]
+assim:
+\[
+T\left(v-\sum\limits_{w\in F}\alpha_ww\right)=0,
+\]
+aí:
+\[
+v-\sum\limits_{w\in F}\alpha_ww\in\mathrm{Ker}(T),
+\]
+assim existem um conjunto finito $E\subseteq B$ e função $\beta:B\rightarrow K$ tais que:
+\[
+v-\sum\limits_{w\in F}\alpha_ww=\sum\limits_{u\in E}\beta_uu,
+\]
+aí:
+\[
+v=\sum\limits_{u\in E}\beta_uu+\sum\limits_{w\in F}\alpha_ww.
+\]
+Por outro lado, para subconjunto finito $E\subseteq B\cup C$ e função $\alpha:E\rightarrow K$ tais que:
+\[
+\sum_{e\in E}\alpha_ee=0,
+\]
+então:
+\[
+\sum_{e\in E\cap C}\alpha_eT(e)=0,
+\]
+aí:
+\[
+\forall e\in E\cap C:\alpha_e=0,
+\]
+aí:
+\[
+\sum_{e\in E\setminus C}\alpha_ee=0,
+\]
+aí:
+\[
+\forall e\in E\setminus C:\alpha_e=0,
+\]
+portanto:
+\[
+\forall e\in E:\alpha_e=0.
+\]
 \end{proof}
 
 \begin{teorema}[Teorema do Núcleo-Imagem] \index{Espaço Vetorial!Teorema do Núcleo-Imagem}
@@ -680,7 +727,7 @@ $T \in \mathcal{L}(U,V)$ é isomorfismo se e somente se $T^{-1}$ também o é.
 \end{proposicao}
 
 \begin{proposicao}
-dois espaços vetoriais $U$ e $V$ são isomorfos se e somente se quaisquer duas bases $\mathcal{B}$ de $U$ e $\mathcal{C}$ de $V$ possuem a mesma cardinalidade.
+Dois espaços vetoriais $U$ e $V$ são isomorfos se e somente se quaisquer duas bases $B$ de $U$ e $C$ de $V$ possuem a mesma cardinalidade.
 \end{proposicao}
 \begin{teorema}
 Para espaços vetoriais $U$ e $V$, então $U$ é isomorfo a $V$ se e só se $\dim(U)=\dim(V)$.
@@ -689,39 +736,69 @@ Para espaços vetoriais $U$ e $V$, então $U$ é isomorfo a $V$ se e só se $\di
 \section{Espaço Dual}
 
 \begin{definicao}
-Seja $V$ um espaço vetorial sobre $K$. Denotamos $V^*=\mathcal{L}(V,K)$. O espaço $V^*$ chama-se o \textbf{espaço dual} de $V$. Os elementos de $V$ chama-se \textbf{funcionais lineares}.
+Seja $V$ um espaço vetorial sobre $K$. Denotamos $V^*=\mathcal{L}(V,K)$. O espaço $V^*$ chama-se o \textbf{espaço dual} de $V$. Os elementos de $V$ chamam-se \textbf{funcionais lineares}.
 \end{definicao}
 
-\medskip
 \noindent
-Se $\dim(V)=n$, então $\dim(V^*)=n\cdot 1=n$. Assim, $V$ e $V^*$ são isomorfos (no caso de $\dim(V)=n<\aleph_0$).
+Se $\dim(V)=n$, então $\dim(V^*)=n\cdot 1=n$, aí $V$ e $V^*$ são isomorfos.
 
-\begin{teorema}
-Seja $V$ um espaço vetorial com $\dim(V)=n$ e $B=\{v_i\}_{i\in n}$ uma base de $V$. Então existe uma base $B^*=\{f_i\}_{i\in n}$ de $V^*$ tal que $f_i(v_j)=\delta_{i,j}$ para $i,j\in n$. Além disso, $\forall v\in V:v=\sum_{i\in n}f_i(v)v_i$ e $\forall f\in V^*:f=\sum_{i\in n}f(v_i)f_i$.
+\begin{teorema}\label{basedual}
+Seja $V$ um espaço vetorial com $\dim(V)=n$ e $B=(v_i)_{i=1}^n$ uma base de $V$. Então existe uma base $B^*=(f_i)_{i=1}^n$ de $V^*$ tal que $f_i(v_j)=\delta_{i,j}$ para quaisquer $i,j$. Além disso:
+\[
+\forall v\in V:v=\sum_{i=1}^nf_i(v)v_i
+\]
+e:
+\[
+\forall f\in V^*:f=\sum_{i=1}^nf(v_i)f_i.
+\]
 \end{teorema}
 \begin{proof}
-Para todo $i\in n$, existe uma única função linear $f_i:V\rightarrow K$ tal que:
+Para $i=1,\dots,n$, existe uma única função linear $f_i:V\rightarrow K$ tal que:
 \[
 f_i(v_j)=\left\{\begin{array}{rl}0,&i\neq j\\1,&i=j\end{array}\right.
 \]
-Seja $\alpha:n\rightarrow K$ tal que:
+Sejam $\alpha_1,\dots,\alpha_n\in K$ tais que:
 \[
-\sum_{i\in n}\alpha_if_i=0.
+\sum_{i=1}^n\alpha_if_i=0.
 \]
-Para $j\in n$, aplicando este funcional para o vetor $v_j\in B$, então:
+Para $j=1,\dots,n$, aplicando este funcional para o vetor $v_j\in B$, então:
 \[
-0=0(v_j)=\sum_{i\in n}\alpha_if_i(v_j)=\alpha_j,
+0=0(v_j)=\sum_{i=1}^n\alpha_if_i(v_j)=\alpha_j,
 \]
 ou seja, $\alpha_j=0$. Portanto $B^*$ é linearmente independente.
 
 \medskip
 \noindent
-Além disso, para $v\in V$ existe $\alpha:n\rightarrow K$ tal que $v=\sum_{i\in n}\alpha_iv_i$, aí para $i\in n$ temos $f_i(v)=\alpha_if_i(v_i)=\alpha_i$; logo $f(v)=\sum_{i\in n}\alpha_if(v_i)=\sum_{i\in n}f(v_i)f_i(v)$. 
+Além disso, para $v\in V$ existem $\alpha_1,\dots,\alpha_n\in K$ tais que:
+\[
+v=\sum_{i=1}^n\alpha_iv_i,
+\]
+aí para $i=1,\dots,n$ temos:
+\[
+f_i(v)=\alpha_if_i(v_i)=\alpha_i;
+\]
+logo:
+\[
+f(v)=\sum_{i=1}^n\alpha_if(v_i)=\sum_{i=1}^nf(v_i)f_i(v). \qedhere
+\] 
 \end{proof}
 
 \begin{definicao}\index{Espaço Vetorial!Base dual}
 A base $B^*$ chama-se a \textbf{base dual} da base $B$.
 \end{definicao}
+
+\noindent
+Podemos estender o estudo do espaço dual para espaços vetoriais quaisquer.
+
+\begin{definicao}
+Seja $B$ uma base de $V$, então para cada $a\in B$ definimos a transformação linear $f_a\in V^*$ por $f_a(b)=\delta_{a,b}$.
+\end{definicao}
+
+\noindent
+Nesse caso, podemos adaptar facilmente o argumento na demonstração do teorema \ref{basedual} para mostrar que $(f_a)_{a\in B}$ é linearmente independente em $V^*$ e para todo $v\in V$ existe um conjunto finito $F\subseteq B$ tal que:
+\[
+v=\sum_{b\in F}f_b(v)b.
+\]
 
 \section{Espaço Bidual}
 
@@ -741,18 +818,19 @@ Então $\varphi_v\in V^{**}$.
 $\varphi\in\mathcal{L}(V,V^{**})$ e $\varphi$ é injetora.
 \end{proposicao}
 \begin{proof}
-Para $v\in\mathrm{Ker}(\varphi)$, então $\varphi_v=0$, aí para todo $f\in V^*$ temos $f(v)=\varphi_v(f)=0$, aí para todo $i\in n$ temos $f_i(v)=0$, aí $v=\sum_{i\in n}f_i(v)v_i=0$, aí $v=0$.
+Seja $B$ uma base de $V$. Para $v\in\mathrm{Ker}(\varphi)$, então $\varphi_v=0$, aí temos $\forall b\in B:f_b(v)=\varphi_v(f_b)=0$, aí existe um conjunto finito $F\subseteq B$ tal que:
+\[
+v=\sum_{b\in F}f_b(v)b,
+\]
+aí $v=0$.
 \end{proof}
 
-\noindent
-Seja $B$ uma base de $V$, então para cada $a\in B$ definimos a transformação linear $f_a\in V^*$ por $f_a(b)=\delta_{a,b}$, então $(f_a)_{a\in B}$ é linearmente independente em $V^*$ e para todo $v\in V$ existem um conjunto finito $F\subseteq B$ tal que $v=\sum_{b\in F}f_b(v)b$.
-
 \begin{corolario}
-Se $\dim(V)=n<\aleph_0$ então $\varphi:V\rightarrow V^{**}$ é um isomorfismo.
+Se $\dim(V)$ é finita, então $\varphi:V\rightarrow V^{**}$ é um isomorfismo.
 \end{corolario}
 \begin{proof}
 \[
-\dim(V)=\dim(V^*)=\dim(V^{**}).
+\dim(V)=\dim(V^*)=\dim(V^{**}). \qedhere
 \]
 \end{proof}
 
@@ -761,14 +839,14 @@ Nesse caso $\varphi$ é um isomorfismo natural, ou seja, não depende da escolha
 \end{observacao}
 
 \begin{corolario}
-Se $\dim(V)<\aleph_0$, então toda base de $V^*$ é a base dual para uma base de $V$.
+Se $\dim(V)$ é finita, então toda base de $V^*$ é a base dual para uma base de $V$.
 \end{corolario}
 \begin{proof}
-Seja $C$ uma base de $V^*$. Consideremos a base dual $C^*$ de $V^{**}$. Mas $V^{**}\cong V$, então existe $v:C\rightarrow V$ tal que $\forall c\in C:f_c=\varphi_{v_c}$, assim:
+Seja $C=(f_i)_{i=1}^n$ uma base de $V^*$. Consideremos a base dual $C^*=(g_i)_{i=1}^n$ de $V^{**}$. Mas $\varphi$ é sobrejetora, então existem $v_1,\dots,v_n\in V$ tais que para todo $i$ tenhamos $g_i=\varphi_{v_i}$, assim:
 \[
-c(v_d)=\varphi_{v_d}(c)=f_d(v_c)=\delta_{d,c}=\delta_{c,d},
+f_i(v_j)=\varphi_{v_j}(f_i)=g_j(f_i)=\delta_{j,i}=\delta_{i,j},
 \]
-logo $C$ é base dual da base $(v_c)_{c\in C}$ de $V$.
+logo $C=(f_i)_{i=1}^n$ é base dual da base $(v_i)_{i=1}^n$ de $V$.
 \end{proof}
 
 \section{Anuladores}
@@ -1274,27 +1352,33 @@ Provaremos a primeira afirmação pois a segunda é análoga.
 Bláa blá blá
 
 \chapter{Formas Canônicas}
-,\section{Autovalores e Autovetores}
- \begin{definicao}
-Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). Um vetor 
-\(v\in V\) é um \emph{vetor próprio} ou \emph{autovetor} de \(T\) se existe \(\lambda\in K\) tal que \(T(v)=\lambda v\). O escalar \(\lambda\) é um \emph{valor próprio} ou \emph{autovalor} do operador \(T\). Dizemos que \(v\) é um autovetor associado com o autovalor \(\lambda\).
+
+\section{Autovalores e Autovetores}
+
+\begin{definicao}
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). Um vetor \(v\in V\) é um \textbf{autovetor} de \(T\) se existe \(\lambda\in K\) tal que \(T(v)=\lambda v\). O escalar \(\lambda\) é um \textbf{autovalor} do operador \(T\). Dizemos que \(v\) é um autovetor associado com o autovalor \(\lambda\).
 \end{definicao}
+
 \begin{exemplo}
 Seja \(V=\mathbb{C}^1(\mathbb{R})\) e considere o operador linear \(T\in\mathcal{L}(V)\) tal que \(T(v)=v^\prime\) para cada \(v\in V\). Considere \(v=e^{\lambda x}\) com \(\lambda\in K\). Então \(T(v)=\lambda e^{\lambda x}=\lambda v\). Ou seja \(v\) é um autovetor associado com o autovalor \(\lambda\).
 \end{exemplo}
+
 \begin{definicao}
 Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). O \emph{spectrum} do operador \(T\) é o conjunto
 \[\text{Spec}(T)\coloneqq\{\lambda\in K\,\colon \lambda \text{ é autovalor de } T\}.\]
 Para cada \(\lambda\in\text{Spec}(T)\), denotamos o conjunto dos autovetores associados a \(\lambda\) como \(V_T(\lambda)\).
 \end{definicao}
- No contexto da definição anterior, considere
- \(\lambda\in\text{Spec}(T)\). Então
- \begin{align*}
-    v\in V_T(\lambda)&\iff T(v)=\lambda v\\&\iff (T-\lambda I)(v)=0\\&\iff v\in\text{Ker}(T-\lambda I).
- \end{align*}
+No contexto da definição anterior, considere
+\(\lambda\in\text{Spec}(T)\). Então
+\begin{align*}
+v\in V_T(\lambda)&\iff T(v)=\lambda v\\&\iff (T-\lambda I)(v)=0\\&\iff v\in\text{Ker}(T-\lambda I).
+\end{align*}
+
+\noindent
 \textcolor{red}{ALGUMA COISA QUE EU PERDI}
 
-
+\medskip
+\noindent
 Ainda no mesmo contexto, vamos assumir agora que \(\text{dim}(V)=n<\infty\). Então temos 
 que \[\lambda\in\text{Spec}(T)\implies\text{Ker}(T-\lambda I)\not =\{0\}\implies\text{det}(T-\lambda I)=0.\]
 Reciprocamente, se \(\text{det}(T-\lambda I)=0\) então \(V_T(\lambda)=\text{Ker}(T-\lambda I)\not=\{0\}\).
@@ -1409,7 +1493,7 @@ Seja \(\{\lambda_i\}_{i\in [k]}\subseteq\text{Spec}(T).\)
 \end{proof}
 
 \begin{proof}
-\begin{itemize}\hfill
+\begin{itemize}
 \item (i)$\Rightarrow$(ii): Sejam $(v_{i,j})_{j\in n_i}$ autovetores associados
   a $\lambda_i\in\text{Spec}(T)$\textcolor{red}{TERMINAR ESSA IMPLICAÇÃO}  
 \item (ii)\(\Rightarrow\)(iii):\[\text{dim}(V_T(\lambda_1))+\ldots +\text{dim}(V_T(\lambda_k))=n_1+\ldots +n_k=\text{deg}(p_T(t))=\text{dim}(V)=n.\]
@@ -1446,6 +1530,25 @@ Como $f(T)=0$ e $m_T(t)=0$, então $r(T)=0$, aí $r(t)=0$.
 
 \begin{corolario}
 O polinômio $m_T(t)$ é único.
+\end{corolario}
+
+\begin{definicao}
+Dado $v\in V$, um polinômio mônico de grau mínimo $m_{T,v}(t)\in K[t]$ tal que $m_{T,v}(T)(v)=0$ chama-se um \textbf{polinômio $T$-minimal} do vetor $v$. Chamemos um polinômio $f(t)\in K[t]$ de um \textbf{polinômio $T$-anulador} de $v$ se $f(T)(v)=0$.
+\end{definicao}
+
+\begin{lema}
+Seja $f(t)\in K[t]$ tal que $f(T)(v)=0$. Então $m_{T,v}(t)\mid f(t)$.
+\end{lema}
+\begin{proof}
+Dividimos $f(t)$ por $m_{T,v}(t)$ (com resto):
+\[
+f(t)=m_{T,v}(t)\cdot q(t)+r(t),\quad\quad\deg(r(t))<\deg(m_{T,v}(t))\text{ ou }r(t)=0.
+\]
+Como $f(T)(v)=0$ e $m_{T,v}(v)=0$, então $r(T)(v)=0$, aí $r(t)=0$.
+\end{proof}
+
+\begin{corolario}
+O polinômio $m_{T,v}(t)$ é único.
 \end{corolario}
 
 \noindent
@@ -1545,11 +1648,13 @@ Além disso, \(\bar{T}\) induz um operador linear
 
 \begin{proposicao}
 Seja \(V\) um espaço vetorial sobre um corpo \(K\), seja \(T\in\mathcal{L}(V)\)
-e seja \(W\) um subespaço \(T\)-invariante de \(V\). Seja $B_1$ uma base de $W$ e seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$ e seja $\overline{B_2}=\{\overline{b}:b\in B_2\}$.
-Então \[[T]_B=\begin{pmatrix}
-X & * \\ 0 & Y
-\end{pmatrix}\]
-onde \(X=[T\upharpoonright W]_{B_1}\) e \(Y=[\overline{T}]_{\overline{B_2}}\).
+e seja \(W\) um subespaço \(T\)-invariante de \(V\). Seja $B_1$ uma base de $W$ e seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$. Então $\overline{B}_2=\{\overline{b}:b\in B_2\}$ é uma base de $V/W$ e, sendo $\overline{T}\in L(V/W)$ o operador induzido, temos:
+\[
+[T]_B=
+\begin{pmatrix}
+[T\upharpoonright_W]_{B_1}&*\\0&[\overline{T}]_{\overline{B_2}}
+\end{pmatrix},
+\]
 \end{proposicao}
 \begin{proof}
 \textcolor{red}{COMPLETAR}
@@ -1565,11 +1670,11 @@ em que $T_1\in\mathcal{L}(W)$ e $T_2\in\mathcal{L}(W)$ com $T_1(w)=T(w)$ e $T_2(
 \begin{proof}
 Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então:
 \begin{align*}
-  p_T(t)&=\det[tI-T]_B\\
-        &=\text{det}\begin{pmatrix}
-          tI_m-A & * \\ 0 & tI_{n-m}-B\end{pmatrix}\\
-        &=\text{det}(tI_m-A)\text{det}(tI_{n-m}-B)\\
-        &=p_A(t)p_B(t)=p_{T_1}(t)p_{T_2}(t)
+p_T(t)&=\det[tI-T]_B\\
+&=\text{det}\begin{pmatrix}
+tI_m-A & * \\ 0 & tI_{n-m}-B\end{pmatrix}\\
+&=\text{det}(tI_m-A)\text{det}(tI_{n-m}-B)\\
+&=p_A(t)p_B(t)=p_{T_1}(t)p_{T_2}(t)\qedhere
 \end{align*}
 \end{proof}
 
@@ -1581,33 +1686,29 @@ O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T
 Seja \(V\) um espaço vetorial de dimensão finita sobre um corpo \(K\), e seja \(T\in\mathcal{L}(V)\). Então \(p_T(T)=0\), onde \(p_T(t)\in K[t]\) é um polinômio característico de \(T\). 
 \end{teorema}
 \begin{proof}
-Basta provar que \(p_T(T)(v)=0\) para cada \(v\in V\). Se \(v=0\) o resultado é evidente.
-Então seja \(0\not=v\in V\).
-Note que como \(V\) tem dimensão finita temos que existe um \(m \leq n = \text{dim}(V)\) mínimo tal que existem coeficientes \(\alpha_0,\ldots,\alpha_{m-1}\) tais que \(T^m(v)=\sum_{i=0}^{m-1}\alpha_iT^i(v)\). Para tal \(m\in\mathbb{N}\), considere o conjunto
-\(\{v,T(v),\ldots, T^{m-1}\}\) e seja \(W\) o subespaço gerado por ele. Note que \(W\) é \(T\)-invariante e ainda
-\[[T\upharpoonright W]_B=\begin{pmatrix}
-0 & 0 & \ldots& 0 &\alpha_0
-\\ 1 & 0 & \ldots & 0 & \alpha_1
-\\ 0 & 1 & \ldots & 0 & \alpha_2
+Basta provar que \(\forall v\in V:p_T(T)(v)=0\). Seja $v\in V$. Consideremos:
+\[
+m_{T,v}(t)=t^m+\alpha_{m-1}t^{m-1}+\dots+\alpha_1 t+\alpha_0,
+\]
+o polinômio mônico de menor grau tal que \(m_{T,v}(T)(v)=0\). Então \(B_1=\{v,T(v),\ldots, T^{m-1}(v)\}\) é linearmente independente. Seja \(W\) o subespaço gerado por ele. Note que \(W\) é \(T\)-invariante e ainda:
+\[[T\upharpoonright_W]_{B_1}=\begin{pmatrix}
+0 & 0 & \ldots& 0 & -\alpha_0
+\\ 1 & 0 & \ldots & 0 & -\alpha_1
+\\ 0 & 1 & \ldots & 0 & -\alpha_2
 \\ \ldots & \ldots  & \ldots  & \ldots  & \ldots \
-\\ 0 & 0 & \ldots & 1 & \alpha_{m-1} 
-\end{pmatrix}=A.\]
- Então, pelo Exercício 18 da lista 1, segue que
-\[p_A(t)=
+\\ 0 & 0 & \ldots & 1 & -\alpha_{m-1} 
+\end{pmatrix}\]
+Então, pelo Exercício 18 da lista 1, segue que:
+\[
 p_{T \upharpoonright_{W}}(t)=
-t^m -\alpha_{m-1}t^{m-1}- \ldots -\alpha_1t-\alpha_0.\]
-E também
-\[p_{T \upharpoonright _{W}}(T)=
-T^m-\alpha_{m-1}T^{m-1}-\ldots-\alpha_1 T-\alpha_o I.\]
-Aplicando essa última função a \(v\) segue:
-\[p_{T \upharpoonright_{ W}}(T)(v)=
-T^m(v)-\alpha_{m-1}T^{m-1}(v)-\ldots-\alpha_1 T(v)-\alpha_o v=0.\]
-Para concluir que \(p_T(T)(v)=0\)
-escrevemos \(p_T(T)=p_{T\upharpoonright_{W}}(T)q(T).\)
+t^m + \alpha_{m-1}t^{m-1} + \ldots + \alpha_1t+\alpha_0.\]
+Aplicando essa função a \(v\) segue:
+\[p_{T \upharpoonright_{W}}(T)(v)=m_{T,v}(T)(v)=0.\]
+Para concluir que \(p_T(T)(v)=0\), notamos que \(p_{T\upharpoonright_W}(t)\mid p_T(t).\)
 \end{proof}
 \begin{corolario}
-Se \(A\in M_n(K)\) então \(P_A(A)=0\),
-onde \(P_A(t)=\text{det}(tI -A)\). \end{corolario}
+Se \(A\in M_n(K)\) então \(p_A(A)=0\),
+onde \(p_A(t)=\text{det}(tI -A)\). \end{corolario}
 
 \begin{exemplo}
 Considere a matriz\[\begin{pmatrix}
@@ -1629,17 +1730,39 @@ P_A(A)&=A^2-(a+d)A+(ad-bc)I\\
 Se $V$ é espaço de dimensão finita e $T\in L(V)$, então todo polinômio irredutível que divide $p_T$ também divide $m_T$.
 \end{teorema}
 \begin{proof}
-Faremos a demonstração por indução em $V$. Suponhamos o lema válido para $\dim(V)<n$. Seja $V$ espaço vetorial tal que $\dim(V)=n$ e seja $T\in L(V)$ e seja $p$ um polinômio irredutível que divide $p_T$. Se $V=0$, é fácil. Senão, então tome um $v\neq 0$ qualquer. Seja $W$ o subespaço gerado por $\{v,T(v),T^2(v),\dots\}$. É fácil ver que $W$ é $T$-invariante, aí consideremos o espaço quociente $V/W$. Como $v\neq 0$, então $W\neq 0$, aí $\dim(V/W)=\dim(V)-\dim(W)<n$. Seja $k$ o menor tal que $\{v,T(v),T^2(v),\dots,T^k(v)\}$ seja linearmente dependente, então $B_1=\{v,T(v),T^2(v),\dots,T^{k-1}(v)\}$ é uma base de $W$. Seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$. Então $\overline{B}_2=\{\overline{b}:b\in B_2\}$ é uma base de $V/W$ e, sendo $T'=T\upharpoonright W$ e sendo $\overline{T}\in L(V/W)$ o operador induzido, então temos:
+Faremos a demonstração por indução em $V$. Suponhamos o lema válido para $\dim(V)<n$. Seja $V$ espaço vetorial tal que $\dim(V)=n$ e seja $T\in L(V)$ e seja $p$ um polinômio irredutível que divide $p_T$. Se $V=0$, é fácil. Senão, então tome um $v\neq 0$ qualquer. Consideremos:
+\[
+m_{T,v}(t)=t^m+\alpha_{m-1}t^{m-1}+\dots+\alpha_1 t+\alpha_0,
+\]
+o polinômio mônico de menor grau tal que \(m_{T,v}(T)(v)=0\). Então \(B_1=\{v,T(v),\ldots, T^{m-1}(v)\}\) é linearmente independente. Seja \(W\) o subespaço gerado por ele. Note que \(W\) é \(T\)-invariante e ainda:
+\[[T\upharpoonright_W]_{B_1}=\begin{pmatrix}
+0 & 0 & \ldots& 0 & -\alpha_0
+\\ 1 & 0 & \ldots & 0 & -\alpha_1
+\\ 0 & 1 & \ldots & 0 & -\alpha_2
+\\ \ldots & \ldots  & \ldots  & \ldots  & \ldots \
+\\ 0 & 0 & \ldots & 1 & -\alpha_{m-1} 
+\end{pmatrix}\]
+Então, pelo Exercício 18 da lista 1, segue que:
+\[
+p_{T \upharpoonright_{W}}(t)=
+t^m + \alpha_{m-1}t^{m-1} + \ldots + \alpha_1t+\alpha_0.
+\]
+Além disso, vendo a definição de $m_{T,v}$, é fácil ver que:
+\[
+m_{T \upharpoonright_{W}}(t)=
+t^m + \alpha_{m-1}t^{m-1} + \ldots + \alpha_1t+\alpha_0.
+\]
+Seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$. Então $\overline{B}_2=\{\overline{b}:b\in B_2\}$ é uma base de $V/W$ e, sendo $\overline{T}\in L(V/W)$ o operador induzido, temos:
 \[
 [T]_B=
 \begin{pmatrix}
-[T']_{B_1}&*\\0&[\overline{T}]_{\overline{B_2}}
+[T\upharpoonright_W]_{B_1}&*\\0&[\overline{T}]_{\overline{B_2}}
 \end{pmatrix},
 \]
-aí é fácil ver que $p_T=p_{T'}p_{\overline{T}}$ e $m_{T'}\mid m_T$ e $m_{\overline{T}}\mid m_T$. Assim, como $p\mid p_T$, então $p\mid p_{T'}$ ou $p\mid p_{\overline{T}}$.
+aí $p_T=p_{T\upharpoonright_W}p_{\overline{T}}$ e $m_{T\upharpoonright_W}\mid m_T$ e $m_{\overline{T}}\mid m_T$. Assim, como $p\mid p_T$, então $p\mid p_{T\upharpoonright_W}$ ou $p\mid p_{\overline{T}}$.
 \begin{itemize}
-\item Se $p\mid p_{T'}$, então podemos nos lembrar que $p_{T'}=m_{T'}$, ou ver a resolução do exercício 15 da lista 2, aquele que fala sobre matrizes companheiras de polinômios, e aí inferir que $p\mid m_{T'}$, aí $p\mid m_T$.
-\item Se $p\mid p_{\overline{T}}$, então, por hipótese de indução, temos $p\mid m_{\overline T}$, aí $p\mid m_T$.
+\item Se $p\mid p_{T\upharpoonright_W}$, como $p_{T\upharpoonright_W}=m_{T\upharpoonright_W}$, então $p\mid m_{T\upharpoonright_W}$, aí $p\mid m_T$.
+\item Se $p\mid p_{\overline{T}}$, então, por hipótese de indução, temos $p\mid m_{\overline T}$, aí $p\mid m_T$. \qedhere
 \end{itemize}
 \end{proof}
 
