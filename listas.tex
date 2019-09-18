@@ -3809,12 +3809,37 @@ encontre $k \in \mathbb{N}$ tal que $(AB - BA)^k = 0.$
   
   }
 
-\solucao{V}
+\solucao{
+  \dividiritens{  
+  \task[\pers{a}] Sabemos que um vetor $v \in V$ é cíclico se $Z(v, T) = V,$ onde 
+  \[
+  Z(v,T) = \{ g(T)(v) | g(t) \in K[t] \}.
+  \]
+  
+  Equivalentemente, dizemos que $v \in V$ é cíclico se $\{v, T(v), T^2(v), \ldots, T^{n-1}(v) \}$ é uma base para $V.$
+  
+  
+  }
+
+}
 
    \exercicio{2} Sejam $V$ um $K$-espaço vetorial de dimensão finita e $T \in \mathcal{L}(V).$ Prove que se $T^2$ tem um vetor
 cíclico, então $T$ tem um vetor cíclico. Vale a recíproca?
   
-\solucao{}
+\solucao{Seja $n = \dim V.$ Se $v$ é um vetor cíclico para $T^2,$ isso quer dizer que $V = Z(v,T^2).$ Vejamos que $Z(v, T^2) \subseteq Z(v, T). $
+\[
+Z(v,T^2) = \{ g(T^2)(v) | g(t) \in K[t] \} = \langle v, T^2(v), T^4(v), \ldots \rangle \subseteq  \langle v, T(v), T^2(v), \ldots, T^{n-1}(v) \rangle = Z(v, T)
+\]Logo, concluímos que
+\[
+\textcolor{RawSienna}{Z(v,T^2)} \subseteq  Z(v, T) \Rightarrow \textcolor{RawSienna}{V} \subseteq  Z(v, T) \Rightarrow \boxed{Z(v,T) = V}
+\]
+Assim, $v$ é um vetor cíclico para $T.$
+
+Observe que a recíproca não é verdadeira. Tome $T = \begin{bmatrix}
+0 & 1 \\ 1 & 0 \end{bmatrix}.$ Então $v = (1,0)$ é um vetor cíclico para $T,$ mas $T^2 = I,$ que não possui um vetor cíclico.
+%https://math.stackexchange.com/questions/2154881/if-linear-operator-t2-has-a-cyclic-vector-then-so-does-t?rq=1
+
+}
     \exercicio{3} Sejam $V$ um $K$-espaço vetorial de dimensão $n$ e $T \in \mathcal{L}(V)$ um operador diagonalizável.
 \dividiritens{
 \task[\pers{a}] Mostre que existe um vetor cíclico para $T$ se, e somente se, $T$ tem $n$ autovalores distintos.
@@ -3882,14 +3907,14 @@ minimal de $T$ é igual ao polinômio característico de $T$ e é uma potência 
     2 & 0 & 4 & 1
     \end{bmatrix} \in \mathcal{M}_4(\mathbb{R})
     \]
-e encontre uma matriz inversível $P$ tal que $P^{−1}AP = R.$
-            \solucao{}
-    \exercicio{15} Seja $T \in \mathcal{L}(K^6)$ com polinômio minimal $m_T(x) = (x^2 − 2)(x^2 + 1).$ Ache as possibilidades para a forma racional de $T$ para $K = \mathbb{Q}, K = \mathbb{R}$ e $K = \mathbb{C}.$   
+e encontre uma matriz inversível $P$ tal que $P^{-1}AP = R.$    
+        \solucao{}
+    \exercicio{15} Seja $T \in \mathcal{L}(K^6)$ com polinômio minimal $m_T(x) = (x^2 - 2)(x^2 + 1).$ Ache as possibilidades para a forma racional de $T$ para $K = \mathbb{Q}, K = \mathbb{R}$ e $K = \mathbb{C}.$   
             \solucao{}
     \exercicio{16} Seja $T \in \mathcal{L}(\mathbb{R}^4)$ um operador linear tal que $t^2 + 3$ é um divisor do polinômio minimal de $T$
 e $1$ é o único autovalor de $T.$ Quais são as possíveis a formas racionais de $T?$               \solucao{}
     \exercicio{17} Classifique, a menos de semelhança, as matrizes reais de ordem $6$ com polinômio minimal
-\[(t − 1)^2(t + 1)(t − 2). \]
+\[(t - 1)^2(t + 1)(t - 2). \]
                  \solucao{}
     \exercicio{18} Determine quais das matrizes seguintes são semelhantes:
 \[
@@ -3941,7 +3966,7 @@ são semelhantes.
 \end{bmatrix}
  \]
 e a matriz $P$ tal que $P^{
-−1}AP = J.$
+-1}AP = J.$
                  \solucao{}
     \exercicio{22} Seja
 \[
@@ -3980,7 +4005,7 @@ e $a \neq b.$ Determine a forma racional e a forma de Jordan de $T.$
 \solucao{}
 \exercicio{27} Classifique, a menos de semelhança, todas as matrizes reais de ordem $7$ com polinômio
 característico 
-\[p_T(t) = (t − 1)^4(t − 2)^2(t − 1).\]
+\[p_T(t) = (t - 1)^4(t - 2)^2(t - 1).\]
 \solucao{}
 \exercicio{28} Determine a forma racional e a forma de Jordan da matriz real
 \[
@@ -4000,7 +4025,7 @@ A  =\begin{bmatrix}
 verdade que $d \mid n?$ Justifique.
 }
 \solucao{}
-\exercicio{30} Dê a forma de Jordan de um operador linear $T \colon \mathbb{R}^7 \to \mathbb{R}^7$ com polinômio característico $p_T(t) = (t − 1)^2(t − 2)^4(t − 3)$ e tal que $\dim(\Ker(T − 2I)) = 2, \dim(\Ker(T − I)) = 1$ e $\Ker(T − 2I)^3 \neq \Ker(T − 2I)^2.$
+\exercicio{30} Dê a forma de Jordan de um operador linear $T \colon \mathbb{R}^7 \to \mathbb{R}^7$ com polinômio característico $p_T(t) = (t - 1)^2(t - 2)^4(t - 3)$ e tal que $\dim(\Ker(T - 2I)) = 2, \dim(\Ker(T - I)) = 1$ e $\Ker(T - 2I)^3 \neq \Ker(T - 2I)^2.$
 \solucao{}
 
 \textcolor{Red}{Questões Suplementares}
@@ -4010,6 +4035,23 @@ verdade que $d \mid n?$ Justifique.
 \newpage
 \section{\textcolor{Floresta}{Lista 5}}
 \exercicio{1} 
+\solucao{}
+
+
+\textcolor{Red}{Questões Suplementares}
+
+\exercicio{31} 
+\solucao{}
+
+\newpage
+\section{\textcolor{Floresta}{Lista 6}}
+
+   \exercicio{1}
+   
+   
+   \textcolor{Red}{Questões Suplementares}
+
+\exercicio{31} 
 \solucao{}
 \end{document} 
 %https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm

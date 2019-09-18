@@ -522,7 +522,7 @@ Uma soma:
 \]
 é dita uma \textbf{soma direta} se para todo $i \in I$ tivermos:
 \[
-W_i \cap \left( \sum\limits_{j \neq i} W_j \right) = 0
+W_i \cap \left( \sum\limits_{j \neq i} W_j \right) = 0.
 \]
 \end{definicao}
 
@@ -864,20 +864,23 @@ $S^0$ é um subespaço de $V$.
 \end{proposicao}
 
 \begin{teorema}
-Seja $V$ um espaço com $\dim(V)<\aleph_0$ e $W\subseteq V$ um subespaço. Então:
+Seja $V$ um espaço de dimensão finita e $W\subseteq V$ um subespaço. Então:
 \[
 \dim(V)=\dim(W)+\dim(V^0).
 \]
 \end{teorema}
 \begin{proof}
-Seja $\dim(V)=n$ e $\dim(W)=m$. Escolhemos uma base $(v_i)_{i\in m}$ de $W$ e completemo-la até uma base $(v_i)_{i\in n}$ de $V$. Consideremos a base dual $(f_{v_i})_{i\in n}$ de $V^*$. Mostraremos que $(f_{v_i})_{i\in n\setminus m}$ é uma base de $W^0$. É claro que $\forall i\in n\setminus m:f_{v_i}\in W^0$. Seja $f\in W^0$, então $f=\sum_{i\in n}f(v_i)f_{v_i}=\sum_{i\in n\setminus m}f(v_i)f_{v_i}$.
+Seja $\dim(V)=n$ e $\dim(W)=m$. Escolhemos uma base $(v_1,\dots,v_m)$ de $W$ e completemo-la até uma base $(v_1,\dots,v_m,v_{m+1},\dots v_n)$ de $V$. Consideremos a base dual $(f_1,\dots,f_n)$ de $V^*$. Mostraremos que $(f_{m+1},\dots,f_n)$ é uma base de $W^0$. É claro que para todo $i=m+1,\dots,n$ temos $f_i\in W^0$. Seja $f\in W^0$, então:
+\[
+f=\sum_{i=1}^nf(v_i)f_i=\sum_{i=m+1}^nf(v_i)f_i. \qedhere
+\]
 \end{proof}
 
 \begin{teorema}
-Se $\dim(V)<\aleph_0$ e $V=U\oplus W$, então $V^*=U^0\oplus W^0$ e $U^0\cong W^*$ e $W_0\cong U^*$.
+Se $\dim(V)$ é finita e $V=U\oplus W$, então $V^*=U^0\oplus W^0$ e $U^0\cong W^*$ e $W_0\cong U^*$.
 \end{teorema}
 \begin{proof}
-Seja $B=B_U\cup B_W$ uma base de $V$, em que $B_U$ é base de $U$ e $B_W$ é base de $W$. Então na base dual temos $B^*=B_U^*\cup B_V^*$, e pelo teorema anterior temos $\langle B_U^*\rangle=W^0$ e $\langle B_V^*\rangle=U^0$.
+Seja $B=B_U\cup B_W$ base de $V$, em que $B_U$ é base de $U$ e $B_W$ é base de $W$. Então a base dual é $B^*=B_U^*\cup B_V^*$, e pelo teorema anterior temos $\langle B_U^*\rangle=W^0$ e $\langle B_V^*\rangle=U^0$.
 \end{proof}
 
 \section{Transpostas}
@@ -892,7 +895,7 @@ T^t:V^t&\rightarrow&U^t\\f&\mapsto&T^t(f)=f\circ T
 \end{definicao}
 
 \begin{proposicao}
-Se $\dim(U)<\aleph_0$ e $T\in\mathcal{L}(U,V)$, então:
+Se $\dim(U)$ é finita e $T\in\mathcal{L}(U,V)$, então:
 \begin{itemize}
 \item[a)] $\mathrm{Ker}(T^t)=(\mathrm{Im}(T))^0$.
 \item[b)] $\mathrm{Rank}(T^t)=\mathrm{Rank}(T)$.
@@ -923,14 +926,14 @@ mas $\dim(V^*)=\dim(V)$ e $\dim(\mathrm{Ker}(T^t))+\dim(\mathrm{Im}(T))^0$.
 \[
 \dim(U)=\dim(\mathrm{Ker}(T))+\dim(\mathrm{Im}(T))
 \]
-aí $\dim(\mathrm{Ker}(T))^0=\dim(\mathrm{Im}(T))$, aí $(\mathrm{Ker}(T))^0=\mathrm{Im}(T)$.
+aí $\dim(\mathrm{Ker}(T))^0=\dim(\mathrm{Im}(T))$, aí $(\mathrm{Ker}(T))^0=\mathrm{Im}(T)$. \qedhere
 \end{itemize}
 \end{proof}
 
 \begin{teorema}
 Sejam $U$ e $V$ espaços vetoriais de dimensão finita com bases $B$ e $C$ e bases duais $B^*$ e $C^*$. Se $T\in\mathcal{L}(U,V)$, então:
 \[
-([T]_{B,C})^t=[T^t]_{C^*,B^*}
+[T]_{B,C}^t=[T^t]_{C^*,B^*}
 \]
 \end{teorema}
 
@@ -946,10 +949,8 @@ Consideremos $T:K^n\rightarrow K^m$ dada por $T(v)=Av$. Sejam $B$ e $C$ as bases
 \begin{array}{ccccc}
 \mathrm{Rank}(T)&=&\mathrm{Column Rank}(A)&&\\
 \mathrm{Rank}(T^t)&=&\mathrm{Column Rank}(A^t)&=&\mathrm{Row Rank}(A).
-\end{array}
+\end{array} \qedhere
 \]
-
-\noindent
 \end{proof}
 
 \section{Espaços Quocientes}
@@ -1018,7 +1019,7 @@ Temos o seguinte:
 
 \medskip
 \noindent
-1) Mostraremos que $\overline{T}$ está ``bem definida''. Se $\overline{u}=\overline{v}$, então $u-v\in W\in\mathrm{Ker}(T)$, aí $T(u-v)=0$, aí $T(u)=T(v)$.
+1) Mostraremos que $\overline{T}$ está ``bem definida''. Se $\overline{u}=\overline{v}$, então $u-v\in W\subseteq\mathrm{Ker}(T)$, aí $T(u-v)=0$, aí $T(u)=T(v)$.
 
 \medskip
 \noindent
@@ -1026,8 +1027,17 @@ Temos o seguinte:
 
 \begin{itemize}
 \item $\overline{T}(\overline{u}+\overline{v})=\overline{T}(\overline{u+v})=T(u+v)=T(u)+T(v)=\overline{T}(\overline{u})+\overline{T}(\overline{v})$.
-\item 
+\item $\overline{T}(\alpha\overline{v})=\overline{T}(\overline{\alpha v})=T(\alpha v)=\alpha T(v)=\alpha\overline{T}(\overline{v})$.
 \end{itemize}
+Agora, para todo $T'\in\mathcal{L}(U/W,V)$ tal que para todo $u\in U$ tenhamos:
+\[
+T'(\overline{u})=T(u),
+\]
+então para todo $v\in U/W$ existe um $u\in U$ tal que $v=\overline{u}$, aí:
+\[
+T'(v)=T'(\overline{u})=T(u)=\overline{T}(\overline{u})=\overline{T}(v);
+\]
+logo $T'=\overline{T}$.
 \end{proof}
 
 \begin{teorema}
@@ -1068,7 +1078,10 @@ Seja $V=W\oplus U$, então $\dim V=\dim W+\dim U$, mas $U\cong V/W$, aí $\dim U
 \end{proof}
 
 \begin{observacao}
-Existem espaços vetoriais $W$ e $U$ e $W'$ e $U'$ tais que $W\oplus U\cong W'\oplus U'$ e $W\cong W'$, mas $U\ncong U'$. De fato podemos tomar $W=\bigoplus_{i=0}^\infty Ke_{2i}$ e $U=\bigoplus_{i=0}^\infty Ke_{2i+1}$ e $W'=\bigoplus_{i=0}^\infty Ke_i$ e $U'=\{0\}$.
+Existem espaços vetoriais $W$ e $U$ e $W'$ e $U'$ tais que $W\oplus U\cong W'\oplus U'$ e $W\cong W'$, mas $U\ncong U'$. De fato podemos tomar:
+\[
+W=\bigoplus_{i=0}^\infty Ke_{2i},\quad U=\bigoplus_{i=0}^\infty Ke_{2i+1},\quad W'=\bigoplus_{i=0}^\infty Ke_i,\quad U'=\{0\}.
+\]
 \end{observacao}
 
 \chapter{Determinantes}
@@ -1076,13 +1089,9 @@ Existem espaços vetoriais $W$ e $U$ e $W'$ e $U'$ tais que $W\oplus U\cong W'\o
 \section{Formas Multilineares}
 
 \begin{definicao}
-Seja $V$ um espaço vetorial e $V^r=V\times\dots\times V$. Uma \textbf{forma $r$-linear} sobre $V$ é uma função:
+Seja $V$ um espaço vetorial e $V^r=V\times\dots\times V$. Uma \textbf{forma $r$-linear} sobre $V$ é uma função $F:V^r\rightarrow K$ que é linear em cada argumento, ou seja, para cada $i=1,\dots,r$ temos:
 \[
-F:V^r\rightarrow K,\quad\quad (v_i)_{i\in r}\mapsto F((v_i)_{i\in r})\in K
-\]
-que é linear em cada argumento, ou seja, para cada $i\in r$ temos que
-\[
-F(v_0,\dots,\alpha v_i+\beta v'_i,\dots,v_{r-1})=\alpha F(v_0,\dots,v_i,\dots,v_{r-1})+\beta F(v_0,\dots,v'_i,\dots,v_{r-1}).
+F(v_1,\dots,\alpha v_i+\beta v'_i,\dots,v_r)=\alpha F(v_1,\dots,v_i,\dots,v_r)+\beta F(v_1,\dots,v'_i,\dots,v_r).
 \]
 Denotamos por $L_r(V)$ o conjunto das formas $r$-lineares sobre $V$.
 \end{definicao}
@@ -1090,30 +1099,30 @@ Denotamos por $L_r(V)$ o conjunto das formas $r$-lineares sobre $V$.
 \begin{exemplo}
 Seja $V=K^2$ e:
 \[
-F((x_0,y_0),(x_1,y_1),(x_2,y_2))=x_0y_1x_2-x_0x_1x_2.
+F((x_1,y_1),(x_2,y_2),(x_3,y_3))=x_1y_2x_3-x_1x_2x_3.
 \]
 Então $F$ é uma forma 3-linear.
 \end{exemplo}
 
 \begin{definicao}
-Uma forma $F\in L_r(V)$ chama-se \textbf{alternativa} se e só se para $v\in V^r$, se $v$ não é injetora, então $F(v)=0$. Denotamos por $A_r(V)$ o conjunto das formas $r$-lineares alternativas.
+Uma forma $F\in L_r(V)$ chama-se \textbf{alternada} se e só se para $(v_1,\dots,v_r)\in V^r$ e $i<j$ tais que $v_i=v_j$ então $F(v_1,\dots,v_r)=0$. Denotamos por $A_r(V)$ o conjunto das formas $r$-lineares alternadas.
 \end{definicao}
 
 \begin{definicao}
-Uma forma $F$ é chamada \textbf{antissimétrica} se para $v\in V^r$ e para $i,j\in r$ tais que $i\neq j$, então:
+Uma forma $F$ é chamada \textbf{antissimétrica} se para $v\in V^r$ e para $i<j$ temos:
 \[
-F(v_0,\dots,v_i,\dots,v_j,\dots,v_{r-1})=-F(v_0,\dots,v_j,\dots,v_i,\dots,v_{r-1}).
+F(v_1,\dots,v_i,\dots,v_j,\dots,v_r)=-F(v_1,\dots,v_j,\dots,v_i,\dots,v_r).
 \]
 \end{definicao}
 
 \begin{proposicao}
-Toda forma alternativa é antissimétrica.
+Toda forma alternada é antissimétrica.
 \end{proposicao}
 \begin{proof}
-Seja $F\in A_r(V)$. Sejam $v\in V^r$ e $i,j\in r$ tais que $i\neq j$. Então:
+Seja $F\in A_r(V)$. Sejam $v\in V^r$ e $i<j$, então:
 \[
 \begin{array}{rcl}
-0&=&F(v_0,\dots,v_i+v_j,\dots,v_i+v_j,\dots,v_{r-1})\\&=&F(v_0,\dots,v_i,\dots,v_i,\dots,v_{r-1})+F(v_0,\dots,v_i,\dots,v_j,\dots,v_{r-1})\\&&+F(v_0,\dots,v_j,\dots,v_i,\dots,v_{r-1})+F(v_0,\dots,v_j,\dots,v_j,\dots,v_{r-1})\\&=&F(v_0,\dots,v_i,\dots,v_j,\dots,v_{r-1})+F(v_0,\dots,v_j,\dots,v_i,\dots,v_{r-1})
+0&=&F(v_1,\dots,v_i+v_j,\dots,v_i+v_j,\dots,v_r)\\&=&F(v_1,\dots,v_i,\dots,v_i,\dots,v_r)+F(v_1,\dots,v_i,\dots,v_j,\dots,v_r)\\&+&F(v_1,\dots,v_j,\dots,v_i,\dots,v_r)+F(v_1,\dots,v_j,\dots,v_j,\dots,v_r)\\&=&F(v_1,\dots,v_i,\dots,v_j,\dots,v_r)+F(v_1,\dots,v_j,\dots,v_i,\dots,v_r)
 \end{array}
 \]
 \end{proof}
@@ -1122,22 +1131,26 @@ Seja $F\in A_r(V)$. Sejam $v\in V^r$ e $i,j\in r$ tais que $i\neq j$. Então:
 Se a característica do corpo é $\neq 2$, então toda forma antissimétrica é reflexiva.
 \end{proposicao}
 \begin{proof}
-Para $F$ antissimétrica e $v\in V^r$ e $i,j\in r$ tais que $i\neq j$, se $v_i=v_j$, sendo $v=v_i$, então:
+Para $F$ antissimétrica e $v\in V^r$ e $i<j$, se $v_i=v_j$, sendo $v=v_i$, então:
 \[
-F(v_0,\dots,v,\dots,v,\dots,v_{r-1})=-F(v_0,\dots,v,\dots,v,\dots,v_{r-1}),
+F(v_1,\dots,v,\dots,v,\dots,v_1)=-F(v_1,\dots,v,\dots,v,\dots,v_r),
 \]
 aí:
 \[
-2F(v_0,\dots,v,\dots,v,\dots,v_{r-1})=0,
+2F(v_1,\dots,v,\dots,v,\dots,v_r)=0,
 \]
 aí:
 \[
-F(v_0,\dots,v,\dots,v,\dots,v_{r-1})=0.
+F(v_1,\dots,v,\dots,v,\dots,v_r)=0.
 \]
 \end{proof}
 
 \begin{definicao}
-Seja $F\in L_r(V)$ e $\sigma\in S_r$ uma permutação. Então, para $v\in V^r$, definamos $(\sigma F)(v)=F(v\circ\sigma)$. Então é fácil ver que $\sigma F\in L_r(V)$.
+Seja $F\in L_r(V)$ e $\sigma\in S_r$ uma permutação. Para $(v_1,\dots,v_r)\in V^r$ definimos:
+\[
+(\sigma F)\left(v_1,\dots,v_r\right)=F\left(v_{\sigma(1)},\dots,v_{\sigma(r)}\right).
+\]
+É fácil ver que $\sigma F\in L_r(V)$.
 \end{definicao}
 
 \begin{observacao}
@@ -1145,27 +1158,34 @@ Para $F\in L_r(V)$, então $F$ é antissimétrica se e somente se para toda tran
 \end{observacao}
 
 \begin{proposicao}
-Seja $F\in L_r(V)$ uma forma antissimétrica. Então para $\sigma\in S_r$, temos $\sigma F=(\sgn\sigma)F$.
+Seja $F\in L_r(V)$ uma forma antissimétrica. Então para $\sigma\in S_r$, temos:
+\[
+\sigma F=(\sgn \ \sigma)F.
+\]
 \end{proposicao}
 \begin{proof}
-Para $\sigma\in S_r$, então $\sigma$ pode ser escrita como $\sigma=\tau_0\dots\tau_{k-1}$, em que $\tau_i$ são transposições, e $\sigma$ é par se e só se $k$ é par.
-
-\medskip
-\noindent
-Temos $\sigma F=(\tau_0\dots\tau_{k-1})F=(-1)^k F=(\sgn\sigma)F$, pois $\sgn\sigma=(-1)^k$.
+Para $\sigma\in S_r$, então $\sigma$ pode ser escrita como um produto de transposições:
+\[
+\sigma=\tau_1\dots\tau_k,
+\]
+aí $\sigma$ é par se e só se $k$ é par. Portanto:
+\[
+\sigma F=(\tau_1\dots\tau_k)F=(-1)^k F=(\sgn \ \sigma)F,
+\]
+pois $\sgn \ \sigma=(-1)^k$.
 \end{proof}
 
 \begin{proposicao}
 Toda forma $r$-linear determina uma forma $r$-linear alternada da seguinte maneira:
 \[
-F\mapsto\varphi(F)=\sum_{\sigma\in S_r}\sgn\sigma(\sigma F).
+F\mapsto\varphi(F)=\sum_{\sigma\in S_r}(\sgn \ \sigma)(\sigma F).
 \]
 \end{proposicao}
 \begin{proof}
-Seja $v_i=v_j=v$ com $i\neq j$. Precisamos provar que $\varphi(F)(v)=0$. Seja $\tau$ a transposição $(i,j)$, então $S=A_r\cup A_r\tau$ e $A_r\cap A_r\tau=\emptyset$. Então temos o seguinte:
+Seja $v_i=v_j=v$ com $i<j$. Precisamos provar que $\varphi(F)(v)=0$. Seja $\tau$ a transposição $(i,j)$, então $ S_r=A_r\cup A_r\tau$ e $A_r\cap A_r\tau=\emptyset$. Então temos o seguinte:
 \[
 \begin{array}{rcl}
-\varphi(F)(v)&=&\sum_{\sigma\in S_r}(\sgn\sigma)(\sigma F(v))\\&=&\sum_{\sigma\in A_r}(\sigma F(v))-\sum_{\sigma\in A_r}(\sigma\tau F(v))\\&=&\sum_{\sigma\in A_r}(\sigma F(v))-\sum_{\sigma\in A_r}(\sigma F(v))\\&=&0
+\varphi(F)(v)&=&\sum_{\sigma\in S_r}(\sgn \ \sigma)(\sigma F(v))\\&=&\sum_{\sigma\in A_r}(\sigma F(v))-\sum_{\sigma\in A_r}(\sigma\tau F(v))\\&=&\sum_{\sigma\in A_r}(\sigma F(v))-\sum_{\sigma\in A_r}(\sigma F(v))\\&=&0.
 \end{array}
 \]
 \end{proof}
@@ -1178,23 +1198,27 @@ F(v)=0.
 \end{observacao}
 
 \begin{lema}
-Seja $\dim V=n$ e $F\in A_n(V)$. Seja $(e_i)_{i\in n}$ uma base de $V$, então $F$ é completamente determinada pelo valor $F(e)$.
+Seja $\dim V=n$ e $F\in A_n(V)$. Seja $(e_1,\dots,e_n)$ uma base de $V$, então $F$ é completamente determinada pelo valor $F(e)$.
 \end{lema}
 \begin{proof}
-Seja $v\in V^n$. Então existe $\alpha:n\times n\rightarrow K$ tal que:
+Seja $(v_1,\dots,v_n)\in V^n$. Então existe $(\alpha_{i,j})\in M_n(K)$ tal que:
 \[
-v_i=\sum_{j\in n}\alpha_{i,j}e_j.
+v_i=\sum_{j=1}^n\alpha_{i,j}e_j.
 \]
 Assim:
 \[
 \begin{array}{rcl}
-F(v)&=&F((\sum_{j\in n}\alpha_{i,j}e_j)_{j\in n})\\&=&\sum_{j\in n^n}\prod_{i\in n}\alpha_{i,j(i)}F(e\circ j)\\&=&\sum_{\sigma\in S_n}\prod_{i\in n}\alpha_{i,\sigma(i)}F(e\circ \sigma)\\&=&\textcolor{red}{\left(\sum\limits_{\sigma\in S_n}\prod_{i\in n}\alpha_{i,\sigma(i)} \sgn\sigma \right)} F(e).
+F(v_1,\dots,v_n)&=&F\left(\sum\limits_{j_1=1}^n\alpha_{1,j_1}e_{j_1},\dots,\sum\limits_{j_n=1}^n\alpha_{n,j_n}e_{j_n}\right)\\&=&\sum\limits_{j_1,\dots,j_n=1}^n\alpha_{1,j_1}\dots\alpha_{n,j_n}F\left(e_{j_1},\dots,e_{j_n}\right)\\&=&\sum\limits_{\sigma\in S_n}\alpha_{1,\sigma_1}\dots\alpha_{n,\sigma_n}F\left(e_{\sigma_1},\dots,e_{\sigma_n}\right)\\&=&\textcolor{red}{\left(\sum\limits_{\sigma\in S_n}\alpha_{1,\sigma_1}\dots\alpha_{n,\sigma_n} \sgn \ \sigma \right)} F(e_1,\dots,e_n).
 \end{array}
 \]
 \end{proof}
 
 \noindent
-Note então que o valor $\sum\limits_{\sigma\in S_n}\prod_{i\in n}\alpha_{i,\sigma(i)} \sgn\sigma$ \emph{determina} $F$ para qualquer $v \in V^n.$ Chamaremos este valor de \textbf{determinante} de $F.$
+Note então que o valor
+\[
+\sum\limits_{\sigma\in S_n}\alpha_{1,\sigma_1}\dots\alpha_{n,\sigma_n} \sgn \ \sigma 
+\]
+\emph{determina} $F$ para qualquer $v \in V^n.$ Chamaremos este valor de \textbf{determinante} de $F.$
 
 \begin{exemplo}
 
@@ -1204,7 +1228,10 @@ Note então que o valor $\sum\limits_{\sigma\in S_n}\prod_{i\in n}\alpha_{i,\sig
 
 Seja $K$ um corpo e consideremos o anel das matrizes $M_n(K)$. Identificaremos os elementos de $M_n(K)$ com os elementos de $(K^n)^n$ assim:
 \[
-A=(a_{i,j})_{(i,j)\in n\times n}\leftrightarrow ((a_{i,j})_{j\in n})_{i\in n}
+\begin{pmatrix}
+a_{1,1}&&a_{1,n}\\&\ddots&\\a_{n,1}&&a_{n,n}
+\end{pmatrix} \longleftrightarrow
+\left((a_{1,1},\dots,a_{1,n}),\dots,(a_{n,1},\dots,a_{n,n})\right).
 \]
 Portanto, uma função $n$-linear aqui é uma função $n$-linear nas linhas da matriz.
 
@@ -1219,32 +1246,32 @@ Pelo que vimos, existe e é única a função determinante: É a forma $n$-linea
 \noindent
 Logo, se $A=(a_{i,j})\in M_n(K)$, então:
 \[
-\det(A)=\sum_{\sigma\in S_n}\sgn(\sigma)\prod_{i\in n}a_{i,\sigma(i)}.
+\det(A)=\sum_{\sigma\in S_n}\sgn(\sigma)a_{1,\sigma_1}\dots a_{n,\sigma_n}.
 \]
 
 \begin{exemplo}
-Para $n=2$, temos $S_2=\{I,(0,1)\}$, e assim, sendo:
+Para $n=2$, temos $S_2=\{I,(1,2)\}$, e assim, sendo:
 \[
 A=\begin{pmatrix}
-a_{0,0}&a_{0,1}\\a_{1,0}&a_{1,1}
+a_{1,1}&a_{1,2}\\a_{2,1}&a_{2,2}
 \end{pmatrix},
 \]
 então temos:
 \[
-\det(A)=a_{0,0}a_{1,1}-a_{0,1}a_{1,0}.
+\det(A)=a_{1,1}a_{2,2}-a_{1,2}a_{2,1}.
 \]
 \end{exemplo}
 
 \begin{exemplo}
-Agora, se $n=3$, então $S_3=\{I,(0,1,2),(0,2,1),(0,1),(0,2),(1,2)\}$, e assim, sendo:
+Agora, se $n=3$, então $S_3=\{I,(1,2,3),(1,3,2),(1,2),(1,3),(2,3)\}$, e assim, sendo:
 \[
 A=\begin{pmatrix}
-a_{0,0}&a_{0,1}&a_{0,2}\\a_{1,0}&a_{1,1}&a_{1,2}\\a_{2,0}&a_{2,1}&a_{2,2}
+a_{1,1}&a_{1,2}&a_{1,3}\\a_{2,1}&a_{2,2}&a_{2,3}\\a_{3,1}&a_{3,2}&a_{3,3}
 \end{pmatrix},
 \]
 então temos:
 \[
-\det(A)=a_{0,0}a_{1,1}a_{2,2}+a_{0,1}a_{1,2}a_{2,0}+a_{0,2}a_{1,0}a_{2,1}-a_{0,1}a_{1,0}a_{2,2}-a_{0,2}a_{1,1}a_{2,0}-a_{0,0}a_{1,2}a_{2,1}.
+\det(A)=a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}+a_{1,3}a_{2,1}a_{3,2}-a_{1,2}a_{2,1}a_{3,3}-a_{1,3}a_{2,2}a_{3,1}-a_{1,1}a_{2,3}a_{3,2}.
 \]
 \end{exemplo}
 
@@ -1259,14 +1286,18 @@ Temos as seguintes propriedades:
 \begin{proof}
 Temos o seguinte:
 \begin{itemize}
-\item[1)] Sendo $A=(a_{i,j})_{(i,j)\in n\times n}$, então temos:
+\item[1)] Sendo $A=(a_{i,j})\in M_n(K)$, então temos:
 \[
-\begin{array}{rcl}
-\det(A)&=&\sum_{\sigma\in S_n}\sgn(\sigma)\prod_{i\in n}a_{i,\sigma(i)}\\&=&\sum_{\sigma\in S_n}\sgn(\sigma)\prod_{i\in n}a_{\sigma^{-1}(i),i}\\&=&\sum_{\tau\in S_n}\sgn(\tau^{-1})\prod_{i\in n}a_{\tau(i),i}\\&=&\sum_{\tau\in S_n}\sgn(\tau)\prod_{i\in n}a^t_{i,\tau(i)}\\&=&\det(A^t).
+\begin{array}{rccll}
+\det(A)&=&\sum\limits_{\sigma\in S_n}&\sgn(\sigma)&a_{1,\sigma_1}\dots a_{n,\sigma_n}\\&=&\sum\limits_{\sigma\in S_n}&\sgn(\sigma)&a_{\sigma^{-1}_1,1}\dots a_{\sigma^{-1}_n,n}\\&=&\sum\limits_{\tau\in S_n}&\sgn(\tau^{-1})&a_{\tau_1,1}\dots a_{\tau_n,n}\\&=&\sum\limits_{\tau\in S_n}&\sgn(\tau)&a^t_{1,\tau_1}\dots,a^t_{n,\tau_n}\\&=&\det(A^t).&&
 \end{array}
 \]
 \item[2)] Seja $F_A:M_n(K)\rightarrow K$ tal que $\forall X\in M_n(K):F_A(X)=\det(AX)$. Então a função $F_A$ é uma função $n$-linear alternada sobre as colunas, mas também $F_A(I)=\det(A)$, aí $F_A(B)=\det(A)\det(B)$, assim $\det(AB)=\det(A)\det(B)$
-\item[3)] Se $A$ é inversível, então existe a inversa $A^{-1}$, assim $1=\det(I)=\det(AA^{-1})=\det(A)\det(A)^{-1}$, aí $\det(A)\neq 0$ e $\det(A^{-1})=(\det(A))^{-1}$. Por outro lado, se $\det(A)\neq 0$, então $\det(A^t)\neq 0$, aí as colunas de $A$ são linearmente independentes, aí consideremos $T:K^n\rightarrow K^n$ tal que $[T]_{\mathrm{can}}=A$, então $T$ é inversível, assim $A=[T]_{\mathrm{can}}$ é inversível.
+\item[3)] Se $A$ é inversível, então existe a inversa $A^{-1}$, assim:
+\[
+1=\det(I)=\det(AA^{-1})=\det(A)\det(A)^{-1},
+\]
+aí $\det(A)\neq 0$ e $\det(A^{-1})=(\det(A))^{-1}$. Por outro lado, se $\det(A)\neq 0$, então $\det(A^t)\neq 0$, aí as colunas de $A$ são linearmente independentes, aí consideremos $T:K^n\rightarrow K^n$ tal que $[T]_{\mathrm{can}}=A$, então $T$ é inversível, assim $A=[T]_{\mathrm{can}}$ é inversível.
 \end{itemize}
 \end{proof}
 
@@ -1297,9 +1328,13 @@ em que $B\in M_r(K)$ e $D\in M_{n-r}(K)$ e $C\in M_{n-r,r}(K)$ e $0\in M_{r,n-r}
 \begin{proof}
 Temos o seguinte:
 \begin{itemize}
-\item[1)] Seja $A=(a_{i,j})_{(i,j)\in n\times n}$ uma matriz triangular inferior, então para $i,j\in n$ tais que $i<j$ temos $a_{i,j}=0$, mas a única permutação $\sigma\in S_n$ tal que $\forall i\in n:i\geq\sigma(i)$ é a identidade, assim temos:
+\item[1)] Seja $A=(a_{i,j})\in M_n(K)$ uma matriz triangular inferior, então para $i<j$ temos $a_{i,j}=0$, mas a única permutação $\sigma\in S_n$ tal que para todo $i=1,\dots,n$ tenhamos $i\geq\sigma_i$ é a permutação identidade $I$, assim temos:
 \[
-\det(A)=\sum_{\sigma\in S_n}\sgn(\sigma)\prod_{i\in n}a_{i,\sigma(i)}=\sgn(I)\prod_{i\in n}a_{i,I(i)}=\prod_{i\in n}a_{i,i}.
+\begin{array}{rcl}
+\det(A)&=&\sum_{\sigma\in S_n}\sgn(\sigma)a_{1,\sigma_1}\dots a_{n,\sigma_n}\\
+&=&\sgn(I)a_{1,I_1}\dots a_{n,I_n}\\
+&=&a_{1,1}\dots a_{n,n}.
+\end{array}
 \]
 \item[2)] Seja $F:M_r(K)\rightarrow K$ tal que:
 \[
@@ -1331,24 +1366,33 @@ assim $G(Y)=\det(Y)$, aí $F(I)=G(D)=\det(D)$, assim $F(X)=F(I)\det(X)=\det(X)\d
 Agora temos a \textbf{regra de Laplace}:
 
 \begin{teorema}
-Dada $A\in M_n(K)$, indicaremos por $M_{i,j}$ a matriz quadrada de tamanho $n-1$ obtida a partir de $A$ eliminando a linha $i$ e a coluna $j$.
+Dada $A=(a_{i,j})\in M_n(K)$, indicaremos por $M_{i,j}$ a matriz quadrada de tamanho $n-1$ obtida a partir de $A$ eliminando a linha $i$ e a coluna $j$.
 
 \smallskip
 \noindent
-Para cada $i\in n$, então vale:
+Para cada $i=1,\dots,n$, então vale:
 \[
-\det(A)=\sum_{j\in n}(-1)^{i+j}a_{i,j}\det(M_{i,j}).
+\det(A)=\sum_{j=1}^n(-1)^{i+j}a_{i,j}\det(M_{i,j}).
 \]
-Para cada $j\in n$, então vale:
+Para cada $j=1,\dots,n$, então vale:
 \[
-\det(A)=\sum_{i\in n}(-1)^{i+j}a_{i,j}\det(M_{i,j}).
+\det(A)=\sum_{i=1}^n(-1)^{i+j}a_{i,j}\det(M_{i,j}).
 \]
 \end{teorema}
 \begin{proof}
 Provaremos a primeira afirmação pois a segunda é análoga.
 \end{proof}
-\textcolor{red}{AULA DE 19 DE AGOSTO (COLOCAREI ASSIM QUE CONSEGUIR)- FICOU
-  FALTANDO A PROVA DA REGRA DE LAPLACE E A PARTE DE MATRIZES SOBRE ANEIS COMUTATIVOS}
+
+\medskip
+\noindent
+\textcolor{red}{AULA DE 19 DE AGOSTO (COLOCAREI ASSIM QUE CONSEGUIR)}
+
+\medskip
+\noindent
+\textcolor{red}{FICOU FALTANDO A PROVA DA REGRA DE LAPLACE E A PARTE DE MATRIZES SOBRE ANEIS COMUTATIVOS}
+
+\medskip
+\noindent
 Bláa blá blá
 
 \chapter{Formas Canônicas}
@@ -1356,18 +1400,24 @@ Bláa blá blá
 \section{Autovalores e Autovetores}
 
 \begin{definicao}
-Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). Um vetor \(v\in V\) é um \textbf{autovetor} de \(T\) se existe \(\lambda\in K\) tal que \(T(v)=\lambda v\). O escalar \(\lambda\) é um \textbf{autovalor} do operador \(T\). Dizemos que \(v\) é um autovetor associado com o autovalor \(\lambda\).
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\).
+\begin{itemize}
+\item Para $\lambda\in K$, dizemos que $\lambda$ é um \textbf{autovalor} de $T$ se existe um $v\neq 0$ tal que $T(v)=\lambda v$.
+\item Para $\lambda\in K$, um \textbf{autovetor} associado a $\lambda$ é um $v\in V$ tal que $T(v)=\lambda v$.
+\item Para $\lambda\in K$, chamamos de \textbf{autoespaço} associado a $\lambda$ o conjunto $V_T(\lambda)$ dos autovetores associados a $\lambda$.
+\end{itemize}
 \end{definicao}
 
 \begin{exemplo}
-Seja \(V=\mathbb{C}^1(\mathbb{R})\) e considere o operador linear \(T\in\mathcal{L}(V)\) tal que \(T(v)=v^\prime\) para cada \(v\in V\). Considere \(v=e^{\lambda x}\) com \(\lambda\in K\). Então \(T(v)=\lambda e^{\lambda x}=\lambda v\). Ou seja \(v\) é um autovetor associado com o autovalor \(\lambda\).
+Seja \(V=\mathbb{C}^1(\mathbb{R})\) e considere o operador linear \(T\in\mathcal{L}(V)\) tal que \(T(v)=v^\prime\) para cada \(v\in V\). Considere \(v=e^{\lambda x}\) com \(\lambda\in K\). Então \(T(v)=\lambda e^{\lambda x}=\lambda v\). Ou seja \(v\) é um autovetor associado a \(\lambda\).
 \end{exemplo}
 
 \begin{definicao}
-Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). O \emph{spectrum} do operador \(T\) é o conjunto
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). O \textbf{spectrum} do operador \(T\) é o conjunto:
 \[\text{Spec}(T)\coloneqq\{\lambda\in K\,\colon \lambda \text{ é autovalor de } T\}.\]
-Para cada \(\lambda\in\text{Spec}(T)\), denotamos o conjunto dos autovetores associados a \(\lambda\) como \(V_T(\lambda)\).
 \end{definicao}
+
+\noindent
 No contexto da definição anterior, considere
 \(\lambda\in\text{Spec}(T)\). Então
 \begin{align*}
@@ -1375,64 +1425,68 @@ v\in V_T(\lambda)&\iff T(v)=\lambda v\\&\iff (T-\lambda I)(v)=0\\&\iff v\in\text
 \end{align*}
 
 \noindent
-\textcolor{red}{ALGUMA COISA QUE EU PERDI}
-
-\medskip
-\noindent
 Ainda no mesmo contexto, vamos assumir agora que \(\text{dim}(V)=n<\infty\). Então temos 
 que \[\lambda\in\text{Spec}(T)\implies\text{Ker}(T-\lambda I)\not =\{0\}\implies\text{det}(T-\lambda I)=0.\]
 Reciprocamente, se \(\text{det}(T-\lambda I)=0\) então \(V_T(\lambda)=\text{Ker}(T-\lambda I)\not=\{0\}\).
 \begin{definicao}
-Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). O \emph{ polinômio característico} de \(T\) é a função \(p_T(\lambda)\colon K\to K\) dada por
-\[p_T(\lambda)\coloneqq\text{det}(T-\lambda I), \text{ para cada }\lambda\in K.\]
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) e seja \(T\in\mathcal{L}(V)\). O \textbf{polinômio característico} de \(T\) é o polinômio:
+\[p_T(t)\coloneqq\text{det}(tI-T).\]
 \end{definicao}
+
+\noindent
 Note que \(\lambda\in\text{Spec}(T)\) se e só se \(\lambda\) é raiz de \(p_T(\lambda)\). Além disso, note que se  \(B\) e \(B^\prime\) são bases \(V\), então \(p_T(\lambda)=p_{[T]_B}(\lambda)\). De fato, se \(P\) é a matriz de mudança da base \(B\) para a base \(B^\prime\), então
 \begin{align*}
-    [\lambda I - T]_{B^\prime}&=P^{-1}[\lambda I - T]_{B}P
+[\lambda I - T]_{B^\prime}&=P^{-1}[\lambda I - T]_{B}P
 \end{align*}
 Isso implica que \[\text{det}([\lambda I- T]_{B^\prime})=\text{det}(P^{-1})\text{det}([\lambda I - T]_B)\text{det}(P).\]
-Ou seja, \(\text{det}([\lambda I- T]_{B^\prime})=\text{det}([\lambda I - T]_B)\).
+Ou seja,
+\[\text{det}([\lambda I- T]_{B^\prime})=\text{det}([\lambda I - T]_B).\]
 \begin{exemplo}
 Seja \(T\in\mathcal{L}(\mathbb{R}^2)\) tal que \[[T]_{\text{can}}=\begin{pmatrix}
 0 & -1\\1 & 0
 \end{pmatrix}.\]
-Isto é, \(T((x,y))=(-y,x)\) para cada \((x,y)\in\mathbb{R}^2\). Então 
+Isto é, \(T(x,y)=(-y,x)\) para cada \((x,y)\in\mathbb{R}^2\). Então 
 \begin{align*}
-p_T(\lambda)&=\text{det}\Bigg(\begin{pmatrix}
--\lambda & -1\\1 & -\lambda
-\end{pmatrix}\Bigg)\\&=\lambda^2+1.
+p_T(x)&=\text{det}\begin{pmatrix}
+x & 1\\-1 & x
+\end{pmatrix}\\&=x^2+1.
 \end{align*}
-Dessa forma, \(\text{Spec}(T)=\varnothing\) pois \(p_T(\lambda)\) não possui raízes em \(K=\mathbb{R}\).
+Dessa forma, \(\text{Spec}(T)=\varnothing\) pois \(p_T(x)\) não possui raízes em \(K=\mathbb{R}\).
 \end{exemplo}
+
 \begin{exemplo}
 Seja \(T\in\mathcal{L}(\mathbb{R}^3)\) tal que\[[T]_{\text{can}}=\begin{pmatrix}
 3 & 1 & -1\\2 & 2 & -1\\ 2 & 2 & 0
 \end{pmatrix}.\]
-Então \begin{align*}
-p_T(\lambda)&=\text{det}\left(\begin{pmatrix}
-3-\lambda & 1 & -1\\2 & 2-\lambda & -1\\ 2 & 2 & -\lambda
-\end{pmatrix}\right)\\&=(\lambda-1)^2(\lambda-2).
+Então:
+\begin{align*}
+p_T(x)&=\text{det}\begin{pmatrix}
+x-3 & -1 & 1 \\ -2 & x-2 & 1 \\ -2 & -2 & x
+\end{pmatrix}\\&=(x-1)^2(x-2).
 \end{align*}
 Isso implica que \(\text{Spec}(T)=\{1,2\}\). Além disso, temos que
-\[V_T(1)=\text{Ker}(T-I)=\text{Ker}(\begin{pmatrix}
+\[V_T(1)=\text{Ker}(T-I)=\text{Ker}\begin{pmatrix}
 2 & 1 & -1\\2 & 1 & -1\\ 2 & 2 & -1
-\end{pmatrix})=\langle (1,0,2)\rangle.\]
+\end{pmatrix}=\langle (1,0,2)\rangle.\]
 e ainda
-\[V_T(2)=\text{Ker}(T-2 I)=\text{Ker}(\begin{pmatrix}
+\[V_T(2)=\text{Ker}(T-2 I)=\text{Ker}\begin{pmatrix}
 1 & 1 & -1\\2 & 0 & -1\\ 2 & 2 & -2
-\end{pmatrix})=\langle (1,1,2)\rangle\]
+\end{pmatrix}=\langle (1,1,2)\rangle\]
 \end{exemplo}
+
 \begin{exemplo}
 Seja \(T\in\mathcal{L}(\mathbb{R}^3)\) tal que
 \[[T]_{\text{can}}=\begin{pmatrix}
 1 & 2 & -1\\-2 & -3 & -1\\ 2 & 2 & -2
 \end{pmatrix}.\]
-Neste caso temos que \begin{align*}
-p_T(\lambda)&=\text{det}(\begin{pmatrix}
-1- \lambda & 2 & -1\\-2 & -3 - \lambda & -1\\ 2 & 2 & -2-\lambda
-\end{pmatrix})\\&=(\lambda+1)^2(\lambda+2).    \end{align*}
-Isso implica que \(\text{Spec}(T)=\{-1,-2\}\) e ainda \[V_T(-1)=\langle\{ (1,0,2),(0,1,2)\}\rangle\] e
-\[V_T(-2)=\langle (1,-1,1)\rangle\].
+Neste caso temos que
+\begin{align*}
+p_T(x)&=\text{det}\begin{pmatrix}
+x-1 & -2 & 1\\2 & x+3 & 1\\ -2 & -2 & x+2
+\end{pmatrix}\\&=(x+1)^2(x+2).
+\end{align*}
+Isso implica que \(\text{Spec}(T)=\{-1,-2\}\) e ainda \[V_T(-1)=\langle(1,0,2),(0,1,2)\rangle\] e
+\[V_T(-2)=\langle (1,-1,1)\rangle.\]
 Uma vez que os autovetores acima são L.I, eles formam uma base \(B\) de \(\mathbb{R}^3\) e 
 \[[T]_B=\begin{pmatrix}
 -1 & 0 & 0\\0 & -1 & 0\\ 0 & 0 & -2
@@ -1440,67 +1494,99 @@ Uma vez que os autovetores acima são L.I, eles formam uma base \(B\) de \(\math
 é uma matriz diagonal.
 \end{exemplo}
 \begin{teorema}
-Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\). São equivalentes:
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\), e sejam $\lambda_1,\dots,\lambda_k$ os autovalores distintos, e para $i=1,\dots,k$ seja $n_k=\text{dim} \ V_T(\lambda_i)$. São equivalentes:
 \begin{enumerate}
-    \item \(T\) é diagonalizável.
-    \item \(p_T(t)=(t-\lambda_1)^{n_1}\ldots(t-\lambda_k)^{n_k}\) e \(\text{dim}(V_T(\lambda_i))=n_i\) para cada \(i\in [k]\).
-    \item\(\text{dim}((V_T(\lambda_1))+\ldots+\text{dim}(V_T(\lambda_k))=\text{dim}(V)=n.\)
+\item \(T\) é diagonalizável.
+\item \(p_T(t)=(t-\lambda_1)^{n_1}\ldots(t-\lambda_k)^{n_k}\).
+\item \(n_1+\ldots+n_k=n.\)
 \end{enumerate}
 \end{teorema}
-\begin{lema}
-Seja \(\{\lambda_i\}_{i\in [k]}\subseteq\text{Spec}(T).\)
+\begin{lema}\label{autoespaco}
+Sejam \(\lambda_1,\dots,\lambda_k\in K\) distintos. Então:
 \begin{enumerate}
-    \item Se \(v_i \in V_T(\lambda_i)\) para cada \(i\in [k]\) e \(v_1+\ldots+v_k=0\), então \(v_1=\ldots=v_k=0\).
-    \item Se \(B_i\subseteq V_T(\lambda_i)\) é L.I para cada \(i\in [k]\), então \(\bigcup_{i\in [k]}B_i\) é L.I.
+\item Se \(v_i \in V_T(\lambda_i)\) para cada \(i=1,\dots,k\) e \(v_1+\ldots+v_k=0\), então \(v_1=\ldots=v_k=0\).
+\item Se \(B_i\subseteq V_T(\lambda_i)\) é L.I para cada \(i=1,\dots,k\), então $B_1\cup\dots\cup B_k$ é L.I.
 \end{enumerate}
 \end{lema}
 \begin{proof}[Demonstração do Lema]\hfill
 \begin{enumerate}
 \item Vamos provar essa afirmação por indução em \(k\). Primeiro note que o
-      resultado é trivial quando \(k=1\). Agora seja \(k\in\mathbb{N}\) e
-      assuma  que o resultado vale para cada natural \(i < k\). Sejam
-      \(v_1,\ldots,v_k\) tais que \(v_i\in V_T(\lambda_i)\) para cada \(\i\in
-      [k]\) e \(v_1+\ldots + v_k=0\). Então temos que 
-      \begin{equation}\label{primeira}
-      \lambda_1(v_1+\ldots+v_k)=0\lambda_1=0.
-    \end{equation}
-    Além disso, é claro que
-      \begin{equation}\label{segunda}
-      T(v_1+\ldots +v_k)=\lambda_1v_1+\ldots +\lambda_kv_k=0.
-      \end{equation}
-      Subtraindo a Equação \ref{primeira} de \ref{segunda}, obtemos
-      \begin{equation}\label{terceira}
-       (\lambda_1-\lambda_1)v_1+(\lambda_2-\lambda_1)v_2+\ldots +(\lambda_k-\lambda_1)v_k=0.
-     \end{equation}
-     Agora notamos que cada termo no lado esquerdo é um autovetor de \(T\)     e
-     aplicamos a hipótese de indução para concluir que \(v_2=\ldots =v_k=0
-     \). Finalmente, como sabemos que \(v_1+\ldots +v_k=0\) e \(v_2=\ldots =
-     v_k=0\), obtemos que \(v_1=0\) também, o que conclui nossa prova.
-     \item Seja \(S\subseteq\bigcup_{i\in [k]}B_i\) finito e seja \(\alpha\colon S\to\mathbb{R}\). Note que
-       \(V_T(\lambda_i)\cap V_T(\lambda_j)=\{0\}\) sempre que \(i,j\in [k]\) e
-       \(i\not=j\) e então podemos escrever
-       \[\sum_{v\in S}\alpha_iv_i=\sum_{v\in S_1}\alpha_v v+\ldots+\sum_{v\in
-           S_k}\alpha_vv,\]
-       onde \(S_i\subseteq B_i\) é finito para cada \(i\in [k]\). Utilizan
-       do o fato de que o termo \mbox{\(\sum_{v\in S_i}\alpha_v v\in V_T(\lambda_i)\)}
-       para cada \(i\in [k]\) e aplicando o item anterior, obtemos que
-       \[\sum_{v\in S_1}\alpha_vv=\ldots=\sum_{v\in S_k}\alpha_vv=0.\]
-       Finalmente como como \(S_i\subseteq B_i\) para cada \(i\in [k]\) e
-       \(B_i\) é sempre L.I por hipótese segue que a restrição de \(\alpha\) a
-       cada \(S_i\) é identicamente nula. Como \(S=\bigcup_{i\in [k]}S_i\) segue
-       que \(\alpha\) é indenticamente nula.\qedhere
-    \end{enumerate}
+resultado é trivial quando \(k=1\). Agora seja \(k\in\mathbb{N}\) e
+assuma  que o resultado vale para cada natural \(i < k\). Sejam
+\(v_1,\ldots,v_k\) tais que \(v_i\in V_T(\lambda_i)\) para cada \(i=1,\dots,k\) 
+e \(v_1+\ldots + v_k=0\). Então:
+\begin{equation}\label{primeira}
+0=\lambda_10=\lambda_1(v_1+v_2+\ldots+v_k)=\lambda_1v_1+\lambda_1v_2+\ldots+\lambda_1v_k.
+\end{equation}
+Além disso, é claro que:
+\begin{equation}\label{segunda}
+0=T(0)=T(v_1+v_2+\ldots+v_k)=\lambda_1v_1+\lambda_2v_2+\ldots+\lambda_kv_k.
+\end{equation}
+Subtraindo a Equação \ref{primeira} de \ref{segunda}, obtemos:
+\begin{equation}\label{terceira}
+(\lambda_2-\lambda_1)v_2+\ldots +(\lambda_k-\lambda_1)v_k=0.
+\end{equation}
+Agora notamos que cada termo $(\lambda_i-\lambda_1)v_i$ no lado esquerdo é um autovetor de \(T\) associado a $\lambda_i$ e 
+aplicamos a hipótese de indução para concluir que \(v_2=\ldots =v_k=0\). 
+Finalmente, como sabemos que \(v_1+\ldots +v_k=0\) e \(v_2=\ldots =
+v_k=0\), obtemos que \(v_1=0\) também, o que conclui nossa prova.
+\item Seja \(S\subseteq B_1\cup\dots\cup B_k\) finito e seja \(\alpha\colon S\to\mathbb{R}\) tal que:
+\[
+\sum_{v\in S}\alpha_vv=0.
+\]
+Note que
+\(V_T(\lambda_i)\cap V_T(\lambda_j)=\{0\}\) sempre que e
+\(i\not=j\) e então podemos escrever
+\[\sum_{v\in S}\alpha_vv=\sum_{v\in S_1}\alpha_v v+\ldots+\sum_{v\in
+S_k}\alpha_vv,\]
+onde \(S_i\subseteq B_i\) é finito para cada \(i=1,\dots,k\). Utilizando o fato de que:
+\[
+\sum_{v\in S_i}\alpha_v v\in V_T(\lambda_i)
+\]
+para cada \(i=1,\dots,k\) e aplicando o item anterior, obtemos que
+\[\sum_{v\in S_1}\alpha_vv=\ldots=\sum_{v\in S_k}\alpha_vv=0.\]
+Finalmente como como \(S_i\subseteq B_i\) para cada \(i=1,\dots,k\) e
+\(B_i\) é sempre L.I por hipótese segue que a restrição de \(\alpha\) a
+cada \(S_i\) é identicamente nula. Como \(S=S_1\cup\dots\cup S_k\), segue
+que \(\alpha\) é indenticamente nula. \qedhere
+\end{enumerate}
 \end{proof}
 
 \begin{proof}
+Temos o seguinte:
 \begin{itemize}
-\item (i)$\Rightarrow$(ii): Sejam $(v_{i,j})_{j\in n_i}$ autovetores associados
-  a $\lambda_i\in\text{Spec}(T)$\textcolor{red}{TERMINAR ESSA IMPLICAÇÃO}  
-\item (ii)\(\Rightarrow\)(iii):\[\text{dim}(V_T(\lambda_1))+\ldots +\text{dim}(V_T(\lambda_k))=n_1+\ldots +n_k=\text{deg}(p_T(t))=\text{dim}(V)=n.\]
-\item (iii)\(\Rightarrow\)(i): Para cada \(i\in [k]\) considere uma base \(B_i\)
-  de \(V_T(\lambda_i)\). Seja \(B=\bigcup_{i\in [k]}B_i\). Pelo lema anterior,
-  temos que \(B\) é L.I. Como \(\vert B\vert =n\) segue que \(B\) é uma base de
-  \(V\). Além disso, \(B\) é uma base de autovetores de \(T\). Logo, \(T\) é diagonalizável.
+\item (i)$\Rightarrow$(ii): Seja $B$ uma base tal que:
+\[
+[T]_B=\begin{pmatrix}
+\lambda_1I_{m_1}&&\\&\ddots&\\&&\lambda_kI_{m_k}
+\end{pmatrix},
+\]
+em que $m_1,\dots,m_k$ são inteiros positivos. Então o polinômio característico de $T$ é:
+\[
+p_T(t)=(t-\lambda_1)^{m_1}\ldots(t-\lambda_k)^{m_k}.
+\]
+Além disso, para $i=1,\dots,k$, então a matriz de $T-\lambda_iI$ é igual a:
+\[
+\begin{pmatrix}
+(\lambda_1-\lambda_i)I_{m_1}&&&&\\&\ddots&&&\\&&0_{m_i}&&\\&&&\ddots&\\&&&&(\lambda_k-\lambda_i)I_{m_k}
+\end{pmatrix},
+\]
+aí é fácil ver que:
+\[
+n_i=\mathrm{dim} \ V_T(\lambda_i)=\mathrm{dim} \ \mathrm{Ker}(T-\lambda_iI)=m_i,
+\]
+ou seja, $n_i=m_i$; assim:
+\[
+p_T(t)=(t-\lambda_1)^{n_1}\ldots(t-\lambda_k)^{n_k}.
+\]
+\item (ii)\(\Rightarrow\)(iii): O polinômio característico de $T$ tem grau $n$, aí:
+\[
+n_1+\ldots+n_k=\text{deg}(p_T(t))=n.
+\]
+\item (iii)\(\Rightarrow\)(i): Para cada \(i=1,\dots,k\) considere uma base \(B_i\)
+de \(V_T(\lambda_i)\). Seja \(B=B_1\cup\dots\cup B_k\). Pelo Lema \ref{autoespaco},
+temos que \(B\) é L.I. Como \(\vert B\vert =n\) segue que \(B\) é uma base de
+\(V\). Além disso, \(B\) é uma base de autovetores de \(T\). Logo, \(T\) é diagonalizável.
 \end{itemize}
 \end{proof}
 
@@ -1511,7 +1597,15 @@ Seja $V$ um espaço sobre $K$, $\dim V=n<\infty$, $T\in\mathcal{L}(V)$. Definamo
 \end{definicao}
 
 \noindent
-Lembremo-nos de que, se $\dim(U)=m$ e $\dim(V)=n$, então $\dim\mathcal{L}(U,V)=mn$. Assim, se $V$ é um espaço vetorial tal que $\dim(V)=n<\infty$, então $\dim\mathcal{L}(V)=n^2$, de modo que existe $m\leq n^2+1$ tal que os operadores $I,T,T^2,\dots,T^m$ sejam linearmente dependentes. Seja $m$ um número minimal tal que $T^m\in\langle I,T,\dots,T^{m-1}\rangle$. Então $T^m=a_0\cdot I+a_1\cdot T+\dots a_{m-1}T^{m-1}$, com $a_i\in K$. Seja $m_T(t)=t^m-a_{m-1}t^{m-1}-\dots-a_1t-a_0$, então $m_T(t)=0$, e $m_T(t)$ é um polinômio de menor grau tal que $m_T(t)=0$.
+Lembremo-nos de que, se $\dim(U)=m$ e $\dim(V)=n$, então $\dim\mathcal{L}(U,V)=mn$. Assim, se $V$ é um espaço vetorial tal que $\dim(V)=n<\infty$, então $\dim\mathcal{L}(V)=n^2$, de modo que existe $m\leq n^2+1$ tal que os operadores $I,T,T^2,\dots,T^m$ sejam linearmente dependentes. Seja $m$ o menor deles. Então existem $a_0,\dots,a_{m-1}\in K$ tais que:
+\[
+T^m+a_{m-1}T^{m-1}+\dots+a_1T+a_0I=0.
+\]
+Seja:
+\[
+m_T(t)=t^m+a_{m-1}t^{m-1}+\dots+a_1t+a_0,
+\]
+então $m_T(T)=0$, e $m_T(t)$ é um polinômio mônico de grau mínimo tal que $m_T(T)=0$.
 
 \begin{definicao}
 Um polinômio mônico de grau mínimo tal que $m_T(t)\in K[t]$ tal que $m_T(t)=0$ chama-se um \textbf{polinômio minimal} do operador $T$. Chamemos um polinômio $f(t)\in K[t]$ de um \textbf{polinômio anulador} de $T$ se $f(T)=0$.
@@ -1544,7 +1638,7 @@ Dividimos $f(t)$ por $m_{T,v}(t)$ (com resto):
 \[
 f(t)=m_{T,v}(t)\cdot q(t)+r(t),\quad\quad\deg(r(t))<\deg(m_{T,v}(t))\text{ ou }r(t)=0.
 \]
-Como $f(T)(v)=0$ e $m_{T,v}(v)=0$, então $r(T)(v)=0$, aí $r(t)=0$.
+Como $f(T)(v)=0$ e $m_{T,v}(T)(v)=0$, então $r(T)(v)=0$, aí $r(t)=0$.
 \end{proof}
 
 \begin{corolario}
@@ -1578,21 +1672,30 @@ aí $T(v)=\lambda v$, aí $\lambda\in\mathrm{Spec}(T)$.
 
 \medskip
 \noindent
-Por outro lado, se $\lambda\in\mathrm{Spec}(T)$, seja $v\in V$ tal que $v\neq 0$ e $T(v)=\lambda v$, então $T(T(v))=\lambda^2 v,\dots,T^m(v)=\lambda^m v,\dots$, aí para $f(t)\in K[t]$ temos $f(T)(v)=f(\lambda)\cdot v$, aí $0=m_T(T)(v)=m_T(\lambda)\cdot v$, aí $m_T(\lambda)=0$.
+Por outro lado, se $\lambda\in\mathrm{Spec}(T)$, seja $v\in V$ tal que $v\neq 0$ e $T(v)=\lambda v$, então:
+\[
+T(T(v))=\lambda^2 v,\dots,T^m(v)=\lambda^m v,\dots,
+\]
+aí para $f(t)\in K[t]$ temos $f(T)(v)=f(\lambda)\cdot v$, aí $0=m_T(T)(v)=m_T(\lambda)\cdot v$, aí $m_T(\lambda)=0$.
 \end{proof}
 
-\begin{corolario}
-Se $T$ é diagonalizável e $\mathrm{Spec}(T)=\{\lambda_i\}_{i\in r}$, então $m_T(t)=\prod_{i\in r}(t-\lambda_i)$.
+\begin{corolario}\label{diagonal}
+Se $T$ é diagonalizável e $\mathrm{Spec}(T)=\{\lambda_1,\dots,\lambda_r\}$, então:
+\[
+m_T(t)=(t-\lambda_1)\dots(t-\lambda_r).
+\]
 \end{corolario}
 
-\noindent
-Se $\mathrm{Spec}(T)=\{\lambda_i\}_{i\in r}$, então:
-\[
-V=\sum_{i\in r}V_T(\lambda_i).
-\]
-
 \begin{proof}
-Já sabemos que $m_T(t)=\left(\prod_{i\in r}(t-\lambda_i)^{k_i}\right)$ em que $q(t)$ não tem raízes em $K$. Basta provar que $(T-\lambda_0 I)\dots(T-\lambda_{r-1} I)=0$. Seja $v\in V$, $v=v_0+\dots+v_{r-1}$, com $v_i\in V_T(\lambda_i)$, então temos $(T-\lambda_i I)(v_i)=0$, portanto $()(v_i)=0$, e logo $()(v)=0$. Então o polinômio $f(t)=(t-\lambda_0)\dots$ é um polinômio anulador para $T$, aí $m_T(t)\mid f(t)$, aí $m_T(t)=f(t)$.
+Já sabemos que:
+\[
+m_T(t)=(t-\lambda_1)^{k_1}\dots(t-\lambda_r)^{k_r}q(t)
+\]
+em que $q(t)$ não tem raízes em $K$. Seja
+\[
+f(t)=(t-\lambda_1I)\dots(t-\lambda_rI).
+\]
+Seja $v\in V$, então $v=v_1+\dots+v_r$ para alguns $v_i\in V_T(\lambda_i)$, aí temos $(T-\lambda_iI)(v_i)=0$, aí $f(T)(v_i)=0$; logo $f(T)(v)=0$. Portanto $f(T)=0$, aí $m_T\mid f$, aí $m_T=f$.
 \end{proof}
 
 \section{Subespaços Invariantes}
@@ -1607,47 +1710,11 @@ Um subespaço é $T$-invariante se e só se é um $K[t]$-submódulo.
 \begin{exemplo}
 Seja \(V=\mathbb{C}(\mathbb{R})\) e considere o operador \(D\colon f\to
 f^\prime\). Então o subespaço\[P_n\coloneqq\{f(t)\in\mathbb{R}[t]\,\colon
-  \text{deg}(f)\leq n\}\] é \(D\)-invariante. 
+\text{deg}(f)\leq n\}\] é \(D\)-invariante. 
 \end{exemplo}
-  \noindent
-Seja $\dim(V)=n$ e $T\in\mathcal{L}(V)$, $W\subseteq V$ um subespaço
-$T$-invariante. Escolhemos uma base $B_1=\{v_i\}_{i\in m}$ de $W$ e
-completemo-la até uma base $B=\{v_i\}_{i\in n}$ do espaço $V$. Qual é a matriz
-$[T]_B$?
-
-Vamos começar notando que \(T\) é \(W\)-invariante e então 
-\begin{align*}
-&T(v_1)=\sum_{i\in m}\alpha_{1i}v_i\\&T(v_2)=\sum_{i\in m}\alpha_{2i}v_i\\&\ldots\\&T(v_m)=\sum_{i\in m}\alpha_{mi}v_i\\&T(v_{m+1})=\sum_{i\in n}\alpha_{(m+1)i}v_i\\&\ldots\\&T(v_n)=\sum_{i\in n}\alpha_{ni}v_i.
-\end{align*}
-
-Dessa forma segue que
-\[[T]_B=\begin{pmatrix}
-    \alpha_{11} & \ldots & \alpha_{1m} &\alpha_{1(m+1)}& \ldots & \alpha_{1n}
-    \\ \ldots & \ldots & \ldots & \ldots &\ldots & \ldots
-    \\\alpha_{m1} & \ldots & \alpha_{mm} & \alpha_{m(m+1)} & \ldots &
-    \alpha_{mn}\\ 0 & \ldots & 0 & \alpha_{(m+1)(m+1)}&\ldots &\alpha_{(m+1)n}\\
-    \ldots & \ldots & \ldots & \ldots &\ldots & \ldots \\ 0 & 0 & 0
-    &\alpha_{n(m+1)} & \ldots & \alpha_{nn}
-\end{pmatrix}.\]
-
-Isto é, a matriz de \(T\) na base \(B\) tem a forma
-
-\[[T]_B=\begin{pmatrix}
-    A & * \\ 0 & B\end{pmatrix},\]
-onde \(A\in M_m(K)\) e \(B\in M_{n-m}(K)\). Note que \(A\) é a matriz da
-restrição de \(T\) a \(W\) na base \(B_1\).
-
-Vamos agora considerar a restrição de \(T\) a \(W\), denotada por
-\(T\upharpoonright W\). Claramente, temos que \(T\upharpoonright
-W\in\mathcal{L}(W)\). Considere \(\bar{V}\coloneqq\frac{V}{W}\) e seja 
-\(\pi\colon V\to\bar{V}\) uma projeção. Seja \(\bar{T}\coloneqq \pi\circ T\).
-Então \(\bar{T}\in\mathcal{L}(V,\bar{V})\) e \(W\subseteq\text{Ker}(\bar{T})\).
-De fato, para cada \(w\in W\) temos \[\pi(T(w))\in \pi(W)=0.\]
-Além disso, \(\bar{T}\) induz um operador linear
-\(\tilde{T}\in\mathcal{L}(\bar{V})\) definido por \(\tilde{T}(v+W)=\bar{T}(v)\).
 
 \begin{proposicao}
-Seja \(V\) um espaço vetorial sobre um corpo \(K\), seja \(T\in\mathcal{L}(V)\)
+Seja \(V\) um espaço vetorial de dimensão finita sobre um corpo \(K\), seja \(T\in\mathcal{L}(V)\)
 e seja \(W\) um subespaço \(T\)-invariante de \(V\). Seja $B_1$ uma base de $W$ e seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$. Então $\overline{B}_2=\{\overline{b}:b\in B_2\}$ é uma base de $V/W$ e, sendo $\overline{T}\in L(V/W)$ o operador induzido, temos:
 \[
 [T]_B=
@@ -1657,30 +1724,97 @@ e seja \(W\) um subespaço \(T\)-invariante de \(V\). Seja $B_1$ uma base de $W$
 \]
 \end{proposicao}
 \begin{proof}
-\textcolor{red}{COMPLETAR}
+Seja $\dim(V)=\textcolor{blue}{n}$ e $T\in\mathcal{L}(V)$, e seja $W\subseteq V$ um subespaço
+$T$-invariante. Escolhemos uma base $B_1=\{v_1,\dots,v_{\textcolor{red}{m}}\}$ de $W$ e
+completemo-la até uma base $B=\{v_1,\dots,v_{\textcolor{red}{m}},v_{m+1},\dots,v_{\textcolor{blue}{n}}\}$ do espaço $V$. Qual é a matriz
+$[T]_B$?
+
+\medskip
+\noindent
+Vamos começar notando que \(T\) é \(W\)-invariante e então:
+\[
+\begin{array}{lcl}
+T(v_1)&=&\sum\limits_{i=1}^{\textcolor{red}{m}}\alpha_{1,i}v_i\\T(v_2)&=&\sum\limits_{i=1}^{\textcolor{red}{m}}\alpha_{2,i}v_i\\&\vdots&\\T(v_m)&=&\sum\limits_{i=1}^{\textcolor{red}{m}}\alpha_{m,i}v_i\\T(v_{m+1})&=&\sum\limits_{i=1}^{\textcolor{blue}{n}}\alpha_{m+1,i}v_i\\&\vdots&\\T(v_n)&=&\sum\limits_{i=1}^{\textcolor{blue}{n}}\alpha_{n,i}v_i.
+\end{array}
+\]
+Dessa forma segue que:
+\[[T]_B=\begin{pmatrix}
+\alpha_{1,1} & \ldots & \alpha_{1,m} &\alpha_{1,m+1}& \ldots & \alpha_{1,n}
+\\\ldots & \ldots & \ldots & \ldots &\ldots & \ldots
+\\\alpha_{m,1} & \ldots & \alpha_{m,m} & \alpha_{m,m+1} & \ldots &
+\alpha_{m,n}\\ 0 & \ldots & 0 & \alpha_{m+1,m+1}&\ldots &\alpha_{m+1,n}\\
+\ldots & \ldots & \ldots & \ldots &\ldots & \ldots \\ 0 & \ldots & 0
+&\alpha_{n,m+1} & \ldots & \alpha_{n,n}
+\end{pmatrix}.\]
+
+\noindent
+Isto é, a matriz de \(T\) na base \(B\) tem a forma:
+\[[T]_B=\begin{pmatrix}
+X & * \\ 0 & Y\end{pmatrix},\]
+onde \(X\in M_m(K)\) e \(Y\in M_{n-m}(K)\). Note que \(X\) é a matriz da
+restrição de \(T\) a \(W\) na base \(B_1\). Além disso, temos o seguinte:
+\[
+\begin{array}{lcl}
+\bar{T}(\bar{v}_{m+1})&=&\sum\limits_{i={\textcolor{red}{m}}+1}^{\textcolor{blue}{n}}\alpha_{m+1,i}\bar{v}_i\\&\vdots&\\\bar{T}(\bar{v}_n)&=&\sum\limits_{i={\textcolor{red}{m}}+1}^{\textcolor{blue}{n}}\alpha_{n,i}\bar{v}_i.
+\end{array}
+\]
+Portanto $Y$ é a matriz da transformação $\bar{T}$ na base $\{\bar{v}_{m+1},\dots,\bar{v}_n\}$.
 \end{proof}
 
 \begin{lema}
 Seja $\dim(V)=n$, $T\in\mathcal{L}(V)$ e $W\subseteq V$ um subsepaço $T$-invariante. Então:
 \[
-p_T(t)=p_{T_1}(t)\cdot p_{T_2}(t)
+p_T(t)=p_{T\upharpoonright_W}(t)\cdot p_{\bar{T}}(t)
 \]
-em que $T_1\in\mathcal{L}(W)$ e $T_2\in\mathcal{L}(W)$ com $T_1(w)=T(w)$ e $T_2(v+W)=T(v)+W$.
+em que $\bar{T}$ é o operador induzido em $V/W$.
 \end{lema}
 \begin{proof}
-Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então:
+Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então a matriz de \(T\) na base \(B\) tem a forma:
+\[Z=\begin{pmatrix}
+X & * \\ 0 & Y\end{pmatrix},\]
+onde \(X\in M_m(K)\) e \(Y\in M_{n-m}(K)\), assim $X$ é a matriz de $T\upharpoonright_W$ em relação a $B_1$, e $Y$ é a matriz de $\bar{T}$ em relação a $\{\bar{b}:b\in B\setminus B_1\}$, assim:
 \begin{align*}
-p_T(t)&=\det[tI-T]_B\\
+p_T(t)&=p_Z(t)\\
+&=\det(tI-Z)\\
 &=\text{det}\begin{pmatrix}
-tI_m-A & * \\ 0 & tI_{n-m}-B\end{pmatrix}\\
-&=\text{det}(tI_m-A)\text{det}(tI_{n-m}-B)\\
-&=p_A(t)p_B(t)=p_{T_1}(t)p_{T_2}(t)\qedhere
+tI_m-X & * \\ 0 & tI_{n-m}-Y\end{pmatrix}\\
+&=\text{det}(tI_m-X)\text{det}(tI_{n-m}-Y)\\
+&=p_X(t)p_Y(t)\\
+&=p_{T\upharpoonright_W}(t)p_{\bar{T}}(t)\qedhere
 \end{align*}
 \end{proof}
 
 \begin{observacao}
-O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T=I_V$ e seja $W$ um subespaço $T$-invariante (De fato, quando \(T\) é a identidade, todo subespaço de \(V\) é \(T\)-invariante), então $T_1=I_W$ e $T_2=I_{V/W}$ e aí $m_T(t)=m_{T_1}(t)=m_{T_2}(t)=t-1$.
+O mesmo \textcolor{red}{não} ocorre para polinômios minimais. De fato, seja $T=I_V$ e seja $W$ um subespaço $T$-invariante (De fato, quando \(T\) é a identidade, todo subespaço de \(V\) é \(T\)-invariante), então $T_1=I_W$ e $T_2=I_{V/W}$ e aí $m_T(t)=m_{T_1}(t)=m_{T_2}(t)=t-1$. Não obstante, ainda temos um resultado interessante para isso.
 \end{observacao}
+
+\begin{lema}
+Seja $\dim(V)=n$, $T\in\mathcal{L}(V)$ e $W\subseteq V$ um subsepaço $T$-invariante. Então:
+\[
+m_{T\upharpoonright_W}(t)\mid m_T(t),\quad m_{\bar{T}}(t)\mid m_T(t),
+\]
+em que $\bar{T}$ é o operador induzido em $V/W$.
+\end{lema}
+\begin{proof}
+Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então a matriz de \(T\) na base \(B\) tem a forma:
+\[Z=\begin{pmatrix}
+X & * \\ 0 & Y\end{pmatrix},\]
+onde \(X\in M_m(K)\) e \(Y\in M_{n-m}(K)\), assim $X$ é a matriz de $T\upharpoonright_W$ em relação a $B_1$, e $Y$ é a matriz de $\bar{T}$ em relação a $\{\bar{b}:b\in B\setminus B_1\}$, assim é fácil de mostrar por indução que para todo $k\geq 0$ então temos uma matriz da forma:
+\[
+Z^k=
+\begin{pmatrix}
+X^k & * \\ 0 & Y^k
+\end{pmatrix},
+\]
+assim temos uma matriz é da forma:
+\[
+m_T(Z)=
+\begin{pmatrix}
+m_T(X) & * \\ 0 & m_T(Y)
+\end{pmatrix},
+\]
+mas sabemos que $m_T(Z)=0$, aí $m_T(X)=0$ e $m_T(Y)=0$, aí a conclusão segue.
+\end{proof}
 
 \begin{teorema}[Teorema da Cayley-Hamilton]\label{cayley-hamilton}
 Seja \(V\) um espaço vetorial de dimensão finita sobre um corpo \(K\), e seja \(T\in\mathcal{L}(V)\). Então \(p_T(T)=0\), onde \(p_T(t)\in K[t]\) é um polinômio característico de \(T\). 
@@ -1820,7 +1954,7 @@ onde \(f_1(t)=p_1^{k_1}(t)\ldots p_{r-1}^{k_{r-1}}(t)\) e \(f_2(t)=p_r^{k_r}(t)\
 Então \(\text{m.d.c}\{f_1(t),f_2(t)\}=1\).
 Aplicando o lema o resultado segue.
 \end{proof}
-\begin{corolario}
+\begin{corolario}\label{primaria minimal}
 Seja \(V\) um espaço vetorial tal que \(\text{dim}(V)=n < \infty\),
 seja \(T\in\mathcal{L}(V)\), e seja
 \(m_T(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t) \) com \(p_i(t)\) irredutíveis e
@@ -1869,8 +2003,8 @@ Um operador \(T\in\mathcal{L}(V)\) é diagonalizável se, e somente se
 \(\lambda_i\not=\lambda_j\) sempre que \(i\not= j\).
 \end{corolario}
 \begin{proof}
-A ida já foi provada em algum momento do passado, então
-vamos mostrar apenas a volta. Pelo primeiro Corolário, temos que
+A ida já foi provada no corolário \ref{diagonal}, então
+vamos mostrar apenas a volta. Pelo Corolário \ref{primaria minimal}, temos que
 \(V=V_1\oplus\ldots\oplus V_r\) com \(m_{T_{\upharpoonright
 v_i}}=t-\lambda_i\), ou seja \(T_{\upharpoonright V_i}=\lambda_i
 I_{V_i}\) e ainda \(V_i=V_T(\lambda_i)\). 
