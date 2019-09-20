@@ -1493,7 +1493,7 @@ Uma vez que os autovetores acima são L.I, eles formam uma base \(B\) de \(\math
 \end{pmatrix}\]
 é uma matriz diagonal.
 \end{exemplo}
-\begin{teorema}
+\begin{teorema}\label{diagonal}
 Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\), e sejam $\lambda_1,\dots,\lambda_k$ os autovalores distintos, e para $i=1,\dots,k$ seja $n_k=\text{dim} \ V_T(\lambda_i)$. São equivalentes:
 \begin{enumerate}
 \item \(T\) é diagonalizável.
@@ -1593,7 +1593,7 @@ temos que \(B\) é L.I. Como \(\vert B\vert =n\) segue que \(B\) é uma base de
 \section{Polinômio Minimal}
 
 \begin{definicao}
-Seja $V$ um espaço sobre $K$, $\dim V=n<\infty$, $T\in\mathcal{L}(V)$. Definamos por recursão $T^0=I$ e $T^{k+1}=T^k\circ T$. Se $p(t)\in K[t]$, $p(t)=a_0+a_1t+\cdot+a_mt^m$, então está bem definido o operador $p(T)=a_0\cdot I+a_1\cdot I+\dots+a_m\cdot T^m\in\mathcal{L}(V)$.
+Seja $V$ um espaço sobre $K$, $\dim V=n<\infty$, $T\in\mathcal{L}(V)$. Definamos por recursão $T^0=I$ e $T^{k+1}=T^k\circ T$. Se $p(t)\in K[t]$, $p(t)=a_0+a_1t+\dots+a_mt^m$, então está bem definido o operador $p(T)=a_0\cdot I+a_1\cdot I+\dots+a_m\cdot T^m\in\mathcal{L}(V)$.
 \end{definicao}
 
 \noindent
@@ -1679,7 +1679,7 @@ T(T(v))=\lambda^2 v,\dots,T^m(v)=\lambda^m v,\dots,
 aí para $f(t)\in K[t]$ temos $f(T)(v)=f(\lambda)\cdot v$, aí $0=m_T(T)(v)=m_T(\lambda)\cdot v$, aí $m_T(\lambda)=0$.
 \end{proof}
 
-\begin{corolario}\label{diagonal}
+\begin{corolario}\label{diagonal1}
 Se $T$ é diagonalizável e $\mathrm{Spec}(T)=\{\lambda_1,\dots,\lambda_r\}$, então:
 \[
 m_T(t)=(t-\lambda_1)\dots(t-\lambda_r).
@@ -1715,18 +1715,18 @@ f^\prime\). Então o subespaço\[P_n\coloneqq\{f(t)\in\mathbb{R}[t]\,\colon
 
 \begin{proposicao}
 Seja \(V\) um espaço vetorial de dimensão finita sobre um corpo \(K\), seja \(T\in\mathcal{L}(V)\)
-e seja \(W\) um subespaço \(T\)-invariante de \(V\). Seja $B_1$ uma base de $W$ e seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$. Então $\overline{B}_2=\{\overline{b}:b\in B_2\}$ é uma base de $V/W$ e, sendo $\overline{T}\in L(V/W)$ o operador induzido, temos:
+e seja \(W\) um subespaço \(T\)-invariante de \(V\). Seja $B_1$ uma base de $W$ e seja $B$ uma base de $V$ tal que $B_1\subseteq B$. Então $B_2=\{\overline{b}:b\in B\setminus B_1\}$ é uma base de $V/W$ e, sendo $\overline{T}\in L(V/W)$ o operador induzido, temos:
 \[
 [T]_B=
 \begin{pmatrix}
-[T\upharpoonright_W]_{B_1}&*\\0&[\overline{T}]_{\overline{B_2}}
+[T\upharpoonright_W]_{B_1}&*\\0&[\overline{T}]_{B_2}
 \end{pmatrix},
 \]
 \end{proposicao}
 \begin{proof}
 Seja $\dim(V)=\textcolor{blue}{n}$ e $T\in\mathcal{L}(V)$, e seja $W\subseteq V$ um subespaço
 $T$-invariante. Escolhemos uma base $B_1=\{v_1,\dots,v_{\textcolor{red}{m}}\}$ de $W$ e
-completemo-la até uma base $B=\{v_1,\dots,v_{\textcolor{red}{m}},v_{m+1},\dots,v_{\textcolor{blue}{n}}\}$ do espaço $V$. Qual é a matriz
+completemos uma base $B=\{v_1,\dots,v_{\textcolor{red}{m}},v_{m+1},\dots,v_{\textcolor{blue}{n}}\}$ do espaço $V$. Qual é a matriz
 $[T]_B$?
 
 \medskip
@@ -1769,10 +1769,10 @@ p_T(t)=p_{T\upharpoonright_W}(t)\cdot p_{\bar{T}}(t)
 em que $\bar{T}$ é o operador induzido em $V/W$.
 \end{lema}
 \begin{proof}
-Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então a matriz de \(T\) na base \(B\) tem a forma:
+Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então, considerando $B_2=\{\bar{b}:b\in B\setminus B_1\}$, a matriz de \(T\) na base \(B\) tem a forma:
 \[Z=\begin{pmatrix}
 X & * \\ 0 & Y\end{pmatrix},\]
-onde \(X\in M_m(K)\) e \(Y\in M_{n-m}(K)\), assim $X$ é a matriz de $T\upharpoonright_W$ em relação a $B_1$, e $Y$ é a matriz de $\bar{T}$ em relação a $\{\bar{b}:b\in B\setminus B_1\}$, assim:
+onde $X$ é a matriz de $T\upharpoonright_W$ em relação a $B_1$ e $Y$ é a matriz de $\bar{T}$ em relação a $B_2$, assim:
 \begin{align*}
 p_T(t)&=p_Z(t)\\
 &=\det(tI-Z)\\
@@ -1796,10 +1796,10 @@ m_{T\upharpoonright_W}(t)\mid m_T(t),\quad m_{\bar{T}}(t)\mid m_T(t),
 em que $\bar{T}$ é o operador induzido em $V/W$.
 \end{lema}
 \begin{proof}
-Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então a matriz de \(T\) na base \(B\) tem a forma:
+Escolhamos $B_1$ e $B$ como bases de $W$ e $V$ tais que $B_1\subseteq B$, então, considerando $B_2=\{\bar{b}:b\in B\setminus B_1\}$, a matriz de \(T\) na base \(B\) tem a forma:
 \[Z=\begin{pmatrix}
 X & * \\ 0 & Y\end{pmatrix},\]
-onde \(X\in M_m(K)\) e \(Y\in M_{n-m}(K)\), assim $X$ é a matriz de $T\upharpoonright_W$ em relação a $B_1$, e $Y$ é a matriz de $\bar{T}$ em relação a $\{\bar{b}:b\in B\setminus B_1\}$, assim é fácil de mostrar por indução que para todo $k\geq 0$ então temos uma matriz da forma:
+onde $X$ é a matriz de $T\upharpoonright_W$ em relação a $B_1$ e $Y$ é a matriz de $\bar{T}$ em relação a $B_2$, assim é fácil de mostrar por indução que para todo $k\geq 0$ então temos uma matriz da forma:
 \[
 Z^k=
 \begin{pmatrix}
@@ -1815,6 +1815,8 @@ m_T(X) & * \\ 0 & m_T(Y)
 \]
 mas sabemos que $m_T(Z)=0$, aí $m_T(X)=0$ e $m_T(Y)=0$, aí a conclusão segue.
 \end{proof}
+
+\section{Teorema de Cayley-Hamilton}
 
 \begin{teorema}[Teorema da Cayley-Hamilton]\label{cayley-hamilton}
 Seja \(V\) um espaço vetorial de dimensão finita sobre um corpo \(K\), e seja \(T\in\mathcal{L}(V)\). Então \(p_T(T)=0\), onde \(p_T(t)\in K[t]\) é um polinômio característico de \(T\). 
@@ -1838,7 +1840,7 @@ p_{T \upharpoonright_{W}}(t)=
 t^m + \alpha_{m-1}t^{m-1} + \ldots + \alpha_1t+\alpha_0.\]
 Aplicando essa função a \(v\) segue:
 \[p_{T \upharpoonright_{W}}(T)(v)=m_{T,v}(T)(v)=0.\]
-Para concluir que \(p_T(T)(v)=0\), notamos que \(p_{T\upharpoonright_W}(t)\mid p_T(t).\)
+Para concluir que \(p_T(T)(v)=0\), notamos que \(p_T(t)=p_{T\upharpoonright_W}(t)\cdot p_{\bar{T}}(t),\) em que $\bar{T}$ é o operador induzido em $V/W$.
 \end{proof}
 \begin{corolario}
 Se \(A\in M_n(K)\) então \(p_A(A)=0\),
@@ -1864,7 +1866,7 @@ P_A(A)&=A^2-(a+d)A+(ad-bc)I\\
 Se $V$ é espaço de dimensão finita e $T\in L(V)$, então todo polinômio irredutível que divide $p_T$ também divide $m_T$.
 \end{teorema}
 \begin{proof}
-Faremos a demonstração por indução em $V$. Suponhamos o lema válido para $\dim(V)<n$. Seja $V$ espaço vetorial tal que $\dim(V)=n$ e seja $T\in L(V)$ e seja $p$ um polinômio irredutível que divide $p_T$. Se $V=0$, é fácil. Senão, então tome um $v\neq 0$ qualquer. Consideremos:
+Faremos a demonstração por indução na dimensão de $V$. Suponhamos o lema válido para $\dim(V)<n$. Seja $V$ espaço vetorial tal que $\dim(V)=n$ e seja $T\in L(V)$ e seja $p$ um polinômio irredutível que divide $p_T$. Se $V=0$, é fácil. Senão, então tome um $v\neq 0$ qualquer. Consideremos:
 \[
 m_{T,v}(t)=t^m+\alpha_{m-1}t^{m-1}+\dots+\alpha_1 t+\alpha_0,
 \]
@@ -1886,139 +1888,161 @@ Além disso, vendo a definição de $m_{T,v}$, é fácil ver que:
 m_{T \upharpoonright_{W}}(t)=
 t^m + \alpha_{m-1}t^{m-1} + \ldots + \alpha_1t+\alpha_0.
 \]
-Seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$. Então $\overline{B}_2=\{\overline{b}:b\in B_2\}$ é uma base de $V/W$ e, sendo $\overline{T}\in L(V/W)$ o operador induzido, temos:
-\[
-[T]_B=
-\begin{pmatrix}
-[T\upharpoonright_W]_{B_1}&*\\0&[\overline{T}]_{\overline{B_2}}
-\end{pmatrix},
-\]
-aí $p_T=p_{T\upharpoonright_W}p_{\overline{T}}$ e $m_{T\upharpoonright_W}\mid m_T$ e $m_{\overline{T}}\mid m_T$. Assim, como $p\mid p_T$, então $p\mid p_{T\upharpoonright_W}$ ou $p\mid p_{\overline{T}}$.
+Sendo $\overline{T}\in L(V/W)$ o operador induzido, temos $p_T=p_{T\upharpoonright_W}p_{\overline{T}}$ e $m_{T\upharpoonright_W}\mid m_T$ e $m_{\overline{T}}\mid m_T$. Assim, como $p\mid p_T$, então $p\mid p_{T\upharpoonright_W}$ ou $p\mid p_{\overline{T}}$.
 \begin{itemize}
 \item Se $p\mid p_{T\upharpoonright_W}$, como $p_{T\upharpoonright_W}=m_{T\upharpoonright_W}$, então $p\mid m_{T\upharpoonright_W}$, aí $p\mid m_T$.
 \item Se $p\mid p_{\overline{T}}$, então, por hipótese de indução, temos $p\mid m_{\overline T}$, aí $p\mid m_T$. \qedhere
 \end{itemize}
 \end{proof}
 
-\begin{teorema}[Decomposição Primária]
+\section{Decomposições Primárias}
+
+\begin{teorema}[Decomposição Primária Geral]
 Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que
 \(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\). Suponhamos que
-\(f(T)=0\), onde \[f(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\] e cada
-\(p_i(t)\in
-K[t]\) é irredutível. Então \(V=V_1\oplus\ldots\oplus V_r\) onde
-cada \(V_i\) é \(T\)-invariante e \(p_i^{k_i}(T_{\upharpoonright V_i})=0\).
+\(f(T)=0\) e também:
+\[
+f=f_1\ldots f_r,
+\]
+com $f_1,\dots,f_r$ mutuamente primos entre si. Para cada $i$ seja $V_i=\Ker \ f_i(T)$. Então:
+\begin{itemize}
+\item Cada $V_i$ é $T$-invariante.
+\item $V=V_1\oplus\dots\oplus V_r$.
+\item Cada projeção canônica $P_i:V\rightarrow V_i$ é um polinômio de $T$.
+\end{itemize}
 \end{teorema}
-\begin{lema}
-Seja \(f(T)=0\) onde \(f(t)=f_1(t)f_2(t)\) com
-\(f_1\) e \(f_2\) primas entre si. Então \(V=V_1\oplus V_2\)
-onde \(V_1\) e \(V_2\) são \(T\)-invariantes,
-\(f_1(T_{\upharpoonright V_1})=0\) e \(f_2(T_{\upharpoonright V_2})=0\).
+\begin{lema}[Identidade de Bézout]
+Se \(\mathrm{mdc}(f_1,\dots,f_r)=1\) então existem $g_1,\dots,g_r\in K[t]$ tais que:
+\[f_1g_1+\dots+f_rg_r=1.\]
 \end{lema}
-\begin{sublema}[Identidade de Bézout]
-Se \(\text{m.d.c}(f_1(t),f_2(t))=1\) então existem
-\mbox{\(r(t),s(t)\in K[t]\)} tais que
-\[f_1(t)r(t)+f_2(t)s(t)=1.\]
-\end{sublema}
-\begin{proof}[Demonstração do Lema]
-Considere \(V_2\coloneqq\text{Im}(f_1(T))\)
-e \(V_1\coloneqq\text{Im}(f_1(T))\).
-Vamos verificar que que \(V_1\) e \(V_2\) são \(T\)-invariantes.
-Seja \(v\in V_1\). Então \(v=f_2(T)(w)\) para algum \(w\in V\).
-Dessa forma,
-\begin{align*}
-T(v) = T f_2(T)(w)=f_2(T)(T(w))=f_2(T)(T(w))\in\text{Im}(f_2(T))=V.
-\end{align*}
-e analogamente para \(V_2\). Além disso, mostremos que \(V=V_1+V_2\).
-De fato, para cada \(v\in V\) temos \[v=f_1(T)r(T)(v)+f_2(T)s(T)(v).\]
-Como \(f_1(T)r(T)(v)\in V_2\) e \(f_2(T)s(T)(v)\in V_1\)
-concluímos que \(v\in V_1 + V_2\). Agora vamos mostrar que \(V_1\cap
-V_2=\{0\}\). Para tal, vamos verificar que
-\(V_1\subseteq\text{Ker}(f_1)(T)\)
-e \(V_2\subseteq\text{Ker}(f_2(T)).\) Seja \(v\in V_1\). Então
-\(v=f_2(T)(w)\) para algum \(w\in V\).
-\[f_1(T)(v)=f_1(T)f_2(T)(w)=f(T)(w)=0.\]
-Também vejamos que que
-\(\text{Ker}(f_1)(T)\cap\text{Ker}(f_2)(T)=\{0\}\). Seja
-\(v\in\text{Ker}(f_1(T))\cap\text{Ker}(f_2(T))\).
-Então temos por definição que \(f_1(T)(v)=f_2(T)(v)=0\). Segue
-\[v=r(T)f_1(T)(v)+s(T)f_2(T)(v)=0.\]
-Assim concluímos que \(V=V_1\oplus
-V_2\). Finalmente, note que como \(V_1\subseteq\text{Ker}(f_1(T))\) e
-\(V_2\subseteq\text{Ker}(f_2(T))\) segue que  \(f_1(T\upharpoonright_{ V_1})=0\) e \(f_2(T\upharpoonright_{ V_2})=0\).
-\end{proof}
 \begin{proof}[Demonstração do Teorema]
-Vamos mostrar este resultado por indução sobre \(r\). Note que o resultado é
-óbvio para \(r=1\). Agora suponhamos que o resultado vale para
-o caso \(r-1\). Então consideramos \(f(t)=f_1(t)f(t)\),
-onde \(f_1(t)=p_1^{k_1}(t)\ldots p_{r-1}^{k_{r-1}}(t)\) e \(f_2(t)=p_r^{k_r}(t)\).
-Então \(\text{m.d.c}\{f_1(t),f_2(t)\}=1\).
-Aplicando o lema o resultado segue.
+Para cada $i$, então para $v\in V_i$ temos $f_i(T)(v)=0$, aí $Tf_i(T)(v)=0$, aí $f_i(T)T(v)=0$, aí $T(v)\in V_i$; logo $V_i$ é $T$-invariante. Agora para cada $i$ seja:
+\[
+h_i=\frac{f}{f_i}.
+\]
+Então $\mathrm{mdc}(h_1,\dots,h_r)=1$, assim existem $g_1,\dots,g_r\in K[t]$ tais que:
+\[h_1g_1+\dots+h_rg_r=1,\]
+aí:
+\[
+h_1(T)g_1(T)+\dots+h_r(T)g_r(T)=I.
+\]
+Para $v_1,\dots,v_r\in V$, se para todo $i$ tivermos $v_i\in V_i$ e:
+\[
+v_1+\dots+v_r=0,
+\]
+então para cada $i$ temos:
+\[
+h_i(T)(v_1)+\dots+h_i(T)(v_r)=0,
+\]
+mas para cada $j\neq i$ então $f_j\mid h_i$, aí $h_i(T)(v_j)=0$; assim:
+\[
+h_i(T)(v_i)=0,
+\]
+mas:
+\[
+v_i=h_1(T)g_1(T)(v_i)+\dots+h_r(T)g_r(T)(v_i),
+\]
+e para cada $j\neq i$ temos $f_i\mid h_j$, aí $h_j(T)(v_i)=0$; assim:
+\[
+v_i=h_i(T)g_i(T)(v_i)=0;
+\]
+portanto:
+\[
+v_1=\dots=v_r=0.
+\]
+Para todo $v\in V$ então:
+\[
+v=h_1(T)g_1(T)(v)+\dots+h_r(T)g_r(T)(v),
+\]
+e para cada $i$ temos:
+\[
+f_i(T)h_i(T)g_i(T)(v)=f(T)g_i(T)(v)=0,
+\]
+aí:
+\[
+h_i(T)g_i(T)(v)\in V_i;
+\]
+logo:
+\[
+V=V_1\oplus\dots\oplus V_r,
+\]
+e, para cada $i$, a função $h_i(T)g_i(T)$ é a projeção canônica de $V$ em $V_i$.
 \end{proof}
-\begin{corolario}\label{primaria minimal}
-Seja \(V\) um espaço vetorial tal que \(\text{dim}(V)=n < \infty\),
-seja \(T\in\mathcal{L}(V)\), e seja
-\(m_T(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t) \) com \(p_i(t)\) irredutíveis e
-primos entre si. Então \(V=V_1\oplus\ldots\oplus V_r\) onde \(V_i\)
-são \(T\)-invariantes e \(m_{T_{\upharpoonright V_i}}(t)=p_i^{k_i}(t)\). 
-\end{corolario}
+
+\begin{teorema}[Decomposição Primária para Minimais]\label{primaria minimal}
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que
+\(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\), e seja:
+\[
+m_T=p_1^{k_1}\ldots p_r^{k_r},
+\]
+com \(p_1\dots,p_r\) irredutíveis e mutuamente
+primos entre si. Para cada $i$ seja $V_i=\Ker \ p_i(T)^{k_i}$. Então:
+\begin{itemize}
+\item Cada $V_i$ é $T$-invariante.
+\item $V=V_1\oplus\dots\oplus V_r$.
+\item Cada projeção canônica $P_i:V\rightarrow V_i$ é um polinômio de $T$.
+\item Para cada $i$ então \(m_{T\upharpoonright_{V_i}}=p_i^{k_i}\).
+\end{itemize}
+\end{teorema}
 \begin{proof}
-Temos por definição que \(m_T(T)=0\). Portanto, pelo teorema temos
-que \(V=V_1\oplus\ldots\oplus V_r\),
-onde cada \(V_i\) é \(T\)-invariante.
-Considere \(T_i\coloneqq T_{\upharpoonright V_i}\)
-para cada \(i\in [r]\).
-Temos que \(p_i^{k_i}(T_i)=0\). Então segue que \(m_{T_i}(t)\vert
-p_i^{k_i}(t)\), ou seja,
-\(m_{T_i}(t)=p_i(t)^{m_i}\), onde \(m_i\leq k_i\). Suponhamos que \(m_i <
-k_i\) e consideremos \(g(t)=p_1^{k_1}(t)\ldots p_i^{m_i}(t)\ldots
-p_r^{k_r}(t)\), e então \(\text{deg}(g(t))<\text{deg}(m_T(t))\). Provaremos
-que \(g(T)=0\), o que irá contradizer a minimalidade do grau de \(m_t(t)\). Se
-\(v\in V_j\) com \(j\not= i\) então \(p_j^{k_j}(v)=0\) e portanto
+Por definição temos \(m_T(T)=0\). Logo, pelo teorema da decomposição primária geral, temos os três primeiros itens. Agora considere \(T_i\coloneqq T\upharpoonright_{V_i}\)
+para cada \(i=1,\dots,r\).
+Temos que \(p_i(T_i)^{k_i}=0\). Então segue que \(m_{T_i}\mid
+p_i^{k_i}\), ou seja,
+\(m_{T_i}=p_i^{m_i}\), onde \(m_i\leq k_i\). Consideremos:
+\[
+g=p_1^{k_1}\ldots p_i^{m_i}\ldots
+p_r^{k_r}.
+\]
+Para $j\neq i$ e para \(v\in V_j\), então \(p_j^{k_j}(v)=0\) e portanto
 \(g(T)(v)=0\). Se \(v\in V_i\) então \(p_i^{m_i}(T)(v)=0\) e
-\(g(T)(v)=0\). Assim concluímos que
-\(g(T_k)=0\) para cada \(k=1,\ldots ,r\) e logo \(g(T)=0\).
-Isso implica que \(g(T)\) é o polinômio minimal de \(T\), absurdo.
+\(g(T)(v)=0\). Assim, como $V=V_1+\oplus+V_r$, concluímos que \(g(T)=0\).
+Isso implica que \(m_T\mid g\), aí \(p_i^{k_i}\mid p_i^{m_i}\), aí $k_i\leq m_i$, assim $m_i=k_i$, aí \(m_{T_i}=p_i^{k_i}.\)
 \end{proof}
-\begin{corolario}
-Seja \(V\) um espaço vetorial tal que \(\text{dim}(V)=n<\infty\), seja
-\(T\in\mathcal{L}(V)\), e seja
-\(p_T(t)=p_1^{k_1}(t)\ldots p_r^{k_r}(t)\) com
-\(p_i(t)\) irredutíveis e primos entre si.
-Então \(V=V_1\oplus\ldots\oplus
-V_r\), com \(V_i\) \(T\)-invariantes e
-\(p_{T_{\upharpoonright V_i}}(t)=p_i(t)^{k_i}\).
-\end{corolario}
+\begin{teorema}[Decomposição Primária para Característicos]\label{primaria caracteristico}
+Seja \(V\) um espaço vetorial sobre um corpo \(K\) tal que
+\(\text{dim}(V)=n<\infty\) e seja \(T\in\mathcal{L}(V)\), e seja:
+\[
+p_T=p_1^{k_1}\ldots p_r^{k_r},
+\]
+com \(p_1\dots,p_r\) irredutíveis e mutuamente
+primos entre si. Para cada $i$ seja $V_i=\Ker \ p_i(T)^{k_i}$. Então:
+\begin{itemize}
+\item Cada $V_i$ é $T$-invariante.
+\item $V=V_1\oplus\dots\oplus V_r$.
+\item Cada projeção canônica $P_i:V\rightarrow V_i$ é um polinômio de $T$.
+\item Para cada $i$ então \(p_{T\upharpoonright_{V_i}}=p_i^{k_i}\).
+\end{itemize}
+\end{teorema}
 \begin{proof}
-Pelo teorema temos
-que \(V=V_1\oplus\ldots\oplus V_r\),
-onde cada \(V_i\) é \(T\)-invariante.
-Considere \(T_i\coloneqq T_{\upharpoonright V_i}\)
-para cada \(i\in [r]\).
-Temos que \(p_i^{k_i}(T_i)=0\). Então segue que \(m_{T_i}(t)\vert
-p_i^{k_i}(t)\), mas, pelo teorema de Cayley-Hamilton \textcolor{red}{ao avesso} (Teorema \ref{cayley-hamilton-avesso}), todo fator irredutível de $p_{T_i}$ deve dividir $m_{T_i}$, logo ser igual a $p_i$. Assim $p_{T_i}=p_i^{l_i}$ para algum $l_i$. Entretanto, considerando bases $B_i$ de $V_i$, e juntando numa base $B$ de $V$, é fácil ver que $p_T=p_{T_1}\dots p_{T_k}$, assim $p_T=p_1^{l_1}\ldots p_r^{l_r}$, aí pela fatoração única devemos ter $l_i=k_i$ para todo $i$, concluindo a demonstração.
+Pelo teorema de Cayley-Hamilton temos \(p_T(T)=0\). Portanto, pelo teorema da decomposição primária geral, temos os três primeiros itens. Agora considere \(T_i\coloneqq T\upharpoonright_{V_i}\)
+para cada \(i=1,\dots,r\).
+Temos que \(p_i(T_i)^{k_i}=0\). Então segue que \(m_{T_i}\mid
+p_i^{k_i}\), aí, pelo teorema de Cayley-Hamilton \textcolor{red}{ao avesso} (Teorema \ref{cayley-hamilton-avesso}), todo fator irredutível de $p_{T_i}$ deve dividir $m_{T_i}$, logo ser igual a $p_i$. Assim $p_{T_i}=p_i^{l_i}$ para algum $l_i$. Entretanto, considerando bases $B_i$ de $V_i$, e juntando numa base $B$ de $V$, é fácil ver que $p_T=p_{T_1}\dots p_{T_k}$, assim $p_T=p_1^{l_1}\ldots p_r^{l_r}$, aí pela fatoração única devemos ter $l_i=k_i$ para todo $i$, concluindo a demonstração.
 \end{proof}
-\begin{corolario}
-Um operador \(T\in\mathcal{L}(V)\) é diagonalizável se, e somente se
-\(m_T=(t-\lambda_1)\ldots(t-\lambda_r)\) com
-\(\lambda_i\not=\lambda_j\) sempre que \(i\not= j\).
-\end{corolario}
+
+\section{Critérios de Diagonalização}
+
+\begin{teorema}\label{diagonal2}
+Um operador \(T\in\mathcal{L}(V)\) é diagonalizável se, e somente se:
+\[
+m_T(t)=(t-\lambda_1)\ldots(t-\lambda_r)
+\]
+com \(\lambda_i\not=\lambda_j\) sempre que \(i\not= j\).
+\end{teorema}
 \begin{proof}
-A ida já foi provada no corolário \ref{diagonal}, então
-vamos mostrar apenas a volta. Pelo Corolário \ref{primaria minimal}, temos que
-\(V=V_1\oplus\ldots\oplus V_r\) com \(m_{T_{\upharpoonright
-v_i}}=t-\lambda_i\), ou seja \(T_{\upharpoonright V_i}=\lambda_i
-I_{V_i}\) e ainda \(V_i=V_T(\lambda_i)\). 
+A ida já foi provada no corolário \ref{diagonal1}, então
+vamos mostrar apenas a volta. Pelo teorema da decomposição primária geral, sendo $V_i=\mathrm{Ker} \ (T-\lambda_iI)$ para todo $i$, então cada $V_i$ é $T$-invariante e \(V=V_1\oplus\ldots\oplus V_r\), aí para todo $i$ temos \(T\upharpoonright_{V_i}=\lambda_iI\), aí \(V_i\subseteq V_T(\lambda_i)\); logo $T$ é diagonalizável. 
 \end{proof}
 
 \noindent
-Considere \(\{T_i\,\colon i\in I\}\subseteq\mathcal{L}(V)\).
-Quando os operadores \(T_i\) podem ser diagonalizados simultaneamente?
+Considere \(\{T_i\,\colon i\in I\}\subseteq\mathcal{L}(V)\). Em que condições os operadores \(T_i\) podem ser diagonalizados simultaneamente, ou seja, existe base $B$ de $V$ tal que para todo $i\in I$ a matriz $[T_i]_B$ seja diagonal?
 
 \begin{teorema}
 Um conjunto \(\{T_i\,\colon i \in I\}\) pode ser diagonalizado
 simultaneamente se, e somente se cada \(T_i\) é diagonalizável e \(T_iT_j=T_jT_i\) para todo \(i,j\in I\).\end{teorema}
 \begin{proof}
-Mostraremos por indução na dimensão. Suponhamos que o teorema é válido para espaços de dimensão menor que $n$. Seja $V$ um espaço tal que $\dim(V)=n$ e seja $\mathcal{F}$ um conjunto de operadores que comutam um com outro. Se todo elemento de $\mathcal{F}$ é múltiplo da identidade, então acaba. Caso contrário, existe um $T\in\mathcal{F}$ que não é múltiplo da identidade. Sejam $c_1,\dots,c_k$ os autovalores de $T$. Para $i$ seja $W_i=\Ker(T-c_iI)$. Então, como os elementos de $\mathcal{F}$ comutam um com outro, então $W_i$ é invariante para todo elemento de $\mathcal{F}$. Para cada $U\in\mathcal{F}$, então $m_U$ é produto de fatores lineares distintos, aí, como $m_{U\upharpoonright W_i}\mid m_U$, então $m_{U\upharpoonright W_i}$ é produto de fatores lineares distintos, aí $U\upharpoonright W_I$ é diagonalizável. Como $\dim(W_i)<n$, então existe uma base $B_i$ tal que para todo $U\in\mathcal{F}$ então $[U\upharpoonright W_i]$ seja diagonal. Então $B=B_1\cup\dots\cup B_k$ é a base que buscamos.
+Mostraremos por indução na dimensão. Suponhamos que o teorema é válido para espaços de dimensão menor que $n$. Seja $V$ um espaço tal que $\dim(V)=n$ e seja $\mathcal{F}$ um conjunto de operadores que comutam um com outro. Se todo elemento de $\mathcal{F}$ é múltiplo da identidade, então acaba. Caso contrário, existe um $T\in\mathcal{F}$ que não é múltiplo da identidade. Sejam $c_1,\dots,c_k$ os autovalores de $T$. Para $i$ seja $W_i=\Ker(T-c_iI)$. Então, como os elementos de $\mathcal{F}$ comutam um com outro, então $W_i$ é invariante para todo elemento de $\mathcal{F}$. Para cada $U\in\mathcal{F}$, então $m_U$ é produto de fatores lineares distintos, aí, como $m_{U\upharpoonright_{W_i}}\mid m_U$, então $m_{U\upharpoonright_{W_i}}$ é produto de fatores lineares distintos, aí $U\upharpoonright_{W_i}$ é diagonalizável. Como $\dim(W_i)<n$, então existe uma base $B_i$ tal que para todo $U\in\mathcal{F}$ a matriz $[U\upharpoonright_{W_i}]_{B_i}$ seja diagonal. Portanto $B=B_1\cup\dots\cup B_k$ é a base que buscamos.
 \end{proof}
 
 \printindex

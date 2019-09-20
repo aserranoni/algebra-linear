@@ -2824,41 +2824,25 @@ assim $m_T(x)$ é produto de fatores lineares distintos, aí $T$ é diagonalizá
 \]
 Prove que se $A$ é diagonalizável então $T_A$ é diagonalizável.
 \solucao{
-Se $A$ é diagonalizável, então existe uma matriz inversível $P$ e uma matriz diagonal $D$ tal que $A=PDP^{-1}$. Consideremos primeiro o operador $T_D$. Seja:
+Se $A$ é diagonalizável, então existem uma matriz inversível $P$ e uma matriz diagonal $D$ tais que $A=PDP^{-1}$. Consideremos primeiro o operador $T_D$. Seja:
 \[
 D=\begin{pmatrix}
 d_1&&&\\&d_2&&\\&&\ddots&\\&&&d_n
-\end{pmatrix},
+\end{pmatrix}.
 \]
-então para $(i,j)$, a entrada $(i,j)$ da matriz $DM-MD$ é $(d_i-d_j)m_{i,j}$; assim o operador $T_D$ consiste em multiplicar cada entrada $(i,j)$ de uma matriz $M$ por $(d_i-d_j)$. Assim, para todo polinômio $p(x)$, então $p(T_D)(M)$ consiste em multiplicarmos cada entrada $(i,j)$ da matriz $M$ por $p(d_i-d_j)$. Consideremos o conjunto:
-\[
-E=\{d_i-d_j\mid i,j=1\dots,n\},
-\]
-então $E$ é finito, aí considerando o polinômio:
-\[
-p(x)=\prod_{e\in E}(x-e),
-\]
-então $p(x)$ é produto de fatores lineares distintos e $p(T_D)=0$, mas para toda matriz $M$ temos:
+Então, para matriz $M=(m_{i,j})$ e para $i,j=1,\dots,n$, a entrada $(i,j)$ da matriz $DM-MD$ é $(d_i-d_j)m_{i,j}$; assim, para $i,j=1,\dots,n$, sendo $E_{i,j}$ a matriz que vale $1$ na entrada $(i,j)$ e $0$ nas demais, então é fácil ver que $T_D(E_{i,j})=(d_i-d_j)E_{i,j}$, assim $E_{i,j}$ é autovetor de $T_D$. Porém, para $M\in\m{n}{K}$, temos o seguinte:
 \[
 \begin{array}{rcl}
 T_A(M)&=&AM-MA\\
 &=&PDP^{-1}M-MPDP^{-1}\\
 &=&P(DP^{-1}MP-P^{-1}MPD)P^{-1}\\
-&=&PT_D(P^{-1}MP)P^{-1},
+&=&PT_D(P^{-1}MP)P^{-1}.
 \end{array}
 \]
-aí é fácil provar por indução que para todo $r\geq 0$ temos:
-\[
-T_A^r(M)=PT_D^r(P^{-1}MP)P^{-1},
-\]
-assim particular temos:
-\[
-p(T_A)(M)=Pp(T_D)(P^{-1}MP)P^{-1}=0;
-\]
-logo $p(T_A)=0$, aí o polinômio minimal de $T_A$ é produto de fatores lineares distintos, aí $T_A$ é diagonalizável.
+Logo, para $i,j=1,\dots,n$, é fácil ver que $PE_{i,j}P^{-1}$ é autovetor de $T_A$. Além disso, as matrizes $PE_{i,j}P^{-1}$ em que $i,j=1,\dots,n$ formam uma base de $\m{n}{K}$. Portanto $T_A$ é diagonalizável.
 }
 
-\exercicio{29} Seja $V$ um $K$-espaço de dimensão finita e sejam $E_1, E_2, \ldots E_k \in \mathcal{L}(V)$ tais que $E_1 + E2 + \ldots + E_k = I.$
+\exercicio{29} Seja $V$ um $K$-espaço de dimensão finita e sejam $E_1, E_2, \ldots E_k \in \mathcal{L}(V)$ tais que $E_1 + E_2 + \ldots + E_k = I.$
 \dividiritensdiv{1}{     
 \task[\pers{a}] Prove que se $E_iE_j = 0,$ para $i \neq j,$ então $E_i^2 = E_i$ para todo $i = 1, 2, \ldots, k.$
 \task[\pers{b}] Prove que se $E_i^2 = E_i$ para todo $i = 1, 2, \ldots, k$ e a característica de $K$ é zero, então $E_iE_j= 0,$ sempre que $i \neq j.$
@@ -3051,7 +3035,7 @@ Para encontrar a decomposição primária de $T,$ precisamos encontrar seu polin
 \task[\pers{a}] Encontrando o polinômio característico de $A:$
 \[
 \begin{array}{rcl}
-p(\lambda) &=& \det\left(A - \lambda I  \right) \\
+p(\lambda) &=& \det\left( \lambda I - A \right) \\
 &=& \det\left( \begin{bmatrix} \lambda & 0 & 0 \\
 0 & \lambda& 0 \\
 0 &0 & \lambda 
@@ -3344,7 +3328,7 @@ Prove que $W_i = \Ker(T-\lambda_iI)^{m_i},$ para todo $i = 1, \ldots, k.$
 \task[\pers{a}]
 Sendo $V_i=\Ker(T-\lambda_iI)^{m_i}$, então pela decomposição primária temos $V=V_1\oplus\dots\oplus V_k$ e cada $V_i$ é $T$-invariante. Além disso, sendo $V'_i=\Ker(T-\lambda_iI)^{n_i}$, então pela decomposição primária temos $V=V'_1\oplus\dots\oplus V'_k$ e cada $V'_i$ é $T$-invariante. Mas também temos $V_i\subseteq V'_i$ para cada $i$. Logo é fácil ver que $V_i=V'_i$ para todo $i$. Para cada $i$ seja $T_i=T\upharpoonright V_i$. Então $p_T=p_{T_1}\dots p_{T_k}$. Além disso, para cada $i$ temos $m_{T_i}(t)=(t-\lambda_i)^{m_i}$. Assim $\lambda_i$ é o único autovalor de $T_i$ em $V_i$, mas $p_{T_i}$ é produto de fatores lineares, assim $p_{T_i}(t)=(t-\lambda_i)^{r_i}$ para algum $r_i$. Assim $p_T(t)=(t-\lambda_1)^{r_1}\dots(t-\lambda_k)^{r_k}$, aí, pela fatoração única de polinômios, para todo $i$ temos $r_i=n_i$, aí $p_{T_i}=(t-\lambda_i)^{n_i}$, aí $\dim(V_i)=n_i$, aí $\dim(\Ker(T-\lambda_iI)^{m_i})=n_i$.
 \task[\pers{b}]
-É fácil ver que para todo $i$ temos $V_i\subseteq W_i$. Agora, para cada $i$, então para $v\in W_i$ então existe $r$ tal que $(T-\lambda_iI)(v)=0$, mas seja $v=v_1+\dots+v_k$ com $v_i\in V_i$, então $0=\sum_{j}(T-\lambda_iI)^r(v_j)$ e para todo $j$ temos $(T-\lambda_iI)(v_j)\in V_j$, aí para todo $j\neq i$ temos $(T-\lambda_iI)^r(v_j)=0$, mas $(T-\lambda_jI)^{m_j}(v_j)=0$, mas $(t-\lambda_i)^r$ e $(t-\lambda_j)^{m_j}$ são primos entre si, aí por Bézout temos $v_j=0$; logo $v=v_i$, aí $v\in V_i$. Logo, $V_i=W_i$, ou seja, $W_i=\Ker(T-\lambda_iI)^{m_i}$.
+É fácil ver que para todo $i$ temos $V_i\subseteq W_i$. Agora, para cada $i$, então para $v\in W_i$ então existe $r$ tal que $(T-\lambda_iI)^r(v)=0$, mas seja $v=v_1+\dots+v_k$ com $v_j\in V_j$, então $0=\sum_{j}(T-\lambda_iI)^r(v_j)$ e para todo $j$ temos $(T-\lambda_iI)^r(v_j)\in V_j$, aí para todo $j\neq i$ temos $(T-\lambda_iI)^r(v_j)=0$, mas $(T-\lambda_jI)^{m_j}(v_j)=0$ e $(t-\lambda_i)^r$ e $(t-\lambda_j)^{m_j}$ são primos entre si, aí por Bézout temos $v_j=0$; logo $v=v_i$, aí $v\in V_i$. Logo, $V_i=W_i$, ou seja, $W_i=\Ker(T-\lambda_iI)^{m_i}$.
 }
 }
   
@@ -3364,21 +3348,26 @@ Agora, apliquemos repetidamente o discurso do parágrafo anterior para chegarmos
 
 \bigskip
 \noindent
-\textcolor{red}{Solução Alternativa 1:} Faremos a resolução por indução em $V$. Suponhamos o exercício válido para $\dim(V)<n$. Seja $V$ espaço vetorial tal que $\dim(V)=n$ e seja $N$ um operador nilpotente. Então existe $r$ tal que $N^r=0$. Se $V=0$, é fácil. Senão, então tome um $v\neq 0$ qualquer. Seja $W$ o subespaço gerado por $\{v,N(v),N^2(v),\dots\}$. É fácil ver que $W$ é $N$-invariante, aí consideremos o espaço quociente $V/W$. Como $v\neq 0$, então $W\neq 0$, aí $\dim(V/W)=\dim(v)-\dim(W)<n$. Seja $k$ o menor tal que $\{v,N(v),N^2(v),\dots,N^k(v)\}$ seja linearmente dependente, então $B_1=\{v,N(v),N^2(v),\dots,N^{k-1}(v)\}$ é uma base de $W$. Seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=B\setminus B_1$. Então $\overline{B}_2=\{\overline{b}:b\in B_2\}$ é uma base de $V/W$ e, sendo $N'=N\upharpoonright W$ e sendo $\overline{N}\in L(V/W)$ o operador induzido, então temos:
+\textcolor{red}{Solução Alternativa 1:} Faremos a resolução por indução na dimensão de $V$. Suponhamos o exercício válido para $\dim(V)<n$. Seja $V$ espaço vetorial tal que $\dim(V)=n$ e seja $N\in L(V)$ tal que exista $r$ tal que $N^r=0$. Se $V=0$, é fácil. Senão, então tome um $v\neq 0$ qualquer. Consideremos:
+\[
+m_{N,v}(t)=t^m+\alpha_{m-1}t^{m-1}+\dots+\alpha_1 t+\alpha_0,
+\]
+o polinômio mônico de menor grau tal que \(m_{N,v}(N)(v)=0\). Então \(B_1=\{v,N(v),\ldots, N^{m-1}(v)\}\) é linearmente independente. Além disso, como \(N^r(v)=0\), então $m_{N,v}(t)\mid t^r$, aí $m_{N,v}(t)=t^m$. Seja \(W\) o subespaço gerado por ele. Note que \(W\) é \(N\)-invariante e ainda:
+\[[N\upharpoonright_W]_{B_1}=\begin{pmatrix}
+0 & 0 & \ldots& 0 & 0
+\\ 1 & 0 & \ldots & 0 & 0
+\\ 0 & 1 & \ldots & 0 & 0
+\\ \ldots & \ldots  & \ldots  & \ldots  & \ldots \
+\\ 0 & 0 & \ldots & 1 & 0
+\end{pmatrix},\]
+assim $p_{N\upharpoonright_W}(t)=t^m$. Seja $B$ uma base de $V$ tal que $B_1\subseteq B$ e seja $B_2=\{\overline{b}:b\in B\setminus B_1\}$. Então $B_2$ é uma base de $V/W$ e, sendo $\overline{N}\in L(V/W)$ o operador induzido, temos:
 \[
 [N]_B=
 \begin{pmatrix}
-[N']_{B_1}&*\\0&[\overline{N}]_{\overline{B_2}}
+[N\upharpoonright_W]_{B_1}&*\\0&[\overline{N}]_{B_2}
 \end{pmatrix},
 \]
-aí é fácil ver que $p_N=p_{N'}p_{\overline{N}}$. Além disso, é fácil ver que:
-\[
-[N]^r_B=
-\begin{pmatrix}
-[N']^r_{B_1}&*\\0&[\overline{N}]^r_{\overline{B_2}}
-\end{pmatrix},
-\]
-de modo que $(N')^r=0$ e $(\overline{N})^r=0$, aí por hipótese de indução temos $p_{\overline{N}}(t)=t^{\dim(V/W)}$. Além disso, $N'$ é a matriz companheira de um polinômio, aí $p_{N'}=m_{N'}$, mas $m_{N'}(t)\mid t^r$, aí $p_{N'}(t)=t^l$ para algum $l$, aí $p_{N}(t)=t^{l+\dim(V/W)}$, mas o grau de $p_{N}$ deve ser $n$, aí $p_{N}(t)=t^n$.
+assim é fácil ver que $p_N(t)=p_{N\upharpoonright_W}(t)p_{\overline{N}}(t)$, mas também é fácil ver que $\overline{N}^r=0$, aí por hipótese de indução temos $p_{\overline{N}}(t)=t^{n-m}$, aí $p_N(t)=t^n.$
 
 \bigskip
 \noindent
@@ -3401,13 +3390,12 @@ $TN = NT$. Prove que
 }
 \solucao{
 \dividiritens{
-\task[\pers{a}] $(\Rightarrow)$ Como $N$ é nilpotente, sabemos que existe $m > 0$ tal que $N^m = 0.$ Assumindo que $N \neq 0$ (pois do contrário não há o que demonstrar), então $m > 1.$ 
-
-Se $T$ é inversível, podemos escrever
+\task[\pers{a}]
+}
+$(\Rightarrow)$ Como $N$ é nilpotente, sabemos que existe $m > 0$ tal que $N^m = 0.$ Assumindo que $N \neq 0$ (pois do contrário não há o que demonstrar), então $m > 1.$ Se $T$ é inversível, podemos escrever
 \[
 T + N = T(I + T^{-1}N)
 \]
-
 Note também que 
 \[
 TN = NT \Rightarrow T^{-1}N = NT^{-1}.
@@ -3416,7 +3404,6 @@ e consequentemente
 \[
 (-T^{-1}N)^m = (-1)^mT^{-m}N^m = 0.
 \]
-
 Lembrando da identidade polinomial
 \[
 x^m - 1 = (x - 1) \displaystyle \sum\limits_0^{m - 1} x^{m - 1 - i},
@@ -3435,54 +3422,51 @@ I - \textcolor{Mahogany}{(-T^{-1}N)^m} =  I - \textcolor{Mahogany}{0} = I,
 \]
 donde segue que
 \[
- \textcolor{Blue}{I - (-T^{-1}N)^m} = (I + T^{-1}N) \displaystyle \sum_0^{m - 1} (-T^{-1}N)^{m - 1- i} \Rightarrow  \textcolor{Blue}{I} = (I + T^{-1}N) \displaystyle \sum_0^{m - 1} (-T^{-1}N)^{m - 1- i}.
+\textcolor{Blue}{I - (-T^{-1}N)^m} = (I + T^{-1}N) \displaystyle \sum_0^{m - 1} (-T^{-1}N)^{m - 1- i} \Rightarrow  \textcolor{Blue}{I} = (I + T^{-1}N) \displaystyle \sum_0^{m - 1} (-T^{-1}N)^{m - 1- i}.
 \]
-
-Logo, isso mostra que $(I + T^{-1}N)$ possui uma inversa (respectivamente, $\sum\limits_0^{m - 1} (-T^{-1}N)^{m - 1- i}.)$
-
+Logo, isso mostra que $(I + T^{-1}N)$ possui uma inversa, respectivamente:
+\[
+\sum\limits_0^{m - 1} (-T^{-1}N)^{m - 1- i}.
+\]
 Daí, concluímos que ambos $T$ e $I + T^{-1}N$ são inversíveis; logo seu produto também o é. Mas
 \[
 T(I + T^{-1}N) = T + N.
 \]
-
 Portanto, segue que $T + N$ é inversível. \\
 
+\medskip
+\noindent
 $(\Leftarrow)$ Se $T+N$ é inversível, como $-N$ é nilpotente e $(T+N)(-N)=(-N)(T+N)$, então basta aplica $(\Rightarrow)$ para $T+N$ e $-N$ em vez de $T$ e $N$ e concluir que $(T+N)-N$ é inversível, aí $T$ é inversível.
 %https://math.mit.edu/~gs/linearalgebra/ila0205.pdf - pg 93
-\task[\pers{b}] Se $\det(T) = 0,$ então $\det(T) $
-
-Utilizando que
+\dividiritens{
+\task[\pers{b}]
+}
+Se $\det(T) = 0,$ então $T$ não é inversível, aí, pelo item (a), a matriz $T+N$ não é inversível, aí temos $\det(T+N)=0$, aí $\det(T)=\det(T+N)$. Se $\det(T)\neq 0$, então $T$ é inversível, aí utilizando que
 \[
 T + N= T(I + T^{-1}N),
 \]
+podemos inferir que:
+\[
+\det(T+N)=\det(T)\det(I+T^{-1}N),
+\]
+porém $TN=NT$ e $N$ é nilpotente, aí $T^{-1}N$ é nilpotente, assim, pela resolução do Exercício 7 da Lista 3, existe uma base $B$ tal que a matriz de $T^{-1}N$ seja estritamente triangular superior, assim $I+T^{-1}N$ é triangular superior com todas as entradas na diagonal valendo $1$, assim $\det(I+T^{-1}N)=1$, aí $\det(T+N)=\det(T)$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\dividiritens{
+\task[\pers{c}]
 }
+Para todo $t$, então $-N$ é nilpotente e também:
+\[
+(tI-T)(-N)=(-N)(tI-T),
+\]
+aí pelo item (b) temos:
+\[
+\begin{array}{rcl}
+p_T(t) &=& \det(tI-T) \\
+ &=& \det(tI-T-N) \\
+&=& \det(ti-(T+N)) \\
+&=& p_{T+N}(t)
+\end{array}
+\]
 %https://math.stackexchange.com/questions/2757872/let-t-n-v-to-v-n-is-nilpotent-t-is-invertible-and-nt-tn-prove-nt
 }
 
@@ -3659,7 +3643,22 @@ T_{I_n}(M) = I_n M - M I_n = 0.
 \]
 Logo, $T_{I_n} = 0,$ que obviamente é nilpotente, mas $A = I_n$ não é nilpotente.
 
-\task[\pers{b}]
+\task[\pers{b}] Suponhamos que $A$ possua um autovalor $\lambda$ e $T_A$ seja diagonalizável. Seja $v\neq 0$ tal que $Av=\lambda v$. Sejam $\lambda_1,\dots,\lambda_r$ os autovalores de $T_A$. Para toda $M\in\m{n}{K}$, então existem $M_1,\dots,M_r$ tais que:
+\[
+M=M_1+\dots+M_r
+\]
+e para todo $i$ tenhamos:
+\[
+T_A(M_i)=\lambda_i M_i,
+\]
+assim temos:
+\begin{align*}
+T_A(M_i)v=\lambda_i M_iv
+&\Rightarrow AM_iv-M_iAv=\lambda_i M_iv\\
+&\Rightarrow AM_iv-\lambda M_iv=\lambda_i M_iv\\
+&\Rightarrow AM_iv=(\lambda_i+\lambda)M_iv,
+\end{align*}
+aí $M_iv$ é autovetor de $A$; logo todo vetor da forma $Mv$ pode ser expresso como soma de autovetores de $A$. Além disso, como $v\neq 0$, então existe $j$ tal que $v_j\neq 0$, assim para $i$ seja $E_i\in\m{n}{K}$ a matriz que vale $v_j^{-1}$ na entrada $(i,j)$ e $0$ nas outras, então $E_iv=e_i$, em que $e_i\in K^n$ é o vetor que vale $1$ na entrada $i$ e $0$ nas demais. Portanto toda matriz em $\m{n}{K}$ é da forma $Mv$ para alguma $M\in\m{n}{K}$, aí pode ser expressa como soma de autovalores de $A$. Logo $A$ é diagonalizável.
 }
 
 \textbf{Observação:}  $T_A$ na verdade é um operador de derivação em $\mathcal{M}_n(K).$ Veja que $\forall M, N \in \mathcal{M}_n(K),$ temos que
@@ -3797,6 +3796,7 @@ encontre $k \in \mathbb{N}$ tal que $(AB - BA)^k = 0.$
 \solucao{
 %Utilizando o operador do exercício 10.
 }
+
 \newpage
 \section{\textcolor{Floresta}{Lista 4}}
 
@@ -3837,8 +3837,6 @@ Assim, $v$ é um vetor cíclico para $T.$
 
 Observe que a recíproca não é verdadeira. Tome $T = \begin{bmatrix}
 0 & 1 \\ 1 & 0 \end{bmatrix}.$ Então $v = (1,0)$ é um vetor cíclico para $T,$ mas $T^2 = I,$ que não possui um vetor cíclico.
-%https://math.stackexchange.com/questions/2154881/if-linear-operator-t2-has-a-cyclic-vector-then-so-does-t?rq=1
-
 }
     \exercicio{3} Sejam $V$ um $K$-espaço vetorial de dimensão $n$ e $T \in \mathcal{L}(V)$ um operador diagonalizável.
 \dividiritens{
@@ -3849,7 +3847,10 @@ Observe que a recíproca não é verdadeira. Tome $T = \begin{bmatrix}
     \exercicio{4} Prove que duas matrizes de ordem $3$ são semelhantes se, e somente se, elas têm o mesmo polinômio característico e o mesmo polinômio minimal.
  \solucao{}
     \exercicio{5} Prove que toda matriz $A \in \mathcal{M}_n(K)$ é semelhante à sua transposta $A^t.$
- \solucao{}
+ \solucao{
+ %https://math.stackexchange.com/questions/94599/a-matrix-is-similar-to-its-transpose
+ 
+ }
     \exercicio{6} Sejam $V$ um $K$-espaço vetorial de dimensão $n$ e $T \in \mathcal{L}(V).$
 \dividiritens{
 \task[\pers{a}] Prove que $\mbox{Im } T$ tem um complementar $T$-invariante se, e somente se, $\mbox{Im } T \cap \Ker T = 0.$
@@ -3880,7 +3881,10 @@ Encontre vetores $\{v_1, \ldots , v_r \}$ que satisfazem as condições do Teore
  \solucao{}
     \exercicio{9} Sejam $N_1$ e $N_2$ matrizes de ordem $6$ nilpotentes. Suponha que elas têm o mesmo polinômio
 minimal e o mesmo posto. Prove que elas são semelhantes. Mostre que o mesmo resultado não é verdadeiro para matrizes de ordem $7.$
- \solucao{}
+ \solucao{
+ %http://www.professores.uff.br/marco/wp-content/uploads/sites/37/2017/07/SolVE2-2012.pdf -  questão 2 
+ 
+ }
     \exercicio{10} Seja $A \in \mathcal{M}_n(\mathbb{R}),$ tal que $A^2 + I = 0.$ Prove que $n = 2k$ e que $A$ é semelhante à matriz
     \[
     A = \begin{bmatrix}
@@ -3978,7 +3982,31 @@ A  =\begin{bmatrix}
 \end{bmatrix}.
 \]
 Determine a forma de Jordan $J$ de $A$ e encontre uma matriz inversível $P$ tal que $P^{-1}AP = J.$
-                 \solucao{}
+                 \solucao{
+                 Para encontrar a forma de Jordan de $A,$ vamos primeiramente encontrar o polinômio característico e o minimal de $A.$ Temos que
+                 \[
+                 p_A(\lambda) = \det(A - \lambda I) = \det \left( \begin{bmatrix}
+0 & 1 & 0& 0\\
+0 &0 &1 & 0 \\
+0 &0 &0& 1 \\
+0 & 0 & -1&0
+\end{bmatrix} - \lambda \begin{bmatrix}
+1 & 0 & 0& 0\\
+0 &1 &0 & 0 \\
+0 &0 &1& 0 \\
+0 & 0 & 0&1
+\end{bmatrix} \right) = \]\[
+\det \left( \begin{bmatrix}
+-\lambda & 1 & 0& 0\\
+0 &-\lambda &1 & 0 \\
+0 &0 &-\lambda& 1 \\
+0 & 0 & -1&-\lambda
+\end{bmatrix} \right) = \lambda^4 + \lambda^2 \Rightarrow p_A(\lambda) = \lambda^2(\lambda + i)(\lambda - i)
+                 \]
+
+Sabemos que o polinômio minimal é o polinômio de menor grau que anula $T.$ Além disso, $m_A(t) \mid p_A(t).$               
+                 
+                 }
     \exercicio{23} Seja $V$ um espaço vetorial de dimensão $n$, com $n \ge 2$ e seja $T$ um operador linear em $V$ de posto $2.$ Determine todas as possíveis formas de Jordan de $T.$
                  \solucao{}
     \exercicio{24} Seja $T \colon \mathcal{P}_n(\mathbb{R}) \to \mathcal{P}_n(\mathbb{R}) $ o operador linear definido por 
