@@ -4360,15 +4360,176 @@ a_{n+1} = 7n - a_{n} - 9, \forall n > 1
 \solucao{}
 \newpage
 \section{\textcolor{Floresta}{Lista 5}}
-\exercicio{1} 
+
+Nesta lista, $V$ é um $K$-espaço com produto interno $\prin{ , }$ em que $K = \mathbb{R}$ ou $K = \mathbb{C}.$
+\exercicio{1} Faça o que se pede:
+\dividiritens{
+\task[\pers{a}] Se $K = \mathbb{R},$ mostre que, para $u,v \in V,$
+\[
+\prin{u,v}= 0 \Leftrightarrow \norm{u+v}^2= \norm{u}^2 + \norm{v}^2.
+\]
+\task[\pers{b}] Mostre que $\textbf{(a)}$ é falso se $K = \mathbb{C}.$
+\task[\pers{c}] Se $K = \mathbb{C},$ mostre que para $u,v \in V,$
+\[
+\prin{u,v} = 0\Leftrightarrow \norm{\alpha u + \beta v}^2 = \norm{\alpha u}^2 + \norm{\beta v}^2, 
+\]
+para todos $\alpha, \beta \in \mathbb{C}.$
+}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Observando que 
+\[
+\norm{v} = \sqrt{\prin{v,v}} \Rightarrow \norm{u + v} = \sqrt{\prin{u+v,u+v}},
+\]
+a partir das propriedades do produto interno, segue que
+\[
+\textcolor{Green}{\norm{u+v}}^2 = \textcolor{Green}{ \sqrt{\prin{u+v,u+v}}}^2 = \prin{u + v, u+v} =\]\[ \textcolor{Red}{\prin{u,u}} + \textcolor{Magenta}{\prin{u,v}} + \textcolor{Laranja}{\prin{v,u}} + \textcolor{Blue}{\prin{v,v}} =\]\[ \textcolor{Red}{\norm{u}^2} + \textcolor{Magenta}{0} + \textcolor{Laranja}{0} + \textcolor{Blue}{\norm{v}^2} = \norm{u}^2 + \norm{v}^2 \Rightarrow \boxed{\norm{u+v}^2= \norm{u}^2 + \norm{v}^2}
+\]
+Agora, se $\norm{u+v}^2= \norm{u}^2 + \norm{v}^2,$ então temos que 
+\[\norm{u+v}^2 = \prin{u+v, u+v} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \Rightarrow \textcolor{Green}{\norm{u+v}^2} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \Rightarrow\]\[ \textcolor{Green}{\norm{u}^2 + \norm{v}^2} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \Rightarrow 2 \prin{u,v} = 0 \Rightarrow \boxed{\prin{u,v} = 0}
+\]
+}
+}
+\exercicio{2} Mostre que vale a \emph{lei do paralelogramo}:
+\[
+\norm{u + v}^2 + \norm{u-v}^2 = 2 \norm{u}^2 + 2 \norm{v}^2, \ \forall u,v \in V
+\]
 \solucao{}
+\exercicio{3} Se $K = \mathbb{R},$ mostre que, para $u, v \in V$, $\norm{u} = \norm{v}$ se, e somente se, $u + v$ e $u - v$ são
+ortogonais. Discuta a afirmação para $K = \mathbb{C}.$
+\solucao{}
+\exercicio{4} Seja $V$ um espaço vetorial sobre um corpo $K.$
+\dividiritens{
+\task[\pers{a}] Se $K = \mathbb{C}$, mostre que vale a \emph{identidade de polarização}, para todos $u, v \in V:$
+\[
+4 \prin{u,v} = \norm{u+v}^2 - \norm{u-v}^2 + i \norm{u+iv}^2 - i\norm{u-iv}^2
+\]
+\task[\pers{b}] Se $K = \mathbb{R}$, mostre que vale a \emph{identidade de polarização}, para todos $u, v \in V:$
+\[
+4 \prin{u,v} = \norm{u+v}^2 - \norm{u-v}^2
+\]
+}
+\solucao{}
+\exercicio{5} Encontre uma base ortonormal de cada um dos seguintes subespaços $S$ e determine também, em cada caso, o subespaço $S^{\perp}.$ 
+\dividiritens{
+\task[\pers{a}] $S$ é o subespaço de $\mathbb{C}^3$ gerado pelos vetores $v_1 = (1, 0, i)$ e $v_2 = (2, 1, 1 + i),$ com o produto interno usual. 
+\task[\pers{b}] $S = \{ (x,y,z) \in \mathbb{R}^3 | x + y + z = 0 \},$ com o produto interno usual.
+\task[\pers{c}] $S = \{ p(t) \in \mathcal{P}_3 (\mathbb{R}) | tp^{\prime}(t) = p(t) \}$ e $\prin{p,q} = \displaystyle \int\limits_0^1 p(t)q(t) \dif t$
+\task[\pers{d}] $S = \{ A \in \mathcal{M}_3(\mathbb{R}) | \tr(A) = 0 \}$ e $\prin{A,B} = \tr(AB^t).$
+\task[\pers{e}] $S = \langle (1,-1,1) \rangle,$ com o produto interno usual.%S^{\perp} = \langle (0, 1, 1), (1,1,0) \rangle
+}
+\solucao{}
+\exercicio{6}  Prove que se 
+\[\abs{\prin{u,v}} = \norm{u} \norm{v},
+\] então $u$ e $v$ são linearmente dependentes.
+\solucao{}
+\exercicio{7} Sejam $W$ um subespaço de $V$ e $v \in V.$ Um vetor $w \in W$ é uma \emph{melhor aproximação} para $v$ por
+vetores em $W$ se \[\norm{v − w} \le \norm{v − u}, \mbox{ para todo } u \in W.\] Prove que
+\dividiritens{
+\task[\pers{a}] O vetor $w \in W$ é uma melhor aproximação para $v \in V$ por vetores em $W$ se, e somente
+se, $v − w \in W^{\perp}.$
+\task[\pers{b}] Se uma melhor aproximação para $v \in V$ por vetores em $W$ existe, então ela é única.
+\task[\pers{c}] Se $\dim W < \infty$ então existe uma melhor aproximação para $v \in V$ por vetores em $W$ e ela é dada por $w = \displaystyle\sum\limits_{i=1}^k \prin{v,e_i} e_i,$ onde $\{ e_1, \ldots, e_k \}$ é uma base ortonormal qualquer de $W.$
 
+}
 
+Tal vetor é chamado de \emph{projeção ortogonal de v em W.}
+\solucao{}
+\exercicio{8} Sejam $W$ um subespaço de $V$ e $v \in V.$ Seja $E \colon V \to V$ a função tal que $E(v) = w,$ a projeção
+ortogonal de $v$ em $W.$ (Assuma que, para todo $v \in V,$ existe tal $w.$) Prove que 
+\dividiritens{
+\task[\pers{a}] $E$ é um operador linear em $V.$
+\task[\pers{b}] $E$ é idempotente.
+\task[\pers{c}] $\mbox{Im } E = W$ e $\Ker E = W^{\perp}.$
+\task[\pers{d}] $V = W \oplus W^{\perp}.$
+}
+\solucao{}
+\exercicio{9} Seja $W$ um subespaço de dimensão finita de $V.$ Existem, em geral, várias projeções cuja imagem é $W.$ Uma delas, a projeção ortogonal, tem a propriedade que $\norm{E(v)} \le \norm{v},$ para
+todo $v \in V.$ Prove se $E \in \mathcal{L}(V)$ é uma projeção cuja imagem é $W$ e $\norm{E(v)} \le \norm{v},$ para todo $v \in V,$ então $E$ é a projeção ortogonal em $W.$
+(\textbf{Sugestão:} Prove que $\prin{E(v), v - E(v)} = 0,$ para todo $v \in V$ se, e somente se, $\prin{u, E(v)} = 0,$
+para todo $u \in \Ker E$ e $v \in V.$ )
+\solucao{}
+\exercicio{10}  Sejam $W$ um subespaço de dimensão finita de $V$ e $E$ a projeção ortogonal de $V$ em $W$. Prove
+que $\prin{E(v), u} = \prin{v, E(u)}$ para todos $u, v \in V.$
+\solucao{}
+\exercicio{11} Sejam $V$ e $W$ espaços vetoriais de mesma dimensão (finita) sobre $K$ e com produtos internos $\prin{,}_V$ e $\prin{,}_W,$ respectivamente. Seja T : V → W uma transformação linear. Prove que as
+seguintes afirmações são equivalentes: 
+\dividiritens{
+\task[\pers{a}] $\prin{T(u), T(v)}_W = \prin{u,v},$ para todos $u,v \in V.$
+\task[\pers{b}] $T$ leva \textbf{toda} base ortonormal de $V$ em uma base ortonormal de $W.$
+\task[\pers{c}] $T$ leva \textbf{uma} base ortonormal de $V$ em uma base ortonormal de $W.$
+\task[\pers{d}] $\norm{T(v)}_W = \norm{v}_V$ para todo $v \in V.$
+}
+Tal $T$ é um \emph{isomorfismo de espaços com produto interno.}
+\solucao{}
+\exercicio{12} Uma matriz $A \in \mathcal{M}_n(K)$ é chamada \emph{ortogonal} se $AA^t = I_n$ e \emph{unitária} se $AA^{∗} = I_n.$ Encontre um exemplo de uma matriz complexa unitária que não é ortogonal e um exemplo de uma matriz que é ortogonal e não é unitária.
+\solucao{}
+\exercicio{13} Seja $T \in \mathcal{L}(V)$ um isomorfismo de espaços com produto interno, isto é,
+\[\prin{T(u), T(v)} = \prin{u,v},
+\] para todos $u, v \in V.$ Prove que $T$ possui um adjunto e $T^{*} = T^{-1}.$ Prove que vale
+também a recíproca, isto é, se $T$ possui um adjunto com $T^{*} = T^{-1},$ então $T$ é um isomorfismo de espaços com produto interno. Tal $T$ é chamado \emph{operador unitário} se $K = \mathbb{C}$ e \emph{ortogonal} se $K = \mathbb{R}.$
+\solucao{$(\Rightarrow)$ Para provar que $T$ possui um adjunto, precisamos verificar que existe $T^* \in \mathcal{L}(V)$ tal que
+\[
+\prin{T(u), v} = \prin{u, T^{*}(v)}, \quad \forall u,v \in V
+\]
+Como $T$ é um isomorfismo, sabemos que existe $T^{-1} \in \mathcal{L}(V).$ Consideremos então o vetor $v = T^{-1}(w).$ Daí,
+\[
+\prin{T(u), T(\textcolor{Green}{v})} = \prin{u,\textcolor{Green}{v}} \Rightarrow \prin{T(u), T(\textcolor{Green}{T^{-1}(w)})} = \prin{u,\textcolor{Green}{T^{-1}(w)}} \Rightarrow \prin{T(u), w} = \prin{u, T^{-1}(w)}, \forall u, w \in V.
+\]
+Logo, $T$ possui um adjunto, e $T^{*} = T^{-1}.$
+\newline
+$(\Leftarrow)$ Se $T \in \mathcal{L}(V)$ possui um operador adjunto $T^{*} \in \mathcal{L}(V),$ sabemos por definição que
+\[
+\prin{T(u), v} = \prin{u, T^{*}(v)}, \quad \forall u,v \in V
+\]
+Como $T^{*} = T^{-1},$ escrevendo $v = T(w),$ temos que
+\[
+\prin{T(u), v} = \prin{u, \textcolor{Blue}{T^{*}}(v)} \Rightarrow \prin{T(u), \textcolor{Violet}{v}} = \prin{u, \textcolor{Blue}{T^{-1}}(\textcolor{Violet}{v})} \Rightarrow \prin{T(u), \textcolor{Violet}{T(w)}} = \prin{u, \textcolor{Blue}{T^{-1}}(\textcolor{Violet}{T(w)})} \Rightarrow \prin{T(u), T(w)} = \prin{u, T^{-1}(T(w))} \Rightarrow \prin{T(u), T(w)} = \prin{u, w}.
+\]
+Logo, $T$ é um isomorfismo.
+}
 \textcolor{Red}{Questões Suplementares}
 
-\exercicio{31} 
+\exercicio{31} Considere o seguinte subespaço de $\mathbb{R}^3:$
+\[
+W = \{ (x,y,z) \in \mathbb{R}^3 |x + 2y - 3z = 0, x - 2y + z = 0 \}
+\]
+\dividiritens{
+\task[\pers{a}] Descreva o operador de projeção ortogonal de $V$ em $W.$
+\task[\pers{b}] Verifique que $\mathbb{R}^3 = W \oplus W^{\perp}.$ 
+}
+\solucao{}
+\exercicio{32} Seja $\mathcal{F}$ o espaço vetorial das funções reais, e considere os conjuntos
+%https://www.ime.unicamp.br/~marcia/AlgebraLinear/Arquivos%20PDF/exemplos_subespacos.pdf
+\[
+S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-x) \}
+\]
+\dividiritens{
+\task[\pers{a}] Verifique que $S_i$ e $S_p$ são subespaços vetoriais de $\mathcal{F}.$
+\task[\pers{b}] Descreva os operadores de projeção ortogonal de $\mathcal{F}$ em $S_i$ e em $S_p.$
+\task[\pers{c}] Encontre subespaços $W_1$ e $W_2$ de $\mathcal{F}$ tais que \[\mathcal{F} = S_i \oplus W_1 \quad \mbox{e} \quad \mathcal{F} = S_p \oplus W_2 \]
+\task[\pers{d}] Conclua que $\mathcal{F} = S_p \oplus S_i.$%http://www.uel.br/projetos/matessencial/superior/alinear/somadir.htm
+%http://vectorsandgeometry.wikidot.com/3-5-exemplos-resolvidos-com-interseccao
+}
+
 \solucao{}
 
+\exercicio{33} (Decomposição QR) A \emph{Decomposição QR} de uma matriz $A \in \mathcal{M}_n(K)$ consiste em escrever a matriz $A$ como um produto $QR,$ onde $Q$ é uma matriz ortogonal (se $K = \mathbb{R}$) ou unitária (se $K = \mathbb{C}$) e $R$ é uma matriz triangular superior. Tal decomposição é importante para o método dos mínimos quadrados e é base para algoritmos computacionais de cálculo de autovalores de uma matriz. 
+\dividiritens{
+\task[\pers{a}] Prove que toda matriz $A \in \mathcal{M}_n(K)$ admite uma decomposição $QR.$
+\task[\pers{b}] Encontre a decomposição QR das seguintes matrizes:
+\begin{itemize}
+    \item[\textbf{($\alpha$)}] $A = \begin{pmatrix}
+  12 & -51 &   4 \\
+   6 & 167 & -68 \\
+  -4 &  24 & -41
+\end{pmatrix}$
+    \item[\textbf{($\beta$)}]
+\end{itemize}
+}
+%https://pt.wikipedia.org/wiki/Decomposi%C3%A7%C3%A3o_QR
+%https://www.ufrgs.br/reamat/AlgebraLinear/livro/s13-o_processo_de_ortogonalizax00e7x00e3o_de_gramx2013schmidt.html
+\solucao{}
 \newpage
 \section{\textcolor{Floresta}{Lista 6}}
 
