@@ -1838,7 +1838,7 @@ Seja $V$ um espaço vetorial e $T\in\mathcal{L}(V)$. Seja $v\in V$ que possua um
 \noindent
 O teorema seguinte mostra como subespaços cíclicos podem ser compostos e decompostos.
 
-\begin{teorema}
+\begin{teorema}\label{ciclico}
 Seja $V$ um espaço vetorial e $T\in\mathcal{L}(V)$.
 \begin{itemize}
 \item (Compondo subespaços cíclicos) Se $u_1,\dots,u_n\in V$ tem $T$-anuladores mutuamente primos entre si, então o $T$-anulador de $u=u_1+\dots+u_n$ é:
@@ -2121,8 +2121,114 @@ Mostraremos por indução na dimensão. Suponhamos que o teorema é válido para
 
 \section{Triangularização de Matrizes}
 
+\begin{definicao}
+Um operador $T$ sobre um espaço vetorial de dimensão finita $V$ é dito \textbf{triangularizável} se e somente se existe uma base ordenada em que $T$ é representada por uma matriz triangular superior.
+\end{definicao}
+
+\begin{lema}
+Seja $V$ um espaço vetorial de dimensão finita. Seja $T\in\mathcal{L}(V)$ cujo polinômio minimal seja um produto de fatores lineares:
+\[
+m_T(x)=(x-c_1)^{r_1}\dots(x-c_k)^{r_k}.
+\] 
+Seja $W$ um subespaço $T$-invariante de $V$ tal que $W\neq V$. Então existe um vetor $v\in V$ tal que $v\notin W$ e exista $i$ tal que $(T-c_iI)(v)\in W$.
+\end{lema}
+\begin{proof}
+Seja $u\in V$ um vetor tal que $u\notin W$. Seja $g(x)$ o menor polinômio tal que $g(T)(u)\in W$. Então $g$ divide o polinômio minimal $m_T$. Portanto:
+\[
+g(x)=(x-c_1)^{s_1}\dots(x-c_k)^{s_k},
+\]
+em que exista algum $j$ tal que $s_i>0$. Então $(x-c_i)$ divide $g(x)$:
+\[
+g(x)=(x-c_i)h(x).
+\]
+Pela definição de $g$, então $v\coloneqq h(T)(u)\notin W$. Mas:
+\[
+(T-c_iI)(v)=(T-c_iI)h(T)(v)=g(T)(v)\in W.
+\]
+Assim acaba.
+\end{proof}
+
+\begin{teorema}
+Seja $V$ um espaço vetorial de dimensão finita e seja $T\in\mathcal{L}(V)$. Então $T$ é triangularizável se e só se o polinômio minimal de $T$ é um produto de fatores lineares.
+\end{teorema}
+\begin{proof}
+Suponhamos que o polinômio minimal de $T$ se decompões em fatores lineares:
+\[
+m_T(x)=(x-c_1)^{r_1}\dots(x-c_k)^{r_k}.
+\]
+Com uma aplicação repetida do lema acima, chegaremos a uma base ordenada $B=(e_1,\dots,e_n)$ na qual a matriz de $T$ é triangular superior:
+\[
+[T]_B=\begin{pmatrix}
+a_{1,1}&a_{1,2}&a_{1,3}&\ldots&a_{1,n}\\0&a_{2,2}&a_{2,3}&\ldots&a_{2,n}\\0&0&a_{3,3}&\ldots&a_{3,n}\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\ldots&a_{n,n}
+\end{pmatrix}.
+\]
+Isto simplesmente diz que:
+\[
+T(e_j)=a_{1,j}e_1+\dots+a_{j,j}e_j,\quad\quad\quad j=1,\dots,n,
+\]
+ou seja, $T(e_j)$ está no subespaço gerado por $e_1,\dots,e_j$. Para obter os $e_1,\dots,e_n$, começamos aplicando o lema para o subespaço $W_0=0$, para obter o vetor $e_1$. Então apliquemos o lema para $W_1$, o subespaço gerado por $e_1$, e assim obteremos $e_2$. Depois apliquemos o lema para $W_2$, o subespaço gerado por $e_1$ e $e_2$. Continuemos desta maneira. Notemos que, quando os vetores $e_1,\dots,e_i$ são obtidos, são as relações:
+\[
+T(e_j)=a_{1,j}e_1+\dots+a_{j,j}e_j,\quad\quad\quad j=1,\dots,i
+\]
+que garantem que o subespaço gerado por $e_1,\dots,e_i$ é um subespaço $T$-invariante.
+
+\medskip
+\noindent
+Por outro lado, se $T$ é triangularizável, então é evidente que o polinômio característico de $T$ é da forma:
+\[
+p_T(x)=(x-c_1)^{d_1}\dots(x-c_k)^{d_k}.
+\]
+Para isto, apenas considere a matriz triangular superior:
+\[
+\begin{pmatrix}
+a_{1,1}&a_{1,2}&a_{1,3}&\ldots&a_{1,n}\\0&a_{2,2}&a_{2,3}&\ldots&a_{2,n}\\0&0&a_{3,3}&\ldots&a_{3,n}\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\ldots&a_{n,n}
+\end{pmatrix}.
+\]
+As entradas diagonais $a_{1,1},\dots,a_{n,n}$ são autovalores, com $c_i$ repetida $d_i$ vezes. Mas, se $p_T$ pode ser assim fatorado, então $m_T$ pode ser decomposto em fatores lineares, pois $m_T$ divide $p_T$.
+\end{proof}
+
+\begin{corolario}
+Num corpo algebricamente fechado $K$, então toda matriz sobre $K$ é semelhante sobre $K$ a uma matriz triangular superior.
+\end{corolario}
+
+\begin{observacao}
+Com o lema acima, também podemos apresentar uma prova alternativa de que um operador linear $T$ cujo polinômio minimal seja produto de fatores lineares \emph{distintos} é diagonalizável.
+\end{observacao}
+\begin{proof}
+De fato, se:
+\[
+m_T=(x-c_1)\dots(x-c_k),
+\]
+em que $c_1,\dots,c_k$ são distintos, então seja $W$ o subespaço gerado por todos os autovetores de $T$. Suponhamos que $W\neq V$. Então pelo lema existe um $v\in V$ tal que $v\notin W$ e existe um $i$ tal que $w\coloneqq(T-c_iI)(v)\in W$. Como $w\in W$, então:
+\[
+w=w_1+\dots+w_k,
+\]
+em que $T(w_j)=c_jw_j$ para $j=1,\dots,k$, assim:
+\[
+h(c_1)w_1+\dots+h(c_k)w_k=h(T)(w)\in W
+\]
+para todo polinômio $h$. Agora $m_T(x)=(x-c_i)q(x)$ para algum polinômio $q(x)$. Também:
+\[
+q(x)-q(c_i)=(x-c_i)h(x)
+\]
+para algum polinômio $h(x)$. Temos:
+\[
+q(T)(v)-q(c_i)(v)=h(T)(T-c_iI)(v)=h(T)(w),
+\]
+mas $h(T)\in W$, e, como:
+\[
+0=m_T(T)(v)=(T-c_iI)q(T)(v),
+\]
+então $q(T)(v)\in W$, aí $q(c_i)(v)\in W$, mas $v\notin W$, aí $q(c_i)=0$, uma contradição.
+\end{proof}
+
 \section{Decomposições Cíclicas}
 
+\begin{definicao}
+Seja $V$ um espaço vetorial e seja $T\in\mathcal{L}(V)$. Dizemos que $V$ é \textbf{primário} em relação a $T$ se e só se existe um polinômio irredutível $p(t)\in K[t]$ e um natural $e$ tal que $p(T)^e=0$.
+\end{definicao}
+
+\noindent
 O seguinte teorema mostra como podemos decompor um espaço vetorial anulável por uma potência de polinômio irredutível em subespaços cíclicos.
 
 \begin{teorema}[Decomposição Cíclica de Espaços Primários]
@@ -2304,7 +2410,7 @@ m_T=p_1^{e_1}\dots p_n^{e_n},
 \]
 em que os $p_i$ são polinômios irredutíveis mônicos distintos sobre $K$, então $V$ pode ser decomposto em uma soma direta:
 \[
-V=V_1\oplus V_n,
+V=V_1\oplus\dots\oplus V_n,
 \]
 em que:
 \[
@@ -2318,6 +2424,7 @@ em que $m_{T,v_{i,j}}=p_i^{e_{i,j}}$ e os termos de cada decomposição cíclica
 \[
 e_i=e_{i,1}\geq e_{i,2}\geq\dots\geq e_{i,k_i}.
 \]
+
 \end{teorema}
 
 \noindent
@@ -2369,6 +2476,43 @@ p_r\mid p_{r-1}\mid\dots\mid p_2\mid p_1.
 \]
 \end{teorema}
 
+\begin{proof}
+De acordo com a decomposição cíclica em divisores elementares, $V$ pode ser escrito como soma direta:
+\[
+V=\left(Z(u_{1,1},T)\oplus\dots\oplus Z(u_{1,k_1},T)\right)\oplus\dots\oplus\left(Z(u_{m,1},T)\oplus\dots\oplus Z(u_{m,k_m},T)\right)
+\]
+em que $m_{T,u_{i,j}}=p_i^{e_{i,j}}$ e:
+\[
+e_{i,1}\geq e_{i,2}\geq\dots\geq e_{i,k_i},
+\]
+assim podemos combinar somandos cíclicos com polinômios minimais relativamente primos. Uma maneira de fazer isto é pegar o subespaço cíclico $Z(u_{i,1},T)$ de cada coleção:
+\[
+Z(u_{i,1},T)\oplus\dots\oplus Z(u_{i,k_i},T)
+\]
+para obtermos o seguinte:
+\[
+Z(v_1,T)=Z(u_{1,1},T)\oplus\dots\oplus Z(u_{m,1},T)
+\]
+e repetir o processo:
+\[
+Z(v_2,T)=Z(u_{1,2},T)\oplus\dots\oplus Z(u_{m,2},T)
+\]
+\[
+Z(v_3,T)=Z(u_{1,3},T)\oplus\dots\oplus Z(u_{m,3},T)
+\]
+\[
+\vdots
+\]
+É claro que alguns somandos podem estar faltando aqui pois os diferentes subespaços primários:
+\[
+Z(u_{i,1},T)\oplus\dots\oplus Z(u_{i,k_i},T)
+\]
+não necessariamente têm o mesmo número de somandos. De qualquer modo o resultado de rearranjarmos e combinarmos os somandos cíclicos é uma decomposição da forma:
+\[
+V=Z(v_1,T)\oplus\dots\oplus Z(v_r,T).
+\]
+\end{proof}
+
 \noindent
 Por causa da unicidade da decomposição cíclica em divisores elementares, então temos a unicidade da decomposição cíclica em fatores invariantes
 
@@ -2395,6 +2539,301 @@ Então $m=n$ e também $p_k=q_k$ para todo $k$.
 \begin{definicao}
 A sequência dos polinômios $p_i$ é unicamente determinado pela decomposição cíclica em fatores invariantes, assim ela é chamada a sequência dos \textbf{fatores invariantes}.
 \end{definicao}
+
+\section{Formas Racionais de Matrizes}
+
+\begin{definicao}
+Definimos a \textbf{matriz companheira} do polinômio mônico:
+\[
+p(x)=x^n+a_{n-1}x^{n-1}+\dots+a_1x+a_0
+\]
+como a matriz:
+\[
+C[p(x)]=\begin{pmatrix}
+0&0&\ldots&0&-a_0\\1&0&\ldots&0&-a_1\\0&1&\ddots&&\vdots\\\vdots&\vdots&\ddots&0&-a_{n-2}\\0&0&\ldots&1&-a_{n-1}
+\end{pmatrix}
+\]
+\end{definicao}
+
+\begin{teorema}
+Dado polinômio $p(x)\in K[x]$, então temos:
+\[
+p_{C[p(x)]}(x)=m_{C[p(x)]}=p(x).
+\]
+Além disso, um espaço vetorial $V$ possui um vetor cíclico para $T\in\mathcal{L}(V)$ se e somente se $T$ pode ser representado por uma matriz companheira, e nesse caso a base representante é $T$-cíclica.
+\end{teorema}
+\begin{proof}
+Veja o Exercício 15 da lista 2.
+\end{proof}
+
+\noindent
+Agora estamos prontos para determinar um conjunto de formas canônicas para similaridade entre matrizes. Faremos isto através das formas racionais. Há pelo menos dois tipos de formas racionais: a forma racional para divisores elementares e a forma racional para fatores invariantes. Primeiro apresentaremos as formas racionais para divisores elementares.
+
+\begin{definicao}
+Dizemos que uma matriz $A$ está na \textbf{forma racional para divisores elementares} se e só se $A$ é da forma:
+\[
+\begin{pmatrix}
+C[r_1^{e_1}(x)]&&\\&\ddots&\\&&C[r_n^{e_n}(x)]
+\end{pmatrix},
+\]
+em que os $r_i(x)$ são polinômios mônicos irredutíveis.
+\end{definicao}
+
+\begin{teorema}[Forma Racional para Divisores Elementares]
+Cada classe de similaridade $S$ de matrizes contém uma matriz $A$ na forma racional para divisores elementares. Além disso, o conjunto das matrizes em $S$ que estão nessa forma
+é o conjunto de matrizes obtidas de $A$ através de reordenação das matrizes companheiras no bloco diagonal.
+\end{teorema}
+\begin{proof}
+Seja $V$ um espaço vetorial de \emph{dimensão finita} e seja $T\in\mathcal{L}(V)$. Pela decomposição cíclica em divisores elementares, o espaço $V$ pode ser expressado pela seguinte soma direta:
+\[
+V=\left(Z(v_{1,1},T)\oplus\dots\oplus Z(v_{1,k_1},T)\right)\oplus\left(Z(v_{n,1},T)\oplus\dots\oplus Z(v_{n,k_n},T)\right),
+\]
+em que $m_{T,v_{i,j}}=p_i^{e_{i,j}}$ e também:
+\[
+e_{i,1}\geq e_{i,2}\geq\dots\geq e_{i,k_i}.
+\]
+A concatenação $B$ das bases ordenadas:
+\[
+B_{i,j}=\left(v_{i,j},T(v_{i,j}),\dots,T^{d_{i,j}-1}(v_{i,j})\right),
+\]
+em que $d_{i,j}=\mathrm{deg}(p_i)\cdot e_{i,j}$, é uma base ordenada tal que:
+\[
+[T]_B=\begin{pmatrix}
+C[p_1^{e_{1,1}}(x)]&&&&&&\\&\ddots&&&&&\\&&C[p_1^{e_{1,k_1}}(x)]&&&&\\&&&\ddots&&&\\&&&&C[p_n^{e_{n,1}}(x)]&&\\&&&&&\ddots&\\&&&&&&C[p_n^{e_{n,k_n}}(x)].
+\end{pmatrix}
+\]
+O restante do enunciado pode ser demonstrada tendo em mente a unicidade da decomposição cíclica em divisores elementares.
+\end{proof}
+
+\noindent
+Agora apresentaremos a forma racional para fatores invariantes, que é a forma racional usual da álgebra linear. Portanto, se alguém pedir que representemos uma matriz na forma racional, muito provavelmente está pedindo a forma racional para fatores invariantes.
+
+\begin{definicao}
+Dizemos que uma matriz $A$ está na \textbf{forma racional para fatores invariantes} se e só se $A$ é uma matriz da forma:
+\[
+\begin{pmatrix}
+C[s_1(x)]&&\\&\ddots&\\&&C[s_n(x)]
+\end{pmatrix},
+\]
+em que $s_{k+1}(x)\mid s_k(x)$ para $k=1,\dots,n-1$.
+\end{definicao}
+
+\begin{teorema}[Forma Racional para Fatores Invariantes]
+Cada classe de similaridade $S$ de matrizes contém uma matriz $A$ na forma racional para fatores invariantes. Além disso, o conjunto das matrizes em $S$ que estão nessa forma
+é o conjunto de matrizes obtidas de $A$ através de reordenação das matrizes companheiras no bloco diagonal.
+\end{teorema}
+
+\begin{lema}
+Se $p(x),q(x)$ são polinômios mônicos primos entre si, então:
+\[
+C[p(x)q(x)]\sim\begin{pmatrix}
+C[p(x)]&\\&C[q(x)]
+\end{pmatrix}.
+\]
+\end{lema}
+\begin{proof}[Demonstração do Lema]
+Se uma matriz $A$ tem polinômio minimal:
+\[
+m_T=p_1^{e_1}\dots p_n^{e_n}
+\]
+de grau igual ao tamanho da matria, então o teorema das formas racionais para divisores elementares implica que os divisores elementares de $A$ são precisamente:
+\[
+p_1^{e_1},\dots,p_n^{e_n}.
+\]
+Como as matrizes $C[p(x)q(x)]$ e $C[p(x)]\oplus C[q(x)]$ têm o mesmo tamanho $m$ e o mesmo polinômio minimal $p(x)q(x)$ de grau $m$, segue que eles têm o mesmo multiconjunto dos divisores elementares e assim são similares.
+\end{proof}
+
+\begin{proof}[Demonstração do Teorema]
+O lema pode ser usado para rearranjar e combinar as matrizes companheiras numa matriz $A$ em forma racional para divisores elementares para produzir uma matriz em forma racional para fatores invariantes que seja similar a $A$. Além disso, é fácil ver que este processo é reversível.
+\end{proof}
+
+\noindent
+Finalizaremos esta seção mostrando uma aplicação das formas racionais para divisores elementares.
+
+\begin{teorema}
+O polinômio característico de uma matriz é igual ao produto de seus divisores elementares.
+\end{teorema}
+\begin{proof}
+Seja $A$ uma matriz, então ela é similar a uma matriz na forma racional para divisores elementares:
+\[
+\begin{pmatrix}
+C[r_1(x)]&&\\&\ddots&\\&&C[r_n(x)]
+\end{pmatrix}.
+\]
+Sabemos que o polinômio característico de $C[r_i(x)]$ é igual a $r_i(x)$, assim o resultado segue.
+\end{proof}
+
+\section{Formas de Jordan de Matrizes}
+
+As formas racionais, seja para divisores elementares ou para fatores invariantes, têm a façanha de que todo operador linear num espaço vetorial de dimensão finita tem uma forma racional canônica, seja para divisores elementares ou para fatores invariantes. Porém, as formas racionais podem estar longes do ideal de simplicidade que tínhamos em mente para um conjunto de formas canônicas fáceis de apresentar, assim servem mais como ferramentas teóricas do que práticas.
+
+\medskip
+\noindent
+Quando o polinômio minimal $m_T(x)$ de $T$ se decompõe sobre $K$, ou seja:
+\[
+m_T(x)=(x-c_1)^{r_1}\dots(x-c_k)^{r_k},
+\]
+então existe uma outra forma canônica que é bem mais fácil de apresentar do que a forma racional.
+
+\medskip
+\noindent
+De algum modo, a complexidade das formas racionais vem da escolha da base para os subespaços $T$-invariantes cíclicos $Z(v_{i,j},T)$. Recordemos que as bases $T$-cíclicas
+têm a forma:
+\[
+B_{i,j}=(v_{i,j},T(v_{i,j}),\dots,T^{d_{i,j}-1}(v_{i,j})),
+\]
+em que $d_{i,j}=\mathrm{deg}(p_i)\cdot(e_{i,j})$. Com essa base, toda complexidade no final quando tentamos expressar:
+\[
+T(T^{d_{i,j}-1}(v_{i,j}))=T^{d_{i,j}}(v_{i,j})
+\]
+como combinação linear dos vetores da base.
+
+\medskip
+\noindent
+No entanto, como $B_{i,j}$ tem a forma:
+\[
+(v,T(v),T^2(v),\dots,T^{d-1}(v)),
+\]
+então qualquer sequência da forma:
+\[
+(p_0(T)(v),p_1(T)(v),\dots,p_{d-1}(T)(v))
+\]
+em que $\mathrm{deg}(p_k)=k$ será uma base de $Z(v_{i,j},T)$. Em particular, quando $m_T(x)$ se decompõe sobre $K$, os divisores elementares são:
+\[
+p_i^{e_{i,j}}(x)=(x-c_i)^{e^{i,j}}
+\]
+e assim a sequência:
+\[
+C_{i,j}=(v_{i,j},(T-c_iI)(v_{i,j}),\dots,(T-c_iI)^{e_{i,j}-1}(v_{i,j}))
+\]
+é também uma base de $Z(v_{i,j},T)$.
+
+\medskip
+\noindent
+Se temporariamente denotarmos o $k$-ésimo vetor da base $C_{i,j}$ por $b_k$, então para $k=0,\dots,e_{i,j}-2$ temos:
+\[
+\begin{array}{rcl}
+T(b_k)&=&T((T-c_iI)^k(v_{i,j}))\\
+&=&(T-c_iI+c_iI)((T-c_iI)^k(v_{i,j}))\\
+&=&(T-c_iI)^{k+1}(v_{i,j})+c_i(T-c_i)^k(v_{i,j})\\
+&=&b_{k+1}+c_ib_k.
+\end{array}
+\]
+Para $k=e_{i,j}-1$, usando o fato de que:
+\[
+(T-c_iI)^{k+1}(v_{i,j})=(T-c_iI)^{e_{i,j}}(v_{i,j})=0,
+\]
+obtemos:
+\[
+T(b_{e_{i,j}-1})=c_ib_{e_{i,j}-1}.
+\]
+Logo, para esta base, a complexidade se espalha melhor, e a matriz de $T\upharpoonright_{Z(v_{i,j},T)}$ em relação a $C_{i,j}$ é a matriz de tamanho $e_{i,j}$:
+\[
+\begin{pmatrix}
+c_i&0&\ldots&\ldots&0\\1&c_i&\ddots&&\vdots\\0&1&\ddots&\ddots&\vdots\\\vdots&\ddots&\ddots&\ddots&0\\0&\ldots&0&1&c_i
+\end{pmatrix}.
+\]
+Assim apresentaremos o conceito das formas de Jordan.
+
+\begin{definicao}
+Um \textbf{bloco de Jordan} é uma matriz do tipo:
+\[
+J(c,n)=\begin{pmatrix}
+c&0&\ldots&\ldots&0\\1&c&\ddots&&\vdots\\0&1&\ddots&\ddots&\vdots\\\vdots&\ddots&\ddots&\ddots&0\\0&\ldots&0&1&c
+\end{pmatrix},
+\]
+em que $c\in K$ e a matriz tem tamanho $n$. Dizemos que uma matriz está na \textbf{forma de Jordan} se e só se é uma soma direta de blocos de Jordan.
+\end{definicao}
+
+\noindent
+Com a discussão anterior, então temos as conhecidas formas de Jordan.
+
+\begin{teorema}[Forma de Jordan]
+Suponhamos que o polinômio minimal de $T\in\mathcal{L}(V)$ se decomponha sobre o corpo $K$, ou seja:
+\[
+m_T(x)=(x-c_1)^{e_1}\dots(x-c_n)^{e_n},
+\]
+em que $c_i\in K$. Então existe uma base $B$ tal que a matriz de $T$ seja:
+\[
+\begin{pmatrix}
+J(c_1,e_{1,1})&&&&&&\\&\ddots&&&&&\\&&J(c_1,e_{1,k_1})&&&&\\&&&\ddots&&&\\&&&&J(c_n,e_{n,1})&&\\&&&&&\ddots&\\&&&&&&J(c_n,e_{n,k_n})
+\end{pmatrix},
+\]
+em que os polinômios $(x-c_i)^{e_{i,j}}$ são os divisores elementares de $T$.
+\end{teorema}
+
+\begin{corolario}
+Se $K$ é algebricamente fechado, então, a menos de ordem dos blocos na diagonal, o conjunto de matrizes na forma de Jordan constitui um conjunto de formas canônicas para a similaridade de matrizes.
+\end{corolario}
+
+\section{Espaços Indecomponíveis}
+
+A decomposição cíclica em divisores elementares pode ser usada para caracterizar espaços vetoriais de dimensão finita com vetores cíclicos através de seus divisores elementares.
+
+\begin{teorema}[Caracterização de Espaços Cíclicos]
+Seja $V$ um espaço vetorial de dimensão finita e seja $T\in\mathcal{L}(V)$. Consideremos o polinômio minimal:
+\[
+m_T=p_1^{e_1}\dots p_n^{e_n}.
+\]
+As seguintes propriedades são equivalentes:
+\begin{itemize}
+\item[1)] $V$ possui um vetor cíclico para $T$.
+\item[2)] $V$ é uma soma direta:
+\[
+V=Z(v_1,T)\oplus\dots\oplus Z(v_n,T)
+\]
+de subespaços cíclicos primários $V_i=Z(v_i,T)$ tais que $m_{T\upharpoonright{V_i}}=p_i^{e_i}$.
+\item[3)] Os divisores elementares de $V$ são precisamente:
+\[
+p_1^{e_1},\dots,p_n^{e_n}.
+\]
+\end{itemize}
+\end{teorema}
+\begin{proof}
+Suponhamos que $V$ tenha vetor cíclico para $T$. Então a decomposição primária para minimais de $V$ é uma decomposição cíclica, pois pelo Exercício 1 da Lista 4 todo subespaço $T$-invariante de um espaço com vetor cíclico também tem um vetor cíclico. Logo, (1) implica (2). Reciprocamente, se (2) ocorre, então como os polinômios minimais são relativamente primos, o Teorema \ref{ciclico} implica que $V$ tem um vetor cíclico. Deixamos o restante da prova para o leitor.
+\end{proof}
+
+\noindent
+A decomposição cíclica em divisores elementares é uma decomposição de $V$ numa soma dureta de subespaços $T$-invariantes que não podem ser decompostos em pedaços menores. De fato, isto caracteriza a decomposição cíclica em divisores elementares de $V$. Antes de justificar estas afirmações, apresentamos a seguinte definição.
+
+\begin{definicao}
+Um espaço vetorial $V$ é dito \textbf{indecomponível} para um $T\in\mathcal{L}(V)$ se e só se não puder ser escrito como uma soma direta de dois subespaços $T$-invariantes próprios.
+\end{definicao}
+
+\begin{teorema}[Caracterização de Espaços Indecomponíveis]
+Seja $V$ um espaço vetorial de dimensão finita e seja $T\in\mathcal{L}(V)$. Então as seguinte propriedades são equivalentes:
+\begin{itemize}
+\item[1)] $V$ é indecomponível para $T$.
+\item[2)] $V$ é um espaço primário e tem um vetor cíclico para $T$.
+\item[3)] $V$ tem apenas um divisor elementar para $T$.
+\end{itemize}
+\end{teorema}
+
+\noindent
+Portanto, a decomposição cíclica em divisores elementares é uma decomposição de $V$ em uma soma direta de subespaços $T$-invariantes indecomponíveis para $T$. Reciprocamente, se:
+\[
+V=V_1\oplus\dots\oplus V_n
+\]
+é uma decomposição de $V$ numa soma direta de subespaços $T$-invariantes indecomponíveis para $T$, então cada subespaço $T$-invariante $V_i$ é primário e possui vetor cíclico, aí esta decomposição é a decomposição cíclica em divisores elementares de $V$.
+
+\medskip
+\noindent
+Quem já está familiarizado com teoria dos grupos sabem que todo grupo de ordem prima é cíclico. Entretanto, existem espaços com polinômio minimal irredutível que no entanto não possuem vetores cíclicos. Não obstante, espaços com polinômio minimal irredutível com vetores cíclicos são importantes.
+
+\medskip
+\noindent
+De fato, se $V$ é um espaço vetorial de dimensão finita e $T\in\mathcal{L}(V)$, com polinômio minimal $m_T$, então cada fator primo de $p$ de $m_T$ nos oferece um subespaço $T$-invariante $W$ de $V$ com vetor cíclico cujo polinômio minimal é $p$ e aí $W$ é também indecomponível para $T$.
+Infelizmente, $W$ não necessariamente tem um complemento $T$-invariante e aí não podemos usá-lo
+para decompor $V$. Não obstante, o teorema ainda é útil.
+
+\begin{teorema}[Teorema de ``Cauchy'' para Álgebra Linear]
+Seja $V$ um espaço vetorial de dimensão finita e $T\in\mathcal{L}(V)$, com polinômio minimal $m_T$. Se $p$ é um divisor primo de $m_T$, então $V$ tem um subespaço $T$-invariante $W$ com vetor cíclico com $T$-anulador $p$.
+\end{teorema}
+\begin{proof}
+Se $m_T=pq$, então existe um $v\in V$ tal que $w\coloneqq q(T)(v)\neq 0$ mas $p(T)(w)=0$.
+Assim $W=Z(w,T)$ é anulado por $p(T)$ e assim $m_{T,w}\mid p$. Mas $p$ é primo e
+$m_{T,w}\neq 1$, aí $m_{T,w}=p$.
+\end{proof}
 
 \chapter{Espaços com Produto Interno}
 
