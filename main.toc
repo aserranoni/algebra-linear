@@ -19,7 +19,16 @@
 \contentsline {section}{\numberline {4.1}Autovalores e Autovetores}{31}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Polin\IeC {\^o}mio Minimal}{35}{section.4.2}% 
 \contentsline {section}{\numberline {4.3}Subespa\IeC {\c c}os Invariantes}{36}{section.4.3}% 
-\contentsline {section}{\numberline {4.4}Teorema de Cayley-Hamilton}{38}{section.4.4}% 
-\contentsline {section}{\numberline {4.5}Decomposi\IeC {\c c}\IeC {\~o}es Prim\IeC {\'a}rias}{40}{section.4.5}% 
-\contentsline {section}{\numberline {4.6}Crit\IeC {\'e}rios de Diagonaliza\IeC {\c c}\IeC {\~a}o}{41}{section.4.6}% 
+\contentsline {section}{\numberline {4.4}Subespa\IeC {\c c}os C\IeC {\'\i }clicos}{38}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Teorema de Cayley-Hamilton}{39}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Decomposi\IeC {\c c}\IeC {\~o}es Prim\IeC {\'a}rias}{40}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Crit\IeC {\'e}rios de Diagonaliza\IeC {\c c}\IeC {\~a}o}{42}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Triangulariza\IeC {\c c}\IeC {\~a}o de Matrizes}{43}{section.4.8}% 
+\contentsline {section}{\numberline {4.9}Decomposi\IeC {\c c}\IeC {\~o}es C\IeC {\'\i }clicas}{43}{section.4.9}% 
+\contentsline {chapter}{\numberline {5}Espa\IeC {\c c}os com Produto Interno}{49}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Defini\IeC {\c c}\IeC {\~o}es e Exemplos}{49}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Matriz de Gramm}{50}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Espa\IeC {\c c}os Normados}{51}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}Ortogonalidade}{52}{section.5.4}% 
+\contentsline {section}{\numberline {5.5}Funcionais Lineares}{52}{section.5.5}% 
 \contentsfinish 
