@@ -4427,10 +4427,9 @@ ortogonais. Discuta a afirmação para $K = \mathbb{C}.$
 vetores em $W$ se \[\norm{v - w} \le \norm{v - u}, \mbox{ para todo } u \in W.\] Prove que
 \dividiritens{
 \task[\pers{a}] O vetor $w \in W$ é uma melhor aproximação para $v \in V$ por vetores em $W$ se, e somente
-se, $v − w \in W^{\perp}.$
+se, $v - w \in W^{\perp}.$
 \task[\pers{b}] Se uma melhor aproximação para $v \in V$ por vetores em $W$ existe, então ela é única.
-\task[\pers{c}] Se $\dim W < \infty$ então existe uma melhor aproximação para $v \in V$ por vetores em $W$ e ela é dada por $w = \displaystyle\sum\limits_{i=1}^k \prin{v,e_i} e_i,$ onde $\{ e_1, \ldots, e_k \}$ é uma base ortonormal qualquer de $W.$
-
+\task[\pers{c}] Se $\dim W < \infty$ então existe uma melhor aproximação para $v \in V$ por vetores em $W$ e ela é dada por $w = \displaystyle\sum\limits_{i=1}^k \prin{v,e_i} e_i,$ onde $\{e_1, \ldots, e_k\}$ é uma base ortonormal qualquer de $W.$
 }
 
 Tal vetor é chamado de \emph{projeção ortogonal de v em W.}
@@ -4462,7 +4461,6 @@ seguintes afirmações são equivalentes:
 }
 Tal $T$ é um \emph{isomorfismo de espaços com produto interno.}
 \solucao{}
-\solucao{}
 \exercicio{12} Uma matriz $A \in \mathcal{M}_n(K)$ é chamada \emph{ortogonal} se $AA^t = I_n$ e \emph{unitária} se $AA^{*} = I_n.$ Encontre um exemplo de uma matriz complexa unitária que não é ortogonal e um exemplo de uma matriz que é ortogonal e não é unitária.
 \solucao{}
 \exercicio{13} Seja $T \in \mathcal{L}(V)$ um isomorfismo de espaços com produto interno, isto é,
@@ -4473,9 +4471,11 @@ também a recíproca, isto é, se $T$ possui um adjunto com $T^{*} = T^{-1},$ en
 \[
 \prin{T(u), v} = \prin{u, T^{*}(v)}, \quad \forall u,v \in V
 \]
-Como $T$ é um isomorfismo, sabemos que existe $T^{-1} \in \mathcal{L}(V).$ Consideremos então o vetor $v = T^{-1}(w).$ Daí,
+Como $T$ é um isomorfismo, sabemos que existe $T^{-1} \in \mathcal{L}(V).$ Consideremos o vetor $v = T^{-1}(w).$ Daí, $\forall u, w \in V:$
 \[
-\prin{T(u), T(\textcolor{Green}{v})} = \prin{u,\textcolor{Green}{v}} \Rightarrow \prin{T(u), T(\textcolor{Green}{T^{-1}(w)})} = \prin{u,\textcolor{Green}{T^{-1}(w)}} \Rightarrow \prin{T(u), w} = \prin{u, T^{-1}(w)}, \forall u, w \in V.
+\begin{array}{rcl}
+\prin{T(u), T(\textcolor{Green}{v})} = \prin{u,\textcolor{Green}{v}} &\Rightarrow& \prin{T(u), T(\textcolor{Green}{T^{-1}(w)})} = \prin{u,\textcolor{Green}{T^{-1}(w)}} \\&\Rightarrow& \prin{T(u), w} = \prin{u, T^{-1}(w)}.
+\end{array}
 \]
 Logo, $T$ possui um adjunto, e $T^{*} = T^{-1}.$
 \newline
@@ -4485,9 +4485,198 @@ $(\Leftarrow)$ Se $T \in \mathcal{L}(V)$ possui um operador adjunto $T^{*} \in \
 \]
 Como $T^{*} = T^{-1},$ escrevendo $v = T(w),$ temos que
 \[
-\prin{T(u), v} = \prin{u, \textcolor{Blue}{T^{*}}(v)} \Rightarrow \prin{T(u), \textcolor{Violet}{v}} = \prin{u, \textcolor{Blue}{T^{-1}}(\textcolor{Violet}{v})} \Rightarrow \prin{T(u), \textcolor{Violet}{T(w)}} = \prin{u, \textcolor{Blue}{T^{-1}}(\textcolor{Violet}{T(w)})} \Rightarrow \prin{T(u), T(w)} = \prin{u, T^{-1}(T(w))} \Rightarrow \prin{T(u), T(w)} = \prin{u, w}.
+\begin{array}{rcl}
+\prin{T(u), v} = \prin{u, \textcolor{Blue}{T^{*}}(v)} &\Rightarrow& \prin{T(u), \textcolor{Violet}{v}} = \prin{u, \textcolor{Blue}{T^{-1}}(\textcolor{Violet}{v})} \\&\Rightarrow& \prin{T(u), \textcolor{Violet}{T(w)}} = \prin{u, \textcolor{Blue}{T^{-1}}(\textcolor{Violet}{T(w)})} \\&\Rightarrow& \prin{T(u), T(w)} = \prin{u, T^{-1}(T(w))} \\&\Rightarrow& \prin{T(u), T(w)} = \prin{u, w}.
+\end{array}
 \]
 Logo, $T$ é um isomorfismo.
+}
+\solucao{}
+\exercicio{14} Seja $T$ o operador linear em $\mathbb{C}^2$ (com o produto interno usual) definido por: $T(1, 0) = (1 +
+i, 2)$ e $T(0, 1) = (i, i).$ Determine a matriz de $T^{*}$
+em relação à base canônica de $\mathbb{C}^2$. Vale que
+$TT^{*} = T^{*}T?$
+\solucao{Seja $A \in \mathcal{M}_2(\mathbb{C})$ a matriz que representa $T.$ Pelas informações do enunciado, se
+\[
+A = \begin{pmatrix}
+\alpha & \beta \\
+\gamma & \delta
+\end{pmatrix},
+\]
+devemos ter
+\[
+\begin{pmatrix}
+\alpha & \beta \\
+\gamma & \delta
+\end{pmatrix} \begin{pmatrix}
+1 \\ 0
+\end{pmatrix} =  \begin{pmatrix}
+1+i \\ 2
+\end{pmatrix} \quad \mbox{e} \quad \begin{pmatrix}
+\alpha & \beta \\
+\gamma & \delta
+\end{pmatrix} \begin{pmatrix}
+0 \\ 1
+\end{pmatrix} =  \begin{pmatrix}
+i \\ i
+\end{pmatrix}.
+\]
+Daí, segue que $\alpha = 1 + i, \gamma = 2, $ e $\beta = \delta = i.$ Portanto, a matriz de $T$ na base canônica de $\mathbb{C}^2$ é \[\begin{pmatrix}
+1+i & i \\
+2 & i
+\end{pmatrix}.\]
+Observe que a matriz adjunta $T^{*}$ corresponde ao hermitiano de $A,$ ou seja,
+\[
+[T^{*}]_{\mbox{can}} = A^{*} = A^{H} = \overline{A}^t.
+\]
+Logo, temos que a matriz procurada é
+\[[T^{*}]_{\mbox{can}} = A^{*} = \overline{\begin{pmatrix}
+1+i & i \\
+2 & i
+\end{pmatrix}}^t = \begin{pmatrix}
+1-i & -i \\
+2 & -i
+\end{pmatrix}^t = \begin{pmatrix}
+1-i & 2\\
+-i & -i
+\end{pmatrix}\]
+Observe que
+\[AA^{*} = \begin{pmatrix}
+1+i & i \\
+2 & i
+\end{pmatrix}\begin{pmatrix}
+1-i & 2\\
+-i & -i
+\end{pmatrix} = \begin{pmatrix}
+3 & 3 +2i\\
+3-2i & 5
+\end{pmatrix}
+\]
+\[
+A^{*}A = 
+\begin{pmatrix}
+1-i & 2\\
+-i & -i
+\end{pmatrix} \begin{pmatrix}
+1+i & i \\
+2 & i
+\end{pmatrix} =
+\begin{pmatrix}
+6 & 1+3i\\
+1-3i & 2
+\end{pmatrix}
+\]
+Logo $TT^{*} \neq T^{*}T$ nesse caso, ou seja, $T$ não é um operador normal.
+}
+\exercicio{15} Seja $T$ um operador linear em $V$ que possui um adjunto $T^{*}.$
+\dividiritens{
+\task[\pers{a}] Mostre que $\Ker T^{*} = (\mbox{Im }T)^{\perp}$ e que $\mbox{Im }T^{*} \subset (\Ker T)^{\perp}.$
+\task[\pers{b}] Mostre que se $\dim V < \infty,$ então $\mbox{Im }T^{*} = (\Ker T)^{\perp}.$
+\task[\pers{c}] Seja $V = \mathcal{C}([0, 1], \mathbb{R})$ e $T \in \mathcal{L}(V)$ definida por: $f \longmapsto T(f),$, com $(T(f))(t) = t f(t)$ para
+todo $t \in [0, 1].$ Determine $T^{*}$ e mostre que $\mbox{Im } T^{*} \neq (\Ker T)^{\perp}.$
+}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Provemos que $\Ker T^{*} = (\mbox{Im }T)^{\perp}.$ Temos que
+\[
+\begin{array}{rcl}
+  x \in \Ker T^{*}   &  \Leftrightarrow & T^{*}(x) = 0\\
+     &  \Leftrightarrow & \prin{T^{*}(x),y} = 0, \ \forall y \in V\\
+     &  \Leftrightarrow & \prin{x,T(y)} = 0, \ \forall y \in V\\
+     &  \Leftrightarrow & x \perp \mbox{Im } T \\
+     &  \Leftrightarrow & x \in (\mbox{Im }T)^{\perp}
+\end{array}
+\]
+}
+
+}
+
+\exercicio{16} Seja $T \in \mathcal{L}(V).$ Prove que se $T$ é inversível, então $T^{*}$ é inversível e $(T^{*})^{-1} = (T^{-1})^{*}.$
+\solucao{Se $T$ é inversível, então existe $T^{-1} \in \mathcal{L}(V)$ tal que $TT^{-1} = I.$ Desse modo, das propriedades da adjunção, temos que
+\[
+(TT^{-1})^{*} = I^{*} \Rightarrow (T^{-1})^{*} T^{*} = I
+\]
+Logo, $(T^{-1})^{*} \in \mathcal{L}(V)$ é tal que $(T^{-1})^{*} T^{*} = I.$ Portanto, $T^{*}$ é inversível.
+
+Para mostrar que $(T^{*})^{-1} = (T^{-1})^{*},$ podemos seguir dois caminhos:
+\begin{itemize}
+
+\item Temos que
+\[
+I = I^{*}(TT^{-1})^{*} = (T^{-1})^{*}T^{*}.
+\]
+Logo, $\left(T^{-1}\right)^{*} = \left(T^{*}\right)^{-1}.$
+
+\item Sabemos que $(T^{*})^{-1}T^{*} = I,$ então $((T^{*})^{-1}T^{*})^{*} = I^{*}.$ Das propriedades de $*,$ temos que $I^{*} = I,$ $(AB)^{*} = B^{*}A^{*}$ e $A^{**} = A.$ Daí,
+\[
+(\textcolor{Cerulean}{(T^{*})^{-1}} \textcolor{JungleGreen}{T^{*}})^{*} = \textcolor{RawSienna}{I^{*}} \Rightarrow
+(\textcolor{JungleGreen}{(T^{*}})^{*} (\textcolor{Cerulean}{T^{*})^{-1}})^{*}  = \textcolor{RawSienna}{I} \Rightarrow \textcolor{Gray}{T^{**}} ((T^{*})^{-1})^{*} = I \Rightarrow \textcolor{Gray}{T} ((T^{*})^{-1})^{*} = I 
+\]
+Assim, concluímos que $((T^{*})^{-1})^{*}$ é a inversa de $T.$ Ou seja,
+\[
+T^{-1} = ((T^{*})^{-1})^{*} \Rightarrow (T^{-1})^{*} = (((T^{*})^{-1})^{*})^{*} \Rightarrow (T^{-1})^{*} = ((T^{*})^{-1})^{**}  \Rightarrow \boxed{(T^{-1})^{*} = (T^{*})^{-1}}
+\]
+
+
+    \item Sendo $T^{*}$ o adjunto de $T,$ sabemos por definição que
+     \[\langle T(u),v \rangle = \langle u, T^*(v) \rangle \quad \forall u,v\in V\]
+
+Então, substituindo $u$ por $T^{-1}(w),$ onde $w \in V,$ ficamos com
+\[
+\langle T(\textcolor{Green}{u}),v \rangle = \langle \textcolor{Green}{u}, T^*(v) \rangle \Rightarrow \langle T(\textcolor{Green}{T^{-1}(w)}),v \rangle = \langle \textcolor{Green}{T^{-1}(w)}, T^*(v) \rangle \Rightarrow \langle w, v \rangle = \langle T^{-1}(w), T^{*}(v) \rangle
+\]
+Por outro lado, para $T^{-1}$ e $x = T^{*}(v) \in V:$
+\[
+\langle \textcolor{Blue}{T^{-1}}(w),\textcolor{Magenta}{x} \rangle = \langle w, (\textcolor{Blue}{T^{-1}})^*(\textcolor{Magenta}{x}) \rangle \Rightarrow \langle \textcolor{Blue}{T^{-1}}(w),\textcolor{Magenta}{T^{*}(v)} \rangle = \]\[\langle w, (\textcolor{Blue}{T^{-1}})^*(T^{*}(v)) \rangle \Rightarrow  \langle T^{-1}(w),T^{*}(v) \rangle = \langle w, (\textcolor{Laranja}{TT^{-1}})^*(v) \rangle \Rightarrow  \]\[ \langle T^{-1}(w),T^{*}(v) \rangle = \langle w, \textcolor{Laranja}{I}^*(v) \rangle \Rightarrow  \langle T^{-1}(w),T^{*}(v) \rangle = \langle w, v \rangle  
+\]
+Daí, temos que
+\[
+\langle T^{-1}(w), T^{*}(v) \rangle = 
+\] \textcolor{Red}{MelhorarEXPLICAÇÃO}
+%https://math.stackexchange.com/questions/1006975/adjoint-operator-and-inverse
+\end{itemize}
+}
+\exercicio{17}  Seja $E$ um operador linear em $V$ tal que $E^2 = E$ e tal que $E$ possui um adjunto $E^{*}.$ Prove que $E$ é autoadjunto se, e somente se $EE^{∗} = E^{*}E.$ Prove também que, neste caso, $E$ é a projeção
+ortogonal em $W = \mbox{Im }E.$
+\solucao{}
+\exercicio{18} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T \in \mathcal{L}(V).$ Prove que $T$ é autoadjunto se, e somente se $\prin{T(v), v} \in \mathbb{R},$ para todo $v \in V.$
+\solucao{$(\Rightarrow)$ Seja $T$ um operador auto-adjunto. Então, sabemos que $T^{*} = T.$ Para mostrar que certo $z \in \mathbb{C}$ é real, basta verificar que $z = \overline{z}.$ Dado  $v \in V,$ tem-se que
+\[
+\langle T(v), v \rangle = \langle v, \textcolor{Brown}{T^{*}}(v) \rangle = \langle v, \textcolor{Brown}{T^{*}}(v) \rangle = \overline{\langle T(v),v \rangle} \Rightarrow \langle T(v), v \rangle \in \mathbb{R}
+\]
+$(\Leftrightarrow)$ Dado $v \in V,$ se $\prin{T(v), v} \in \mathbb{R}$, então temos que $\prin{T(v), v} = \overline{\prin{T(v), v}}.$ Assim,
+\[
+\langle T(v), v \rangle = \overline{ \langle T(v), v \rangle } = \overline{ \langle v, T^{*}(v) \rangle } = \langle T^{*}(v), v \rangle \Rightarrow \langle (T - T^{*})(v), v \rangle = 0 \quad \forall v \in V
+\]
+Como $V$ é um espaço vetorial sobre $\mathbb{C},$ temos que $T - T^{*},$ acarretando $T = T^{*}.$
+}
+\exercicio{19} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T \in \mathcal{L}(V).$ Prove que se $\prin{T(v), v} = 0,$ para todo $v \in V,$ então $T = 0.$ Dê um exemplo para mostrar que o mesmo resultado não é necessariamente
+verdadeiro se $V$ é um espaço vetorial sobre $\mathbb{R}.$ 
+\solucao{Por hipótese, $\prin{T(v + w), v + w} = 0$ para quaisquer $v,w \in V.$ Assim,
+\[
+\prin{T(v + w), v + w} = 0 \Rightarrow \prin{T(v) + T(w), v + w} = 0 \Rightarrow  \textcolor{Laranja}{\prin{T(v), v}} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{\prin{T(w), w}} \Rightarrow  \textcolor{Laranja}{0} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{0} \Rightarrow \prin{T(v), w} + \prin{T(w), v} = 0
+\]
+Note que $w$ é arbitrário na igualdade obtida acima.  Daí, podemos substituir $w$ por $iw,$ e usando que
+\[
+\prin{T(v), i w} = \overline{i} \prin{T(v), w} =  -i \prin{T(v), w} \quad \mbox{e} \quad \prin{T(iw),v} = \prin{iT(w), v} = i \prin{T(w), v},
+\]
+podemos verificar que
+\[
+\prin{T(v), \textcolor{Blue}{w}} + \prin{T(\textcolor{Blue}{w}), v} = 0 \Rightarrow \prin{T(v), \textcolor{Blue}{iw}} + \prin{T(\textcolor{Blue}{iw}), v} = 0 \Rightarrow - i \prin{T(v), w} + i \prin{T(w), v} = 0 \Rightarrow i(\prin{T(w), v} - \prin{T(v), w}) = 0 \Rightarrow \prin{T(w), v} - \prin{T(v), w} = 0
+\]
+Dessa forma, temos que
+\[
+\cancel{\prin{T(v), w}} + \prin{T(w), v} + \prin{T(w), v} - \cancel{\prin{T(v), w}} = 0 \Rightarrow 2\prin{T(w), v} = 0 \Rightarrow \boxed{\prin{T(w), v} = 0}
+\]
+Obtemos portanto que $\prin{T(w), v} = 0$ para quaisquer $v,w \in V.$ Vejamos que isso acarreta $T = 0.$
+
+Faça $v = T(w).$ Então $\prin{T(w), T(w)} = 0$ e daí $T(w) = 0$ para todo $w \in V.$ Consequentemente, $T = 0.$
+
+Observe que na resolução acima tivemos que considerar a unidade imaginária em certo momento. Vejamos que tal resultado não vale para espaços vetoriais sobre $\mathbb{R}.$ Considere o operador linear $T$ em $V = \mathbb{R}^2$ definido por $T(x,y) = (y,-x).$ Então, para todo $v = (v_1, v_2) \in \mathbb{R}^2,$ temos que
+\[
+\prin{\textcolor{Emerald}{T(v)}, v} = \prin{\textcolor{Emerald}{(-v_2, v_1)}, (v_1, v_2)} = -v_2v_1 + v_1v_2 = 0.
+\]
+Logo, $\prin{T(v),v} = 0$ para todo $v \in V,$ mas claramente $T \neq 0.$
 }
 \textcolor{Red}{Questões Suplementares}
 
@@ -4542,5 +4731,10 @@ S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-
 \exercicio{31} 
 \solucao{}
 \end{document} 
+
+%Interessante:
+
 %https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm
 %https://math.stackexchange.com/questions/1186477/given-minimal-characteristic-polynomial-how-to-derive-linear-recurrence
+
+%http://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2033-19.pdf
