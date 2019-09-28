@@ -3854,25 +3854,25 @@ Então $v = (1,0)$ é um vetor cíclico para $T,$ mas $T^2 = I,$ que não possui
 }
 \solucao{
 \dividiritens{
-\task[\pers{a}] Se existe $v\in V$ tal que $V=Z(v,T)$, então $\{v,T(v),\dots,T^{n-1}(v)\}$ é base de $V$, aí $m_T$ tem grau $n$, e sendo $\lambda_1,\dots,\lambda_r$ os autovalores distintos, então:
+\task[\pers{a}] Se existe $v\in V$ tal que $V=Z(v,T)$, então $\{v,T(v),\dots,T^{n-1}(v)\}$ é base de $V$, aí $m_T$ tem grau $n$, e sendo $\lambda_1,\dots,\lambda_r$ os autovalores distintos, então
 \[
-m_T(t)=(t-\lambda_1)\dots(t-\lambda_r),
+m_T(t)=(t-\lambda_1)\dots(t-\lambda_r).
 \]
-aí $m_T$ tem grau $r$, aí $r=n$, assim $T$ tem $n$ autovalores distintos. A recíproca será resolvida no item (b).
+Assim, concluímos que $m_T$ tem grau $r$. Logo, $r=n$ e $T$ tem $n$ autovalores distintos. A recíproca será resolvida no item (b).
 
-\task[\pers{b}] Se $T$ tem $n$ autovalores distintos e se $\{v_1, \ldots , v_n\}$ é uma base de autovetores de $T,$ então para cada $i$ existe $\lambda_i$ tal que $T(v_i)=\lambda_iv_i$; assim $\lambda_1,\dots,\lambda_n$ devem ser distintos, aí para cada $i$ seja:
+\task[\pers{b}] Se $T$ tem $n$ autovalores distintos e se $\{v_1, \ldots , v_n\}$ é uma base de autovetores de $T,$ então para cada $i \in \{1, \ldots, n \}.$ existe $\lambda_i$ tal que $T(v_i)=\lambda_iv_i$; assim $\lambda_1,\dots,\lambda_n$ devem ser distintos. Agora, considere para cada $i \in \{1, \ldots, n \},$
 \[
-q_i(t)=\prod_{j\neq i}(t-\lambda_j),\quad p_i(t)=\frac{q_i(t)}{q_i(\lambda_i)},
+q_i(t)=\prod_{j\neq i}(t-\lambda_j)\quad \mbox{e} \quad p_i(t)=\frac{q_i(t)}{q_i(\lambda_i)},
 \]
 então:
 \[
 \begin{array}{rcl}
 v_i&=&p_i(\lambda_1)v_1+\dots+p_i(\lambda_n)v_n\\
 &=&p_i(T)v_1+\dots+p_i(T)v_n\\
-&=&p_i(T)(v_1+\dots+v_n);
+&=&p_i(T)(v_1+\dots+v_n).
 \end{array}
 \]
-logo $v_1+\dots+v_n$ é um vetor cíclico para $T$.
+Logo, $v_1+\dots+v_n$ é um vetor cíclico para $T$.
 }
 }
 
@@ -3899,7 +3899,150 @@ A = \begin{bmatrix}
 \end{bmatrix}
 \]
 Encontre uma matriz inversível $P$ tal que $P^{-1}AP$ esteja na forma racional.
- \solucao{}
+ \solucao{
+ Primeiramente, encontremos o polinômio característico e o polinômio minimal de $A.$ Temos que
+ \[
+ p_A(\lambda) = \det \left( A - \lambda I \right) \Rightarrow  p_A(\lambda) = \det \left( \begin{bmatrix}
+1 & 3 & 3 \\
+3 & 1 & 3 \\
+-3 & -3 & -5
+\end{bmatrix} - \begin{bmatrix}
+\lambda & 0 & 0 \\
+0 & \lambda & 0 \\
+0 & 0 & \lambda
+\end{bmatrix} \right) \Rightarrow \]\[p_A(\lambda) = \det \begin{bmatrix}
+1-\lambda & 3 & 3 \\
+3 & 1-\lambda & 3 \\
+-3 & -3 & -5-\lambda
+\end{bmatrix} \Rightarrow p_A(\lambda) = \lambda^3+3\lambda^2-4 \Rightarrow p_A(\lambda) = (\lambda-1)(\lambda+2)^2
+ \]
+ O polinômio minimal será
+ \[
+ m_A(\lambda) = (\lambda-1)(\lambda+2) = \lambda^2 + \lambda - 2
+ \]
+ Dessa forma, temos que
+ \[
+ V = Z(v_1, A) \oplus Z(v_2, A)
+ \]
+ Como na decomposição cíclica, o $A$-anulador do primeiro vetor $v_1$ é o polinômio minimal, temos que 
+\[
+\dim(Z(v_1, A)) = \deg(m_A) = 2
+\]
+Portanto, na decomposição, aparece apenas mais um vetor $v_2,$ sendo 
+\[
+\dim(Z(v_2, A)) = 1,\] 
+ou seja, $v_2$ é um vetor característico de $A$. O $A$−anulador de $v_2$ é $p_2 = \lambda - 2,$ pois $p_A = p_1p_2.$
+A matriz que representa $Z(v_1, A)$ será portanto, a matriz companheira de $p_1(\lambda) = m_A(\lambda).$ Assim,
+\[
+A_1 = \begin{bmatrix}
+0 & 2 \\
+1 & -1
+\end{bmatrix}
+\]
+A matriz que representa $Z(v_2, A)$ será a matriz companheira de $p_2(\lambda) = \lambda + 2.$ Assim,
+\[A_2 = \begin{bmatrix}
+-2 \end{bmatrix}
+\]
+
+Portanto, temos que a forma racional de $A$ é
+\[
+R = \begin{bmatrix}
+\textcolor{Violet}{A_1} & 0 \\ 0 & \textcolor{PineGreen}{A_2}
+\end{bmatrix} \Rightarrow R = \begin{bmatrix}
+\textcolor{Violet}{0} & \textcolor{Violet}{2} & 0 \\ \textcolor{Violet}{1} & \textcolor{Violet}{-1} & 0 \\
+0 & 0 & \textcolor{PineGreen}{-2}
+\end{bmatrix} 
+\]
+Encontremos agora a matriz $P.$ Para isso, precisaremos encontrar bases para $Z(v_1, A)$ e $Z(v_2, A).$ 
+Vamos primeiramente descrever $V_1 = \Ker(A - I)$ e $V_2 = \Ker(A + 2I).$ 
+\begin{itemize}
+    \item Para encontrar uma base para $V_1$, seja $v = (x, y, z) \in V.$ Então, temos que
+    \[
+    (A - I)v = 0 \Rightarrow \begin{bmatrix}
+0 & 3 & 3 \\
+3 & 0 & 3 \\
+-3 & -3 & -6
+\end{bmatrix} \begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix} \Rightarrow \]\[\begin{cases}
+3y + 3z = 0 \\
+3x+3z = 0 \\
+-3x-3y-6z = 0
+\end{cases} \Rightarrow v = z \cdot (-1,-1,1)
+    \]
+    Desse modo, temos que $V_1 = \Ker(A - I) = \langle (-1,-1,1) \rangle.$ Denotemos $u_1 = (-1,-1,1).$
+
+\item Para encontrar uma base para $V_2$, seja $v = (x, y, z) \in V.$ Então, temos que
+    \[
+    (A + 2I)v = 0 \Rightarrow \begin{bmatrix}
+3 & 3 & 3 \\
+3 & 3 & 3 \\
+-3 & -3 & -3
+\end{bmatrix} \begin{bmatrix}
+x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix} \Rightarrow \]\[\begin{cases}
+3x + 3y + 3z = 0 \\
+3x+3y+3z = 0 \\
+-3x-3y-3z = 0
+\end{cases} \Rightarrow v = y \cdot (-1,1,0) + z (-1,0,1)
+    \]
+        Desse modo, temos que $V_2 = \Ker(A + 2I) = \langle (-1,1,0), (-1,0,1) \rangle.$ Denotemos $u_2 = (-1,1,0)$ e $u_3 =  (-1,0,1).$ 
+\end{itemize}
+Para encontrar $v_1,$ como $p_1 = m_A,$ precisamos escolher um vetor de $V_1$ e um de $V_2.$ Podemos então tomar $v_1 = u_1 + u_2$ (poderia ser $u_1 + u_3$ também), e assim
+\[
+v_1 = (-1,-1,1) + (-1,1,0) \Rightarrow v_1 = (-2,0,1).
+\]
+Sabemos que $\{ v_1, Av_1 \}$ é uma base para $Z(v_1, A).$ Então,
+\[
+Av_ 1 =  \begin{bmatrix}
+1 & 3 & 3 \\
+3 & 1 & 3 \\
+-3 & -3 & -5
+\end{bmatrix} \begin{bmatrix}
+-2 \\ 0 \\ 1
+\end{bmatrix} = \begin{bmatrix}
+1 \\ -3 \\ 1
+\end{bmatrix}
+\]
+Logo, $\mathcal{B_1} = \{ (-2,0,1),(1, -3 , 1)\} $ é base para $Z(v_1, A).$
+Para encontrar $v_2,$ como $p_2 = \lambda + 2,$ podemos tomar $v_2 = u_3.$ Logo,
+\[
+v_2 = u_3 \Rightarrow v_2 =  (-1,0,1)
+\]
+Assim, temos que $\mathcal{B}_2 = \{v_2 \} = \{ (-1,0,1) \}$ é base para $Z(v_2, A).$ A matriz $P$ será composta pelos vetores de $\mathcal{B}_1$ e $\mathcal{B}_2$ dispostos em suas colunas. Assim,
+\[
+P = \begin{bmatrix}
+-2 & 1& -1\\
+0 &-3 & 0\\
+1 &1 &1
+\end{bmatrix}
+\]
+Com efeito, uma rápida verificação mostra que
+\[
+P^{-1}AP = \left[\begin{matrix}
+-1 & -\frac{2}{3} & -1 \\
+0 & -\frac{1}{3} & 0 \\
+1 & 1 & 2
+\end{matrix}\right]  \begin{bmatrix}
+1 & 3 & 3 \\
+3 & 1 & 3 \\
+-3 & -3 & -5
+\end{bmatrix}\begin{bmatrix}
+-2 & 1& -1\\
+0 &-3 & 0\\
+1 &1 &1
+\end{bmatrix} = \left[\begin{matrix}
+0 & 2 & 0 \\
+1 & -1 & 0 \\
+0 & 0 & -2
+\end{matrix}\right] = R \Rightarrow R = P^{-1}AP,
+\]
+como queríamos.
+ }
     \exercicio{8} Seja $A \in \mathcal{M}_n(\mathbb{R})$ a matriz
 \[
 A = \begin{bmatrix}
@@ -3931,11 +4074,11 @@ minimal e o mesmo posto. Prove que elas são semelhantes. Mostre que o mesmo res
 
 \solucao{
 \dividiritens{
-\task[\pers{a}] Se $T$ tem um vetor cíclico, então, para todo operador linear $U$ que comuta com $T$, o conjunto $W=\mathrm{Im}(U)$ é um subespaço $T$-invariante, aí pelo Exercício 1 da Lista 4 existe $w$ tal que $W=Z(w,T)$, aí existe um polinômio $p$ tal que $U(v)=p(T)(w)$, aí para todo $k$ temos:
+\task[\pers{a}] Se $T$ tem um vetor cíclico, então, para todo operador linear $U$ que comuta com $T$, o conjunto $W=\mathrm{Im}(U)$ é um subespaço $T$-invariante. Pelo Exercício 1 da Lista 4, existe $w$ tal que $W=Z(w,T)$, aí existe um polinômio $p$ tal que $U(v)=p(T)(w)$. Assim, para todo $k,$ temos que
 \[
-UT^k(v)=T^kU(v)=T^kp(T)(v)=p(T)T^k(v);
+UT^k(v)=T^k\textcolor{Mahogany}{U}(v)=T^k\textcolor{Mahogany}{p(T)}(v)=p(T)T^k(v).
 \]
-logo, como $\{v,T(v),T^2(v)\dots\}$ gera $V$, então $U=p(T)$.
+Logo, como $\{v,T(v),T^2(v)\dots\}$ gera $V$, então $U=p(T)$.
 }
 }
 
@@ -4654,7 +4797,7 @@ Como $V$ é um espaço vetorial sobre $\mathbb{C},$ temos que $T - T^{*},$ acarr
 verdadeiro se $V$ é um espaço vetorial sobre $\mathbb{R}.$ 
 \solucao{Por hipótese, $\prin{T(v + w), v + w} = 0$ para quaisquer $v,w \in V.$ Assim,
 \[
-\prin{T(v + w), v + w} = 0 \Rightarrow \prin{T(v) + T(w), v + w} = 0 \Rightarrow  \textcolor{Laranja}{\prin{T(v), v}} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{\prin{T(w), w}} \Rightarrow  \textcolor{Laranja}{0} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{0} \Rightarrow \prin{T(v), w} + \prin{T(w), v} = 0
+\prin{T(v + w), v + w} = 0 \Rightarrow \prin{T(v) + T(w), v + w} = 0 \Rightarrow  \textcolor{Laranja}{\prin{T(v), v}} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{\prin{T(w), w}} \Rightarrow  \]\[ \textcolor{Laranja}{0} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{0} \Rightarrow \prin{T(v), w} + \prin{T(w), v} = 0
 \]
 Note que $w$ é arbitrário na igualdade obtida acima.  Daí, podemos substituir $w$ por $iw,$ e usando que
 \[
@@ -4662,7 +4805,7 @@ Note que $w$ é arbitrário na igualdade obtida acima.  Daí, podemos substituir
 \]
 podemos verificar que
 \[
-\prin{T(v), \textcolor{Blue}{w}} + \prin{T(\textcolor{Blue}{w}), v} = 0 \Rightarrow \prin{T(v), \textcolor{Blue}{iw}} + \prin{T(\textcolor{Blue}{iw}), v} = 0 \Rightarrow - i \prin{T(v), w} + i \prin{T(w), v} = 0 \Rightarrow i(\prin{T(w), v} - \prin{T(v), w}) = 0 \Rightarrow \prin{T(w), v} - \prin{T(v), w} = 0
+\prin{T(v), \textcolor{Blue}{w}} + \prin{T(\textcolor{Blue}{w}), v} = 0 \Rightarrow \prin{T(v), \textcolor{Blue}{iw}} + \prin{T(\textcolor{Blue}{iw}), v} = 0 \Rightarrow - i \prin{T(v), w} + i \prin{T(w), v} = 0 \Rightarrow \]\[i(\prin{T(w), v} - \prin{T(v), w}) = 0 \Rightarrow \prin{T(w), v} - \prin{T(v), w} = 0
 \]
 Dessa forma, temos que
 \[
@@ -4678,6 +4821,149 @@ Observe que na resolução acima tivemos que considerar a unidade imaginária em
 \]
 Logo, $\prin{T(v),v} = 0$ para todo $v \in V,$ mas claramente $T \neq 0.$
 }
+\exercicio{20} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T$ uma função de $V$ em $V$ tal que, para todos $u, v \in V,$ $\norm{T(u) - T(v)} = \norm{u-v}$ e $T(iv) = iT(v).$ Prove que $T$ é linear e que $\norm{T(v)} = \norm{v},$ para todo $v \in V.$
+
+\solucao{}
+\exercicio{21} Seja $T$ um operador linear em $V$ tal que $T$ admite um adjunto. Prove que se $T^{*}T = 0$ então $T = 0.$
+
+\solucao{Vamos primeiramente provar que, se $T^{*}T = 0,$ então $TT^{*} = 0.$
+
+Observe que $0^{*} = 0,$ pois para todos $u,v \in V,$
+\[
+\prin{0(u),v} = \prin{0,v} = 0 = \prin{u,0} = \prin{u, v(0)}.
+\]
+Veja que 
+\[
+\left(T^{*}T\right)^{*} = 0^{*}\Rightarrow T^{*} T^{**} = 0 \Rightarrow T^{*}T = 0.
+\]
+}
+\begin{comment}
+Agora, note que
+\[
+T + T^{*} + T^{*}T = T + T^{*}(T + I)
+\]
+Se $T^{*}T = 0,$ então para todos $u,v \in V,$ temos que
+\[
+\prin{T^{*}T(u), v} = \prin{0(u), v} = 0
+\]
+Por outro lado, substituindo $v$ por $T(w),$ temos que
+\end{comment}
+\exercicio{22} Seja $A \in \mathcal{M}_n(\mathbb{C}).$ Mostre que $A$ se escreve de modo único como $A = B + iC,$ onde $B$ e $C$ são matrizes autoadjuntas.
+\solucao{Façamos 
+\[
+B = \frac{A + A^{*}}{2} \quad \mbox{e} \quad C = \frac{A - A^{*}}{2i}.
+\]
+Então
+\[
+\textcolor{Emerald}{B} + i\textcolor{Cyan}{C} = \textcolor{Emerald}{\frac{A + A^{*}}{2}} + i\textcolor{Cyan}{\frac{A - A^{*}}{2i}} = \frac{A + A^{*}}{2} + \frac{A - A^{*}}{2} = \frac{2A}{2} = A.
+\]
+Além disso, 
+\[
+B^{*} = \left(  \frac{A + A^{*}}{2} \right)^{*} =  \frac{A^{*} + A^{**}}{2}  =  \frac{A^{*} + A}{2} = B
+\]
+e
+\[
+C^{*} = \left( \frac{A - A^{*}}{2i} \right)^{*} =  \frac{A^{*} - A^{**}}{\overline{2i}} =  - \frac{A^{*} - A}{2i} =  \frac{A - A^{*}}{2i} = C, 
+\]
+ou seja, $B$ e $C$ são matrizes auto-adjuntas.
+}
+\exercicio{23}
+Sejam $S, T \in \mathcal{L}(V).$ Suponha que $S$ e $T$ admitem adjuntas.
+
+\dividiritens{
+\task[\pers{a}] Mostre que se $S$ e $T$ são autoadjuntas, então $ST$ é autoadjunta se, e somente se, $ST = TS.$ 
+\task[\pers{b}] Encontre duas matrizes $S$ e $T$ autoadjuntas tais que $ST$ não é autoadjunta.
+\task[\pers{c}] Prove que $T^{*}T$ é autoadjunta.
+\task[\pers{d}] Se $T$ é autoadjunta, mostre que $S^{*}TS$ é autoadjunta.
+\task[\pers{e}] Mostre que se $S$ e $T$ são autoadjuntas, então $ST + TS$ é autoadjunta.
+}
+
+\solucao{\dividiritens{
+\task[\pers{a}] Se $S$ e $T$ são autoadjuntas, então $S = S^{*}$ e $T = T^{*}.$ 
+\newline
+$(\Rightarrow)$ Se $ST$ é autoadjunta, então \[(ST)^{*} = \textcolor{Red}{S}\textcolor{Magenta}{T} = \textcolor{Red}{S^{*}}\textcolor{Magenta}{T^{*}} (TS)^{*}
+\]
+Portanto, da unicidade do operador adjunto, temos
+\[
+(ST)^* - (TS)^{*} = 0 \Rightarrow (ST - TS)^{*} = 0 \Rightarrow ST - TS = 0 \Rightarrow ST = TS. 
+\]
+
+$(\Leftrightarrow)$ Se $ST = TS,$ então
+\[
+(ST)^{*} = (TS)^{*} \Rightarrow (ST)^{*} = \textcolor{Red}{S^{*}}\textcolor{Magenta}{T^{*}} \Rightarrow  (ST)^{*} = \textcolor{Red}{S}\textcolor{Magenta}{T}.
+\]
+Portanto, $ST$ é autoadjunta.
+\task[\pers{b}] Considere
+\[
+S = \begin{bmatrix}
+1 & 0 \\ 0 & 0
+\end{bmatrix} \quad \mbox{e} \quad T = \begin{bmatrix}
+1 & 0 \\ 0 & 1 
+\end{bmatrix} 
+\]
+Então $ST = \begin{bmatrix}
+0 &1 \\ 0 & 0
+\end{bmatrix}$ não é autoadjunta.]
+\newline
+Outro exemplo: Sejam $T, S \in \mathcal{L}(\mathbb{R}^2),$ dadas por
+\[
+T(x,y) = (x+2y, 2x) \quad \mbox{e} \quad S(x,y)  = (y, x+y)
+\]
+As matrizes que representam $T$ e $S$ na base canônica (que é ortonormal) são
+\[
+A = \begin{bmatrix}
+1 & 2 \\
+2 & 0 
+\end{bmatrix} \quad \mbox{e} \quad B = \begin{bmatrix}
+0 & 1 \\
+1 & 1
+\end{bmatrix},
+\]
+respectivamente. Observe que $T$ e $S$ são autoadjuntos pois $A$ e $B$ são matrizes hermitianas. Temos que
+\[
+AB = \begin{bmatrix}
+2 &3 \\ 0 & 2
+\end{bmatrix}.
+\]
+Essa matriz não é hermitiana. Como a base canônica é ortonormal, então $TS$ não é autoadjunta.
+
+\task[\pers{c}] Se $T$ é autoadjunta, então
+\[
+T^{*}T = TT^{*}
+\]
+Pelo item (a), tomando $S = T^{*},$ segue que $T^{*}T$ é autoadjunta.
+\task[\pers{d}] Se $T$ é autoadjunta, então $T^{*} = T.$ Logo,
+\[
+\left(S^*TS\right)^{*} = \left(S^*(TS)\right)^{*} = (TS)^{*} S^{**} = S^{*}\textcolor{Green}{T^{*}}S = S^{*}\textcolor{Green}{T}S.
+\]
+
+\task[\pers{e}] Vamos provar $ST + TS$ é autoadjunta pela definição, ou seja, mostraremos que para todo $u,v \in V,$ 
+\[
+\prin{(ST + TS)(u), v} = \prin{u, (ST + TS)(v)}
+\]
+Para isso, lembrando que $T^{*} = T$ e $S^{*} = S,$ vemos que
+\[
+\begin{array}{rcl}
+\prin{(ST+TS)(u),v} & = & \prin{(ST)(u),v} + \prin{(TS)(u), v} \\
+& =&  \prin{S(\textcolor{Mahogany}{T(u)}),v} + \prin{T(\textcolor{Mahogany}{S(u)}), v} \\
+& =&  \prin{\textcolor{Mahogany}{T(v)},\textcolor{Green}{S^{*}}(v)} + \prin{\textcolor{Mahogany}{S(u)}, \textcolor{Blue}{T^{*}}(v)} \\
+& =&  \prin{T(v),\textcolor{Green}{S}(v)} + \prin{S(u), \textcolor{Blue}{T(v)}} \\
+&=& \prin{u,  \textcolor{Blue}{T^{*}}(S(v))} + \prin{u, \textcolor{Green}{S^{*}}(T(v))} \\
+&=& \prin{u,  \textcolor{Blue}{T}(S(v))} + \prin{u, \textcolor{Green}{S}(T(v))} \\
+&=& \prin{u,(TS)(v)} + \prin{u, (ST)(v)} \\
+& = & \prin{u, (ST + TS)(v)}
+\end{array}
+\]
+Portanto, $\prin{(ST+TS)(u),v} =  \prin{u, (ST + TS)(v)},$ e $ST + TS$ é autoadjunta.
+}
+}
+
+\exercicio{24} Seja $V$ um espaço vetorial com dimensão finita e seja $T \in \mathcal{L}(V).$ Mostre que
+\dividiritens{
+\task[
+}
+
+\solucao{}
 \textcolor{Red}{Questões Suplementares}
 
 \exercicio{31} Considere o seguinte subespaço de $\mathbb{R}^3:$
@@ -4720,6 +5006,40 @@ S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-
 %https://pt.wikipedia.org/wiki/Decomposi%C3%A7%C3%A3o_QR
 %https://www.ufrgs.br/reamat/AlgebraLinear/livro/s13-o_processo_de_ortogonalizax00e7x00e3o_de_gramx2013schmidt.html
 \solucao{}
+
+\exercicio{34} Considere  $T_2 \in \mathcal{L}(\mathbb{R}^2)$ e $T_3 \in \mathcal{L}(\mathbb{R}^3),$ dadas respectivamente por
+\[
+T_2(x,y) = (x+3y, 3x+2y) \quad \mbox{e} \quad T_3(x,y,z) = (2x+7y+8z, 7x+3y+7z, 8x+7y+5z.
+\]
+\task[\pers{a}] Escreva as matrizes de $T_2$ e $T_3$ nas bases canônicas de $\mathbb{R}^2$ e $\mathbb{R}^3,$ respectivamente.
+\task[\pers{b}] Encontre $T_2^{*}$ e $T_3^{*},$ e verifique que $T_2$ e $T_3$ são autoadjuntos.
+
+Sabe-se que $\mathcal{B}_2 = \{ (1,1), (1,0) \}$ é uma base para $\mathbb{R}^2,$ e  $\mathcal{B}_3 = \{ (1,1,-1), (2,-1,0), (3,2,0) \}$ é uma base para $\mathbb{R}^3.$
+
+\task[\pers{c}] Encontre as matrizes que representam $T_2$ e $T_3$ nessas bases.
+\task[\pers{d}] Encontre as matrizes que representam $T_2^{*}$ e $T_3^{*}$ nessas bases e observe que ssas matrizes não são hermitianas. Isso entra em contradição com o fato de $T_2$ e $T_3$ serem autoadjuntas?
+%$\mathcal{B}_2 = \{ (2,-1), (-3,2) \}$ 
+\solucao{}
+
+\exercicio{35} Suponha que $T$ é um operador normal em $V$ e $3$ e $4$ são seus autovalores. Prove que existe um vetor $v \in V$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5.$
+\solucao{Sejam $u$ e $v$ os autovetores de $T$ com respeito aos autovalores $3$ e $4,$ respectivamente. Então,
+\[
+T(u) = 3u \quad \mbox{e} \quad T(w) = 4w.
+\]
+Trocando $u$ por $\frac{u}{\norm{u}}$ e $w$ por $\frac{w}{\norm{w}},$ podemos assumir sem perda de generalidade que $\norm{u} = \norm{w} = 1.$ 
+
+Como $T$ é normal, $u$ e $w$ são ortogonais. O Teorema de Pitágoras implica que
+\[
+\norm{u + w} = \sqrt{\norm{u}^2 + \norm{w}^2} = \sqrt{2},
+\]
+e também
+\[
+\norm{T(u+w)} = \norm{T(u) + T(w)} = \norm{3u + 4w} = \sqrt{9 \norm{u}^2 + 16 \norm{v}^2} = 5.
+\]
+Tomando $v = u + w,$ obtemos um vetor $v$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5,$ como pedido pelo enunciado.
+}
+
+
 \newpage
 \section{\textcolor{Floresta}{Lista 6}}
 
@@ -4738,3 +5058,5 @@ S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-
 %https://math.stackexchange.com/questions/1186477/given-minimal-characteristic-polynomial-how-to-derive-linear-recurrence
 
 %http://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2033-19.pdf
+
+%http://correio.fdvmg.edu.br/downloads/DET142/alglin_UFF.pdf
