@@ -4591,8 +4591,7 @@ todo $v \in V.$ Prove se $E \in \mathcal{L}(V)$ é uma projeção cuja imagem é
 (\textbf{Sugestão:} Prove que $\prin{E(v), v - E(v)} = 0,$ para todo $v \in V$ se, e somente se, $\prin{u, E(v)} = 0,$
 para todo $u \in \Ker E$ e $v \in V.$ )
 \solucao{}
-\exercicio{10}  Sejam $W$ um subespaço de dimensão finita de $V$ e $E$ a projeção ortogonal de $V$ em $W$. Prove
-que $\prin{E(v), u} = \prin{v, E(u)}$ para todos $u, v \in V.$
+\exercicio{10}  Sejam $W$ um subespaço de dimensão finita de $V$ e $E$ a projeção ortogonal de $V$ em $W$. Prove que $\prin{E(v), u} = \prin{v, E(u)}$ para todos $u, v \in V.$
 \solucao{}
 \exercicio{11} Sejam $V$ e $W$ espaços vetoriais de mesma dimensão (finita) sobre $K$ e com produtos internos $\prin{,}_V$ e $\prin{,}_W,$ respectivamente. Seja $T : V \rightarrow W$ uma transformação linear. Prove que as
 seguintes afirmações são equivalentes: 
@@ -4903,7 +4902,7 @@ S = \begin{bmatrix}
 \]
 Então $ST = \begin{bmatrix}
 0 &1 \\ 0 & 0
-\end{bmatrix}$ não é autoadjunta.]
+\end{bmatrix}$ não é autoadjunta.
 \newline
 Outro exemplo: Sejam $T, S \in \mathcal{L}(\mathbb{R}^2),$ dadas por
 \[
@@ -4958,10 +4957,83 @@ Portanto, $\prin{(ST+TS)(u),v} =  \prin{u, (ST + TS)(v)},$ e $ST + TS$ é autoad
 }
 }
 
-\exercicio{24} Seja $V$ um espaço vetorial com dimensão finita e seja $T \in \mathcal{L}(V).$ Mostre que
+\exercicio{24} Seja $V$ um espaço vetorial com dimensão finita e seja $T \in \mathcal{L}(V)$ normal. Mostre que
 \dividiritens{
-\task[\pes{a}] Se $T$ é nilpot
+\task[\pers{a}] Se $T$ é nilpotente, então $T = 0.$
+\task[\pers{b}] Se $T$ é idempotente, então $T^{*} = T.$
+\task[\pers{c}] Se $T^3 = T^2,$ então $T$ é idempotente.
+\task[\pers{d}] Se $T^{8} = T^{7},$ $T$ é autoadjunto e idempotente.
 }
+
+\solucao{
+\dividiritens{
+\task[\pers{a}] Seja $A$ a matriz que representa $T$ na base canônica. Como $T$ é normal, então $A$ também é normal, ou seja, $A^{*}A = AA^{*}.$ 
+
+Sendo $A$ normal, então $A$ é diagonalizável. Logo, existe uma matriz invertível $P$ tal que $P^{-1}AP = D,$ onde $D$ é uma matriz diagonal cujas entradas na diagonal são exatamente os autovalores de $A.$
+
+Como $A$ é nilpotente, todos os seus autovalores são $0.$ Consequentemente, as entradas na diagonal de $D$ são todas nulas, e assim $D = 0.$ Segue que
+\[
+A = P\textcolor{WildStrawberry}{D}P^{-1} = P\textcolor{WildStrawberry}{0}P^{-1} = 0
+\]
+Portanto, todo operator normal e nilpotente é nulo.
+\newline
+
+\textcolor{Red}{Outra solução:} Seja $A$ a matriz que representa $T$ na base canônica. Como $A$ é nilpotente, existe um inteiro positivo $k$ tal que $A^k = 0.$ Vamos provar por indução que $A = 0.$ Se $k = 1,$ o resultado é trivial.
+
+Suponha $k > 1$ e que o caso $k - 1$ funcione. Tome $B = A^{k-1}.$ Note que, como $T$ é normal, então $A$ também é normal, e consequentemente a matriz $B$ também é normal.
+
+Para um vetor $x \in \mathbb{C}^n,$ vamos calcular a norma do vetor $B^{*}Bx$ como segue:
+\[
+\begin{array}{rcl}
+\norm{B^*Bx} &=& (B^*Bx)^{*}(B^{*}Bx) \\
+&=& (Bx)^{*} B^{**} B^{*} Bx \\
+&  = & x^{*}B^* \textcolor{TealBlue}{BB^{*}}Bx \\
+&  = & x^{*}B^* \textcolor{TealBlue}{B^{*}B}Bx \\
+&=& x^{*}(B^{*})^2B^2x\\
+&=& 0,
+\end{array}
+\]
+pois $B^2 = A^{2k-2} = 0,$ já que $k \ge 2$ implica $2k-2 \ge k.$ Daí, temos que $B^*Bx = 0$ para todo $x \in \mathbb{C}^n.$
+
+Assim,
+\[
+\norm{Bx} = (Bx)^{*}(Bx) = x^*B^*Bx = 0, \quad \forall x \in \mathbb{C}^n.
+\]
+Consequentemente, $B = 0.$
+Pela hipótese de indução, $A^{k-1} = 0$ implica $A = 0,$ e portanto $A$
+ deve ser a matriz nula. Assim, $T$ também é o operador nulo.
+ 
+ \task[\pers{b}] Se $T$ é idempotente, então sabemos que $T^2 = T.$ Sendo normal, sabemos também que $T^*T = TT^*.$ Se $T^{*}T = 0,$ pelo Exercício 21, temos que $T = 0,$ que claramente é autoadjunto. 
+ 
+ Consideremos agora $T^{*}T \neq 0.$ Então, observe que
+ \[
+ (T - T^{*})(T^{*}T) = T\textcolor{PineGreen}{T^{*}T} - T^{*}T^{*}T = T\textcolor{PineGreen}{TT^*} - \textcolor{ProcessBlue}{(T^2)}^{*}T =  \textcolor{ProcessBlue}{T^2}T^* - \textcolor{ProcessBlue}{T}^{*}T =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{T^{*}T} =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{TT^{*}} = 0
+ \]
+ Concluímos portanto que $(T - T^{*})(T^{*}T) = 0.$ Como $T^{*}T \neq 0,$ segue que $T - T^{*} = 0,$ acarretando $T = T^{*}.$
+  \task[\pers{c}] Como $T$ é normal, pelo Teorema Espectral, existe uma base ortonormal $\{e_1, e_2, \ldots, e_n \}$ de $V$ consistindo de autovetores de $T.$ Sejam $\lambda_1, \ldots, \lambda_n$ os correspondentes autovalores. Então,
+  \[
+  T(e_j) = \lambda_j e_j,
+  \]
+  para $j = 1, \ldots, n.$ Aplicando $T$ uma quantidade adequada de vezes em ambos os membros da equação acima, temos que
+\[
+T^3(e_j) = \lambda_j^3e_j \quad \mbox{e} \quad T^2(e_j) = \lambda_j^{2}e_j.
+\]
+Dessa forma,
+\[
+T^3(e_j) = T^2(e_j) \Rightarrow \lambda_j^3e_j = \lambda_j^{2}e_j \Rightarrow \lambda_j^3 = \lambda_j^2 \Rightarrow \lambda_j^2(\lambda - 1) = 0
+\]
+Isso implica que $\lambda_j$ vale $1$
+ ou $0.$ Em particular, todos os autovalores de $T$ são reais. A matriz de $T$ com respeito à base ortonormal $\{e_1, \ldots, e_n \}$ será a matriz diagona com $\lambda_1, \ldots, \lambda_n$ na diagonal. Esta matriz claramente é equivalente à sua transposta conjugada, e portanto é hermitiana. Daí, $T = T^{*}.$ %Consequentemente, $T$ é autoadjunto.
+ Aplicando $T$ em ambos os membros na equação obtida inicialmente, ficamos com
+ \[
+ T^2(e_j) = \textcolor{Maroon}{\lambda^2_j} e_j = \textcolor{Maroon}{\lambda_j} e_j = T(e_j),
+ \]
+ onde utilizamos que $\lambda_j^2 = \lambda_j,$ afinal $\lambda_j$ vale $0$ ou $1.$ Como $T^2$ e $T$ coincidem numa base, então devem ser iguais. Logo, $T^2 = T,$ e $T$ é idempotente.
+ \task[\pers{d}] Um raciocínio análogo ao do item (c)  permite concluir que $T$  é autoadjunto e idempotente. Em geral, usando uma argumentação similar, pode-se provar que todo operador normal para o qual existe um inteiro positivo $k \ge 1$ tal que $T^{k+1} = T^k$ é autoadjunto e idempotente.
+ }
+}
+
+\exercicio{25} 
 
 \solucao{}
 \textcolor{Red}{Questões Suplementares}
@@ -4975,7 +5047,7 @@ W = \{ (x,y,z) \in \mathbb{R}^3 |x + 2y - 3z = 0, x - 2y + z = 0 \}
 \task[\pers{b}] Verifique que $\mathbb{R}^3 = W \oplus W^{\perp}.$ 
 }
 \solucao{}
-\exercicio{32} Seja $\mathcal{F}$ o espaço vetorial das funções reais, e considere os conjuntos
+\exercicio{32} Seja $\mathcal{F}$ o espaço vetorial das funções reais com o produto interno usual, e considere os conjuntos
 %https://www.ime.unicamp.br/~marcia/AlgebraLinear/Arquivos%20PDF/exemplos_subespacos.pdf
 \[
 S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-x) \}
@@ -5011,6 +5083,7 @@ S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-
 \[
 T_2(x,y) = (x+3y, 3x+2y) \quad \mbox{e} \quad T_3(x,y,z) = (2x+7y+8z, 7x+3y+7z, 8x+7y+5z.
 \]
+\dividiritens{
 \task[\pers{a}] Escreva as matrizes de $T_2$ e $T_3$ nas bases canônicas de $\mathbb{R}^2$ e $\mathbb{R}^3,$ respectivamente.
 \task[\pers{b}] Encontre $T_2^{*}$ e $T_3^{*},$ e verifique que $T_2$ e $T_3$ são autoadjuntos.
 
@@ -5019,6 +5092,7 @@ Sabe-se que $\mathcal{B}_2 = \{ (1,1), (1,0) \}$ é uma base para $\mathbb{R}^2,
 \task[\pers{c}] Encontre as matrizes que representam $T_2$ e $T_3$ nessas bases.
 \task[\pers{d}] Encontre as matrizes que representam $T_2^{*}$ e $T_3^{*}$ nessas bases e observe que ssas matrizes não são hermitianas. Isso entra em contradição com o fato de $T_2$ e $T_3$ serem autoadjuntas?
 %$\mathcal{B}_2 = \{ (2,-1), (-3,2) \}$ 
+}
 \solucao{}
 
 \exercicio{35} Suponha que $T$ é um operador normal em $V$ e $3$ e $4$ são seus autovalores. Prove que existe um vetor $v \in V$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5.$
@@ -5038,8 +5112,696 @@ e também
 \]
 Tomando $v = u + w,$ obtemos um vetor $v$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5,$ como pedido pelo enunciado.
 }
+\newpage
+\section{\textcolor{Floresta}{Lista 5,5}}
+
+\subsection{Espaços com produto interno}
+
+   \exercicio{1} Determine quais das funções $\prin{,} \colon \mathbb{R}^4 \to \mathbb{R}$ abaixo definem um produto interno em $\mathbb{R}^4:$ 
+\dividiritens{
+\task[\pers{a}] $\prin{(a,b,c,d), (x,y,z,w)} = ax + 2by + 5cz + dw;$
+\task[\pers{b}] $\prin{(a,b,c,d), (x,y,z,w)} = ax - by + cz + 3dw;$
+\task[\pers{c}] $\prin{(a,b,c,d), (x,y,z,w)} = ay + 2bx + cz + dw;$
+\task[\pers{d}] $\prin{(a,b,c,d), (x,y,z,w)} = ax + 5cz + dw;$
+\task[\pers{e}] $\prin{(a,b,c,d), (x,y,z,w)} = ax + 2b + 5z + dw.$
+}
+\solucao{
+Para resolver essa questão, podemos utilizar duas técnicas diferentes:
+\begin{itemize}
+    \item Verificando se os axiomas de produto interno são satisfeitos:
+    \dividiritens{
+    \task[\pers{a}] Temos que
+    \newline 
+    $\clubsuit$ $\prin{u+v,w} = \prin{u,w} + \prin{v,w}.$ 
+        
+        Sejam $u = (u_1, u_2, u_3, u_4), v = (v_1, v_2, v_3, v_4), w = (w_1, w_2, w_3, w_4) \in \mathbb{R}^4.$ Então
+        \[
+        \begin{array}{rcl}
+        \prin{u +v,w} &=& \prin{\textcolor{Green}{(u_1 + v_1, u_2 + v_2, u_3 + v_3, u_4 + v_4)}, \textcolor{Blue}{(w_1, w_2, w_3, w_4)}} \\
+        &=& \textcolor{Green}{(u_1+v_1)}\textcolor{Blue}{w_1} + 2\textcolor{Green}{(u_2+v_2)} \textcolor{Blue}{w_2} + 5 \textcolor{Green}{(u_3+v_3)}\textcolor{Blue}{w_3}+\textcolor{Green}{(u_4+v_4)}\textcolor{Blue}{w_4} \\ 
+        &=& u_1w_1 +v_1w_1 + 2u_2w_2 + 2v_2w_2 + 5u_3w_3 + 5v_3w_3 + u_4w_4 + v_4w_4 \\ 
+        &=& u_1w_1+ 2u_2w_2+5u_3w_3+ u_4w_4 + v_1w_1+ 2v_2w_2+5v_3w_3+ v_4w_4 \\ &=& \prin{(u_1,u_2,u_3,u_4),(w_1,w_2,w_3,w_4)} + \prin{(v_1,v_2,v_3,v_4),(w_1,w_2,w_3,w_4)} \\
+        &=& \prin{u,w} + \prin{v,w}
+        \end{array}
+        \]
+        \newline
+$\textcolor{Red}{\varheart}$ $\prin{\alpha u, v} = \alpha \prin{u,v},$
+
+Sejam $u = (u_1, u_2, u_3, u_4), v = (v_1, v_2, v_3, v_4) \in \mathbb{R}^4$ e $\alpha \in \mathbb{R}.$ Temos:
+\[
+\begin{array}{rcl}
+\prin{\alpha u, v} &=& \prin{\textcolor{Green}{(\alpha u_1, \alpha u_2, \alpha u_3, \alpha u_4)}, \textcolor{Blue}{(v_1,v_2, v_3, v_4)}} \\
+&=&\textcolor{Green}{\alpha u_1} \textcolor{Blue}{v_1} + 2\textcolor{Green}{\alpha u_2} \textcolor{Blue}{v_2} + 5\textcolor{Green}{\alpha u_3} \textcolor{Blue}{v_3} + \textcolor{Green}{\alpha u_4} \textcolor{Blue}{v_4} \\ &=& \alpha (u_1v_1+ 2u_2v_2+5u_3v_3+ u_4v_4) \\ &=& \alpha \prin{(u_1,u_2, u_3, u_4), (v_1,v_2, v_3, v_4)} \\ &=& \alpha \prin{u,v}
+\end{array}
+\]
+\newline
+$\spadesuit$ $\prin{u,v} = \prin{v,u}.$
+Sejam $u = (u_1, u_2, u_3, u_4), v = (v_1, v_2, v_3, v_4) \in \mathbb{R}^4.$ Então
+\[
+\begin{array}{rcl}
+\prin{u,v} &=& \prin{\textcolor{Green}{(u_1, u_2, u_3, u_4)}, \textcolor{Blue}{(v_1, v_2, v_3, v_4)} } \\
+&=&\textcolor{Green}{u_1} \textcolor{Blue}{v_1} + 2\textcolor{Green}{ u_2} \textcolor{Blue}{v_2} + 5\textcolor{Green}{ u_3} \textcolor{Blue}{v_3} + \textcolor{Green}{ u_4} \textcolor{Blue}{v_4} \\
+&=& v_1u_1 + 2v_2u_2 + 5v_3u_3 + v_4u_4 \\
+&=& \prin{(v_1, v_2, v_3, v_4),(u_1, u_2, u_3, u_4)} \\
+&=& \prin{v,u}
+\end{array}
+\]
+\newline
+$\textcolor{Red}{\vardiamond}$ $\prin{u,u} \ge 0; \prin{u,u} = 0 \Leftrightarrow u = 0.$ 
+
+Seja $u = (u_1, u_2, u_3, u_4) \in \mathbb{R}^4.$ Então
+\[
+\prin{u,u} = \prin{(u_1, u_2, u_3, u_4),(u_1, u_2, u_3, u_4)} = u_1^2 +2u_2^2 + 5u_3^2 + u_4^2 \ge 0
+\]
+Além disso, 
+\[
+\prin{u,u} = 0 \Leftrightarrow u_1^2 +2u_2^2 + 5u_3^2 + u_4^2 = 0 \Leftrightarrow u = 0.
+\]
+
+Logo, temos que $\prin{(a,b,c,d), (x,y,z,w)} = ax + 2by + 5cz + dw$ é um produto interno em $\mathbb{R}^4.$
+
+    \task[\pers{b}]
+    
+    
+    \item Argumentando via matrizes, escrevendo o produto interno utilizando a notação matricial. 
+    
+    
+    \task[\pers{a}] Podemos escrever
+    \[
+    \prin{(a,b,c,d), (x,y,z,w)} = u^t A v = (a,b,c,d) \begin{pmatrix}
+    1 & 0 & 0 & 0 \\
+    0 & 2 & 0 & 0 \\
+    0 & 0 & 5 & 0 \\
+    0 & 0 & 0 & 1 \\
+    \end{pmatrix} \begin{pmatrix}
+    x\\ y\\ z \\ w
+    \end{pmatrix}.
+    \]
+    Como $A$ é real e simétrica, basta mostrar que $A$ é positiva definida. Se uma matriz é positiva definida, então é possível reduzí-la a uma matriz diagonal que possui todas as entradas na diagonal positivas. Claramente $A$ é uma matriz diagonal, e todas suas entradas na diagonal são positivas. Logo, $A$ é positiva definida, e $\prin{(a,b,c,d), (x,y,z,w)} = ax + 2by + 5cz + dw$ é um produto interno em $\mathbb{R}^4.$
+    
+    \task[\pers{b}]
+    }
+    
+\end{itemize}
 
 
+}
+
+\exercicio{2} Considere a função $\prin{,} \colon \mathbb{C}^2 \to \mathbb{C}^2$ dada por
+\[
+\prin{u,v} = x_1\overline{y_1} + (1+i)x_1\overline{y_2} + (1-i)x_2\overline{y_1} + 3x_2\overline{y_2}.
+\]
+\dividiritens{
+\task[\pers{a}] Verifique que $\prin{,}$ é um produto interno em $\mathbb{C}^2.$
+\task[\pers{b}] Encotnre a norma de $v = (1+2i, 2+3i) \in \mathbb{C}^2$ em relação a esse produto interno.
+}
+
+\solucao{}
+
+\exercicio{3} Use a desigualdade de Cauchy-Bunyakovski-Schwarz em $\mathbb{R}^3$ para provar a seguinte desigualdade, para $a_i > 0, i = 1,2,3:$
+\[
+(a_1 + a_2 + a_3) \left( \frac{1}{a_1} + \frac{1}{a_2} + \frac{1}{a_3} \right) \ge 0
+\]
+
+\solucao{}
+
+\exercicio{4} Seja $V = \mathcal{M}_{m \times n}(\mathbb{R}).$ Mostre que \[\prin{A,B} = \tr(B^tA) \] define um produto interno em $V.$
+
+\solucao{}
+
+\exercicio{5} Encontre uma base ortonormal para o subespaço $W \subset \mathbb{C}^3$ gerado por $u_1 = (1,i,1)$ e $u_2 = (1+i,0,2).$
+
+\solucao{
+Pelo Processo de Ortonormalização de Gramm-Schmidt, sabemos que existe um conjunto ortonormal $\{u_1, u_2 \}$ tal que $\prin{u_1,u_2} = \prin{(1,i,1),(1+i,0,2)}.$
+Temos então que, para $v_1 = (1,i,1)$ e $v_2 = (1+i,0,2),$
+\[
+u_1 = v_1 = (1,i,1)
+\]
+e
+\[
+u_2 = v_2 - \frac{\prin{v_2,u_1}}{\norm{u_1}^2}u_1 = (1+i,0,2) - \frac{\prin{(1,i,1),(1+i,0,2)}}{\norm{(1,i,1)}^2}(1,i,1) \Rightarrow \]\[u_2 = (1+i,0,2) - \frac{3+i}{1}(1,i,1) \Rightarrow u_2 = (4+2i, -1+3i, 5+i)
+\]
+Em seguida, veja que $\norm{u_1} = 1$ e $\norm{u_2} = 28 + 20i.$ Logo, $u_1$ já está normalizado. Para $u_2,$ temos
+\[
+\hat{u_2} = \frac{(4+2i, -1+3i, 5+i)}{28+20i} = 
+\]
+%https://www.emathhelp.net/calculators/linear-algebra/gram-schmidt-calculator/?i=%5B%5B1%2C1%2Bi%5D%2C%5Bi%2C0%5D%2C%5B1%2C2%5D%5D&steps=on
+}
+
+\exercicio{6} Completar até uma base ortogonal em $\mathbb{R}^4$ o seguinte sistema de vetores:
+\[
+\{ (1,-2,2,-3),(2,-3,2,4) \}
+\]
+
+\solucao{}
+
+\exercicio{7} Usando o processo de ortogonalização de Gramm-Schmidt, construir uma base ortogonal de subespaços para cada item:
+\dividiritens{
+\task[\pers{a}] $\{ (1,2,2,-1), (1,1,-5,3),(3,2,8,-7) \} \subset \mathbb{R}^4;$
+
+\task[\pers{b}] $\{ (1,1,-1,-2),(5,8,-2,-3),(3,9,3,8) \} \subset \mathbb{R}^4;$
+
+\task[\pers{c}] $\{ (1+i,3i,2-i),(2-3i, 10+2i, 5 - i) \} \subset \mathbb{C}^3.$
+}
+\solucao{}
+
+\exercicio{8} Seja $V = \mathcal{C}([0,1], \mathbb{C})$ o espaço de funções complexas contínuas com produto interno dado por
+\[
+\prin{f,g} = \displaystyle \int\limits_{0}^1 f(t) \overline{g(t)} \dif t.
+\]
+Prove que
+\dividiritens{
+\task[\pers{a}] o sistema de funções
+\[
+\{1, \sqrt{2} \cos(2 \pi nt), \sqrt{2} \sen(2 \pi n t), n,m = 1,2, \ldots \}
+\]
+é um conjunto ortonormal em $V;$
+\task[\pers{b}] o sistema de funções $\{ e^{2 \pi i nt}, n = 0, \pm 1, \pm 2, \ldots \}$ é um conjunto ortonormal em $V.$
+}
+\solucao{}
+
+\exercicio{9} Seja $V = \mathcal{M}_N(\mathbb{R})$ com produto interno $\prin{A,B} = \tr(AB^t).$ Achar complementos ortogonais para os subespaços
+\dividiritens{
+\task[\pers{a}] $\{ A \in \mathcal{M}_n(\mathbb{R}) | \tr(A) = 0 \};$
+\task[\pers{b}] $\{ A \in \mathcal{M}_n(\mathbb{R}) | A = A^t \};$
+\task[\pers{c}] $\{ A \in \mathcal{M}_n(\mathbb{R}) | A = -A^t \};$
+\task[\pers{d}] matrizes com zeros debaixo da diagonal principal.%$\{ A \in \mathcal{M}_n(\mathbb{R}) | \tr(A) = 0 \}.$
+}
+\solucao{}
+\exercicio{10}
+Encontre o cosseno do ângulo entre $u$ e $v$ se 
+\[
+u = \begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix} \quad \mbox{e} \quad v = \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}
+\]
+no espaço euclidiano $V = \mathcal{M}_2(\mathbb{R})$ com produto interno do exercício anterior.
+\solucao{Temos que
+\[
+\cos \theta = \frac{\prin{u,v}}{\norm{u} \norm{v}},
+\]
+onde $\theta$ é o ângulo entre $u$ e $v.$ Calculemos os elementos necessários:
+\[
+\prin{u,v} = \prin{\begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix}, \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}} = \tr\left(\begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix} \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}^t  \right) =  \tr\left(\begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix} \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}^t  \right)= \]\[ \tr\left(\begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix} \begin{pmatrix}
+0 & 2 \\ -1 & 3
+\end{pmatrix} \right) =   \tr\left(\begin{pmatrix}
+-1 & 7 \\ 1 & 3
+\end{pmatrix} \right) = 2
+\]
+\[
+\prin{u,u} =  \prin{\begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix},\begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix} } = \tr\left( \begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix} \begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix}^{t}  \right) = \]\[ \tr\left( \begin{pmatrix}
+2 & 1 \\ 3 & -1
+\end{pmatrix} \begin{pmatrix}
+2 & 3 \\ 1 & -1
+\end{pmatrix}  \right) =  \tr\left( \begin{pmatrix}
+5 & 5 \\ 5 & 10
+\end{pmatrix}  \right) = 15
+\]
+\[
+\prin{v,v} =  \prin{ \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}, \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix} } = \tr\left( \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}  \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}^{t}  \right) =  \]\[\tr\left(  \begin{pmatrix}
+0 & -1 \\ 2 & 3
+\end{pmatrix}  \begin{pmatrix}
+0 & 2 \\ -1 & 3
+\end{pmatrix} \right) =  \tr\left( \begin{pmatrix}
+1 & -3 \\ -3 & 13
+\end{pmatrix}  \right) = 14
+\]
+Então
+\[
+\norm{u} = \sqrt{\prin{u,u}} = \sqrt{15} \quad \mbox{e} \quad \norm{v} = \sqrt{\prin{v,v}} = \sqrt{14}
+\]
+Logo,
+\[
+\cos \theta = \frac{\prin{u,v}}{\norm{u} \norm{v}} \Rightarrow \cos \theta = 
+\frac{2}{\sqrt{15} \sqrt{14}}  \Rightarrow \cos \theta = 
+\frac{2}{\sqrt{210}} \Rightarrow \boxed{\cos \theta = 
+\frac{\sqrt{210}}{105}}
+\]
+}
+\exercicio{11} Sejam $\mathbb{R}^4$ com o produto interno usual e 
+\[
+S = \{ (x,y,z,w) \in \mathbb{R}^4 | x - 2y + z + w = 0 \}
+\]
+Determine uma base ortogonal de $S$ e uma outra para $S^{\perp}.$
+
+\solucao{Observe que $w = -x +2y-z$. Logo, um vetor $v \in S$ é da forma
+\[
+v = (x,y,z,-x+2y-z) = x(1,0,0,-1) + y(0,1,0,2) + z(0,0,1,-1).
+\]
+Portanto, temos que $\mathcal{B} = \{(1,0,0,-1), (0,1,0,2), (0,0,1,-1)\}$ é uma base para $S.$ Vamos ortogonalizá-la, utilizando o processo de Ortogonalização de Gramm-Schmidt. Tomando $u_1 = (1,0,0,-1), u_2 = (0,1,0,2)$ e $u_3 = (0,0,1,-1),$ encontraremos a base ortogonal $\{w_1,w_2,w_3\}:$
+\[
+w_1 = u_1 = (1,0,0,-1)
+\]
+\[
+w_2 = u_2 - \frac{\prin{u_2,w_1}}{\norm{w_1}^2}w_1 = (0,1,0,2) - \frac{\prin{ (0,1,0,2),(1,0,0,-1)}}{\norm{(1,0,0,-1)}^2}(1,0,0,-1) = \]\[(0,1,0,2) -  \frac{-2}{(\sqrt{2})^2}(1,0,0,-1) = (0,1,0,2) + (1,0,0,-1) = (1,1,0,1)
+\]
+\[
+w_3 = u_3 - \frac{\prin{u_3,w_1}}{\norm{w_1}^2}w_1 - \frac{\prin{u_3,w_2}}{\norm{w_2}^2}w_2 = \]\[(0,0,1,-1) - \frac{\prin{ (0,0,1,-1),(1,0,0,-1)}}{\norm{(1,0,0,-1)}^2}(1,0,0,-1) - \frac{\prin{ (0,0,1,-1),(1,1,0,1)}}{\norm{(1,1,0,1)}^2}(1,1,0,1) = \]\[ 
+ (0,0,1,-1) - \frac{1}{(\sqrt{2})^2}(1,0,0,-1) - \frac{-1}{(\sqrt{3})^2}(1,1,0,1) = (0,0,1,-1) = \]\[ \frac{1}{2}(1,0,0,-1) + \frac{1}{3}(1,1,0,1) =\left( -\frac{1}{6},\frac{1}{3},1, -\frac{1}{6} \right)
+\]
+Logo, $\left\{  (1,0,0,-1),(1,1,0,1),   \left( -\frac{1}{6},\frac{1}{3},1, -\frac{1}{6} \right) \right\}$ é uma base ortogonal de $S.$
+
+Para encontrar uma base para $S^{\perp},$ precisamos primeiro descrever os elementos desse conjunto. Para isso, sabemos que, se $w \in S^{\perp},$ então $\prin{w, v} = 0 \ \forall v \in S.$ Em particular, isso ocorre para os elementos da base de $S.$ Daí, sendo $w = (w_1,w_2,w_3,w_4),$
+\[
+\begin{cases}
+\prin{w,u_1} = 0 \\
+\prin{w,u_2} = 0 \\
+\prin{w,u_3} = 0 \\
+\end{cases} \Rightarrow \begin{cases}
+w_1 - w_4 = 0 \\
+w_2 + 2w_4 = 0 \\
+w_3-w_4 = 0 \\
+\end{cases} \Rightarrow w = w_4(1,-2,1,1)
+\]
+Logo, $\{ (1,-2,1,1) \}$ é uma base ortogonal para $S^{\perp}.$
+}
+
+\exercicio{12} Considere o espaço $V = \mathcal{P}_3(\mathbb{R})$ com o produto interno dado por
+\[
+\prin{f,g} = \displaystyle\int\limits_{0}^1 f(t) g(t) \dif t
+\]
+Ache uma base ortonormal de $\langle 1, 5+t \rangle^{\perp}.$
+
+\solucao{ Seja $h \in \langle 1, 5+t \rangle^{\perp}.$ Então, temos que
+\[
+\begin{cases}
+\prin{1,h} = 0 \\
+\prin{5+t,h} = 0
+\end{cases} \Rightarrow
+\begin{cases}
+\displaystyle\int\limits_0^1 h(t) \dif t = 0 \\
+\displaystyle\int\limits_0^1 (5+t)h(t) \dif t = 0
+\end{cases} 
+\]
+Como $h \in \mathcal{P}_3(\mathbb{R}),$ temos que $h(t) = \alpha t^3 + \beta t^2 + \gamma t + \delta.$ Então
+\[
+\begin{cases}
+\displaystyle\int\limits_0^1  \alpha t^3 + \beta t^2 + \gamma t + \delta \dif t = 0 \\
+\displaystyle\int\limits_0^1 (5+t)( \alpha t^3 + \beta t^2 + \gamma t + \delta) \dif t = 0
+\end{cases}  \Rightarrow \begin{cases}
+ \frac{1}{4}\alpha + \frac{1}{3}\beta + \frac{1}{2}\gamma+ \delta = 0 \\
+\frac{29}{20} \alpha + \frac{23}{12} \beta + \frac{17}{6} \gamma + \frac{11}{2} \delta = 0
+\end{cases} \Rightarrow \]\[(\alpha, \beta, \gamma, \delta) = \gamma \left( \frac{10}{3}, -4,1,0 \right) + \delta (20,-18,0,1)
+\]
+Logo, sendo $f(t) = \frac{10t^3}{3} - 4t^2 + t$ e $g(t) = 20t^3 - 18t^2 + 1,$ temos que $\{ f, g \}$ é uma base para $\langle 1, 5+t \rangle^{\perp}.$ Observe que $\norm{f} = \frac{\sqrt{105}}{105}, \norm{g} =  \sqrt{\frac{33}{35}}$ e $\prin{f,g} = \frac{19}{210}.$ Logo, vamos precisar ortonormalizá-la, e para isso, utilizaremos o Processo de Ortogonalização de Gramm-Schmidt. Sendo $\{ h_1, h_2 \}$ a base que procuramos, temos:
+\[
+h_1(t) = f(t) = \frac{10t^3}{3} - 4t^2 + t
+\]
+\[
+h_2(t) = g - \frac{\prin{g, h_1} }{\norm{h_1}^2}h_1  =  20t^3 - 18t^2 + 1 - \frac{\frac{19}{210} }{\left( \frac{\sqrt{105}}{105} \right)^2}\left(\frac{10t^3}{3} - 4t^2 + t\right) = \]\[20t^3 - 18t^2 + 1 - \frac{19}{2}\left(\frac{10t^3}{3} - 4t^2 + t\right) = -\frac{1}{6}(70t^3 - 120t^2 + 57t - 6)
+\]
+Temos então que $h_1$ e $h_2$ são ortogonais. Basta agora normalizá-los. Como $\norm{h_1} =  \frac{\sqrt{105}}{105}$ e $\norm{h_2} = \frac{\sqrt{3}}{6},$ temos
+\[
+h_1(t) = \sqrt{105}\left(\frac{10t^3}{3} - 4t^2 + t\right) \quad \mbox{e} \quad h_2(t) = -\frac{\sqrt{3}}{3}(70t^3 - 120t^2 + 57t - 6)
+\]
+Assim, $\{h_1, h_2 \}$ é a base ortonormal procurada.
+}
+
+\exercicio{13} Seja $V = \mathcal{C}([-1,1], \mathbb{R})$ com o produto interno dado por
+\[
+\prin{f,g} = \displaystyle\int\limits_{-1}^1 f(t) g(t) \dif t
+ \]
+Seja $W \subset V$ o subespaço formado pelas funções ímpares. Determine $W^{\perp}.$
+
+\solucao{ Seja $f$ uma função ímpar. Então sabemos por definição que $f(-x) = -f(x).$ Além disso, sabemos que, se $f$ é ímpar, então
+\[
+\displaystyle\int\limits_{-a}^a f(t) \dif t = 0, \forall a \in \mathbb{R}.
+\]
+Daí, queremos que $h(t) = f(t)g(t)$ seja ímpar, para $f$ ímpar.
+Ou seja, $h(-t) = -h(t).$ Mas como
+\[
+h(-t) = \textcolor{Green}{f(-t)}g(-t) = \textcolor{Green}{-f(t)}g(-t)
+\]
+\[
+-h(t) = -f(t)g(t),
+\]
+devemos ter então
+\[
+h(-t) = -h(t) \Rightarrow -f(t)g(-t) = -f(t)g(t) \Rightarrow g(-t) = g(t).
+\]
+Logo, se $g$ for uma função par, então $\prin{f,g} = 0,$ para toda função $f$ ímpar. Concluímos assim que todas as funções ímpares são ortogonais às funções pares. Portanto, $W^{\perp}$ é o subespaço formado pelas funções pares.
+}
+
+\exercicio{14} Para cada caso, encontre a distância entre o vetor $x$ e o subespaço que contém as soluções de cada sistema de equações:
+\dividiritens{
+\task[\pers{a}] $\begin{cases}
+2x_1 + 2x_2 + x_3 + x_4 = 0 \\ 2x_1 + 4x_2 + 2x_3 + 4x_4 = 0
+\end{cases}$ e $x = (2,4,0,-1);$
+\task[\pers{b}] $\begin{cases}
+x_1 + 2x_2 + x_3 - x_4 = 0 \\ x_1 + 3x_2 + x_3 -3x_4 = 0
+\end{cases}$ e $x = (3,3,-4,2);$
+}
+
+\solucao{}
+\exercicio{15} A sequência de polinômios $( p_k )_{k \in \mathbb{N}},$ dada recursivamente por
+\[
+\begin{cases}
+p_0(x) = 1,\\
+p_n(x) =  \frac{1}{2^n n!} \od[n]{}{t} (x^2 - 1)^n, n \ge 1
+\end{cases}
+\]
+são chamados \emph{polinômios de Legendre}. Prove que os polinômios de Legendre formam uma base ortonormal no espaço euclidiano $\mathcal{P}_n(\mathbb{R})$ com produto interno $\prin{f,g} = \displaystyle\int\limits_{-1}^1 f(t) g(t) \dif t.$
+\solucao{Mostremos que a sequência $(p_k)_{k \le n}$ pode ser obtida por meio da ortonormalização da base $\{ 1, t, t^2, \ldots, t^n \}$ de $\mathcal{P}_n(\mathbb{R}).$
+
+
+ A tabela abaixo mostra os $11$ primeiros polinômios de Legendre:
+ \begin{center}
+ \begin{tabular}{|c|c|}
+ \hline
+ $n$ & $p_n(t)$ \\ \hline
+ $0$ & $1$ \\ \hline
+  $1$ & $t$ \\ \hline
+$2$ &  $\frac{1}{2} \left( 3t^2 - 1 \right)$\\ \hline
+$3$ &  $\frac{1}{2} \left( 5t^3 - 3t \right)$ \\ \hline
+$4$& $\frac{1}{8} \left( 35t^4 - 30t^2 + 3 \right)$  \\ \hline
+$5$ & $\frac{1}{8} \left( 63t^5 - 70t^3 + 15t \right)$   \\ \hline
+$6$ &  $\frac{1}{16} \left( 231t^6 - 315t^4 + 105t^2 -5\right)$  \\ \hline
+$7$ & $\frac{1}{16} \left( 429t^7 - 693t^5 + 315t^3 -35t\right)$ \\ \hline 
+$8$ & $\frac{1}{128} \left( 6435t^8 - 12012t^6 + 6930t^4 -1260t^2 + 35\right)$ \\ \hline
+$9$ & $\frac{1}{128} \left( 12155t^9 - 25740t^7 + 18018t^5 -4620t^3 + 315t\right)$  \\ \hline
+$10$ &  $\frac{1}{128} \left( 46189t^{10} - 109395t^8 + 90090t^6 -30030t^4 + 3465t^2 - 63\right)$   \\ \hline
+ \end{tabular}
+ \end{center}
+ Os gráficos dos polinômios de Legendre com $n \le 5$ são mostrados abaixo:
+ 
+ \begin{figure}
+     \includegraphics[scale=0.6]{figuras/legendre.png}
+     \caption{Gráficos dos polinômios de Legendre com $n \le 5$}
+ \end{figure}
+
+
+
+ \textbf{Observação:} Vamos mostrar que $(p_n(t))_{n \ge 0}$ é base ortonormal para $L^2[-1,1].$ Tem-se
+ \[
+ p_n(t) = \frac{1}{2^n n!} \od[n]{}{t} (t^2 - 1)^n
+ \]
+ 
+ Segue do Teorema de Stone-Weierstrass que
+ \[
+ \mathcal{C}([-1,1], \mathbb{R}) = \overline{[t^n, n \ge 0 ]}^{\norm{\centerdot}_\infty} = \overline{[p_n , n \ge 0]}^{\norm{\centerdot}_\infty}
+ \]
+ Além disso,
+ \[
+ \norm{f}_2 \le \sqrt{2} \norm{f}_\infty \ \forall f \in L^2[-1,1] 
+ \]
+ Daí, $[p_n, n \ge 0]$ é denso em $(\mathcal{C}([-1,1], \mathbb{R}), \norm{\centerdot}_2),$ e $[p_n, n \ge 0]$ é denso em $L^2[-1,1].$
+ 
+ Sendo que $(p_n)_{n \ge 0}$ é uma família ortonormal, segue do Teorema da Base Ortonormal que $(p_n)_{n \ge 0}$ é base ortonormal de $L^2[-1,1].$
+
+}
+
+\exercicio{16} Calcule o volume do paralelepípedo formado pelos vetores
+\dividiritens{
+\task[\pers{a}] $(1,-1,1,-1), (1,1,1,1),(1,0,-1,0),(0,1,0,-1).$
+\task[\pers{b}] $(1,1,1,1),(1,-1,-1,1), (2,1,1,3),(0,1,-1,0).$
+}
+
+\solucao{}
+\exercicio{17} No espaço euclidiano $\mathcal{P}_n(\mathbb{R})$ com o produto interno $\displaystyle\int\limits_{-1}^1 f(x)g(x) \dif x,$ calcule
+\dividiritens{
+\task[\pers{a}] o volume do paralelepípedo $P[1,x, \ldots, x^n];$
+\task[\pers{b}] a distância do vetor $x^n$ até o subespaço $\mathcal{P}_{n-1}(\mathbb{R});$
+\task[\pers{c}] o ângulo entre o vetor $x^n$ e o subespaço $\mathcal{P}_{n-1}(\mathbb{R});$
+\task[\pers{d}] a distância do vetor $x^k$ até o subespaço $\mathcal{P}_{\ell}(\mathbb{R}),$ onde $k = 0, 1, \ldots, n$ e $\ell \le n;$
+\task[\pers{e}] o ângulo entre o vetor $x^n$ e o subespaço $\mathcal{P}_{n-1}(\mathbb{R}),$ onde $k = 0, 1, \ldots, n$ e $\ell \le n.$
+}
+\solucao{
+}
+
+
+\exercicio{18} Considere $\mathcal{C}([0, 2 \pi], \mathbb{R})$ munido do produto interno
+\[
+\prin{f,g} = \displaystyle\int\limits_{0}^{2 \pi} f(x)g(x) \dif x.
+\]
+Determine a função $h \in \prin{1, \sen x, \cos x}$ que melhor se aproxime de $f \colon [0, 2 \pi] \to \mathbb{R} $ dada por $f(t) = t - 1.$
+\solucao{}
+
+\exercicio{19} Sabemos que é possível representar um sistema linear a partir de um operador linear $T \in \mathcal{L}(V,U)$, escrevendo o sistema na forma $Tx = b.$ Mesmo assim, esse sistema pode ser insolúvel. Vamos então procurar um $x$ tal que a distância para a imagem de $T$ seja a menor possível. Considere então $x \in U$ ta que para todo $v \in \mbox{Im }(T),$ tenhamos $\prin{T(x)-b,v} = 0.$
+\dividiritens{
+\task[\pers{a}] Prove que $x$ satisfaz
+\[
+(T^{*}T)(x) = T^{*}(b)
+\]
+\task[\pers{b}] Verifique que o sistema representado pela equação acima sempre possui solução.
+}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Se $\prin{T(x)-b,v} = 0$ para todo $v \in \mbox{Im }(T),$ então $T(x)-b \in (\mbox{Im }(T))^{\perp}.$ Mas $(\mbox{Im }(T))^{\perp} = \Ker(T^{*}).$ Daí,
+\[
+T^{*}(T(x) - b) = 0 \Rightarrow (T^{*}T)(x) = T^{*}(b).
+\]
+
+\task[\pers{b}] Claramente $T(x) \in \mbox{Im }(T).$ Logo, o sistema $T^{*}(T(x)) = T^{*}(b)$ possui solução.
+}
+}
+
+\exercicio{20} Determine a reta que melhor se ajusta aos pontos $(−1, −10), (0, −6), (1, −4), (2, −2)$ de $\mathbb{R}^2$.
+\solucao{
+Considere $\alpha x + \beta y + \gamma = 0$ a equação da reta desejada. Queremos que esses pontos pertençam à reta. Logo, formamos o seguinte sistema:
+\[
+\begin{cases}
+-\alpha -10 \beta + \gamma = 0\\
+-6 \beta + \gamma = 0\\
+\alpha - 4 \beta + \gamma = 0\\
+2\alpha - 2 \beta + \gamma = 0\\
+\end{cases} \Rightarrow A = [T]_{\mbox{can}} = \begin{bmatrix}
+-1 & -10 & 1 \\
+0  & -6  & 1 \\
+1  & -4  & 1 \\
+2  & -2  & 1
+\end{bmatrix} \begin{bmatrix}
+\alpha \\ \beta \\ \gamma
+\end{bmatrix} = \begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix}
+\]
+Sendo $x = (\alpha, \beta, \gamma)^t$ e $b = (0,0,0)^t,$ queremos encontrar $x$ que resolva
+\[
+(A^{*}A)(x) = A^{*}(b).
+\]
+Logo, temos que
+\[
+\left(\begin{matrix}
+6 & 2 & 2 \\
+2 & 156 & -22 \\
+2 & -22 & 4
+\end{matrix}\right)   \begin{bmatrix}
+\alpha \\ \beta \\ \gamma
+\end{bmatrix} = \left(\begin{matrix}
+-1 & 0 & 1 & 2 \\
+-10 & -6 & -4 & -2 \\
+1 & 1 & 1 & 1
+\end{matrix}\right) \begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix} \Rightarrow \begin{cases}
+6\alpha + 2\beta + 2 \gamma =0 \\
+2\alpha + 156\beta  -22 \gamma =0 \\
+2\alpha  -22\beta + 4 \gamma =0
+\end{cases}
+\]
+}
+
+\exercicio{21} Determine o polinômio de grau $2$ que melhor se ajusta aos pontos $(−1, 0), (0, −1), (1, 1), (2, 4)$ de $\mathbb{R}^2$.
+\solucao{}
+\exercicio{22} Determine a melhor solução aproximada do sistema
+\[
+\begin{cases}
+x-2y=1\\
+x-y=0\\
+2x+2y=2
+\end{cases}
+\]
+\solucao{A matriz que representa o sistema será
+\[
+A = \begin{bmatrix}
+1 & -2 \\
+1 & -1 \\
+2 & 2
+\end{bmatrix}
+\]
+Logo, tomando $z = (x,y)^t$ e $b = (1,0,2)^t,$ 
+\[
+Az = b
+\]
+Vamos encontrar $z$ tal que $A^{*}Az = A^*b:$
+\[
+A^{*}Az = A^{*}b \Rightarrow \begin{bmatrix}
+6 & 1 \\
+1 & 9
+\end{bmatrix}  \begin{bmatrix}
+x \\
+y
+\end{bmatrix} = \begin{bmatrix}
+1 & 1 & 2 \\
+-2 & -1 & 2
+\end{bmatrix}\begin{bmatrix}
+1 \\
+0 \\
+2
+\end{bmatrix} \Rightarrow \begin{cases}
+6x+y = 5\\
+x + 9y = 2
+\end{cases} \Rightarrow Z = \left( \frac{43}{53}, \frac{7}{53} \right)
+\]
+Portanto, a melhor solução aproximada para o sistema será $\left( \frac{43}{53}, \frac{7}{53} \right).$
+}
+
+
+\exercicio{23} Considere o espaço vetorial $\mathcal{P}_3(\mathbb{R})$ com produto interno dado por
+\[
+\prin{f,g} = \displaystyle\int\limits_{0}^{1} f(x)g(x) \dif x.\]
+
+Determine o polinômio do subespaço $\prin{1,x^2}$ que melhor se aproxima de $f(x) = x^3−x.$
+
+\solucao{
+Seja $W =\prin{1,x^2}.$ Vamos encontrar 
+\[
+d(f, W) = \{ \norm{f - w} | w \in W \} 
+\]
+Sabemos que $d(f,W) = \norm{f - E_W(f)},$ onde 
+\[
+E_W(f) = \sum\limits_{i=1}^2 \frac{\prin{f, w_i}}{\norm{w_i}^2} w_i =  \frac{\prin{f, 1}}{\norm{1}^2} + \frac{\prin{f, x^2}}{\norm{x^2}^2}
+\]
+Logo, 
+\[
+E(x^3 - x) = \frac{\prin{x^3 - x, 1}}{\norm{1}^2} + \frac{\prin{x^3 - x, x^2}}{\norm{x^2}^2} =  \frac{-\frac{1}{4}}{1} + \frac{-\frac{1}{12}}{\frac{1}{5}} = -\frac{2}{3}
+\]
+e
+\[
+d(f,W) = \norm{x^3 - x +\frac{2}{3}} = \displaystyle\int\limits_0^1  \left(x^3 - x +\frac{2}{3} \right) \left(x^3 - x +\frac{2}{3} \right)  \dif x = \frac{59}{315}.
+\]
+Basta encontrar um $g(x)$ tal que
+\[
+\norm{f - g} = \frac{59}{315}
+\]
+
+}
+
+
+\exercicio{24}  Ache $a, b, c \in \mathbb{R}$ de forma a minimizar o valor da integral
+\[
+\displaystyle\int\limits_{-1}^1 \abs{x^3 - ax^2 - bx -c}^2 \dif x.
+\]
+
+\solucao{}
+
+\exercicio{25}  Sejam $U, V$ espaços com produtos internos e $T \colon U \to V$ uma aplicação tal que $\prin{T(u), T(v)} = \prin{u, v} \ \forall u,v \in U.$ Mostre que $T$ é linear.
+
+\solucao{Para verificar que $T$ é linear, precisamos mostrar que, para todo $u, v \in V$ e $\alpha \in K,$ temos que $T(u + v) =  T(u) + T(v)$ e $T(\alpha u) = \alpha T(u).$ De fato,
+\begin{itemize}
+    \item para $u,v, w\in U,$ temos que 
+    \[\prin{T(u+v), T(w)} = \prin{(u+v),w} = \prin{u,w} + \prin{v,w} = \prin{T(u), T(w)} + \prin{T(v), T(w)} = \prin{T(u) + T(v), T(w)} \Rightarrow T(u+v) = T(u) + T(v).\]
+    \item para $u,v, w\in U,$ temos que 
+    \[\prin{T(\alpha u), T(w)} = \prin{\alpha u,w} = \alpha \prin{u,w} = \alpha \prin{T(u), T(w)} + \prin{\alpha T(v), T(w)} \Rightarrow T(\alpha u) = \alpha T(u).\]
+
+\end{itemize}
+Logo, $T$ é linear.
+}
+\subsection{Operadores lineares em espaços com produto interno}
+\exercicio{26} Para cada um dos seguintes funcionais lineares $\varphi \in V^{*},$ encontre um vetor $u \in V$ tal que $\varphi(v) = \prin{v, u} \ \forall v \in V:$
+
+\dividiritens{
+\task[\pers{a}] $V = \mathbb{R}^3, \varphi(x,y,z) = x + 2y -3z;$
+\task[\pers{b}] $V = \mathbb{C}^3, \varphi(x,y,z) = ix + (2+3i)y + (1-2i)z;$
+\task[\pers{c}] $V = \mathcal{P}_2(\mathbb{R}), \varphi(f) = f(1);$
+}
+
+\solucao{\dividiritens{
+\task[\pers{a}] Note que
+\[
+x +2y-3z = \prin{(1,2,-3),(x,y,z)}.
+\]
+Portanto, temos que para $u = (1,2,-3),$ $\varphi(v) = \prin{u, v}, \ \forall v \in V.$
+\task[\pers{b}] Veja que
+\[
+ ix + (2+3i)y + (1-2i)z = \prin{(i,2+3i,1-2i),(x,y,z)}.
+\]
+Portanto, temos que para $u = (i,2+3i,1-2i),$ $\varphi(v) = \prin{u, v}, \ \forall v \in V.$
+
+\task[\pers{c}] Sejam $f(x) = ax^2 + bx +c$ e $g(x) = \alpha x^2 + \beta x + \gamma.$ Como $f(1) = a + b + c,$ temos que
+\[
+\varphi(f) = a + b + c.
+\]
+Queremos encontrar $g$ tal que $\varphi(f) = \prin{g,f}.$ Logo, devemos ter
+\[
+\prin{g,f} = a + b + c \Rightarrow \prin{g,f} = \displaystyle\int\limits_{0}^1 g(x) f(x) \dif x \Rightarrow \displaystyle\int\limits_{0}^1 (\alpha x^2 + \beta x + \gamma) (ax^2 + bx +c) \dif x = a + b + x
+\]
+%https://www.wolframalpha.com/input/?i=%5Cint_0%5E1+%28%5Calpha+x%5E2+%2B+%5Cbeta+x+%2B+%5Cgamma%29+%28ax%5E2+%2B+bx+%2Bc%29++dx+%3D+a+%2B+b+%2B+c
+}
+
+
+}
+
+\exercicio{27} Seja $T \in \mathcal{L}(\mathbb{C}^2)$ o operador dado por $T(1, 0) = (1 + i, 2)$ e $T(0, 1) = (i, i).$ Considerando $\mathbb{C}^2$ com o produto interno canônico, determine $T^{*}.$
+
+\solucao{Observe que a representação matricial de $T$ na base canônica de $\mathbb{C}^2$ é
+\[
+A = [T]_{\mbox{can}} = \begin{bmatrix}
+1 + i & i \\
+2 & i
+\end{bmatrix}
+\]
+Como a base canônica é uma base ortonormal, a matriz que representa $T^{*}$ na base canônica será a hermitiana de $A,$ ou seja,
+\[
+[T^{*}]_{\mbox{can}} = A^{H} = A^{*} = [T^{*}]_{\mbox{can}} = \overline{\begin{bmatrix}
+1 + i & i \\
+2 & i
+\end{bmatrix}^t} = \begin{bmatrix}
+1 - i & 2 \\
+-i & -i
+\end{bmatrix}
+\]
+Logo, o operador $T^{*} \in \mathcal{L}(\mathbb{C}^2)$ é dado por $T(1,0) = (1-i,-i)$ e $T(0,1) = (2,-i).$
+}
+
+\textcolor{Red}{Questões Suplementares}
+
+\exercicio{k} Prove que para qualquer triângulo, a soma dos quadrados das medidas de suas três medianas é igual a três quartos da soma dos quadrados das medidas de seus lados.
+
+%https://repositorio.unesp.br/bitstream/handle/11449/144302/pontes_rc_me_rcla.pdf?sequence=3
+
+
+\solucao{}
+
+\exercicio{k+1} Considere um tetraedro. Chamamos de \emph{bimediana} o segmento que liga os pontos médios de duas
+arestas opostas do tetraedro.
+\dividiritens{
+\task[\pers{a}] Prove que, para qualquer tetraedro, a soma dos quadrados das medidas de suas três bimedianas é igual a um quarto da soma dos quadrados das medidas de suas arestas.
+
+\task[\pers{b}] Encontre  %https://repositorio.unesp.br/bitstream/handle/11449/144302/pontes_rc_me_rcla.pdf?sequence=3
+}
 \newpage
 \section{\textcolor{Floresta}{Lista 6}}
 
