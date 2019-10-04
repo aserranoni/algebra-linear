@@ -313,6 +313,85 @@ T(\Ker(S \circ T)) = \Ker S \cap \mbox{Im } T
 \abs{\mbox{posto } S - \mbox{posto } T} \le \mbox{posto }(T + S) \le \mbox{posto } S + \mbox{posto } T
 \]
 \solucao{}
+\exercicio{22} Seja $V$ um espaço vetorial de dimensão $n$ sobre o corpo $K$ e sejam $S$ e $T$ dois operadores
+lineares em $V$. Suponha que $S \circ T = 0$ e que $S + T$ é sobrejetora. Mostre que 
+\[
+\mbox{posto } T + \mbox{posto } S = n
+\]
+\solucao{}
+\exercicio{23} Seja $T$ um operador linear de posto $1$ em um espaço vetorial $V.$ Mostre que existe um único
+escalar $\alpha$ tal que $T^2 = \alpha T.$ Prove que se $\alpha \neq 1,$ então $I- T$ é inversível.
+
+\solucao{}
+\exercicio{24}  Seja $V$ um espaço vetorial sobre um corpo $K$ de característica diferente de $2$ e seja $T$ um
+operador linear em $V$ tal que $T^2 = I.$ Prove que ou $T = I,$ ou $T = -I,$ ou existe uma base $B$ base de $V$ tal que
+\[
+[T]_{B} = \begin{bmatrix}
+1 & 0 \\
+0 & -1
+\end{bmatrix}
+\]
+Dê um exemplo para mostrar que a hipótese $\mbox{char}(K) \neq 2$ é necessária.
+\solucao{}
+\exercicio{25} Seja $V$ um espaço vetorial sobre um corpo $K$ de característica diferente de $2$ e seja $T$ um
+operador linear em $V$ tal que $T^2 = I.$ Sejam 
+\[W = \{v \in V : T(v) = v\} \quad \mbox{e} \quad U = \{v \in V : T(v) = -v\}.\] Prove que 
+\[V = W \oplus U.\] 
+\solucao{}
+\exercicio{26} Seja $V$ um $K$-espaço vetorial de dimensão $n$ e seja $T$ um operador linear em $V$ tal que $T^n = 0$ e $T^{n-1} \neq 0$. Seja $v \in V$ tal que $T^{n-1}(v) \neq 0.$ Prove que o conjunto
+\[\mathcal{B} = \{v, T(v), T^2(v), \ldots, T^{n-1}(v) \}\]
+é uma base de $V$. Qual é a matriz $[T]_{\mathcal{B}}?$ 
+
+\solucao{}
+\exercicio{27} Sejam $f_1, \ldots , f_m \in (K^n)^{*}.$ Considere a função $T \colon K^n \to K^m$ definida por
+\[T(v) = (f_1(v), f_2(v), \ldots,f_m(v)). \]
+Mostre que $T \in \mathcal{L}(K^n, K^m)$ e que toda transformação linear em $\mathcal{L}(K^n, K^m)$ tem essa forma, para alguma escolha adequada de $f_1, \ldots , f_m \in (K^n)^{*}.$
+\solucao{}
+\exercicio{28} Seja $V$ um $K$-espaço vetorial e seja \[B = \{v_i
+: i \in I\}\] uma base de $V$. Para cada $i \in I,$ seja $f_i \in V^∗$ tal que $f_i(v_j) = \delta_{ij},$ para todo $j \in I.$
+\dividiritens{
+\task[\pers{a}] Mostre que \[C = {f_i
+: i \in I} \] é linearmente independente.
+\task[\pers{b}]) Mostre que $C$ é uma base de $V^{*}$ se, e somente se, $I$ é finito. 
+}
+\solucao{}
+\exercicio{29} Seja $V$ um $K$-espaço vetorial e seja $f \in V^{*}$ um funcional linear não nulo. Mostre que existe $v \in V$ tal que $V = \Ker f \oplus \prin{v}.$
+\solucao{}
+\exercicio{30} Seja $V$ um $K$-espaço vetorial e sejam $f,g \in V^{*}.$ Mostre que se $\Ker f = \Ker g,$ então existe $\lambda \in K,$ tal que $f(v) = \lambda g(v),$ para todo $v \in V.$ 
+\solucao{}
+\exercicio{31} Seja $K$ um corpo infinito e seja $V$ um espaço vetorial de dimensão finita sobre $K.$ Sejam $v_1, v_2, \ldots v_m$ vetores não nulos de $V.$ Prove que existe um funcional linear $f \in V^{*}$ tal que $f(v_i)\neq 0$ para todo $i = 1, 2, \ldots ,m.$ 
+\solucao{}
+\exercicio{32} Seja $V$ um $K$-espaço vetorial. Mostre que $v \in V$ é o vetor nulo se, e somente se $f(v) = 0,$ para todo $f \in V^{*}.$
+\solucao{}
+\exercicio{33} Seja $\tr: \mathcal{M}_n(K) \to K$ a função traço definida por
+\[
+\tr(A) = \displaystyle\sum\limits_{i=1}^n a_{ii},
+\]
+para $A = [a_{ij}]_{1\le,j\le n}$.
+\dividiritens{
+\task[\pers{a}] Mostre que $\tr$ é linear e que \[\tr(AB) = \tr(BA),\] para quaisquer $A, B \in \mathcal{M}_n(K).$
+\task[\pers{b}] Mostre que matrizes semelhantes possuem o mesmo traço.
+\task[\pers{c}] Prove que o traço em $\mathcal{M}_n(K)$ é único no seguinte sentido: Se $f \in (\mathcal{M}_n(K))^{*}$ é tal que $f(AB) = f(BA),$ para quaisquer matrizes $A, B \in \mathcal{M}_n(K),$ então existe $\alpha \in K$ tal que $f = \alpha \tr.$ Se, além disso, $f(I_n) = n$ e a característica de $K$ é zero, então $f = \tr.$
+}
+\solucao{}
+\exercicio{34} Sejam $U$ e $W$ subespaços de um $K$-espaço vetorial $V$. Prove que $U = W$ se, e somente se, $U^{0} = W^{0}.$
+
+\solucao{}
+\exercicio{35} Sejam $U$ e $W$ subespaços de um $K$-espaço de dimensão finita $V$. Prove que: 
+\dividiritens{
+\task[\pers{a}] $(U + W)^0= U^0 \cap W^0;$
+\task[\pers{b}] $(U \cap W)^{0} = U^0 + W^0.$
+}
+A condição sobre a dimensão de $V$ é necessária?
+\solucao{}
+\exercicio{36} Seja $V$ um $K$-espaço de dimensão finita. Mostre que a função $T \mapsto T^t$ é um isomosfismo de $\mathcal{L}(V)$ em $\mathcal{L}(V^{*}).$
+\solucao{}
+\exercicio{37} Seja $V = \mathcal{P}_n(\mathbb{R}).$ Determine $T^t$ uma base de $\Ker T^t$ para os seguintes operadores lineares $T$ de $V:$
+\dividiritens{
+\task[\pers{a}] $T$ é o operador derivação em $V;$
+\task[\pers{b}] $T(p(t)) = p(t+1),$ para todo $p \in V.$
+}
+\solucao{}
 \newpage
 \section{\textcolor{Floresta}{Lista 1}}
 
@@ -1646,9 +1725,28 @@ Calculando os determinantes utilizando o Teorema de Laplace, por exemplo, temos 
 \]
 \task[\pers{b}] Observe que 
 \[
-x_1 = \sen^2 \left(  \right)
+x_1 = \sen^2 \left( \frac{4 \pi}{7} \right), x_2 = \sen^2 \left( \frac{2 \pi}{7} \right) \mbox{ e } x_3 = \sen^2 \left( \frac{\pi}{7} \right)
 \]
-
+Faça $\alpha = \mbox{cis}\left(\frac{\pi}{7}\right) = \cos\left(\frac{\pi}{7}\right) + i \sen \left(\frac{\pi}{7}\right).$ Note que $\alpha^{7} = -1$ e $\alpha^{14} = 1.$ Assim, $\alpha^{-n} = \alpha^{14-n}.$ Temos também que
+\[
+\sen \left(\frac{\pi}{7}\right) = \frac{\alpha - \alpha^{-1}}{2i}
+\]
+Portanto, 
+\[
+\left(x_1^2 + x_2^2 + x_3^2\right)^2 = 
+\left(\left(\frac{\alpha^4 - \alpha^{-4}}{2i}  \right)^2 + \left(\frac{\alpha^2 - \alpha^{-2}}{2i}  \right)^2 + \left(\frac{\alpha - \alpha^{-1}}{2i}  \right)^2 \right)^2 =\]\[
+\left( \frac{\alpha^8 - 2 + \alpha^{-8}}{-4} + \frac{\alpha^4 - 2 + \alpha^{-4}}{-4} + \frac{\alpha^2 - 2 + \alpha^{-2}}{-4}
+\right)^2 = \]\[
+\left( \frac{\alpha^8 - 2 + \alpha^{-8} + \alpha^4 - 2 + \alpha^{-4}}{-4} + \alpha^2 - 2 + \alpha^{-2}
+\right)^2 = \]\[
+\left( \frac{\alpha^{12} + \alpha^{10} + \alpha^8 + \alpha^{6} + \alpha^4 -6}{-4}\right)^2 = \frac{(\alpha^{12} + \alpha^{10} + \alpha^8 + \alpha^{6} + \alpha^4 -6)^2}{16}.
+\]
+Por outro lado,
+\[
+3 \left(\left(\frac{\alpha^4 - \alpha^{-4}}{2i}  \right)^3\left(\frac{\alpha^2 - \alpha^{-2}}{2i}  \right) + \left(\frac{\alpha^2 - \alpha^{-2}}{2i}  \right)^3\left(\frac{\alpha - \alpha^{-1}}{2i}  \right) + \left(\frac{\alpha - \alpha^{-1}}{2i}  \right)^3\left(\frac{\alpha^4 - \alpha^{-4}}{2i}  \right)\right) = \]\[
+3 \left(\left(\frac{\alpha^{12} - 3\alpha^4 + 3\alpha^{-4} - \alpha^{-12}}{-8i}  \right)\left(\frac{\alpha^2 - \alpha^{-2}}{2i}  \right) \right. + \]\[   \left(\frac{\alpha^6 - 3\alpha^{2} + 3\alpha^{-2} - \alpha^{-6}}{-8i}  \right)\left(\frac{\alpha - \alpha^{-1}}{2i}  \right) + \]\[ \left. 
+\left(\frac{\alpha^3 - 3\alpha + 3\alpha^{-1} - \alpha^{-3}}{-8i}  \right)\left(\frac{\alpha^4 - \alpha^{-4}}{2i}  \right) \right) = \]\[3 \left(\left(\frac{(\alpha^4 -1)^4 (\alpha^4 + 1)^3}{16 \alpha^{14}}  \right) +  \left(\frac{(\alpha^2 -1)^4 (\alpha^2+1)^3}{16\alpha^7}  \right) + \left(\frac{(\alpha^2 -1)^4 (\alpha^6 + \alpha^4+\alpha^2+1)^3}{16\alpha^7}  \right) \right) = \]\[3 \left(\left(\frac{(\alpha^4 -1)^4 (\alpha^4 + 1)^3}{16}  \right) +  \left(\frac{(\alpha^2 -1)^4 (\alpha^2+1)^3}{-16}  \right) + \left(\frac{(\alpha^2 -1)^4 (\alpha^6 + \alpha^4+\alpha^2+1)^3}{-16}  \right) \right) =\]\[3 \left(\frac{(\alpha^4 -1)^4 (\alpha^4 + 1)^3 - (\alpha^2 -1)^4 (\alpha^2+1)^3 - (\alpha^2 -1)^4 (\alpha^6 + \alpha^4+\alpha^2+1)^3}{16}  \right) =
+\]
 }
 }
  
