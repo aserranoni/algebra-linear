@@ -1581,22 +1581,78 @@ A^{-1} + B^{-1} = (A + B)^{-1}
         \solucao{}
     \exercicio{34} Sejam $x_1,x_2,x_3 \in \mathbb{R},$ e considere duas matrizes reais $A$ e $B$, com entradas dadas por
     \[
-    a_{jk} = \begin{cases}
-    0, & \mbox{se }j=k\\
-    (x_n  , & \mbox{se } j+k=5,\\
-    i^{k-j+\abs{j-k}-1} x_{\abs{j-k}} &\mbox{se } j+k \notin \{ 0, 5 \} 
-    \end{cases} \quad \mbox{e} \quad b_{jk} = \begin{cases}
-    (-1)^{}
+    a_{ij} = \begin{cases}
+    x_3, & \mbox{se }i=j\\
+    0, & \mbox{se } i+j=5,\\
+    (-1)^i x_{\abs{i-j}}, &\mbox{se } i+j \notin \{ 0, 5 \} \mbox{ e } i < 3;\\
+    (-1)^{j+1} x_{\abs{i-j}}, &\mbox{se } i+j \notin \{ 0, 5 \} \mbox{ e }i > 2. 
+    %i^{k-j+\abs{j-k}-1} x_{\abs{j-k}} &\mbox{se } j+k \notin \{ 0, 5 \} 
+    \end{cases} \quad \mbox{e} \quad b_{ij} = \begin{cases}
+    -x_{j-1}, & \mbox{se } i=1 \mbox{ e } i-j \neq 0; \\
+     x_{i-1}, & \mbox{se } j=1  \mbox{ e } j-i \neq 0;    \\
+ x_{n}, & \mbox{se } i = j = n  \mbox{ e } 2 \le n < 4 \\
+  x_{1}, & \mbox{se } i = j = 4 \\
+     0, & \mbox{caso contrário.}
     \end{cases}
     \]
-    \[
-\left|\begin{matrix}
-0 & -x & -z & -y \\
-x & z & 0 & 0 \\
-z & 0 & y & 0 \\
-y & 0 & 0 & x
-\end{matrix}\right|
-    \]
+\dividiritens{
+\task[\pers{a}] Calcule $\det(A)$ e $\det(B)$ em função de $x_1, x_2$ e $x_3.$
+
+\task[\pers{b}] Mostre que, se $x_i = \sen^2 \left( \frac{2^{3-i} \pi}{7} \right),$ então $\det(A) = 3 \det(B).$
+}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Vamos calcular as entradas de $A:$
+\[
+\begin{array}{lll}
+a_{11} = x_3; & a_{12} = (-1)^{1} x_{\abs{1-2}} = -x_1;&  a_{13} = (-1)^{1} x_{\abs{1-3}} = -x_2; \\  
+a_{14} = 0; & a_{21} =  (-1)^2  x_{\abs{2-1}} = x_1; & a_{22} = x_3; \\
+a_{23} = 0; & a_{24} = (-1)^2  x_{\abs{2-4}} = x_2; &
+a_{31} = (-1)^{1+1}x_{\abs{3-1}} = x_2; \\
+a_{32} = 0; &a_{33} = x_3;&a_{34} = (-1)^{4+1}x_{\abs{3-4}} = -x_1 \\
+a_{41} = 0; & a_{42} = (-1)^{2+1}x_{\abs{4-2}} = - x_2; &a_{43} = (-1)^{3+1}x_{\abs{4-3}} = x_1; \\ a_{44} = x_3
+\end{array}
+\]
+Então:
+\[
+A = \begin{bmatrix}
+x_3 & -x_1 & -x_2 & 0 \\
+x_1 & x_3 & 0 & x_2 \\
+x_2 & 0 & x_3 & -x_1 \\
+0 & -x_2 & x_1 & x_3
+\end{bmatrix}
+\]
+Para $B,$ temos:
+\[
+\begin{array}{llll}
+b_{11} = 0; & b_{12} = -x_{2-1}=-x_1; &b_{13} = -x_{3-1} = -x_2; & b_{14} = -x_{4-1} = -x_3; \\
+b_{21} = x_{2-1} = x_1; & b_{22} = x_2; & b_{23} = 0; & b_{24} = 0;\\
+b_{31} = x_{3-1} = x_2; & b_{32} = 0; & b_{33} = x_3; & b_{34} = 0; \\
+b_{41} = x_{4-1} = x_3; & b_{42} = 0; & b_{43} = 0; &b_{44} =x_1
+\end{array}
+\]
+Logo,
+\[
+B = \begin{bmatrix}
+0 & -x_1 & -x_2 & -x_3 \\
+x_1 & x_2 & 0 & 0 \\
+x_2 & 0 & x_3 & 0\\
+x_3 & 0 & 0 & x_1
+\end{bmatrix}
+\]
+Calculando os determinantes utilizando o Teorema de Laplace, por exemplo, temos que
+\[
+\det(A) = (x_1^2 + x_2^2 + x_3^2)^2 \quad \mbox{e} \quad \det(B) = x_1^3x_2 + x_2^3x_3 + x_3^3x_1
+\]
+\task[\pers{b}] Observe que 
+\[
+x_1 = \sen^2 \left(  \right)
+\]
+
+}
+}
+ 
+ 
 \newpage
 \section{\textcolor{Floresta}{Lista 2}}
 
@@ -6712,10 +6768,14 @@ Temos então que, para $v_1 = (1,i,1)$ e $v_2 = (1+i,0,2),$
 u_1 = v_1 = (1,i,1)
 \]
 e
+
 \[
 u_2 = v_2 - \frac{\prin{v_2,u_1}}{\norm{u_1}^2}u_1 = (1+i,0,2) - \frac{\prin{(1,i,1),(1+i,0,2)}}{\norm{(1,i,1)}^2}(1,i,1) \Rightarrow \]\[u_2 = (1+i,0,2) - \frac{3+i}{1}(1,i,1) \Rightarrow u_2 = (4+2i, -1+3i, 5+i)
 \]
-Em seguida, veja que $\norm{u_1} = 1$ e $\norm{u_2} = 28 + 20i.$ Logo, $u_1$ já está normalizado. Para $u_2,$ temos
+Em seguida, veja que $\norm{u_1} = \sqrt{3}$ e $\norm{u_2} = 28 + 20i.$ Logo, normalizando:
+\[
+\hat{u_1} = \frac{(1,i,1)}{\sqrt{3}} = \Rightarrow \hat{u_1} = \left(\frac{\sqrt{3}}{3}, \frac{i\sqrt{3}}{3}, \frac{\sqrt{3}}{3} \right)
+\]
 \[
 \hat{u_2} = \frac{(4+2i, -1+3i, 5+i)}{28+20i} = 
 \]
