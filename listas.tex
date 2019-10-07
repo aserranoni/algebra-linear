@@ -348,7 +348,7 @@ operador linear em $V$ tal que $T^2 = I.$ Sejam
 Mostre que $T \in \mathcal{L}(K^n, K^m)$ e que toda transformação linear em $\mathcal{L}(K^n, K^m)$ tem essa forma, para alguma escolha adequada de $f_1, \ldots , f_m \in (K^n)^{*}.$
 \solucao{}
 \exercicio{28} Seja $V$ um $K$-espaço vetorial e seja \[B = \{v_i
-: i \in I\}\] uma base de $V$. Para cada $i \in I,$ seja $f_i \in V^∗$ tal que $f_i(v_j) = \delta_{ij},$ para todo $j \in I.$
+: i \in I\}\] uma base de $V$. Para cada $i \in I,$ seja $f_i \in V^*$ tal que $f_i(v_j) = \delta_{ij},$ para todo $j \in I.$
 \dividiritens{
 \task[\pers{a}] Mostre que \[C = {f_i
 : i \in I} \] é linearmente independente.
@@ -1658,6 +1658,28 @@ A^{-1} + B^{-1} = (A + B)^{-1}
     %https://math.stackexchange.com/questions/1291083/matrix-with-prime-entries-and-largest-possible-determinant
     }
         \solucao{}
+        
+\exercicio{34}
+Sejam $x_1,x_2,x_3 \in \mathbb{R},$ e considere duas matrizes reais $A$ e $B$, dadas por
+ \[
+ A = \begin{bmatrix}
+x_3 & -x_1 & -x_2 & 0 \\
+x_1 & x_3 & 0 & x_2 \\
+x_2 & 0 & x_3 & -x_1 \\
+0 & -x_2 & x_1 & x_3
+\end{bmatrix} \quad \mbox{e} \quad B = \begin{bmatrix}
+0 & -x_1 & -x_3 & -x_2 \\
+x_1 & x_3 & 0 & 0 \\
+x_3 & 0 & x_2 & 0\\
+x_2 & 0 & 0 & x_1
+\end{bmatrix}
+ \]
+  \dividiritens{
+  \task[\pers{a}] Encontre $\det(A)$ e $\det(B).$
+  \task[\pers{b}] Mostre que, se $x_i = \sen^2 \left( \frac{2^{3-i} \pi}{7} \right),$ então $\det(A) = 3 \det(B).$
+  \task[\pers{c}] Prove que $\det(A) \ge 3 \det(B).$
+  }
+        \begin{comment}
     \exercicio{34} Sejam $x_1,x_2,x_3 \in \mathbb{R},$ e considere duas matrizes reais $A$ e $B$, com entradas dadas por
     \[
     a_{ij} = \begin{cases}
@@ -1749,7 +1771,7 @@ Por outro lado,
 \]
 }
 }
- 
+ \end{comment}
  
 \newpage
 \section{\textcolor{Floresta}{Lista 2}}
@@ -6042,58 +6064,134 @@ para todos $\alpha, \beta \in \mathbb{C}.$
 }
 \solucao{
 \dividiritens{
-\task[\pers{a}] Observando que 
+\task[\pers{a}] Observe que, para todo $x$, temos:
 \[
-\norm{v} = \sqrt{\prin{v,v}} \Rightarrow \norm{u + v} = \sqrt{\prin{u+v,u+v}},
+\norm{x} = \sqrt{\prin{x,x}},
 \]
-a partir das propriedades do produto interno, segue que
+assim para $u,v$ temos:
 \[
-\textcolor{Green}{\norm{u+v}}^2 = \textcolor{Green}{ \sqrt{\prin{u+v,u+v}}}^2 = \prin{u + v, u+v} =\]\[ \textcolor{Red}{\prin{u,u}} + \textcolor{Magenta}{\prin{u,v}} + \textcolor{Laranja}{\prin{v,u}} + \textcolor{Blue}{\prin{v,v}} =\]\[ \textcolor{Red}{\norm{u}^2} + \textcolor{Magenta}{0} + \textcolor{Laranja}{0} + \textcolor{Blue}{\norm{v}^2} = \norm{u}^2 + \norm{v}^2 \Rightarrow \boxed{\norm{u+v}^2= \norm{u}^2 + \norm{v}^2}
+\norm{u + v} = \sqrt{\prin{u+v,u+v}}.
 \]
-Agora, se $\norm{u+v}^2= \norm{u}^2 + \norm{v}^2,$ então temos que 
-\[\norm{u+v}^2 = \prin{u+v, u+v} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \Rightarrow \textcolor{Green}{\norm{u+v}^2} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \Rightarrow\]\[ \textcolor{Green}{\norm{u}^2 + \norm{v}^2} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \Rightarrow 2 \prin{u,v} = 0 \Rightarrow \boxed{\prin{u,v} = 0}
+\begin{itemize}
+\item Se $\langle u,v\rangle=0$, então, a partir das propriedades do produto interno, segue que:
+\[
+\begin{array}{rcl}
+\textcolor{Green}{\norm{u+v}}^2 &=& \textcolor{Green}{ \sqrt{\prin{u+v,u+v}}}^2 \\&=& \prin{u + v, u+v} \\&=& \textcolor{Red}{\prin{u,u}} + \textcolor{Magenta}{\prin{u,v}} + \textcolor{Laranja}{\prin{v,u}} + \textcolor{Blue}{\prin{v,v}} \\&=& \textcolor{Red}{\norm{u}^2} + \textcolor{Magenta}{0} + \textcolor{Laranja}{0} + \textcolor{Blue}{\norm{v}^2} \\&=& \norm{u}^2 + \norm{v}^2,
+\end{array}
 \]
+ou seja:
+\[
+\boxed{\norm{u+v}^2= \norm{u}^2 + \norm{v}^2}
+\]
+\item Se $\norm{u+v}^2= \norm{u}^2 + \norm{v}^2,$ então temos que:
+\[
+\begin{array}{cl}
+&\norm{u+v}^2 = \prin{u+v, u+v} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \\\Rightarrow& \textcolor{Green}{\norm{u+v}^2} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \\\Rightarrow& \textcolor{Green}{\norm{u}^2 + \norm{v}^2} = \norm{u}^2 + \norm{v}^2 + 2 \prin{u,v} \\\Rightarrow& 2 \prin{u,v} = 0 \\\Rightarrow& \boxed{\prin{u,v} = 0}
+\end{array}
+\]
+\end{itemize}
+\item[\pers{b}] Se considerarmos $V=\mathbb{C}$ munido do produto interno usual:
+\[
+\langle x,y\rangle=x\overline{y},
+\]
+então:
+\[
+\norm{1+i}^2=2,
+\]
+e também:
+\[
+\norm{1}^2+\norm{i}^2=1+1=2,
+\]
+porém:
+\[
+\langle i,1\rangle=i\cdot\overline{1}=i\neq 0.
+\]
+\task[\pers{c}] Sejam $u,v$ vetores quaisquer. Então temos o seguinte:
+\begin{itemize}
+\item Se $\langle u,v\rangle=0$, então, para quaisquer $a,b\in\mathbb{C}$, segue que:
+\[
+\begin{array}{rcl}
+\norm{au+bv}^2 &=& \prin{au + bv, au+bv} \\&=& \prin{au,au} + \prin{au,bv} + \prin{bv,au} + \prin{bv,bv} \\&=& \textcolor{Red}{\prin{au,au}} + a\overline{b}\textcolor{Magenta}{\prin{u,v}} + b\overline{a}\overline{\textcolor{Laranja}{\prin{u,v}}} + \textcolor{Blue}{\prin{bv,bv}} \\&=& \textcolor{Red}{\norm{au}^2} + \textcolor{Magenta}{0} + \textcolor{Laranja}{0} + \textcolor{Blue}{\norm{bv}^2} \\&=& \norm{au}^2 + \norm{bv}^2,
+\end{array}
+\]
+ou seja:
+\[
+\boxed{\norm{au+bv}^2= \norm{au}^2 + \norm{bv}^2}
+\]
+\item Se para quaisquer $a,b\in\mathbb{C}$ temos $\norm{au+bv}^2= \norm{au}^2 + \norm{bv}^2,$ então temos que:
+\[
+\begin{array}{cl}
+&\norm{u+v}^2 = \prin{u+v, u+v} = \norm{u}^2 + \norm{v}^2 + \prin{u,v} + \prin{v,u} \\\Rightarrow& \textcolor{Green}{\norm{u+v}^2} = \norm{u}^2 + \norm{v}^2 + \prin{u,v} + \prin{v,u} \\\Rightarrow& \textcolor{Green}{\norm{u}^2 + \norm{v}^2} = \norm{u}^2 + \norm{v}^2 + \prin{u,v} + \prin{v,u} \\\Rightarrow& \boxed{\prin{u,v} + \prin{v,u} = 0}
+\end{array}
+\]
+e também:
+\[
+\begin{array}{cl}
+&\norm{u+iv}^2 = \prin{iu+v, iu+v} = \norm{iu}^2 + \norm{v}^2 + \prin{iu,v} + \prin{v,iu} \\\Rightarrow& \textcolor{Green}{\norm{iu+v}^2} = \norm{iu}^2 + \norm{v}^2 + i\prin{u,v} - i\prin{v,u} \\\Rightarrow& \textcolor{Green}{\norm{iu}^2 + \norm{v}^2} = \norm{iu}^2 + \norm{v}^2 + i\prin{u,v} - i\prin{v,u} \\\Rightarrow& i\prin{u,v} - i\prin{v,u} = 0 \\\Rightarrow& \boxed{\prin{u,v} - \prin{v,u} = 0}
+\end{array}
+\]
+assim:
+\[
+2\prin{u,v}=\left(\prin{u,v}+\prin{v,u}\right)+\left(\prin{u,v}-\prin{v,u}\right)=0+0=0,
+\]
+aí:
+\[
+\boxed{\prin{u,v}=0}
+\]
+\end{itemize}
 }
 }
 \exercicio{2} Mostre que vale a \emph{lei do paralelogramo}:
 \[
 \norm{u + v}^2 + \norm{u-v}^2 = 2 \norm{u}^2 + 2 \norm{v}^2, \ \forall u,v \in V
 \]
-\solucao{A figura abaixo apresenta uma visualização que revela o porquê do nome lei do paralelogramo:
+\solucao{
+A figura abaixo apresenta uma visualização que revela o porquê do nome ``lei do paralelogramo'':
+\begin{figure}
+\centering
+\includegraphics[scale=2.6]{figuras/leiparalelogramo.png}
+\caption{Representação da lei do paralelogramo}
+\end{figure}
 
- \begin{figure}
- \centering
-     \includegraphics[scale=2.6]{figuras/leiparalelogramo.png}
-     \caption{Representação da lei do paralelogramo}
- \end{figure}
+\newpage
+
+\noindent
 Vamos calcular $\norm{u+v}^2$ e $\norm{u-v}^2:$
 \[
-\norm{u+v}^2 = \prin{u+v, u + v} = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v} + \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} + \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}  \label{u+v}
+\norm{u+v}^2 = \prin{u+v, u + v} = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v} + \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} + \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
 \]
 \[
-\norm{u-v}^2 = \prin{u-v, u - v} = \textcolor{Blue}{\prin{u,u}} - \textcolor{Red}{\prin{u,v} - \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} - \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}   \label{u-v}
+\norm{u-v}^2 = \prin{u-v, u - v} = \textcolor{Blue}{\prin{u,u}} - \textcolor{Red}{\prin{u,v} - \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} - \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
 \]
 Somando as duas equações acima, obtemos
 \[
 \textcolor{Laranja}{\norm{u+v}^2}  + \textcolor{Purple}{\norm{u-v}^2} = \textcolor{Laranja}{\norm{u}^2 + \cancel{2\prin{u,v}} + \norm{v}^2}  + \textcolor{Purple}{\norm{u}^2 - \cancel{2\prin{u,v}} + \norm{v}^2} = 2 \norm{u}^2 + 2 \norm{v}^2.
 \]
-
 }
+
 \exercicio{3} Se $K = \mathbb{R},$ mostre que, para $u, v \in V$, $\norm{u} = \norm{v}$ se, e somente se, $u + v$ e $u - v$ são
 ortogonais. Discuta a afirmação para $K = \mathbb{C}.$
-\solucao{$(\Rightarrow)$ Se $\norm{u} = \norm{v},$ então
+\solucao{
+\dividiritens{
+\task[\pers{a}]
+\begin{itemize}
+\item[$(\Rightarrow)$] Se $\norm{u} = \norm{v},$ então
 \[
 \norm{u} = \norm{v} \Rightarrow \norm{u}^2 = \norm{v}^2 \Rightarrow \norm{u}^2 - \norm{v}^2 = 0 \Rightarrow \norm{u}^2 \textcolor{Red}{+\prin{u,v}- \prin{u,v}}- \norm{v}^2 = 0 \Rightarrow \]\[ \norm{u}^2 -\prin{u,v}+ \prin{v,u}- \norm{v}^2 = 0 \Rightarrow \prin{u+v,u-v} = 0
 \]
 Logo, $u + v$ e $u - v$ são ortogonais.
-\newline
-$(\Leftarrow)$ Se $u+v,$ $u-v$ são ortogonais, então
+\item[$(\Leftarrow)$] Se $u+v,$ $u-v$ são ortogonais, então
 \[\prin{u+v,u-v} = 0 \Rightarrow \textcolor{Green}{\prin{u,u}} - \prin{u,v} + \prin{v,u} - \textcolor{Blue}{\prin{v,v}} = 0 \Rightarrow \textcolor{Green}{\norm{u}^2} - \textcolor{Blue}{\norm{v}^2} = 0 \Rightarrow \norm{u} = \norm{v} \]
+\end{itemize}
 
-Observe que em ambos os sentidos da demonstração utilizamos fortemente o fato de que $\prin{u,v} = \prin{v,u},$ e salientamos que isso só é verdade para espaços vetoriais reais. Se $K = \mathbb{C},$ temos que $\prin{u,v} = \overline{\prin{v,u}}.$ Assim, o resultado pode não ser válido. Com efeito, tome por exemplo $u = (3+i, 5, 7+2i, 7 -4\sqrt{2} i)$ e $v = (0, 5, 12, 0).$ Observe que $\norm{u} = \norm{v} = 13,$ mas $u + v = (3+i, 10,19+2i, 7 -4\sqrt{2} i)$ e $u-v = (3+i, 0, -5+2i, 7 -4\sqrt{2} i),$ e
+\noindent
+Observe que em ambos os sentidos da demonstração utilizamos fortemente o fato de que $\prin{u,v} = \prin{v,u},$ e salientamos que isso só é verdade para espaços vetoriais reais.
+
+\task[\pers{b}]  Se $K = \mathbb{C},$ temos que $\prin{u,v} = \overline{\prin{v,u}}.$ Assim, o resultado pode não ser válido. Com efeito, tome por exemplo $u = (3+i, 5, 7+2i, 7 -4\sqrt{2} i)$ e $v = (0, 5, 12, 0).$ Observe que $\norm{u} = \norm{v} = 13,$ mas $u + v = (3+i, 10,19+2i, 7 -4\sqrt{2} i)$ e $u-v = (3+i, 0, -5+2i, 7 -4\sqrt{2} i),$ e
 \[
 \prin{u+v,u - v} = (3+i)^2 + 10 \cdot 0 + (19+2i)(-5+2i) + (7 -4\sqrt{2} i)^2 = -74 + (34 - 56 \sqrt{2})i \neq 0 .
 \]
+}
 }
 \exercicio{4} Seja $V$ um espaço vetorial sobre um corpo $K.$
 \dividiritens{
@@ -6108,13 +6206,43 @@ Observe que em ambos os sentidos da demonstração utilizamos fortemente o fato 
 }
 \solucao{
 \dividiritens{
-\task[\pers{a}]
-\task[\pers{b}] Utilizando o mesmo raciocínio do Exercício 2, temos
+\task[\pers{a}] Utilizando o mesmo raciocínio do Exercício 2, temos
 \[
-\norm{u+v}^2 = \prin{u+v, u + v} = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v} + \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} + \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}  \label{u+v}
+\norm{u+v}^2 = \prin{u+v, u + v} = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v}} + \textcolor{red}{\prin{v,u}} + \textcolor{Green}{\prin{v,v}}
 \]
 \[
-\norm{u-v}^2 = \prin{u-v, u - v} = \textcolor{Blue}{\prin{u,u}} - \textcolor{Red}{\prin{u,v} - \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} - \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}   \label{u-v}
+\norm{u-v}^2 = \prin{u-v, u - v} = \textcolor{Blue}{\prin{u,u}} - \textcolor{Red}{\prin{u,v}} - \textcolor{red}{\prin{v,u}} + \textcolor{Green}{\prin{v,v}}
+\]
+\[
+\norm{u+iv}^2 = \prin{u+iv, u + iv} = \textcolor{Blue}{\prin{u,u}} - i\textcolor{Red}{\prin{u,v}} + i\textcolor{red}{\prin{v,u}} + \textcolor{Green}{\prin{v,v}}
+\]
+\[
+\norm{u-iv}^2 = \prin{u-iv, u - iv} = \textcolor{Blue}{\prin{u,u}} + i\textcolor{Red}{\prin{u,v}} - i\textcolor{red}{\prin{v,u}} + \textcolor{Green}{\prin{v,v}}
+\]
+assim obtemos:
+\[
+\norm{u+v}^2 = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v}} + \textcolor{red}{\prin{v,u}} + \textcolor{Green}{\prin{v,v}}
+\]
+\[
+-\norm{u-v}^2 = -\textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v}} + \textcolor{red}{\prin{v,u}} - \textcolor{Green}{\prin{v,v}}
+\]
+\[
+i\norm{u+iv}^2 = i\textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v}} - \textcolor{red}{\prin{v,u}} + i\textcolor{Green}{\prin{v,v}}
+\]
+\[
+-i\norm{u-iv}^2 = -i\textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v}} - \textcolor{red}{\prin{v,u}} - i\textcolor{Green}{\prin{v,v}}
+\]
+assim somando as quatro equações acima, obtemos:
+\[
+\norm{u+v}^2 - \norm{u-v}^2 + i \norm{u+iv}^2 - i\norm{u-iv}^2=4 \prin{u,v}.
+\]
+
+\task[\pers{b}] Utilizando o mesmo raciocínio do Exercício 2, temos
+\[
+\norm{u+v}^2 = \prin{u+v, u + v} = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v} + \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} + \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
+\]
+\[
+\norm{u-v}^2 = \prin{u-v, u - v} = \textcolor{Blue}{\prin{u,u}} - \textcolor{Red}{\prin{u,v} - \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} - \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
 \]
 Subtraindo as duas equações acima, vem
 \[
@@ -6347,9 +6475,42 @@ Daí, temos que
 %https://math.stackexchange.com/questions/1006975/adjoint-operator-and-inverse
 \end{itemize}
 }
-\exercicio{17}  Seja $E$ um operador linear em $V$ tal que $E^2 = E$ e tal que $E$ possui um adjunto $E^{*}.$ Prove que $E$ é autoadjunto se, e somente se $EE^{∗} = E^{*}E.$ Prove também que, neste caso, $E$ é a projeção
+\exercicio{17}  Seja $E$ um operador linear em $V$ tal que $E^2 = E$ e tal que $E$ possui um adjunto $E^{*}.$ Prove que $E$ é autoadjunto se, e somente se $EE^{*} = E^{*}E.$ Prove também que, neste caso, $E$ é a projeção
 ortogonal em $W = \mbox{Im }E.$
-\solucao{}
+\solucao{
+Se $E^2=E$ e $EE^*=E^*E$, então para todo $x$ temos o seguinte:
+\[
+\begin{array}{cl}
+&\prin{E(x)-E^*E(x),E(x)-E^*E(x)}\\
+=&\prin{E(x),E(x)}-\prin{E(x),\textcolor{Green}{E^*}E(x)}-\prin{\textcolor{Green}{E^*}E(x),E(x)}+\prin{\textcolor{red}{E^*}E(x),\textcolor{blue}{E^*}E(x)}\\
+=&\prin{E(x),E(x)}-\prin{\textcolor{Green}{E}E(x),E(x)}-\prin{E(x),\textcolor{Green}{E}E(x)}+\prin{\textcolor{blue}{E}\textcolor{red}{E^*}E(x),E(x)}\\
+=&\prin{E(x),E(x)}-\prin{EE(x),E(x)}-\prin{E(x),EE(x)}+\prin{\textcolor{red}{E^*}\textcolor{blue}{E}E(x),E(x)}\\
+=&\prin{E(x),E(x)}-\prin{EE(x),E(x)}-\prin{E(x),EE(x)}+\prin{\textcolor{blue}{E}E(x),\textcolor{red}{E}E(x)}\\
+=&\prin{E(x),E(x)}-\prin{E(x),E(x)}-\prin{E(x),E(x)}+\prin{E(x),E(x)}\\
+=&0,
+\end{array}
+\]
+assim:
+\[
+E(x)-E^*E(x)=0;
+\]
+logo:
+\[
+E=E^*E,
+\]
+portanto:
+\[
+E^*=(E^*E)^*=E^*E^{**}=E^*E=E.
+\]
+Agora, para $x\in V$, então para $y\in V$ temos:
+\[
+\begin{array}{rcl}
+\prin{x-E(x),E(y)}&=&\prin{x,E(y)}-\prin{E(x),E(y)}\\&=&\prin{x,E(y)}-\prin{x,EE(y)}\\&=&\prin{x,E(y)}-\prin{x,E(y)}\\&=&0;
+\end{array}
+\]
+logo $x-E(x)$ é ortogonal a $\mbox{Im }E$. Assim $E$ é a projeção ortogonal a $\mbox{Im E}.$
+}
+
 \exercicio{18} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T \in \mathcal{L}(V).$ Prove que $T$ é autoadjunto se, e somente se $\prin{T(v), v} \in \mathbb{R},$ para todo $v \in V.$
 \solucao{$(\Rightarrow)$ Seja $T$ um operador auto-adjunto. Então, sabemos que $T^{*} = T.$ Para mostrar que certo $z \in \mathbb{C}$ é real, basta verificar que $z = \overline{z}.$ Dado  $v \in V,$ tem-se que
 \[
@@ -6394,28 +6555,14 @@ Logo, $\prin{T(v),v} = 0$ para todo $v \in V,$ mas claramente $T \neq 0.$
 \solucao{}
 \exercicio{21} Seja $T$ um operador linear em $V$ tal que $T$ admite um adjunto. Prove que se $T^{*}T = 0$ então $T = 0.$
 
-\solucao{Vamos primeiramente provar que, se $T^{*}T = 0,$ então $TT^{*} = 0.$
-
-Observe que $0^{*} = 0,$ pois para todos $u,v \in V,$
+\solucao{
+Vamos mostrar algo melhor. Provaremos que, para cada $x\in V$, se $T^*T(x)=0$, então $T(x)=0$. De fato, se $T^*T(x)=0$, então:
 \[
-\prin{0(u),v} = \prin{0,v} = 0 = \prin{u,0} = \prin{u, v(0)}.
+\prin{T(x),T(x)}=\prin{x,T^*T(x)}=\prin{x,0}=0,
 \]
-Veja que 
-\[
-\left(T^{*}T\right)^{*} = 0^{*}\Rightarrow T^{*} T^{**} = 0 \Rightarrow T^{*}T = 0.
-\]
+aí $T(x)=0$.
 }
-\begin{comment}
-Agora, note que
-\[
-T + T^{*} + T^{*}T = T + T^{*}(T + I)
-\]
-Se $T^{*}T = 0,$ então para todos $u,v \in V,$ temos que
-\[
-\prin{T^{*}T(u), v} = \prin{0(u), v} = 0
-\]
-Por outro lado, substituindo $v$ por $T(w),$ temos que
-\end{comment}
+
 \exercicio{22} Seja $A \in \mathcal{M}_n(\mathbb{C}).$ Mostre que $A$ se escreve de modo único como $A = B + iC,$ onde $B$ e $C$ são matrizes autoadjuntas.
 \solucao{Façamos 
 \[
@@ -6536,49 +6683,48 @@ Portanto, $\prin{(ST+TS)(u),v} =  \prin{u, (ST + TS)(v)},$ e $ST + TS$ é autoad
 
 \solucao{
 \dividiritens{
-\task[\pers{a}] Seja $A$ a matriz que representa $T$ na base canônica. Como $T$ é normal, então $A$ também é normal, ou seja, $A^{*}A = AA^{*}.$ 
+\task[\pers{a}] Seja $T$ normal nilpotente. Então, existe um inteiro positivo $k$ tal que $T^k = 0.$ Vamos provar por indução que $T = 0.$ Se $k = 1,$ o resultado é trivial.
 
-Sendo $A$ normal, então $A$ é diagonalizável. Logo, existe uma matriz invertível $P$ tal que $P^{-1}AP = D,$ onde $D$ é uma matriz diagonal cujas entradas na diagonal são exatamente os autovalores de $A.$
+\medskip
+\noindent
+Suponha $k > 1$ e que o caso $k - 1$ funcione. Tome $B = T^{k-1}.$ Note que, como $T$ é normal, então $B$ também é normal.
 
-Como $A$ é nilpotente, todos os seus autovalores são $0.$ Consequentemente, as entradas na diagonal de $D$ são todas nulas, e assim $D = 0.$ Segue que
-\[
-A = P\textcolor{WildStrawberry}{D}P^{-1} = P\textcolor{WildStrawberry}{0}P^{-1} = 0
-\]
-Portanto, todo operator normal e nilpotente é nulo.
-\newline
-
-\textcolor{Red}{Outra solução:} Seja $A$ a matriz que representa $T$ na base canônica. Como $A$ é nilpotente, existe um inteiro positivo $k$ tal que $A^k = 0.$ Vamos provar por indução que $A = 0.$ Se $k = 1,$ o resultado é trivial.
-
-Suponha $k > 1$ e que o caso $k - 1$ funcione. Tome $B = A^{k-1}.$ Note que, como $T$ é normal, então $A$ também é normal, e consequentemente a matriz $B$ também é normal.
-
-Para um vetor $x \in \mathbb{C}^n,$ vamos calcular a norma do vetor $B^{*}Bx$ como segue:
+\medskip
+\noindent
+Para um vetor $x \in V,$ vamos calcular a norma do vetor $B^{*}Bx$ como segue:
 \[
 \begin{array}{rcl}
-\norm{B^*Bx} &=& (B^*Bx)^{*}(B^{*}Bx) \\
-&=& (Bx)^{*} B^{**} B^{*} Bx \\
-&  = & x^{*}B^* \textcolor{TealBlue}{BB^{*}}Bx \\
-&  = & x^{*}B^* \textcolor{TealBlue}{B^{*}B}Bx \\
-&=& x^{*}(B^{*})^2B^2x\\
+\norm{B^*Bx} &=& \prin{B^*Bx,B^{*}Bx} \\
+&=& \prin{Bx,B^{**} B^{*} Bx} \\
+&  = & \prin{x,B^* \textcolor{TealBlue}{BB^{*}}Bx} \\
+&  = & \prin{x,B^* \textcolor{TealBlue}{B^{*}B}Bx} \\
+&=& \prin{x,(B^{*})^2B^2x}\\
 &=& 0,
 \end{array}
 \]
-pois $B^2 = A^{2k-2} = 0,$ já que $k \ge 2$ implica $2k-2 \ge k.$ Daí, temos que $B^*Bx = 0$ para todo $x \in \mathbb{C}^n.$
+pois $B^2 = T^{2k-2} = 0,$ já que $k \ge 2$ implica $2k-2 \ge k.$ Daí, temos que $B^*Bx = 0$ para todo $x \in V.$
 
+\medskip
+\noindent
 Assim,
 \[
-\norm{Bx} = (Bx)^{*}(Bx) = x^*B^*Bx = 0, \quad \forall x \in \mathbb{C}^n.
+\norm{Bx} = (Bx)^{*}(Bx) = x^*B^*Bx = 0, \quad \forall x \in V.
 \]
 Consequentemente, $B = 0.$
-Pela hipótese de indução, $A^{k-1} = 0$ implica $A = 0,$ e portanto $A$
- deve ser a matriz nula. Assim, $T$ também é o operador nulo.
- 
- \task[\pers{b}] Se $T$ é idempotente, então sabemos que $T^2 = T.$ Sendo normal, sabemos também que $T^*T = TT^*.$ Se $T^{*}T = 0,$ pelo Exercício 21, temos que $T = 0,$ que claramente é autoadjunto. 
- 
- Consideremos agora $T^{*}T \neq 0.$ Então, observe que
- \[
- (T - T^{*})(T^{*}T) = T\textcolor{PineGreen}{T^{*}T} - T^{*}T^{*}T = T\textcolor{PineGreen}{TT^*} - \textcolor{ProcessBlue}{(T^2)}^{*}T =  \textcolor{ProcessBlue}{T^2}T^* - \textcolor{ProcessBlue}{T}^{*}T =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{T^{*}T} =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{TT^{*}} = 0
- \]
- Concluímos portanto que $(T - T^{*})(T^{*}T) = 0.$ Como $T^{*}T \neq 0,$ segue que $T - T^{*} = 0,$ acarretando $T = T^{*}.$
+
+\medskip
+\noindent
+Pela hipótese de indução, $T^{k-1} = 0$ implica $T = 0.$ Portanto $T$ é o operador nulo.
+
+\task[\pers{b}] Se $T$ é idempotente, então sabemos que $T^2 = T.$ Sendo normal, sabemos também que $T^*T = TT^*.$ Se $T^{*}T = 0,$ pelo Exercício 21, temos que $T = 0,$ que claramente é autoadjunto. 
+
+\medskip
+\noindent 
+Consideremos agora $T^{*}T \neq 0.$ Então, observe que
+\[
+(T - T^{*})(T^{*}T) = T\textcolor{PineGreen}{T^{*}T} - T^{*}T^{*}T = T\textcolor{PineGreen}{TT^*} - \textcolor{ProcessBlue}{(T^2)}^{*}T =  \textcolor{ProcessBlue}{T^2}T^* - \textcolor{ProcessBlue}{T}^{*}T =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{T^{*}T} =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{TT^{*}} = 0
+\]
+Concluímos portanto que $(T - T^{*})(T^{*}T) = 0.$ Como $T^{*}T \neq 0,$ segue que $T - T^{*} = 0,$ acarretando $T = T^{*}.$
   \task[\pers{c}] Como $T$ é normal, pelo Teorema Espectral, existe uma base ortonormal $\{e_1, e_2, \ldots, e_n \}$ de $V$ consistindo de autovetores de $T.$ Sejam $\lambda_1, \ldots, \lambda_n$ os correspondentes autovalores. Então,
   \[
   T(e_j) = \lambda_j e_j,
@@ -6868,15 +7014,16 @@ u_1 = v_1 = (1,i,1)
 e
 
 \[
-u_2 = v_2 - \frac{\prin{v_2,u_1}}{\norm{u_1}^2}u_1 = (1+i,0,2) - \frac{\prin{(1,i,1),(1+i,0,2)}}{\norm{(1,i,1)}^2}(1,i,1) \Rightarrow \]\[u_2 = (1+i,0,2) - \frac{3+i}{1}(1,i,1) \Rightarrow u_2 = (4+2i, -1+3i, 5+i)
+u_2 = v_2 - \frac{\prin{u_1,v_2}}{\norm{u_1}^2}u_1 = (1+i,0,2) - \frac{\prin{(1+i,0,2),(1,i,1)}}{\norm{(1,i,1)}^2}(1,i,1) \Rightarrow \]\[u_2 = (1+i,0,2) - \frac{3+i}{(\sqrt{3})^2}(1,i,1) \Rightarrow u_2 = \left(\frac{4i}{3}, \frac{i}{3}(-3+i), 1 + \frac{i}{3} \right) 
 \]
-Em seguida, veja que $\norm{u_1} = \sqrt{3}$ e $\norm{u_2} = 28 + 20i.$ Logo, normalizando:
+Em seguida, veja que $\norm{u_1} = \sqrt{3}$ e $\norm{u_2} = 2.$ Logo, normalizando:
 \[
 \hat{u_1} = \frac{(1,i,1)}{\sqrt{3}} = \Rightarrow \hat{u_1} = \left(\frac{\sqrt{3}}{3}, \frac{i\sqrt{3}}{3}, \frac{\sqrt{3}}{3} \right)
 \]
 \[
-\hat{u_2} = \frac{(4+2i, -1+3i, 5+i)}{28+20i} = 
+\hat{u_2} = \frac{\left(\frac{4i}{3}, \frac{i}{3}(-3+i), 1 + \frac{i}{3} \right)}{2} =\left(\frac{2i}{3}, -\frac{1}{6} - \frac{i}{2}, \frac{1}{2} + \frac{i}{6} \right)
 \]
+Logo, uma base ortonormal para $W$ é $\left\{\left(\frac{\sqrt{3}}{3}, \frac{i\sqrt{3}}{3}, \frac{\sqrt{3}}{3} \right), \left(\frac{2i}{3}, -\frac{1}{6} - \frac{i}{2}, \frac{1}{2} + \frac{i}{6} \right) \right\}.$
 %https://www.emathhelp.net/calculators/linear-algebra/gram-schmidt-calculator/?i=%5B%5B1%2C1%2Bi%5D%2C%5Bi%2C0%5D%2C%5B1%2C2%5D%5D&steps=on
 }
 
@@ -7219,7 +7366,7 @@ T^{*}(T(x) - b) = 0 \Rightarrow (T^{*}T)(x) = T^{*}(b).
 }
 }
 
-\exercicio{20} Determine a reta que melhor se ajusta aos pontos $(−1, −10), (0, −6), (1, −4), (2, −2)$ de $\mathbb{R}^2$.
+\exercicio{20} Determine a reta que melhor se ajusta aos pontos $(-1, -10), (0, -6), (1, -4), (2, -2)$ de $\mathbb{R}^2$.
 \solucao{
 Considere $\alpha x + \beta y + \gamma = 0$ a equação da reta desejada. Queremos que esses pontos pertençam à reta. Logo, formamos o seguinte sistema:
 \[
@@ -7265,7 +7412,7 @@ Logo, temos que
 \]
 }
 
-\exercicio{21} Determine o polinômio de grau $2$ que melhor se ajusta aos pontos $(−1, 0), (0, −1), (1, 1), (2, 4)$ de $\mathbb{R}^2$.
+\exercicio{21} Determine o polinômio de grau $2$ que melhor se ajusta aos pontos $(-1, 0), (0, -1), (1, 1), (2, 4)$ de $\mathbb{R}^2$.
 \solucao{}
 \exercicio{22} Determine a melhor solução aproximada do sistema
 \[
@@ -7315,7 +7462,7 @@ Portanto, a melhor solução aproximada para o sistema será $\left( \frac{43}{5
 \[
 \prin{f,g} = \displaystyle\int\limits_{0}^{1} f(x)g(x) \dif x.\]
 
-Determine o polinômio do subespaço $\prin{1,x^2}$ que melhor se aproxima de $f(x) = x^3−x.$
+Determine o polinômio do subespaço $\prin{1,x^2}$ que melhor se aproxima de $f(x) = x^3-x.$
 
 \solucao{
 Seja $W =\prin{1,x^2}.$ Vamos encontrar 
@@ -7483,7 +7630,7 @@ Portanto, $\{ (i,1) \}$ é uma base para $\Ker T^{*}.$
 }
 
 \solucao{\dividiritens{
-\task Vejamos que $T$ é linear:
+\task[\pers{a}] Vejamos que $T$ é linear:
 \begin{itemize}
     \item $T(u_1 + u_2) = T(u_1) + T(u_2), \ \forall u_1, u_2 \in \mathbb{C}^n:$
     Temos que
@@ -7577,7 +7724,7 @@ P = \begin{bmatrix}
 
 \solucao{Veja itens a e b do exercício 15 da lista 5.}
 
-\exercicio{33} Mostre que $T^∗T = 0$ implica $T = 0.$
+\exercicio{33} Mostre que $T^*T = 0$ implica $T = 0.$
 
 \solucao{Veja Exercício 21 da lista 5.}
 
@@ -7932,7 +8079,22 @@ que $(M_{\gamma})^{*} = M_{\overline{\gamma}}.$
 \task[\pers{d}] Para quais $\gamma \in \mathbb{C}$, $M_{\gamma}$ é unitário?
 }
 
-\solucao{}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Vaamos verificar os axiomas de produto interno:
+\begin{itemize}
+    \item[$\clubsuit$] $\prin{\alpha+\beta, \gamma} = \prin{\alpha, \gamma} + \prin{\beta, \gamma}.$
+    Sejam $\alpha = \alpha_1 + i \alpha_2, \beta = \beta_1 + \beta_2 i, \gamma = \gamma_1 + \gamma_2 i \in \mathbb{C}.$ Então
+    \[
+    \prin{\alpha+\beta, \gamma} =  \mbox{Re}((\alpha+\beta) \overline{\gamma}) =  \mbox{Re}((\alpha_1 + i \alpha_2+\beta_1 + \beta_2 i) \overline{ \gamma_1 + \gamma_2 i}) =  \mbox{Re}(((\alpha_1 + \beta_1) + i (\alpha_2+\beta_2))(\gamma_1 - \gamma_2 i))
+    \]
+    \item[$\textcolor{Red}{\varheart}$]
+    \item[$\spadesuit$]
+    \item[$\textcolor{Red}{\vardiamond}$]
+\end{itemize}
+}
+
+}
 
 \textcolor{white}{oi}
 \newline
