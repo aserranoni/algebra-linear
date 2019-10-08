@@ -20,7 +20,18 @@
 
 \section{\textcolor{Floresta}{Lista 0}}
 
-\exercicio{1} Seja
+\begin{exercicio}
+Suponha que $(U, \lozenge, \circ)$ e $(W, \oplus, \odot)$ são $K$-espaços vetoriais. No espaço produto
+\[U \times W = \{(x, y) : x \in U, y \in W\},\]
+definimos as operações
+\[
+(u, v) + (w,z) = (u \lozenge w, v \oplus z) \quad \mbox{e} \quad \lambda(u,v) = (\lambda \circ u, \lambda \odot v),
+\]
+para $(u,v), (w,z) \in U \times W$ e $\lambda \in K.$ Com estas operações, podemos dizer que $U \times W$ é
+um espaço vetorial?
+\end{exercicio}
+\solucao{}
+\begin{exercicio} Seja
 \[
 \mathbb{Q}(\sqrt{2}) = \{ a + b \sqrt{2} \in \mathbb{R} : a,b \in \mathbb{Q} \}.
 \]
@@ -29,10 +40,14 @@
 \task[\pers{b}] Prove que $\mathbb{Q}(\sqrt{2})$ é um $\mathbb{Q}$-espaço vetorial e exiba uma base desse espaço vetorial sobre $\mathbb{Q}.$
 \task[\pers{c}] Mostre que se $L$ e $K$ são corpos tais que $K \subset L,$ então $L$ é um $K$-espaço vetorial.
 }
-\exercicio{2} Seja $V$ um $K$-espaço vetorial e seja $\{u, v, w\} \subset V$ um conjunto linearmente independente.
-Determine condições sobre $K$ para que o conjunto $\{u + v, u + w, v + w\}$ também seja linearmente independente.
+\end{exercicio}
 
-\exercicio{3} Seja \(S\) um subconjunto de um espaço vetorial \(V\)
+
+\begin{exercicio} Seja $V$ um $K$-espaço vetorial e seja $\{u, v, w\} \subset V$ um conjunto linearmente independente.
+Determine condições sobre $K$ para que o conjunto $\{u + v, u + w, v + w\}$ também seja linearmente independente.
+\end{exercicio}
+
+\begin{exercicio}  Seja \(S\) um subconjunto de um espaço vetorial \(V\)
 sobre um corpo \(K\). Recorde que o subespaço de \(V\) gerado por \(S\)
 é definido por
 \[\langle S\rangle\coloneqq\{\lambda_1v_1+\ldots+\lambda_nv_n\,\colon
@@ -45,7 +60,7 @@ combinações lineares de vetores em \(S\).
    \task[\pers{b}] Seja \(W\) a interseção de todos os subespaços de \(V\) que
    contém \(S\). Mostre que \(W=\langle S\rangle\).
 }
-
+\end{exercicio}
 \solucao{
   \dividiritens{
     \task[\pers{a}]
@@ -73,16 +88,16 @@ Seja \(U\) um subespaço de \(V\) que contém \(S\). Pela definição de subespa
 
 }}
 
-\exercicio{4} Mostre que um subconjunto $B$ de um espaço vetorial é linearmente independente se, e somente se, todo subconjunto finito de $B$ é linearmente independente.
- 
+\begin{exercicio}  Mostre que um subconjunto $B$ de um espaço vetorial é linearmente independente se, e somente se, todo subconjunto finito de $B$ é linearmente independente.
+\end{exercicio}
 
-\exercicio{5} Sejam \(W_1\) e \(W_2\) subespaços de um espaço vetorial \(V\).
+\begin{exercicio} Sejam \(W_1\) e \(W_2\) subespaços de um espaço vetorial \(V\).
 \dividiritens{ \task[\pers{a}] Dê um exemplo mostrando que \(W_1\cup W_2\) pode
   não ser um subespaço de \(V\).
   \task[\pers{b}] Prove que \(W_1\cup W_2\) é um subespaço se, e somente se
   \(W_1\subseteq W_2\) ou \(W_2\subseteq W_1\).
  \task[\pers{c}] Mostre que \(W_1+W_2\) é o subespaço gerado por \(W_1\cup W_2\).}
-
+\end{exercicio}
 \solucao{
   \dividiritens{
     \task[\pers{a}]  Por exemplo, se \(V=\mathbb{R}^2\), \(W_1=\langle(1,0)\rangle\) e 
@@ -101,7 +116,7 @@ Seja \(U\) um subespaço de \(V\) que contém \(S\). Pela definição de subespa
 
 }}
 
-\exercicio{6} Considere o $\mathbb{R}$-espaço vetorial $\mathcal{M}_2(\mathbb{R})$ das matrizes de $2 \times 2$ sobre $\mathbb{R}$ e os seguintes subconjuntos de $\mathcal{M}_2(\mathbb{R}):$
+\begin{exercicio} Considere o $\mathbb{R}$-espaço vetorial $\mathcal{M}_2(\mathbb{R})$ das matrizes de $2 \times 2$ sobre $\mathbb{R}$ e os seguintes subconjuntos de $\mathcal{M}_2(\mathbb{R}):$
 \[
 W_1 = \left\{ \begin{bmatrix} x & -x \\ y & z \end{bmatrix} : x,y,z \in \mathbb{R} \right\} \quad \mbox{e} \quad W_2 = \left\{ \begin{bmatrix} a & b \\ -a & c \end{bmatrix} : a,b,c \in \mathbb{R} \right\}
 \]
@@ -109,8 +124,8 @@ W_1 = \left\{ \begin{bmatrix} x & -x \\ y & z \end{bmatrix} : x,y,z \in \mathbb{
 \task[\pers{a}] Mostre que $W_1$ e $W_2$ são subespaços de $\mathcal{M}_2(\mathbb{R}).$
 \task[\pers{b}] Encontre as dimensões de $W_1, W_2, W_1 + W_2$ e $W_1 \cap W_2.$
 }
-
-\exercicio{7} Seja \(\mathcal{F}=\{S_i\,\colon i \in I\}\) uma
+\end{exercicio}
+\begin{exercicio} Seja \(\mathcal{F}=\{S_i\,\colon i \in I\}\) uma
 família não vazia de subespaços distintos de um \(K\)-espaço vetorial \(V\).
 Mostre que são equivalentes:
 \dividiritens{ \task[\pers{i}]
@@ -127,7 +142,7 @@ Mostre que são equivalentes:
 }
 \textbf{Observação:} Segue deste exercício que \(V=\sum\limits_{i\in I}S_i\) é uma
 soma direta se, e somente se, uma das condições (i)-(iii) é satisfeita.
-
+\end{exercicio}
 \solucao{
   \dividiritens{\task[\pers{a}] \textbf{(i)$\implies$(ii)}: Assuma que existe uma família de elementos
               não nulos \(v_i\in S_i\) tais que \mbox{\(\sum\limits_{i\in I}v_i=0\).} Seja
@@ -2314,9 +2329,11 @@ tI-AB & tA \\ 0 & tI
 tI & A \\ 0 & -BA + tI
 \end{bmatrix} 
 \]
-Então veja que
+Então veja que:
 \[
-\det(CD) = \det(DC) \Rightarrow t^n \textcolor{Green}{\det(tI - AB)} = t^n \textcolor{Blue}{\det(tI-BA)} \Rightarrow t^n \textcolor{Green}{p_{AB}(t)} = t^n \textcolor{Blue}{p_{BA}(t)} \Rightarrow \boxed{p_{AB}(t) = p_{BA}(t)}.
+\begin{array}{rcl}
+\det(CD) = \det(DC) &\Rightarrow& t^n \textcolor{Green}{\det(tI - AB)} = t^n \textcolor{Blue}{\det(tI-BA)} \\&\Rightarrow& t^n \textcolor{Green}{p_{AB}(t)} = t^n \textcolor{Blue}{p_{BA}(t)} \\&\Rightarrow& \boxed{p_{AB}(t) = p_{BA}(t).}
+\end{array}
 \]
 }
 
@@ -3044,7 +3061,7 @@ Logo, para $i,j=1,\dots,n$, é fácil ver que $PE_{i,j}P^{-1}$ é autovetor de $
    
 \solucao{
 \dividiritens{
-\task[\pers{a}] Se $E_iE_j=0$ para $i\neq j$, então para todo $i$ temos:
+\task[\pers{a}]} Se $E_iE_j=0$ para $i\neq j$, então para todo $i$ temos:
 \[
 \begin{array}{rcl}
 E_i&=&E_iI\\
@@ -3054,7 +3071,8 @@ E_i&=&E_iI\\
 \end{array}
 \]
 ou seja, $E_i^2=E_i$.
-\task[\pers{b}] Se $E_i^2 = E_i$ para todo $i = 1, 2, \ldots, k$ e a característica de $K$ é zero, então seja $P_i=\mathrm{Im}(E_i)$ e $K_i=\mathrm{Ker}(E_i)$, então é fácil ver que $V=P_i\oplus K_i$, aí existe base $B_i$ de $V$ tal que:
+\dividiritens{
+\task[\pers{b}]} Se $E_i^2 = E_i$ para todo $i = 1, 2, \ldots, k$ e a característica de $K$ é zero, então seja $P_i=\mathrm{Im}(E_i)$ e $K_i=\mathrm{Ker}(E_i)$, então é fácil ver que $V=P_i\oplus K_i$, aí existe base $B_i$ de $V$ tal que:
 \[
 [E_i]_{B_i}=\begin{pmatrix}
 I&0\\0&0
@@ -3083,16 +3101,16 @@ mas a característica de $K$ é zero, aí:
 Portanto, para $k$, temos o seguinte:
 \[
 \begin{array}{rcl}
-\dim(V)&=&\dim(\sum_iP_i)\\
-&=&\dim(P_k)+\dim(\sum_{i\neq k}P_i)-\dim(P_k\cap\sum_{i\neq k}P_i)\\
-&\leq&\dim(P_k)+\sum_{i\neq k}\dim(P_i)-\dim(P_k\cap\sum_{i\neq k}P_i)\\
-&=&\sum_i\dim(P_i)-\dim(P_k\cap\sum_{i\neq k}P_i)\\
-&=&\dim(V)-\dim(P_k\cap\sum_{i\neq k}P_i),
+\dim(V)&=&\dim\left(\sum_iP_i\right)\\
+&=&\dim\left(P_k\right)+\dim\left(\sum_{i\neq k}P_i\right)-\dim\left(P_k\cap\sum_{i\neq k}P_i\right)\\
+&\leq&\dim\left(P_k\right)+\sum_{i\neq k}\dim\left(P_i)-\dim(P_k\cap\sum_{i\neq k}P_i\right)\\
+&=&\sum_i\dim\left(P_i\right)-\dim\left(P_k\cap\sum_{i\neq k}P_i\right)\\
+&=&\dim\left(V\right)-\dim\left(P_k\cap\sum_{i\neq k}P_i\right),
 \end{array}
 \]
 aí:
 \[
-\dim(P_k\cap\sum_{i\neq k}P_i)\leq 0,
+\dim\left(P_k\cap\sum_{i\neq k}P_i\right)\leq 0,
 \]
 aí:
 \[
@@ -3108,11 +3126,11 @@ E_j(v)=E_1E_j(v)+\dots+E_kE_j(v),
 \]
 aí:
 \[
-0=\sum_{l\neq j}E_iE_j(v),
+0=\sum_{l\neq j}E_lE_j(v),
 \]
 mas:
 \[
-\forall l\neq j:E_iE_j(v)\in P_l,
+\forall l\neq j:E_lE_j(v)\in P_l,
 \]
 aí:
 \[
@@ -3126,7 +3144,6 @@ logo:
 \[
 E_iE_j=0.
 \]
-}
 }
    
 \exercicio{30} Seja $A \in \m{n}{K}$ e seja 
@@ -4433,7 +4450,11 @@ x \\ y \\ z
 \end{cases} \\&\Rightarrow& v = y(2,1,0)+z(2,0,1)
 \end{array}
 \]
-Desse modo, temos que $\Ker(A - I) = \langle (2,1,0),(2,0,1) \rangle,$ aí basta escolher um dos vetores $(2,1,0),(2,0,1)$ que não esteja em $Z(v_1,A)$. É fácil ver que o vetor $v_2=(2,1,0)$ satisfaz o que queremos.
+Desse modo, temos que $\Ker(A - I) = \langle (2,1,0),(2,0,1) \rangle,$ aí basta escolher um dos vetores:
+\[
+(2,1,0),\quad\quad(2,0,1)
+\]
+que não esteja em $Z(v_1,A)$. É fácil ver que o vetor $v_2=(2,1,0)$ satisfaz o que queremos.
 
 \medskip
 \noindent
@@ -5363,8 +5384,8 @@ Sabemos que o polinômio minimal é o polinômio de menor grau que anula $T.$ Al
 
 Para isso, vamos calcular a dimensão de cada autoespaço associado. Temos:
 \begin{itemize}
-    \item $\dim(\Ker(A^2)) =2$. Observe que $A^2$ possui 2 linhas linearmente independentes:
-    \[ \begin{bmatrix}
+\item $\dim(\Ker(A^2)) =2$. Observe que $A^2$ possui 2 linhas linearmente independentes:
+\[ \begin{bmatrix}
 0 & 1 & 0& 0\\
 0 &0 &1 & 0 \\
 0 &0 &0& 1 \\
@@ -5380,10 +5401,10 @@ Para isso, vamos calcular a dimensão de cada autoespaço associado. Temos:
 \textcolor{Blue}{0} & \textcolor{Blue}{0} & \textcolor{Blue}{0}&\textcolor{Blue}{0}\\
 \textcolor{Blue}{0} & \textcolor{Blue}{0} & \textcolor{Blue}{0}&\textcolor{Blue}{0}
 \end{bmatrix} 
-    \]
-    Logo, $\mbox{posto}(A) = 2,$ e portanto 
-    \[\dim(\Ker(A)) = 4 - \mbox{posto}(A)  \Rightarrow \dim(\Ker(A)) = 4 - 2 \Rightarrow \dim(\Ker(A)) = 2
-    \]
+\]
+Logo, $\mbox{posto}(A) = 2,$ e portanto 
+\[\dim(\Ker(A)) = 4 - \mbox{posto}(A)  \Rightarrow \dim(\Ker(A)) = 4 - 2 \Rightarrow \dim(\Ker(A)) = 2
+\]
 Encontremos os autovetores que geram $\Ker(A^2).$ Temos que:
 \[
 \begin{bmatrix}
@@ -5394,9 +5415,9 @@ Encontremos os autovetores que geram $\Ker(A^2).$ Temos que:
 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \\w  \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \\0  \end{bmatrix} \Rightarrow (x,y,z,w) = x \cdot (1,0,0,0) + y \cdot (0,1,0,0)
 \]
 Logo, $\Ker(A) = \langle (1,0,0,0), (0,1,0,0) \rangle.$
-    \item $\dim(\Ker(A - iI)) = 1.$ Temos que
-    \[
-    A - iI = \begin{bmatrix}
+\item $\dim(\Ker(A - iI)) = 1.$ Temos que $A - iI = $
+\[
+\begin{bmatrix}
 0 & 1 & 0& 0\\
 0 &0 &1 & 0 \\
 0 &0 &0& 1 \\
@@ -5417,20 +5438,19 @@ i & 0 & 0& 0\\
 0 &0 &-i& 1 \\
 \textcolor{Blue}{0} & \textcolor{Blue}{0} & \textcolor{Blue}{0}& \textcolor{Blue}{0}
 \end{bmatrix}
-    \]
-    
-    Portanto, $\mbox{posto}(A - iI) = 3,$ e $\dim(\Ker(A - iI)) = 1.$ Encontremos agora um autovetor que gera $\Ker(A - iI).$ Para isso, basta resolver o sistema
-    \[
-     \begin{bmatrix}
+\]
+Portanto, $\mbox{posto}(A - iI) = 3,$ e $\dim(\Ker(A - iI)) = 1.$ Encontremos agora um autovetor que gera $\Ker(A - iI).$ Para isso, basta resolver o sistema
+\[
+\begin{bmatrix}
 -i & 1 & 0& 0\\
 0 &-i &1 & 0 \\
 0 &0 &-i& 1 \\
 0 & 0 &0& 0\end{bmatrix} \begin{bmatrix} x \\ y \\ z \\ w\end{bmatrix} = \begin{bmatrix} 0 \\ 0\\ 0 \\ 0\end{bmatrix}
-     \Rightarrow (x,y,z,w) = w \cdot (i, -1, -i, 1)\]
-     Portanto, $\Ker(A  - iI) = \langle (i, -1, -i, 1) \rangle.$
-      \item $\dim(\Ker(A + iI)) = 1.$ Temos que
-    \[
-    A + iI = \begin{bmatrix}
+\Rightarrow (x,y,z,w) = w \cdot (i, -1, -i, 1)\]
+Portanto, $\Ker(A  - iI) = \langle (i, -1, -i, 1) \rangle.$
+\item $\dim(\Ker(A + iI)) = 1.$ Temos que $A + iI =$
+\[
+\begin{bmatrix}
 0 & 1 & 0& 0\\
 0 &0 &1 & 0 \\
 0 &0 &0& 1 \\
@@ -5463,11 +5483,11 @@ i & 1 & 0& 0\\
 Portanto, $\Ker(A  - iI) = \langle (-i, -1, i, 1) \rangle.$
 \end{itemize}
 
+\noindent
 Portanto, a forma de Jordan de $A$ será
 \[
 J = \begin{bmatrix} \textcolor{Blue}{J_{0}} & 0 & 0 \\ 0 & \textcolor{Green}{J_{i}} & 0 \\  0 & 0  & \textcolor{Red}{J_{-i}}\end{bmatrix}
 = \begin{bmatrix}  \textcolor{Blue}{0} & \textcolor{Blue}{1} & 0 & 0\\ \textcolor{Blue}{0} & \textcolor{Blue}{0} & 0 & 0 \\ 0 & 0 & \textcolor{Green}{i} & 0 \\ 0 & 0 & 0 & \textcolor{Red}{-i} \end{bmatrix}\]
- 
 Para encontrar a matriz $P,$ basta colocar na $i$-ésima coluna o autovetor que gera o respectivo autoespaço associado ao autovalor da $i$-ésima coluna de $J.$ Assim,
 \[
 P = \begin{bmatrix} \textcolor{Blue}{1} & \textcolor{Blue}{0} & \textcolor{Green}{i} & \textcolor{Red}{-i} \\
@@ -5797,6 +5817,7 @@ a&&&&&\\1&a&&&&\\&&a&&&\\&&&b&&\\&&&&b&\\&&&&&b
 \end{pmatrix}.
 \]
 }
+
 \exercicio{27} Classifique, a menos de semelhança, todas as matrizes reais de ordem $7$ com polinômio
 característico 
 \[p_T(t) = (t - 1)^4(t - 2)^2(t - 3).\]
@@ -6258,11 +6279,131 @@ Subtraindo as duas equações acima, vem
 \task[\pers{d}] $S = \{ A \in \mathcal{M}_3(\mathbb{R}) | \tr(A) = 0 \}$ e $\prin{A,B} = \tr(AB^t).$
 \task[\pers{e}] $S = \langle (1,-1,1) \rangle,$ com o produto interno usual.%S^{\perp} = \langle (0, 1, 1), (1,1,0) \rangle
 }
-\solucao{}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Para $v\in V$, então $v\in S^\perp$ se e somente se $v$ é ortogonal a $(1,0,i)$ e $(2,1,1+i)$. Temos:
+\[
+\prin{(x,y,z),(1,0,i)}=0\Leftrightarrow x\cdot\overline{1}+y\cdot\overline{0}+z\cdot\overline{i}=0\Leftrightarrow x-iz=0
+\]
+e também:
+\[
+\prin{(x,y,z),(2,1,1+i)}=0\Leftrightarrow x\cdot\overline{2}+y\cdot\overline{1}+z\cdot\overline{1+i}=0\Leftrightarrow 2x+y+(1-i)z=0
+\]
+assim temos um sistema de equações:
+\[
+\left\{\begin{array}{rcl}
+x-iz&=&0\\2x+y+(1-i)z&=&0
+\end{array}
+\right.
+\]
+que equivale ao sistema:
+\[
+\left\{\begin{array}{rcl}
+x-iz&=&0\\y+(1+i)z&=&0
+\end{array}
+\right.
+\]
+O conjunto das soluções é o subespaço gerado por $(i,-1-i,1)$, ou seja:
+\[
+S^\perp=\langle (i,-1-i,1)\rangle.
+\]
+
+\task[\pers{b}]
+Para $(x,y,z)\in\mathbb{R}^3$, então temos o seguinte:
+\[
+\begin{array}{rcl}
+(x,y,z)\in S&\Leftrightarrow&x+y+z=0\\
+&\Leftrightarrow& x\cdot 1+y\cdot 1+z\cdot 1=0\\
+&\Leftrightarrow& \prin{(x,y,z),(1,1,1)}=0\\
+&\Leftrightarrow& (x,y,z)\in\{(1,1,1)\}^\perp;
+\end{array}
+\]
+logo:
+\[
+S=\{(1,1,1)\}^\perp,
+\]
+aí:
+\[
+S^\perp=\{(1,1,1)\}^{\perp\perp}=\langle(1,1,1)\rangle.
+\]
+
+\task[\pers{c}]
+Para polinômio:
+\[
+p(t)=a_0+a_1t+a_2t^2+a_3t^3,
+\]
+então:
+\[
+p'(t)=a_1+2a_2t+3a_3t^2,
+\]
+aí:
+\[
+tp'(t)=a_1t+2a_2t^2+3a_3t^3,
+\]
+assim:
+\[
+p(t)=tp'(t)\Leftrightarrow a_0=a_2=a_3=0,
+\]
+logo:
+\[
+S=\langle t\rangle.
+\]
+Além disso, temos:
+\[
+\prin{p(t),t}=\int_0^1p(t)t\dif t=\frac{a_0}{2}+\frac{a_1}{3}+\frac{a_2}{4}+\frac{a_3}{5};
+\]
+logo:
+\[
+p(t)\in S^\perp\Leftrightarrow\frac{a_0}{2}+\frac{a_1}{3}+\frac{a_2}{4}+\frac{a_3}{5}=0\Leftrightarrow a_3=-\frac{5}{2}a_0-\frac{5}{3}a_1-\frac{5}{4}a_2;
+\]
+assim:
+\[
+S^\perp=\prin{1-\frac{5}{2}t^3,t-\frac{5}{3}t^3,t^2-\frac{5}{4}t^3}.
+\]
+
+\task[\pers{d}]
+Para $A\in\m\{3\}{R}$, então temos o seguinte:
+\[
+A\in S\Leftrightarrow \tr(A)=0\Leftrightarrow\tr(AI^t)=0\Leftrightarrow\prin{A,I}=0\Leftrightarrow A\in\{I\}^\perp.
+\]
+logo:
+\[
+S=\{I\}^\perp,
+\]
+aí:
+\[
+S^\perp=\{I\}^{\perp\perp}=\langle I\rangle.
+\]
+
+\task[\pers{e}]
+Para $(x,y,z)$, então temos:
+\[
+\prin{(x,y,z),(1,-1,1)}=0\Leftrightarrow x\cdot\overline{1}+y\cdot\overline{(-1)}+z\cdot\overline{1}=0\Leftrightarrow x-y+z=0;
+\]
+logo:
+\[
+S^\perp=\langle(1,1,0),(0,1,1)\rangle.
+\]
+}
+}
 \exercicio{6}  Prove que se 
 \[\abs{\prin{u,v}} = \norm{u} \norm{v},
 \] então $u$ e $v$ são linearmente dependentes.
-\solucao{}
+\solucao{
+Suponhamos sem perda de generalidade que $v\neq 0$. Seja:
+\[
+w=\frac{\prin{u,v}}{\norm{v}^2}v
+\]
+a projeção do vetor $u$ sobre o vetor $v$. Então $\prin{u-w,w}=0$, aí, pelo teorema de Pitágoras, temos:
+\[
+\norm{u-w}^2=\norm{(u-w)+w}^2-\norm{w}^2=\norm{u}^2-\frac{\abs{\prin{u,v}}^2}{\norm{v}^2}=0,
+\]
+aí $u=w$, ou seja:
+\[
+u=\frac{\prin{u,v}}{\norm{v}^2}v,
+\]
+assim $u$ e $v$ são linearmente dependentes.
+}
 \exercicio{7} Sejam $W$ um subespaço de $V$ e $v \in V.$ Um vetor $w \in W$ é uma \emph{melhor aproximação} para $v$ por
 vetores em $W$ se \[\norm{v - w} \le \norm{v - u}, \mbox{ para todo } u \in W.\] Prove que
 \dividiritens{
@@ -6273,7 +6414,43 @@ se, $v - w \in W^{\perp}.$
 }
 
 Tal vetor é chamado de \emph{projeção ortogonal de v em W.}
-\solucao{}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Sendo $x=v-w$, então é fácil ver que $w$ é uma melhor aproximação para $v$ se e somente se para todo $a\in W$ tivermos $\norm{x}\leq \norm{x-a}$.
+\begin{itemize}
+\item Se $x\in W^\perp$, então para $a\in W$ temos $\prin{x,a}=0$, aí por Pitágoras temos:
+\[
+\norm{x-a}^2=\norm{x}^2+\norm{-a}^2\geq\norm{x}^2;
+\]
+logo $w$ é uma melhor aproximação para $v$.
+\item Se $w$ é uma melhor aproximação para $v$, então para $a\in W$ seja:
+\[
+b=\frac{\prin{x,a}}{\norm{a}^2}a
+\]
+a projeção do vetor $x$ sobre o vetor $a$, então $b\in W$ e $\prin{x-b,b}=0$, aí por Pitágoras temos:
+\[
+\norm{b}^2=\norm{(x-b)+b}^2-\norm{x-b}^2=\norm{x}^2-\norm{x-b}^2\leq 0,
+\]
+aí $b=0$, aí $\prin{x,a}=0$; logo $x\in W^\perp$.
+\end{itemize}
+
+\task[\pers{b}] Se $a,b\in W$ são melhores aproximações para $v$, então $v-a\in W^\perp$ e $v-b\in W^\perp$, assim $a-b=(v-b)-(v-a)\in W^\perp$, mas $a-b\in W$, de modo que $\prin{a-b,a-b}=0$, aí $a-b=0$, aí $a=b$.
+
+\task[\pers{c}] Sendo:
+\[
+w=\sum_{i=1}^k\prin{v,e_i}e_i,
+\]
+então para todo $j$ temos:
+\[
+\prin{w,e_j}=\prin{\sum_{i=1}^k\prin{v,e_i}e_i,e_j}=\sum_{i=1}^k\prin{v,e_i}\prin{e_i,e_j}=\prin{v,e_j},
+\]
+de modo que:
+\[
+\prin{v-w,e_j}=\prin{v,e_j}-\prin{w,e_j}=\prin{v,e_j}-\prin{v,e_j}=0;
+\]
+logo $v-w\in W^\perp$, assim $v-w$ é uma melhor aproximação para $v$ por $W$.
+}
+}
 \exercicio{8} Sejam $W$ um subespaço de $V$ e $v \in V.$ Seja $E \colon V \to V$ a função tal que $E(v) = w,$ a projeção
 ortogonal de $v$ em $W.$ (Assuma que, para todo $v \in V,$ existe tal $w.$) Prove que 
 \dividiritens{
@@ -6282,16 +6459,68 @@ ortogonal de $v$ em $W.$ (Assuma que, para todo $v \in V,$ existe tal $w.$) Prov
 \task[\pers{c}] $\mbox{Im } E = W$ e $\Ker E = W^{\perp}.$
 \task[\pers{d}] $V = W \oplus W^{\perp}.$
 }
-\solucao{}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Para $u,v\in V$ e $a,b\in K$, então $E(u)\in W$ e $u-E(u)\in W^\perp$ e $E(v)\in W$ e $v-E(v)\in W^\perp$, assim $aE(u)+bE(v)\in W$ e também:
+\[
+(au+bv)-(aE(u)+bE(v))=a(u-E(u))+b(v-E(v))\in W^\perp,
+\]
+assim $E(au+bv)=aE(u)+bE(v)$; logo $E$ é linear.
+
+\task[\pers{b}] Para $v\in V$, então $E(v)\in W$ e $v-E(v)\in W^\perp$, e também $E(E(v))\in W$ e $E(v)-E(E(v))\in W^\perp$, assim $E(v)-E(E(v))\in W$, aí $E(v)-E(E(v))=0$, aí $E(v)=E(E(v))$.
+
+\task[\pers{c}] Temos o seguinte:
+\begin{itemize}
+\item Para $x\in V$ então $E(x)\in W$; logo $\mathrm{Im}(E)\subseteq W$.
+\item Para $w\in W$ então $E(w)\in W$ e $w-E(w)\in W^\perp$, aí $w-E(w)\in W$, aí $w-E(w)=0$, aí $w=E(w)$; logo $W\subseteq\mathrm{Im}(E)$.
+\item Para $x\in V$, se $E(x)=0$, então $x=x-E(x)\in W^\perp$, aí $x\in W^\perp$; logo $\mathrm{Ker}(E)\subseteq W^\perp$.
+\item Para $x\in W^\perp$, então como $E(x)\in W$ e $x-E(x)\in W^\perp$, então $E(x)\in W^\perp$, aí $E(x)=0$; logo $W^\perp\subseteq\mathrm{Ker}(E)$.
+\end{itemize}
+
+\task[\pers{d}] Para $x\in V$ então $E(x)\in W$ e $x-E(x)\in W^\perp$, aí $x=E(x)+(x-E(x))\in W+W^\perp$; logo $V=W+W^\perp$. Além disso, para $x\in W\cap W^\perp$, então $x\in W$ e $x\in W^\perp$, aí $\langle x,x\rangle=0$, aí $x=0$; logo $W\cap W^\perp=0$. Portanto $V=W\oplus W^\perp$.
+}
+}
 \exercicio{9} Seja $W$ um subespaço de dimensão finita de $V.$ Existem, em geral, várias projeções cuja imagem é $W.$ Uma delas, a projeção ortogonal, tem a propriedade que $\norm{E(v)} \le \norm{v},$ para
 todo $v \in V.$ Prove se $E \in \mathcal{L}(V)$ é uma projeção cuja imagem é $W$ e $\norm{E(v)} \le \norm{v},$ para todo $v \in V,$ então $E$ é a projeção ortogonal em $W.$
 (\textbf{Sugestão:} Prove que $\prin{E(v), v - E(v)} = 0,$ para todo $v \in V$ se, e somente se, $\prin{u, E(v)} = 0,$
 para todo $u \in \Ker E$ e $v \in V.$ )
-\solucao{}
+\solucao{
+Para todo $u\in\mathrm{Ker}(E)$ e $v\in V$, então seja:
+\[
+x=\frac{\prin{E(v),u}}{\norm{u}}u
+\]
+a projeção de $E(v)$ sobre $u$, e seja:
+\[
+y=E(v)-x, 
+\]
+então $E(x)=0$ e:
+\[
+E(y)=E^2(v)-E(x)=E(v),
+\]
+mas também $\prin{E(v)-x,x}=0$ e $\norm{E(y)}\leq\norm{y}$, aí:
+\[
+\norm{E(v)}\leq\norm{E(v)-x},
+\]
+assim por Pitágoras temos:
+\[
+\norm{x}^2=\norm{\left(E(v)-x\right)+x}^2-\norm{E(v)-x}^2=\norm{E(v)}^2-\norm{E(v)-x}^2\leq 0,
+\]
+aí $x=0$, aí $\prin{E(v),u}=0$. Portanto $\Ker(E)\subseteq\left(\mathrm{Im}(E)\right)^\perp$, mas para todo $a\in V$ é fácil ver que $a-E(a)\in\mathrm{Ker}(E)$, aí $E$ é a projeção ortogonal sobre $W$.
+}
 \exercicio{10}  Sejam $W$ um subespaço de dimensão finita de $V$ e $E$ a projeção ortogonal de $V$ em $W$. Prove que $\prin{E(v), u} = \prin{v, E(u)}$ para todos $u, v \in V.$
-\solucao{}
+\solucao{
+Para $u,v\in V$, então $E(v)\in W$ e $u-E(u)\in W^\perp$ e $E(u)\in W$ e $v-E(v)\in W^\perp$, assim:
+\[
+0=\prin{E(v),u-E(u)}=\prin{E(v),u}-\prin{E(v),E(u)},
+\]
+e também:
+\[
+0=\prin{v-E(v),E(u)}=\prin{v,E(u)}-\prin{E(v),E(u)}
+\]
+assim é fácil ver que o resultado segue.
+}
 \exercicio{11} Sejam $V$ e $W$ espaços vetoriais de mesma dimensão (finita) sobre $K$ e com produtos internos $\prin{,}_V$ e $\prin{,}_W,$ respectivamente. Seja $T : V \rightarrow W$ uma transformação linear. Prove que as
-seguintes afirmações são equivalentes: 
+seguintes afirmações são equivalentes:
 \dividiritens{
 \task[\pers{a}] $\prin{T(u), T(v)}_W = \prin{u,v},$ para todos $u,v \in V.$
 \task[\pers{b}] $T$ leva \textbf{toda} base ortonormal de $V$ em uma base ortonormal de $W.$
@@ -6299,9 +6528,121 @@ seguintes afirmações são equivalentes:
 \task[\pers{d}] $\norm{T(v)}_W = \norm{v}_V$ para todo $v \in V.$
 }
 Tal $T$ é um \emph{isomorfismo de espaços com produto interno.}
-\solucao{}
+\solucao{
+\begin{itemize}
+\item Se (a) então para base ortonormal $B$ de $V$ então para $x,y\in B$ temos $\prin{T(x),T(y)}=\prin{x,y}=\delta_{x,y}$; logo $T[B]$ é uma base ortonormal de $W$; aí (b).
+\item Se (b), como sempre existe uma base ortonormal de $V$, então (c).
+\item Se (c) então seja $B$ base ortonormal de $V$ tal que $T[B]$ seja base ortonormal de $W$, então para $v\in V$ existe $\alpha:B\rightarrow K$ tal que:
+\[
+v=\sum_{x\in B}\alpha_xx,
+\]
+aí:
+\[
+T(v)=\sum_{x\in B}\alpha_xT(x),
+\]
+mas $T[B]$ é ortonormal, aí:
+\[
+\norm{v}^2=\norm{\sum_{x\in B}\alpha_xx}^2=\sum_{x\in B}\alpha_x^2
+\]
+\[
+\norm{T(v)}^2=\norm{\sum_{x\in B}\alpha_xT(x)}^2=\sum_{x\in B}\alpha_x^2
+\]
+aí $\norm{T(v)}^2=\norm{v}^2$, aí $\norm{T(v)}=\norm{v}$; aí (d).
+\item Se (d), então:
+\begin{itemize}
+\item[$\bullet$] Se $K=\mathbb{R}$, então para $u,v\in V$ temos:
+\[
+\begin{array}{cl}
+&\norm{T(u+v)}^2=\norm{u+v}^2\\
+\Rightarrow&\norm{T(u)}^2+\norm{T(v)}^2+2\prin{T(u),T(v)}\\=&
+\norm{u}^2+\norm{v}^2+2\prin{u,v}\\
+\Rightarrow&\prin{T(u),T(v)}=\prin{u,v}.
+\end{array}
+\]
+\item[$\bullet$] Se $K=\mathbb{C}$, então para $u,v\in V$ temos:
+\[
+\begin{array}{cl}
+&\norm{T(u+v)}^2=\norm{u+v}^2\\
+\Rightarrow&\norm{T(u)}^2+\norm{T(v)}^2+\prin{T(u),T(v)}+\prin{T(v),T(u)}\\=&
+\norm{u}^2+\norm{v}^2+\prin{u,v}+\prin{v,u}\\
+\Rightarrow&\prin{T(u),T(v)}+\prin{T(v),T(u)}=\prin{u,v}+\prin{v,u},
+\end{array}
+\]
+e também:
+\[
+\begin{array}{cl}
+&\norm{T(iu+v)}^2=\norm{iu+v}^2\\
+\Rightarrow&\norm{T(u)}^2+\norm{T(v)}^2+i\prin{T(u),T(v)}-i\prin{T(v),T(u)}\\=&
+\norm{u}^2+\norm{v}^2+i\prin{u,v}-i\prin{u,v}\\
+\Rightarrow&\prin{T(u),T(v)}-\prin{T(v),T(u)}=\prin{u,v}-\prin{v,u}.
+\end{array}
+\]
+Assim:
+\[
+\prin{T(u),T(v)}=\prin{u,v}.
+\]
+\end{itemize}
+Logo (a).
+\end{itemize}
+}
 \exercicio{12} Uma matriz $A \in \mathcal{M}_n(K)$ é chamada \emph{ortogonal} se $AA^t = I_n$ e \emph{unitária} se $AA^{*} = I_n.$ Encontre um exemplo de uma matriz complexa unitária que não é ortogonal e um exemplo de uma matriz que é ortogonal e não é unitária.
-\solucao{}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Consideremos a matriz:
+\[
+A=\begin{pmatrix}
+i
+\end{pmatrix},
+\]
+então:
+\[
+AA^*=\begin{pmatrix}
+i
+\end{pmatrix}\begin{pmatrix}
+-i
+\end{pmatrix}=\begin{pmatrix}
+1
+\end{pmatrix},
+\]
+porém:
+\[
+AA^t=\begin{pmatrix}
+i
+\end{pmatrix}\begin{pmatrix}
+i
+\end{pmatrix}=\begin{pmatrix}
+-1
+\end{pmatrix}.
+\]
+
+\task[\pers{b}] Consideremos a matriz:
+\[
+A=\begin{pmatrix}
+\sqrt{2}&i\\-i&\sqrt{2}
+\end{pmatrix},
+\]
+então:
+\[
+AA^t=\begin{pmatrix}
+\sqrt{2}&i\\-i&\sqrt{2}
+\end{pmatrix}\begin{pmatrix}
+\sqrt{2}&-i\\i&\sqrt{2}
+\end{pmatrix}=\begin{pmatrix}
+1&0\\0&1
+\end{pmatrix},
+\]
+porém:
+\[
+AA^*=\begin{pmatrix}
+\sqrt{2}&i\\-i&\sqrt{2}
+\end{pmatrix}\begin{pmatrix}
+\sqrt{2}&i\\-i&\sqrt{2}
+\end{pmatrix}=\begin{pmatrix}
+3&2i\sqrt{2}\\-2i\sqrt{2}&3
+\end{pmatrix}.
+\]
+}
+}
 \exercicio{13} Seja $T \in \mathcal{L}(V)$ um isomorfismo de espaços com produto interno, isto é,
 \[\prin{T(u), T(v)} = \prin{u,v},
 \] para todos $u, v \in V.$ Prove que $T$ possui um adjunto e $T^{*} = T^{-1}.$ Prove que vale
@@ -6426,66 +6767,72 @@ todo $t \in [0, 1].$ Determine $T^{*}$ e mostre que $\mbox{Im } T^{*} \neq (\Ker
      &  \Leftrightarrow & x \in (\mbox{Im }T)^{\perp}
 \end{array}
 \]
+Agora provemos que $\mbox{Im } T^{*} \subseteq (\Ker T)^{\perp}.$ Para todo $x\in V$, então para todo $y\in\Ker T$ temos $T(y)=0$, aí:
+\[
+\prin{T^*(x),y}=\prin{x,T(y)}=0;
+\]
+logo $T^*(x)\in(\Ker T)^{\perp}$.
+\task[\pers{b}] Se $\dim \ V<\infty$, então temos o seguinte:
+\[
+\begin{array}{rcl}
+\dim \ \mbox{Im } T^{*}&=&\dim \ V-\dim \ \Ker T^*\\
+&=&\dim \ V-\dim \ (\mbox{Im }T)^{\perp}\\
+&=&\dim \ \mbox{Im }T\\
+&=&\dim \ V-\dim \ \Ker T\\
+&=&\dim \ (\Ker T)^{\perp},
+\end{array}
+\]
+mas já vimos no item (a) que:
+\[
+\mbox{Im } T^{*} \subseteq (\Ker T)^{\perp},
+\]
+assim:
+\[
+\mbox{Im } T^{*} = (\Ker T)^{\perp}.
+\]
+\task[\pers{c}] Para quaisquer $f,g$ temos:
+\[
+\begin{array}{rcl}
+\prin{T(f),g}&=&\int_0^1T(f)(t)g(t)\dif t\\
+&=&\int_0^1tf(t)g(t)\dif t\\
+&=&\int_0^1f(t)tg(t)\dif t\\
+&=&\int_0^1f(t)T(g)(t)\dif t\\
+&=&\prin{f,T(g)};
+\end{array}
+\]
+logo $T^*=T$, assim $\mbox{Im } T^{*}=\mbox{Im } T$. Para $f\in\Ker T$, então $T(f)=0$, aí para todo $t$ tal que $0<t\leq 1$ temos $T(f)(t)=0$, aí $tf(t)=0$, aí $f(t)=0$; assim:
+\[
+f(0)=\lim\limits_{t\to 0}f(t)=\lim\limits_{t\to 0}0=0,
+\]
+logo $f=0$. Portanto $\Ker T=0$, aí $(\Ker T)^\perp=V$. Consideremos $g(t)=1$. Para $f$, então:
+\[
+T(f)(0)=0f(0)=0\neq 1=g(0),
+\]
+aí $T(f)\neq g$. Logo $g\notin\mbox{Im }T$. Portanto $\mbox{Im }T\neq V$, aí $\mbox{Im } T^{*} \neq (\Ker T)^{\perp}.$
 }
-
 }
 
 \exercicio{16} Seja $T \in \mathcal{L}(V).$ Prove que se $T$ é inversível, então $T^{*}$ é inversível e $(T^{*})^{-1} = (T^{-1})^{*}.$
-\solucao{Se $T$ é inversível, então existe $T^{-1} \in \mathcal{L}(V)$ tal que $TT^{-1} = I.$ Desse modo, das propriedades da adjunção, temos que
-\[
-(TT^{-1})^{*} = I^{*} \Rightarrow (T^{-1})^{*} T^{*} = I
-\]
-Logo, $(T^{-1})^{*} \in \mathcal{L}(V)$ é tal que $(T^{-1})^{*} T^{*} = I.$ Portanto, $T^{*}$ é inversível.
-
-Para mostrar que $(T^{*})^{-1} = (T^{-1})^{*},$ podemos seguir dois caminhos:
-\begin{itemize}
-
-\item Temos que
-\[
-I = I^{*}(TT^{-1})^{*} = (T^{-1})^{*}T^{*}.
-\]
-Logo, $\left(T^{-1}\right)^{*} = \left(T^{*}\right)^{-1}.$
-
-\item Sabemos que $(T^{*})^{-1}T^{*} = I,$ então $((T^{*})^{-1}T^{*})^{*} = I^{*}.$ Das propriedades de $*,$ temos que $I^{*} = I,$ $(AB)^{*} = B^{*}A^{*}$ e $A^{**} = A.$ Daí,
-\[
-(\textcolor{Cerulean}{(T^{*})^{-1}} \textcolor{JungleGreen}{T^{*}})^{*} = \textcolor{RawSienna}{I^{*}} \Rightarrow
-(\textcolor{JungleGreen}{(T^{*}})^{*} (\textcolor{Cerulean}{T^{*})^{-1}})^{*}  = \textcolor{RawSienna}{I} \Rightarrow \textcolor{Gray}{T^{**}} ((T^{*})^{-1})^{*} = I \Rightarrow \textcolor{Gray}{T} ((T^{*})^{-1})^{*} = I 
-\]
-Assim, concluímos que $((T^{*})^{-1})^{*}$ é a inversa de $T.$ Ou seja,
-\[
-T^{-1} = ((T^{*})^{-1})^{*} \Rightarrow (T^{-1})^{*} = (((T^{*})^{-1})^{*})^{*} \Rightarrow (T^{-1})^{*} = ((T^{*})^{-1})^{**}  \Rightarrow \boxed{(T^{-1})^{*} = (T^{*})^{-1}}
-\]
-
-
-    \item Sendo $T^{*}$ o adjunto de $T,$ sabemos por definição que
-     \[\langle T(u),v \rangle = \langle u, T^*(v) \rangle \quad \forall u,v\in V\]
-
-Então, substituindo $u$ por $T^{-1}(w),$ onde $w \in V,$ ficamos com
-\[
-\langle T(\textcolor{Green}{u}),v \rangle = \langle \textcolor{Green}{u}, T^*(v) \rangle \Rightarrow \langle T(\textcolor{Green}{T^{-1}(w)}),v \rangle = \langle \textcolor{Green}{T^{-1}(w)}, T^*(v) \rangle \Rightarrow \langle w, v \rangle = \langle T^{-1}(w), T^{*}(v) \rangle
-\]
-Por outro lado, para $T^{-1}$ e $x = T^{*}(v) \in V:$
-\[
-\langle \textcolor{Blue}{T^{-1}}(w),\textcolor{Magenta}{x} \rangle = \langle w, (\textcolor{Blue}{T^{-1}})^*(\textcolor{Magenta}{x}) \rangle \Rightarrow \langle \textcolor{Blue}{T^{-1}}(w),\textcolor{Magenta}{T^{*}(v)} \rangle = \]\[\langle w, (\textcolor{Blue}{T^{-1}})^*(T^{*}(v)) \rangle \Rightarrow  \langle T^{-1}(w),T^{*}(v) \rangle = \langle w, (\textcolor{Laranja}{TT^{-1}})^*(v) \rangle \Rightarrow  \]\[ \langle T^{-1}(w),T^{*}(v) \rangle = \langle w, \textcolor{Laranja}{I}^*(v) \rangle \Rightarrow  \langle T^{-1}(w),T^{*}(v) \rangle = \langle w, v \rangle  
-\]
-Daí, temos que
-\[
-\langle T^{-1}(w), T^{*}(v) \rangle = 
-\] \textcolor{Red}{MelhorarEXPLICAÇÃO}
+\solucao{
+Se $T$ é inversível, então existe um $T^{-1}\in\mathcal{L}(V)$ tal que $TT^{-1}=I$ e $T^{-1}T=I$, aí $(TT^{-1})^*=I^*$ e $(T^{-1}T)^*=I^*$, aí $(T^*)^{-1}T^*=I$ e $T^*(T^{-1})^*=I$, assim $(T^{-1})^*$ é inversa de $T^*$.
 %https://math.stackexchange.com/questions/1006975/adjoint-operator-and-inverse
-\end{itemize}
 }
+
 \exercicio{17}  Seja $E$ um operador linear em $V$ tal que $E^2 = E$ e tal que $E$ possui um adjunto $E^{*}.$ Prove que $E$ é autoadjunto se, e somente se $EE^{*} = E^{*}E.$ Prove também que, neste caso, $E$ é a projeção
 ortogonal em $W = \mbox{Im }E.$
 \solucao{
 Se $E^2=E$ e $EE^*=E^*E$, então para todo $x$ temos o seguinte:
 \[
+\begin{array}{rcl}
+\prin{\textcolor{red}{E^*}E(x),\textcolor{blue}{E^*}E(x)}=\prin{\textcolor{blue}{E}\textcolor{red}{E^*}E(x),E(x)}=\prin{\textcolor{red}{E^*}\textcolor{blue}{E}E(x),E(x)}=\prin{\textcolor{blue}{E}E(x),\textcolor{red}{E}E(x)},
+\end{array}
+\]
+aí temos:
+\[
 \begin{array}{cl}
 &\prin{E(x)-E^*E(x),E(x)-E^*E(x)}\\
-=&\prin{E(x),E(x)}-\prin{E(x),\textcolor{Green}{E^*}E(x)}-\prin{\textcolor{Green}{E^*}E(x),E(x)}+\prin{\textcolor{red}{E^*}E(x),\textcolor{blue}{E^*}E(x)}\\
-=&\prin{E(x),E(x)}-\prin{\textcolor{Green}{E}E(x),E(x)}-\prin{E(x),\textcolor{Green}{E}E(x)}+\prin{\textcolor{blue}{E}\textcolor{red}{E^*}E(x),E(x)}\\
-=&\prin{E(x),E(x)}-\prin{EE(x),E(x)}-\prin{E(x),EE(x)}+\prin{\textcolor{red}{E^*}\textcolor{blue}{E}E(x),E(x)}\\
-=&\prin{E(x),E(x)}-\prin{EE(x),E(x)}-\prin{E(x),EE(x)}+\prin{\textcolor{blue}{E}E(x),\textcolor{red}{E}E(x)}\\
+=&\prin{E(x),E(x)}-\prin{E(x),\textcolor{Green}{E^*}E(x)}-\prin{\textcolor{Green}{E^*}E(x),E(x)}+\textcolor{Green}{\prin{E^*E(x),E^*E(x)}}\\
+=&\prin{E(x),E(x)}-\prin{\textcolor{Green}{E}E(x),E(x)}-\prin{E(x),\textcolor{Green}{E}E(x)}+\textcolor{Green}{\prin{EE(x),EE(x)}}\\
 =&\prin{E(x),E(x)}-\prin{E(x),E(x)}-\prin{E(x),E(x)}+\prin{E(x),E(x)}\\
 =&0,
 \end{array}
@@ -6514,41 +6861,48 @@ logo $x-E(x)$ é ortogonal a $\mbox{Im }E$. Assim $E$ é a projeção ortogonal 
 \exercicio{18} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T \in \mathcal{L}(V).$ Prove que $T$ é autoadjunto se, e somente se $\prin{T(v), v} \in \mathbb{R},$ para todo $v \in V.$
 \solucao{$(\Rightarrow)$ Seja $T$ um operador auto-adjunto. Então, sabemos que $T^{*} = T.$ Para mostrar que certo $z \in \mathbb{C}$ é real, basta verificar que $z = \overline{z}.$ Dado  $v \in V,$ tem-se que
 \[
-\langle T(v), v \rangle = \langle v, \textcolor{Brown}{T^{*}}(v) \rangle = \langle v, \textcolor{Brown}{T^{*}}(v) \rangle = \overline{\langle T(v),v \rangle} \Rightarrow \langle T(v), v \rangle \in \mathbb{R}
+\langle T(v), v \rangle = \langle v, \textcolor{Brown}{T^{*}}(v) \rangle = \langle v, \textcolor{Brown}{T}(v) \rangle = \overline{\langle T(v),v \rangle} \Rightarrow \langle T(v), v \rangle \in \mathbb{R}
 \]
-$(\Leftrightarrow)$ Dado $v \in V,$ se $\prin{T(v), v} \in \mathbb{R}$, então temos que $\prin{T(v), v} = \overline{\prin{T(v), v}}.$ Assim,
+$(\Leftarrow)$ Dado $v \in V,$ se $\prin{T(v), v} \in \mathbb{R}$, então temos que $\prin{T(v), v} = \overline{\prin{T(v), v}}.$ Assim, para todo $v\in V$:
 \[
-\langle T(v), v \rangle = \overline{ \langle T(v), v \rangle } = \overline{ \langle v, T^{*}(v) \rangle } = \langle T^{*}(v), v \rangle \Rightarrow \langle (T - T^{*})(v), v \rangle = 0 \quad \forall v \in V
+\langle T(v), v \rangle = \overline{ \langle T(v), v \rangle } = \overline{ \langle v, T^{*}(v) \rangle } = \langle T^{*}(v), v \rangle \Rightarrow \langle (T - T^{*})(v), v \rangle = 0.
 \]
-Como $V$ é um espaço vetorial sobre $\mathbb{C},$ temos que $T - T^{*},$ acarretando $T = T^{*}.$
+Como $V$ é um espaço vetorial sobre $\mathbb{C},$ então pelo Exercício 19 podemos concluir que $T - T^{*}=0,$ acarretando $T = T^{*}.$
 }
 \exercicio{19} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T \in \mathcal{L}(V).$ Prove que se $\prin{T(v), v} = 0,$ para todo $v \in V,$ então $T = 0.$ Dê um exemplo para mostrar que o mesmo resultado não é necessariamente
 verdadeiro se $V$ é um espaço vetorial sobre $\mathbb{R}.$ 
-\solucao{Por hipótese, $\prin{T(v + w), v + w} = 0$ para quaisquer $v,w \in V.$ Assim,
+\solucao{
+\dividiritens{
+\task[\pers{a}] Por hipótese, $\prin{T(v + w), v + w} = 0$ para quaisquer $v,w \in V.$ Assim:
 \[
-\prin{T(v + w), v + w} = 0 \Rightarrow \prin{T(v) + T(w), v + w} = 0 \Rightarrow  \textcolor{Laranja}{\prin{T(v), v}} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{\prin{T(w), w}} \Rightarrow  \]\[ \textcolor{Laranja}{0} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{0} \Rightarrow \prin{T(v), w} + \prin{T(w), v} = 0
+\begin{array}{rcl}
+\prin{T(v + w), v + w} = 0 &\Rightarrow& \prin{T(v) + T(w), v + w} = 0 \\&\Rightarrow& \textcolor{Laranja}{\prin{T(v), v}} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{\prin{T(w), w}} =0\\&\Rightarrow& \textcolor{Laranja}{0} + \prin{T(v), w} + \prin{T(w), v} + \textcolor{Laranja}{0} =0\\&\Rightarrow& \prin{T(v), w} + \prin{T(w), v} = 0
+\end{array}
 \]
-Note que $w$ é arbitrário na igualdade obtida acima.  Daí, podemos substituir $w$ por $iw,$ e usando que
+Note que $w$ é arbitrário na igualdade obtida acima. Daí, podemos substituir $w$ por $iw,$ e, usando que:
 \[
 \prin{T(v), i w} = \overline{i} \prin{T(v), w} =  -i \prin{T(v), w} \quad \mbox{e} \quad \prin{T(iw),v} = \prin{iT(w), v} = i \prin{T(w), v},
 \]
-podemos verificar que
+podemos verificar que:
 \[
-\prin{T(v), \textcolor{Blue}{w}} + \prin{T(\textcolor{Blue}{w}), v} = 0 \Rightarrow \prin{T(v), \textcolor{Blue}{iw}} + \prin{T(\textcolor{Blue}{iw}), v} = 0 \Rightarrow - i \prin{T(v), w} + i \prin{T(w), v} = 0 \Rightarrow \]\[i(\prin{T(w), v} - \prin{T(v), w}) = 0 \Rightarrow \prin{T(w), v} - \prin{T(v), w} = 0
+\begin{array}{rcl}
+\prin{T(v), \textcolor{Blue}{iw}} + \prin{T(\textcolor{Blue}{iw}), v} = 0 &\Rightarrow& - i \prin{T(v), w} + i \prin{T(w), v} = 0 \\&\Rightarrow&-i\left(\prin{T(w), v} - \prin{T(v), w}\right) = 0 \\&\Rightarrow& \prin{T(w), v} - \prin{T(v), w} = 0.
+\end{array}
 \]
-Dessa forma, temos que
+Dessa forma, temos que:
 \[
-\cancel{\prin{T(v), w}} + \prin{T(w), v} + \prin{T(w), v} - \cancel{\prin{T(v), w}} = 0 \Rightarrow 2\prin{T(w), v} = 0 \Rightarrow \boxed{\prin{T(w), v} = 0}
+\begin{array}{rcl}
+\cancel{\prin{T(v), w}} + \prin{T(w), v} + \prin{T(w), v} - \cancel{\prin{T(v), w}} = 0 &\Rightarrow& 2\prin{T(w), v} = 0 \\&\Rightarrow& \boxed{\prin{T(w), v} = 0.}
+\end{array}
 \]
-Obtemos portanto que $\prin{T(w), v} = 0$ para quaisquer $v,w \in V.$ Vejamos que isso acarreta $T = 0.$
+Obtemos portanto que $\prin{T(w), v} = 0$ para quaisquer $v,w \in V.$ Vejamos que isso acarreta $T = 0.$ Faça $v = T(w).$ Então $\prin{T(w), T(w)} = 0$ e daí $T(w) = 0$ para todo $w \in V.$ Consequentemente, $T = 0.$
 
-Faça $v = T(w).$ Então $\prin{T(w), T(w)} = 0$ e daí $T(w) = 0$ para todo $w \in V.$ Consequentemente, $T = 0.$
-
-Observe que na resolução acima tivemos que considerar a unidade imaginária em certo momento. Vejamos que tal resultado não vale para espaços vetoriais sobre $\mathbb{R}.$ Considere o operador linear $T$ em $V = \mathbb{R}^2$ definido por $T(x,y) = (y,-x).$ Então, para todo $v = (v_1, v_2) \in \mathbb{R}^2,$ temos que
+\task[\pers{b}] Observe que na resolução acima tivemos que considerar a unidade imaginária em certo momento. Vejamos que tal resultado não vale para espaços vetoriais sobre $\mathbb{R}.$ Considere o operador linear $T$ em $V = \mathbb{R}^2$ definido por $T(x,y) = (y,-x).$ Então, para todo $v = (v_1, v_2) \in \mathbb{R}^2,$ temos que
 \[
 \prin{\textcolor{Emerald}{T(v)}, v} = \prin{\textcolor{Emerald}{(-v_2, v_1)}, (v_1, v_2)} = -v_2v_1 + v_1v_2 = 0.
 \]
 Logo, $\prin{T(v),v} = 0$ para todo $v \in V,$ mas claramente $T \neq 0.$
+}
 }
 \exercicio{20} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T$ uma função de $V$ em $V$ tal que, para todos $u, v \in V,$ $\norm{T(u) - T(v)} = \norm{u-v}$ e $T(iv) = iT(v).$ Prove que $T$ é linear e que $\norm{T(v)} = \norm{v},$ para todo $v \in V.$
 
@@ -6682,70 +7036,45 @@ Portanto, $\prin{(ST+TS)(u),v} =  \prin{u, (ST + TS)(v)},$ e $ST + TS$ é autoad
 }
 
 \solucao{
-\dividiritens{
-\task[\pers{a}] Seja $T$ normal nilpotente. Então, existe um inteiro positivo $k$ tal que $T^k = 0.$ Vamos provar por indução que $T = 0.$ Se $k = 1,$ o resultado é trivial.
-
-\medskip
-\noindent
-Suponha $k > 1$ e que o caso $k - 1$ funcione. Tome $B = T^{k-1}.$ Note que, como $T$ é normal, então $B$ também é normal.
-
-\medskip
-\noindent
-Para um vetor $x \in V,$ vamos calcular a norma do vetor $B^{*}Bx$ como segue:
+Primeiro provaremos dois fatos sobre um operador normal $T$:
+\begin{itemize}
+\item Para quaisquer $x,y$ temos $\prin{T^*(x),T^*(y)}=\prin{T(x),T(y)}$. De fato temos:
 \[
-\begin{array}{rcl}
-\norm{B^*Bx} &=& \prin{B^*Bx,B^{*}Bx} \\
-&=& \prin{Bx,B^{**} B^{*} Bx} \\
-&  = & \prin{x,B^* \textcolor{TealBlue}{BB^{*}}Bx} \\
-&  = & \prin{x,B^* \textcolor{TealBlue}{B^{*}B}Bx} \\
-&=& \prin{x,(B^{*})^2B^2x}\\
-&=& 0,
+\prin{T^*(x),T^*(y)}=\prin{x,TT^*(y)}=\prin{x,T^*T(y)}=\prin{T(x),T(y)}.
+\]
+\item Para $x$, se $T^2(x)=0$, então $T(x)=0$. De fato, se $T^2(x)=0$, então temos:
+\[
+\prin{T^*T(x),T^*T(x)}=\prin{TT(x),TT(x)}=0,
+\]
+aí $T^*T(x)=0$, aí, pela \emph{resolução} do Exercício 21, temos $T(x)=0$.
+\end{itemize}
+
+\dividiritens{
+\task[\pers{a}] Para $x$, provaremos que, para $k\geq 1$, se $T^k(x)=0$, então $T(x)=0$. Faremos por indução em $k$. Se $k=1$, é trivial. Se $k>1$ e a afirmação é válida para $k-1$, então se $T^k(x)=0$, então:
+\[
+(T^{k-1})^2(x)=T^{2k-2}(x)=T^{k-2}T^k(x)=0,
+\]
+aí $T^{k-1}(x)=0$, aí por hipótese de indução temos $T(x)=0$.
+
+\task[\pers{b}] Se $T$ é idempotente, então sabemos que $T^2 = T.$ Assim para todo $x$ temos:
+\[
+\begin{array}{cl}
+&\prin{T(x)-T^*T(x),T(x)-T^*T(x)}\\
+=&\prin{T(x),T(x)}-\prin{T(x),T^*T(x)}-\prin{T^*T(x),T(x)}+\prin{T^*T(x),T^*T(x)}\\
+=&\prin{T(x),T(x)}-\prin{TT(x),T(x)}-\prin{T(x),TT(x)}+\prin{TT(x),TT(x)}\\
+=&\prin{T(x),T(x)}-\prin{T(x),T(x)}-\prin{T(x),T(x)}+\prin{T(x),T(x)}\\
+=&0,
 \end{array}
 \]
-pois $B^2 = T^{2k-2} = 0,$ já que $k \ge 2$ implica $2k-2 \ge k.$ Daí, temos que $B^*Bx = 0$ para todo $x \in V.$
-
-\medskip
-\noindent
-Assim,
+aí $T(x)-T^*T(x)=0$, aí $T(x)=T^*T(x)$. Logo $T=T^*T$, aí:
 \[
-\norm{Bx} = (Bx)^{*}(Bx) = x^*B^*Bx = 0, \quad \forall x \in V.
+T^*=(T^*T)^*=T^*T^{**}=T^*T=T.
 \]
-Consequentemente, $B = 0.$
 
-\medskip
-\noindent
-Pela hipótese de indução, $T^{k-1} = 0$ implica $T = 0.$ Portanto $T$ é o operador nulo.
+\task[\pers{c}] Se $T^3=T^2$, então para todo $x$, sendo $y=(T-I)(x)$, temos $T^2(y)=0$, aí $T(y)=0$, aí $T^2(x)-T(x)=0$. Logo $T^2=T$.
 
-\task[\pers{b}] Se $T$ é idempotente, então sabemos que $T^2 = T.$ Sendo normal, sabemos também que $T^*T = TT^*.$ Se $T^{*}T = 0,$ pelo Exercício 21, temos que $T = 0,$ que claramente é autoadjunto. 
-
-\medskip
-\noindent 
-Consideremos agora $T^{*}T \neq 0.$ Então, observe que
-\[
-(T - T^{*})(T^{*}T) = T\textcolor{PineGreen}{T^{*}T} - T^{*}T^{*}T = T\textcolor{PineGreen}{TT^*} - \textcolor{ProcessBlue}{(T^2)}^{*}T =  \textcolor{ProcessBlue}{T^2}T^* - \textcolor{ProcessBlue}{T}^{*}T =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{T^{*}T} =   \textcolor{ProcessBlue}{T}T^* - \textcolor{PineGreen}{TT^{*}} = 0
-\]
-Concluímos portanto que $(T - T^{*})(T^{*}T) = 0.$ Como $T^{*}T \neq 0,$ segue que $T - T^{*} = 0,$ acarretando $T = T^{*}.$
-  \task[\pers{c}] Como $T$ é normal, pelo Teorema Espectral, existe uma base ortonormal $\{e_1, e_2, \ldots, e_n \}$ de $V$ consistindo de autovetores de $T.$ Sejam $\lambda_1, \ldots, \lambda_n$ os correspondentes autovalores. Então,
-  \[
-  T(e_j) = \lambda_j e_j,
-  \]
-  para $j = 1, \ldots, n.$ Aplicando $T$ uma quantidade adequada de vezes em ambos os membros da equação acima, temos que
-\[
-T^3(e_j) = \lambda_j^3e_j \quad \mbox{e} \quad T^2(e_j) = \lambda_j^{2}e_j.
-\]
-Dessa forma,
-\[
-T^3(e_j) = T^2(e_j) \Rightarrow \lambda_j^3e_j = \lambda_j^{2}e_j \Rightarrow \lambda_j^3 = \lambda_j^2 \Rightarrow \lambda_j^2(\lambda - 1) = 0
-\]
-Isso implica que $\lambda_j$ vale $1$
- ou $0.$ Em particular, todos os autovalores de $T$ são reais. A matriz de $T$ com respeito à base ortonormal $\{e_1, \ldots, e_n \}$ será a matriz diagona com $\lambda_1, \ldots, \lambda_n$ na diagonal. Esta matriz claramente é equivalente à sua transposta conjugada, e portanto é hermitiana. Daí, $T = T^{*}.$ %Consequentemente, $T$ é autoadjunto.
- Aplicando $T$ em ambos os membros na equação obtida inicialmente, ficamos com
- \[
- T^2(e_j) = \textcolor{Maroon}{\lambda^2_j} e_j = \textcolor{Maroon}{\lambda_j} e_j = T(e_j),
- \]
- onde utilizamos que $\lambda_j^2 = \lambda_j,$ afinal $\lambda_j$ vale $0$ ou $1.$ Como $T^2$ e $T$ coincidem numa base, então devem ser iguais. Logo, $T^2 = T,$ e $T$ é idempotente.
- \task[\pers{d}] Um raciocínio análogo ao do item (c)  permite concluir que $T$  é autoadjunto e idempotente. Em geral, usando uma argumentação similar, pode-se provar que todo operador normal para o qual existe um inteiro positivo $k \ge 1$ tal que $T^{k+1} = T^k$ é autoadjunto e idempotente.
- }
+\task[\pers{d}] Se $T^8=T^7$, então para todo $x$, sendo $y=(T-I)(x)$, temos $T^7(y)=0$, aí pela \emph{resolução} do item (a), temos $T(y)=0$, aí $T^2(x)-T(x)=0$. Logo $T^2=T$. Além disso, pelo item (b), isso implica que $T^*=T$.
+}
 }
 
 \exercicio{25} Seja $T$ um operador qualquer de um espaço com produto interno complexo $V$ de dimensão finita. Então $T$ pode ser representado por uma matriz triangular em relação a alguma base ortonormal de $V.$
@@ -6992,12 +7321,32 @@ Logo, temos que $\prin{(a,b,c,d), (x,y,z,w)} = ax + 2by + 5cz + dw$ é um produt
 
 \solucao{Pela desigualdade de Cauchy-Bunyakovski-Schwarz, sabemos que, para todos $u,v \in \mathbb{R}^3,$
 \[
-\abs{\prin{u,v}} \le \norm{u} \norm{v}
+\norm{u} \norm{v} \ge \abs{\prin{u,v}}
 \]
-Tome 
-
-
+Tome:
+\[
+u=\left(\sqrt{a_1},\sqrt{a_2},\sqrt{a_3}\right)
+\]
+\[
+v=\left(\frac{1}{\sqrt{a_1}},\frac{1}{\sqrt{a_2}},\frac{1}{\sqrt{a_3}}\right)
+\]
+Então:
+\[
+(a_1 + a_2 + a_3) \left( \frac{1}{a_1} + \frac{1}{a_2} + \frac{1}{a_3} \right)=\norm{u}^2\norm{v}^2\ge\abs{\prin{u,v}}^2\]\[=\abs{\sqrt{a_1}\cdot\frac{1}{\sqrt{a_1}}+\sqrt{a_2}\cdot\frac{1}{\sqrt{a_2}}+\sqrt{a_3}\cdot\frac{1}{\sqrt{a_3}}}^2=\abs{1+1+1}^2=9>0.
+\]
 }
+
+\bigskip
+\noindent
+\textcolor{red}{Comentário:}
+
+\medskip
+\noindent
+Podemos provar que, para quaisquer $x,y,z\geq 0$ tais que no máximo um deles seja nulo, então:
+\[
+\left(xy+xz+yz\right)\left(\frac{1}{(x+y)^2}+\frac{1}{(x+z)^2}+\frac{1}{(y+z)^2}\right)\geq\frac{9}{4}.
+\]
+Hmmm... Parece que com Cauchy-Bunyakovski-Schwarz o problema sai facilmente, certo? Só que não... Veja qualquer coisa relacionada com ``Iran 1996 Inequality''.
 
 \exercicio{4} Seja $V = \mathcal{M}_{m \times n}(\mathbb{R}).$ Mostre que \[\prin{A,B} = \tr(B^tA) \] define um produto interno em $V.$
 
