@@ -5561,6 +5561,82 @@ com $a\neq 0$.
 \end{itemize}
 }
 
+\begin{exercicio}
+Encontre, a menos de semelhança, todas as matrizes $A \in GL_3(\mathbb{Q})$ cuja ordem é um divisor de $6.$
+\end{exercicio}
+\solucao{
+Vamos encontrar todas as matrizes $3 \times 3$ com entradas em $\mathbb{Q}$ que satisfazem $A^6 = I.$ O polinômio característico de $A$ é $P_A(x) = x^6 - 1.$ Para cada $A$, o polinômio minimal divide $X^6 - 1,$ e em $\mathbb{Q}[x],$ a fatoração completa deste polinômio é
+\[
+x^6 - 1 = (x+1)(x-1)(x^2-x+1)(x^2 + x + 1).
+\]
+Reciprocamente, se $B$ é qualquer matriz $3 \times 3$ cujopolinômio minimal divide $x^6 - 1,$ então $B^6 = I.$ A única restrição para o polinômio minimal de $B$ deve ser seu grau, que deve ser no máximo $3$ pelo Teorema de Cayley-Hamilton. As únicas possibilidades para o polinômio minimal de tal matriz $A$são portanto
+\begin{itemize}
+    \item $x - 1$
+    \item $x + 1$
+    \item $x^2 - x + 1$
+    \item $x^2 + x + 1$
+    \item $(x-1)(x + 1)$
+    \item $(x - 1)(x^2 - x + 1)$
+    \item $(x - 1)(x^2 + x + 1)$      
+    \item $(x + 1)(x^2 - x + 1)$
+    \item $(x + 1)(x^2 + x + 1)$ 
+\end{itemize}
+Dadas as restrições impostas pela Forma Canônica Racional, temos as seguintes possibilidades para os fatores invariantes:
+\begin{enumerate}
+    \item $x-1, x-1,x-1$
+    \item $x+1, x+1,x+1$
+    \item $x-1, (x-1)(x+1) = x^2 - 1$
+    \item $x+1, (x-1)(x+1) = x^2 - 1$
+    \item $(x-1)(x^2 - x + 1) = x^3 -2x^2+2x - 1$
+    \item $(x-1)(x^2 + x + 1) = x^3 - 1$
+    \item $(x+1)(x^2 - x + 1) = x^3 + 1$
+    \item $(x+1)(x^2 + x + 1) = x^3 + 2x^2 + 2x + 1$
+\end{enumerate}
+Observe que é impossível obter umm conjunto adequado de fatores invariantes se o polinômio minimal for $x^2 - x + 1$ ou $x^2 + x + 1.$ Podemos escrever então as respectivas formas canônicas racionais:
+\begin{tasks}[style=enumerate, item-format={\normalfont\tiny}, after-item-skip=4mm](4)
+\task $\begin{bmatrix}
+\textcolor{Green}{-1} & 0 & 0 \\
+0 & \textcolor{Green}{-1} & 0 \\
+0 & 0 & \textcolor{Green}{-1} \\
+\end{bmatrix}$
+\task $\begin{bmatrix}
+\textcolor{Green}{1} & 0 & 0 \\
+0 & \textcolor{Green}{1} & 0 \\
+0 & 0 & \textcolor{Green}{1} \\
+\end{bmatrix}$
+\task $\begin{bmatrix}
+\textcolor{Green}{1} & 0 & 0 \\
+0 & \textcolor{Green}{0} & \textcolor{Green}{1} \\
+0 & \textcolor{Green}{1} & \textcolor{Green}{0} \\
+\end{bmatrix}$
+\task $\begin{bmatrix}
+\textcolor{Green}{-1} & 0 & 0 \\
+0 & \textcolor{Green}{0} & \textcolor{Green}{1} \\
+0 & \textcolor{Green}{1} & \textcolor{Green}{0} \\
+\end{bmatrix}$
+\task $\begin{bmatrix}
+0 & 0 & 1 \\
+1 & 0 & -2 \\
+0 & 1 & 2 \\
+\end{bmatrix}$
+\task $\begin{bmatrix}
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{bmatrix}$
+\task $\begin{bmatrix}
+0 & 0 & -1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{bmatrix}$
+\task $\begin{bmatrix}
+0 & 0 & -1 \\
+1 & 0 & -2 \\
+0 & 1 & -2 \\
+\end{bmatrix}$
+\end{tasks}
+A menos de semelhança, as 8 matrizes acima determinam todos os elementos de ordens $1,2 , 3$ e $6$ no grupo $GL_3(\mathbb{Q}).$
+}
 \exercicio{24} Seja $T \colon \mathcal{P}_n(\mathbb{R}) \to \mathcal{P}_n(\mathbb{R}) $ o operador linear definido por 
 \[T(p(t)) = p(t + 1).\]
 \dividiritens{
@@ -5568,14 +5644,25 @@ com $a\neq 0$.
 \task[\pers{b}] Se $n = 4,$ encontre uma base $B$ de $\mathcal{P}_n(\mathbb{R})$ tal que $[T]_B$ esteja na forma de Jordan.
 }
 \solucao{
-\dividiritens{\task[\pers{a}]}
-Considerando a base $B=(1,t,\dots,t^n)$, então:
+\dividiritens{\task[\pers{a}]} %Seja $p(t) = a_nt^n + a_{n-1}t^{n-1} + \ldots + a_1t + a_0.$ Observe então que
+%\[p(t+1) = a_n\textcolor{Green}{(t+1)^n} + a_{n-1}\textcolor{Blue}{(t+1)^{n-1}} + \ldots + a_1\textcolor{Red}{(t+1)} + a_0 \Rightarrow p(t+1) = a_n\textcolor{Green}{\sum\limts_{k = 0}^n \binom{n}{n-k} t^{n-k}} + a_{n-1}\textcolor{Blue}{\sum\limts_{k = 0}^{n-1} \binom{n}{n-k} t^{n-k}} + \ldots + a_1\textcolor{Red}{(t+1)} + a_0  \]
+
+Considerando a base $B=(1,t,\dots,t^n)$, observe que
+\[
+T(1) = 1, \quad T(t) = t+ 1, \quad T(t^2) = (t+1)^2 = t^2 + 2t + 1, \quad  T(t^3) = (t+1)^3 = t^3 + 3t^2 + 3t + 1, \quad \ldots \]\[ T(t^n) = \sum\limits_{k=0}^n \binom{n}{n-k} t^{n-k}.
+\]
+Logo,
 \[
 [T]_B=\begin{pmatrix}
-\binom{0}{0}&\binom{1}{0}&\binom{2}{0}&\binom{3}{0}&&\binom{n}{0}\\&\binom{1}{1}&\binom{2}{1}&\binom{3}{1}&&\binom{n}{1}\\&&\binom{2}{2}&\binom{3}{2}&&\binom{n}{2}\\&&&\binom{3}{3}&&\binom{n}{3}\\&&&&\ddots&\\&&&&&\binom{n}{n}
+\binom{0}{0}&\binom{1}{0}&\binom{2}{0}&\binom{3}{0}&\cdots &\binom{n}{0}\\
+0&\binom{1}{1}&\binom{2}{1}&\binom{3}{1}&\cdots &\binom{n}{1}\\
+0&0&\binom{2}{2}&\binom{3}{2}& \cdots &\binom{n}{2}\\
+0&0&0&\binom{3}{3}&\cdots&\binom{n}{3}\\
+\vdots& \vdots& \vdots & \vdots &\ddots& \vdots\\
+0&0&0&0&\cdots&\binom{n}{n}
 \end{pmatrix}.
 \]
-Com isso é fácil ver que:
+Com isso, como $[T}_B$ está na forma triangular, é fácil ver que:
 \[
 p_T(x)=(x-1)^{n+1}.
 \]
@@ -5654,14 +5741,14 @@ C=\left(t^4,(T-I)(t^4),(T-I)^2(t^4),(T-I)^3(t^4),(T-I)^4(t^4)\right)
 \[
 C=\left(t^4,1+4t+6t^2+4t^3,14+24t+12t^2,36+24t,24\right).
 \]
-}
+
 
 \bigskip
 \noindent
 \textcolor{red}{Comentário:}
 
-\dividiritens{\task[\pers{a}]}
-Para todo polinômio $p(t)$, podemos provar por indução que para todo $m$ temos:
+\dividiritens{\task[\pers{a}]
+Para todo polinômio $p(t)$, podemos provar por indução que para todo $m$ temos:}
 \[
 (T-I)^m=\sum_{k=0}^m\binom{m}{k}(-1)^{m-k}p\left(t+k\right).
 \]
@@ -5732,57 +5819,96 @@ ou seja, é o conjunto das permutações de $\{1,\dots,n\}$. Portanto:
 (A - 2I)^3 = 0.
 \]
 \solucao{
-Nesse caso, o polinômio característico de $A$ é:
+Vamos encontrar as possíveis formas de Jordan $J$ para $A.$ Nesse caso, observe que a matriz $B = A - 2I$ é nilpotente. Logo, o polinômio característico de $B$ é $p_B(x) = x^6,$ e assim o polinômio característico de $A$ é:
 \[
-p_A(x)=(x-2)^6,
+p_A(x)=(x-2)^6.
 \]
-e assim os divisores elementares devem ser:
+Consequentemente, os divisores elementares devem ser:
 \[
 (x-2)^{n_1},\dots,(x-2)^{n_k},
 \]
-em que $(n_1,\dots,n_k)$ é uma partição de $6$ tal que $3\geq n_1$. Assim as possibilidades são:
+em que $(n_1,\dots,n_k)$ é uma partição de $6$ tal que $3\geq n_1$. Assim, as possibilidades são:
 \begin{itemize}
-\item
+\item Se o polinômio minimal é $m_A(x) = (x - 2)^3,$ então  \begin{itemize}
+    \item $(x - 2)^3, (x - 2)^3$
 \[
-\begin{pmatrix}
-2&&&&&\\1&2&&&&\\&1&2&&&\\&&&2&&\\&&&1&2&\\&&&&1&2
-\end{pmatrix}
+\left(\begin{array}{ccc:ccc}
+2&0&0&0&0&0\\
+1&2&0&0&0&0\\
+0&1&2&0&0&0\\ \hdashline
+0&0&0&2&0&0\\
+0&0&0&1&2&0\\
+0&0&0&0&1&2
+\end{array}\right)
 \]
-\item
+\item $(x-2)^3, (x-2)^2, x-2$
 \[
-\begin{pmatrix}
-2&&&&&\\1&2&&&&\\&1&2&&&\\&&&2&&\\&&&1&2&\\&&&&&2
-\end{pmatrix}
+\left(\begin{array}{ccc:cc:c}
+2&0&0&0&0&0\\
+1&2&0&0&0&0\\
+0&1&2&0&0&0\\ \hdashline
+0&0&0&2&0&0\\
+0&0&0&1&2&0\\ \hdashline
+0&0&0&0&0&2
+\end{array}\right)
 \]
-\item
+\item $(x-2)^3, x-2,x-2, x-2$
 \[
-\begin{pmatrix}
-2&&&&&\\1&2&&&&\\&1&2&&&\\&&&2&&\\&&&&2&\\&&&&&2
-\end{pmatrix}
+\left(\begin{array}{ccc:c:c:c}
+2&0&0&0&0&0\\
+1&2&0&0&0&0\\
+0&1&2&0&0&0\\ \hdashline
+0&0&0&2&0&0\\ \hdashline
+0&0&0&0&2&0\\ \hdashline
+0&0&0&0&0&2
+\end{array}\right)
 \]
-\item
+\end{itemize}
+    \item Se o polinômio minimal é $m_A(x) = (x - 2)^2,$ então 
+    \begin{itemize}
+\item $(x-2)^2, (x-2)^2, (x-2)^2$
 \[
-\begin{pmatrix}
-2&&&&&\\1&2&&&&\\&&2&&&\\&&1&2&&\\&&&&2&\\&&&&1&2
-\end{pmatrix}
+\left(\begin{array}{cc:cc:cc}
+2&0&0&0&0&0\\
+1&2&0&0&0&0\\ \hdashline
+0&0&2&0&0&0\\ 
+0&0&1&2&0&0\\ \hdashline
+0&0&0&0&2&0\\
+0&0&0&0&1&2
+\end{array}\right)\]
+\item $(x-2)^2, (x-2)^2, x-2, x-2$
+\[
+\left(\begin{array}{cc:cc:c:c}
+2&0&0&0&0&0\\
+1&2&0&0&0&0\\ \hdashline
+0&0&2&0&0&0\\ 
+0&0&1&2&0&0\\ \hdashline
+0&0&0&0&2&0\\ \hdashline
+0&0&0&0&0&2
+\end{array}\right)
 \]
-\item
+\item $(x-2)^2, x-2,x-2, x-2, x-2$
 \[
-\begin{pmatrix}
-2&&&&&\\1&2&&&&\\&&2&&&\\&&1&2&&\\&&&&2&\\&&&&&2
-\end{pmatrix}
+\left(\begin{array}{cc:c:c:c:c}
+2&0&0&0&0&0\\
+1&2&0&0&0&0\\ \hdashline
+0&0&2&0&0&0\\ \hdashline
+0&0&0&2&0&0\\ \hdashline
+0&0&0&0&2&0\\ \hdashline
+0&0&0&0&0&2
+\end{array}\right)
 \]
-\item
+\end{itemize}
+\item Se o polinômio minimal é $m_A(x) = x-2,$ então
 \[
-\begin{pmatrix}
-2&&&&&\\1&2&&&&\\&&2&&&\\&&&2&&\\&&&&2&\\&&&&&2
-\end{pmatrix}
-\]
-\item
-\[
-\begin{pmatrix}
-2&&&&&\\&2&&&&\\&&2&&&\\&&&2&&\\&&&&2&\\&&&&&2
-\end{pmatrix}
+J = \left(\begin{array}{c:c:c:c:c:c}
+2&0&0&0&0&0\\ \hdashline
+0&2&0&0&0&0\\ \hdashline
+0&0&2&0&0&0\\ \hdashline
+0&0&0&2&0&0\\ \hdashline
+0&0&0&0&2&0\\ \hdashline
+0&0&0&0&0&2
+\end{array}\right)
 \]
 \end{itemize}
 }
@@ -5961,7 +6087,119 @@ D  =\begin{bmatrix}
 \end{bmatrix}, \mbox{onde n é da forma } n = \frac{k(k+3)}{2}, k \ge -1.
 \]
 }
-\solucao{}
+\solucao{
+\dividiritens{
+\task[\pers{a}] \textcolor{Red}{COMPLICADO!}
+\task[\pers{b}] Vamos primeiramente encontrar os polinômios minimal e característico de $B:$
+\[
+\begin{array}{rcl}
+p_B(\lambda) &=& \det(B - \lambda I) \\
+&=& \det \left(  \begin{bmatrix}
+1 & 0 & 0& 0 & 0\\
+-3 & 0 & 0& 0 & 1\\
+-3 & -1 & 0& 0 & 0\\
+-1 & -1 & 3& 3& 3\\
+-2 & -2 & 0& 0& 3\\
+\end{bmatrix} - \lambda \begin{bmatrix}
+\lambda & 0 & 0 & 0 & 0\\
+0 & \lambda & 0 & 0 & 0\\
+0 & 0 & \lambda & 0 & 0\\
+0 & 0 & 0 & \lambda & 0\\
+0 & 0 & 0 & 0 & \lambda\\
+\end{bmatrix}  \right) \\
+&=&  \det \left(   \begin{bmatrix}
+1-\lambda & 0 & 0& 0 & 0\\
+-3 & -\lambda & 0& 0 & 1\\
+-3 & -1 & -\lambda& 0 & 0\\
+-1 & -1 & 3& 3-\lambda& 3\\
+-2 & -2 & 0& 0& 3-\lambda\\
+\end{bmatrix} \right) \\
+&=& (-1)^{1+1} (1 - \lambda) \det \begin{bmatrix}
+-\lambda & 0& 0 & 1\\
+-1 & -\lambda& 0 & 0\\
+-1 & 3& 3-\lambda& 3\\
+-2 & 0& 0& 3-\lambda\\
+\end{bmatrix} \\
+&=& (-1)^{1+1} (1-\lambda) \left( (-1)^{1+1} (-\lambda) \det \begin{bmatrix}
+ -\lambda& 0 & 0\\
+3& 3-\lambda& 3\\
+0& 0& 3-\lambda\\
+\end{bmatrix} + (-1)^{1+4} \det  \begin{bmatrix}
+-1 & -\lambda& 0\\
+-1 & 3& 3-\lambda\\
+-2 & 0& 0\\
+\end{bmatrix} \right)\\
+&=& (1-\lambda)(\lambda^4 - 6 \lambda^3 + 11 \lambda^2 - 6 \lambda) \\
+&=& (1-\lambda)(\lambda^4 - 6 \lambda^3 + 11 \lambda^2 - 6 \lambda) \\
+&=& \lambda^5 - 7 \lambda^4 +17 \lambda^3 - 17 \lambda^2 + 6 \lambda \\
+&=& \lambda(\lambda-1)^2 (\lambda-2)(\lambda - 3)
+\end{array}
+\]
+O polinômio minimal será igual ao característico nesse caso. Assim, a forma racional $R$ de $B$ será a matriz companheira
+\[
+R = \begin{bmatrix}
+0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & -6 \\
+0 & 1 & 0 & 0 & 17\\
+0 & 0 & 1 & 0 & -17 \\
+0 & 0 & 0 & 1 & 7
+\end{bmatrix}
+\]
+Para encontrar a forma de Jordan, já sabemos que os autovalores $0,2$ e $3$ aparecerão uma vez, enquanto o autovalor $1$ estará em 2 elementos da diagonal. Calculemos a dimensão do autoespaço asssociado para descobrir a quantos blocos ele pertence. Temos que
+\[
+A - I = \begin{bmatrix}
+0 & 0 & 0& 0 & 0\\
+-3 & -1 & 0& 0 & 1\\
+-3 & -1 & -1& 0 & 0\\
+-1 & -1 & 3& 2& 3\\
+-2 & -2 & 0& 0& 2\\
+\end{bmatrix} \rightarrow
+\begin{bmatrix}
+1 & 1 & 0& 0& -1\\
+-3 & -1 & 0& 0 & 1\\
+-3 & -1 & -1& 0 & 0\\
+-1 & -1 & 3& 2& 3\\
+0 & 0 & 0& 0 & 0\\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 1 & 0& 0& -1\\
+0 & 1 & 0& 0 & -1\\
+0 & 2 & -1& 0 & -3\\
+0 & 0 & 3& 2& 2\\
+0 & 0 & 0& 0 & 0\\
+\end{bmatrix}\rightarrow\]\[
+\begin{bmatrix}
+1 & 1 & 0& 0& -1\\
+0 & 1 & 0& 0 & -1\\
+0 & 0 & 1& 0 & 1\\
+0 & 0 & 3& 2& 2\\
+0 & 0 & 0& 0 & 0\\
+\end{bmatrix}\rightarrow
+\begin{bmatrix}
+1 & 1 & 0& 0& -1\\
+0 & 1 & 0& 0 & -1\\
+0 & 0 & 1& 0 & 1\\
+0 & 0 & 0& 2& -1\\
+0 & 0 & 0& 0 & 0\\
+\end{bmatrix}
+\]
+Logo, $\mbox{posto}(A-I) = 4,$ e $\dim(\Ker(A-I)) = 1.$ Assim, a forma de Jordan será
+\[
+J= \left[\begin{array}{cc:c:c:c:c}
+1 & 0 & 0 & 0 & 0  \\
+1 & 1 & 0 & 0 & 0  \\ \hdashline
+0 & 0 & 0 & 0 & 0  \\ \hdashline
+0 & 0 & 0 & 2 & 0  \\ \hdashline
+0 & 0 & 0 & 0 & 3 \\
+\end{array}\right]
+\]
+}
+}
+\begin{exercicio}
+Considere $J_n(\lambda)$ o bloco de Jordan de ordem $n$ associado ao autovalor $\lambda.$
+\end{exercicio}
+
 \exercicio{29} Seja $V$ um espaço vetorial de dimensão finita $n$ sobre o corpo K e seja $T \in \mathcal{L}(V).$ Seja $f \in K[t]$ um polinômio mônico, irredutível e de grau $d \ge 1.$
 \dividiritens{
 \task[\pers{a}] Suponha que $d \mid n.$ Prove que existe $T \in \mathcal{L}(V)$ tal que o polinômio minimal de $T$ é $f.$
@@ -6139,23 +6377,21 @@ ou seja:
 \[
 \boxed{\norm{au+bv}^2= \norm{au}^2 + \norm{bv}^2}
 \]
-\item Se para quaisquer $a,b\in\mathbb{C}$ temos $\norm{au+bv}^2= \norm{au}^2 + \norm{bv}^2,$ então temos que:
+\item Se para quaisquer $a,b\in\mathbb{C}$ temos $\norm{au+bv}^2= \norm{au}^2 + \norm{bv}^2,$ então para todo $a\in\mathbb{C}$ temos que:
 \[
 \begin{array}{cl}
-&\norm{u+v}^2 = \prin{u+v, u+v} = \norm{u}^2 + \norm{v}^2 + \prin{u,v} + \prin{v,u} \\\Rightarrow& \textcolor{Green}{\norm{u+v}^2} = \norm{u}^2 + \norm{v}^2 + \prin{u,v} + \prin{v,u} \\\Rightarrow& \textcolor{Green}{\norm{u}^2 + \norm{v}^2} = \norm{u}^2 + \norm{v}^2 + \prin{u,v} + \prin{v,u} \\\Rightarrow& \boxed{\prin{u,v} + \prin{v,u} = 0}
+&\norm{au+v}^2 = \prin{au+v, au+v} = \norm{au}^2 + \norm{v}^2 + \prin{au,v} + \prin{v,au} \\\Rightarrow& \textcolor{Green}{\norm{au+v}^2} = \norm{au}^2 + \norm{v}^2 + a\prin{u,v} + \overline{a}\prin{v,u} \\\Rightarrow& \textcolor{Green}{\norm{au}^2 + \norm{v}^2} = \norm{au}^2 + \norm{v}^2 + a\prin{u,v} + \overline{a}\prin{v,u} \\\Rightarrow& a\prin{u,v} + \overline{a}\prin{v,u} = 0
 \end{array}
 \]
-e também:
+assim, pondo $a=1$ e $a=i$ e simplificando, obtemos respectivamente as equações:
 \[
-\begin{array}{cl}
-&\norm{u+iv}^2 = \prin{iu+v, iu+v} = \norm{iu}^2 + \norm{v}^2 + \prin{iu,v} + \prin{v,iu} \\\Rightarrow& \textcolor{Green}{\norm{iu+v}^2} = \norm{iu}^2 + \norm{v}^2 + i\prin{u,v} - i\prin{v,u} \\\Rightarrow& \textcolor{Green}{\norm{iu}^2 + \norm{v}^2} = \norm{iu}^2 + \norm{v}^2 + i\prin{u,v} - i\prin{v,u} \\\Rightarrow& i\prin{u,v} - i\prin{v,u} = 0 \\\Rightarrow& \boxed{\prin{u,v} - \prin{v,u} = 0}
-\end{array}
+\prin{u,v} + \prin{v,u} = 0,\quad\quad \prin{u,v} - \prin{v,u} = 0,
 \]
-assim:
+aí, somando as equações, obtemos:
 \[
 2\prin{u,v}=\left(\prin{u,v}+\prin{v,u}\right)+\left(\prin{u,v}-\prin{v,u}\right)=0+0=0,
 \]
-aí:
+portanto concluímos que:
 \[
 \boxed{\prin{u,v}=0}
 \]
@@ -6168,25 +6404,26 @@ aí:
 \]
 \solucao{
 A figura abaixo apresenta uma visualização que revela o porquê do nome ``lei do paralelogramo'':
+
+\newpage
+
 \begin{figure}
 \centering
 \includegraphics[scale=2.6]{figuras/leiparalelogramo.png}
 \caption{Representação da lei do paralelogramo}
 \end{figure}
 
-\newpage
-
 \noindent
 Vamos calcular $\norm{u+v}^2$ e $\norm{u-v}^2:$
 \[
-\norm{u+v}^2 = \prin{u+v, u + v} = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v} + \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} + \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
+\norm{u+v}^2 = \prin{u+v, u + v} = \textcolor{Blue}{\prin{u,u}} + \textcolor{Red}{\prin{u,v} + \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} + \textcolor{Red}{2\mbox{Re}\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
 \]
 \[
-\norm{u-v}^2 = \prin{u-v, u - v} = \textcolor{Blue}{\prin{u,u}} - \textcolor{Red}{\prin{u,v} - \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} - \textcolor{Red}{2\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
+\norm{u-v}^2 = \prin{u-v, u - v} = \textcolor{Blue}{\prin{u,u}} - \textcolor{Red}{\prin{u,v} - \prin{v,u}} + \textcolor{Green}{\prin{v,v}} = \textcolor{Blue}{\norm{u}^2} - \textcolor{Red}{2\mbox{Re}\prin{u,v}} + \textcolor{Green}{\norm{v}^2}
 \]
 Somando as duas equações acima, obtemos
 \[
-\textcolor{Laranja}{\norm{u+v}^2}  + \textcolor{Purple}{\norm{u-v}^2} = \textcolor{Laranja}{\norm{u}^2 + \cancel{2\prin{u,v}} + \norm{v}^2}  + \textcolor{Purple}{\norm{u}^2 - \cancel{2\prin{u,v}} + \norm{v}^2} = 2 \norm{u}^2 + 2 \norm{v}^2.
+\textcolor{Laranja}{\norm{u+v}^2}  + \textcolor{Purple}{\norm{u-v}^2} = \textcolor{Laranja}{\norm{u}^2 + \cancel{2\mbox{Re}\prin{u,v}} + \norm{v}^2}  + \textcolor{Purple}{\norm{u}^2 - \cancel{2\mbox{Re}\prin{u,v}} + \norm{v}^2} = 2 \norm{u}^2 + 2 \norm{v}^2.
 \]
 }
 
@@ -6194,19 +6431,15 @@ Somando as duas equações acima, obtemos
 ortogonais. Discuta a afirmação para $K = \mathbb{C}.$
 \solucao{
 \dividiritens{
-\task[\pers{a}]
-\begin{itemize}
-\item[$(\Rightarrow)$] Se $\norm{u} = \norm{v},$ então
+\task[\pers{a}] Temos o seguinte:
 \[
-\norm{u} = \norm{v} \Rightarrow \norm{u}^2 = \norm{v}^2 \Rightarrow \norm{u}^2 - \norm{v}^2 = 0 \Rightarrow \norm{u}^2 \textcolor{Red}{+\prin{u,v}- \prin{u,v}}- \norm{v}^2 = 0 \Rightarrow \]\[ \norm{u}^2 -\prin{u,v}+ \prin{v,u}- \norm{v}^2 = 0 \Rightarrow \prin{u+v,u-v} = 0
+\prin{u+v,u-v} = \textcolor{Green}{\prin{u,u}} - \prin{u,v} + \prin{v,u} - \textcolor{Blue}{\prin{v,v}} = \textcolor{Green}{\norm{u}^2} - \textcolor{Blue}{\norm{v}^2},
 \]
-Logo, $u + v$ e $u - v$ são ortogonais.
-\item[$(\Leftarrow)$] Se $u+v,$ $u-v$ são ortogonais, então
-\[\prin{u+v,u-v} = 0 \Rightarrow \textcolor{Green}{\prin{u,u}} - \prin{u,v} + \prin{v,u} - \textcolor{Blue}{\prin{v,v}} = 0 \Rightarrow \textcolor{Green}{\norm{u}^2} - \textcolor{Blue}{\norm{v}^2} = 0 \Rightarrow \norm{u} = \norm{v} \]
-\end{itemize}
-
-\noindent
-Observe que em ambos os sentidos da demonstração utilizamos fortemente o fato de que $\prin{u,v} = \prin{v,u},$ e salientamos que isso só é verdade para espaços vetoriais reais.
+assim é fácil ver que:
+\[
+\prin{u+v,u-v}=0\quad\Leftrightarrow\quad\norm{u}^2 - \norm{v}^2=0\quad\Leftrightarrow\quad\norm{u}^2=\norm{v}^2\quad\Leftrightarrow\quad\norm{u}=\norm{v}.
+\]
+Observe que utilizamos fortemente o fato de que $\prin{u,v} = \prin{v,u},$ e salientamos que isso só é verdade para espaços vetoriais reais.
 
 \task[\pers{b}]  Se $K = \mathbb{C},$ temos que $\prin{u,v} = \overline{\prin{v,u}}.$ Assim, o resultado pode não ser válido. Com efeito, tome por exemplo $u = (3+i, 5, 7+2i, 7 -4\sqrt{2} i)$ e $v = (0, 5, 12, 0).$ Observe que $\norm{u} = \norm{v} = 13,$ mas $u + v = (3+i, 10,19+2i, 7 -4\sqrt{2} i)$ e $u-v = (3+i, 0, -5+2i, 7 -4\sqrt{2} i),$ e
 \[
@@ -6425,7 +6658,7 @@ Tal vetor é chamado de \emph{projeção ortogonal de v em W.}
 logo $w$ é uma melhor aproximação para $v$.
 \item Se $w$ é uma melhor aproximação para $v$, então para $a\in W$ seja:
 \[
-b=\frac{\prin{x,a}}{\norm{a}^2}a
+b=\frac{\prin{x,a}}{\norm{a}^2}a,
 \]
 a projeção do vetor $x$ sobre o vetor $a$, então $b\in W$ e $\prin{x-b,b}=0$, aí por Pitágoras temos:
 \[
@@ -6487,7 +6720,7 @@ para todo $u \in \Ker E$ e $v \in V.$ )
 \solucao{
 Para todo $u\in\mathrm{Ker}(E)$ e $v\in V$, então seja:
 \[
-x=\frac{\prin{E(v),u}}{\norm{u}}u
+x=\frac{\prin{E(v),u}}{\norm{u}}u,
 \]
 a projeção de $E(v)$ sobre $u$, e seja:
 \[
@@ -6556,33 +6789,31 @@ aí $\norm{T(v)}^2=\norm{v}^2$, aí $\norm{T(v)}=\norm{v}$; aí (d).
 &\norm{T(u+v)}^2=\norm{u+v}^2\\
 \Rightarrow&\norm{T(u)}^2+\norm{T(v)}^2+2\prin{T(u),T(v)}\\=&
 \norm{u}^2+\norm{v}^2+2\prin{u,v}\\
-\Rightarrow&\prin{T(u),T(v)}=\prin{u,v}.
+\Rightarrow&\prin{T(u),T(v)}=\prin{u,v};
 \end{array}
 \]
-\item[$\bullet$] Se $K=\mathbb{C}$, então para $u,v\in V$ temos:
+\item[$\bullet$] Se $K=\mathbb{C}$, então para $u,v\in V$, então para $a\in\mathbb{C}$ temos:
 \[
 \begin{array}{cl}
-&\norm{T(u+v)}^2=\norm{u+v}^2\\
-\Rightarrow&\norm{T(u)}^2+\norm{T(v)}^2+\prin{T(u),T(v)}+\prin{T(v),T(u)}\\=&
-\norm{u}^2+\norm{v}^2+\prin{u,v}+\prin{v,u}\\
-\Rightarrow&\prin{T(u),T(v)}+\prin{T(v),T(u)}=\prin{u,v}+\prin{v,u},
+&\norm{T(au+v)}^2=\norm{au+v}^2\\
+\Rightarrow&\norm{T(au)}^2+\norm{T(v)}^2+\prin{T(au),T(v)}+\prin{T(v),T(au)}\\=&
+\norm{au}^2+\norm{v}^2+\prin{au,v}+\prin{v,au}\\
+\Rightarrow&a\prin{T(u),T(v)}+\overline{a}\prin{T(v),T(u)}=a\prin{u,v}+\overline{a}\prin{v,u},
 \end{array}
 \]
-e também:
+aí, pondo $a=1$ e $a=i$ e simplificando, obtemos respectivamente:
 \[
-\begin{array}{cl}
-&\norm{T(iu+v)}^2=\norm{iu+v}^2\\
-\Rightarrow&\norm{T(u)}^2+\norm{T(v)}^2+i\prin{T(u),T(v)}-i\prin{T(v),T(u)}\\=&
-\norm{u}^2+\norm{v}^2+i\prin{u,v}-i\prin{u,v}\\
-\Rightarrow&\prin{T(u),T(v)}-\prin{T(v),T(u)}=\prin{u,v}-\prin{v,u}.
-\end{array}
+\prin{T(u),T(v)}+\prin{T(v),T(u)}=\prin{u,v}+\prin{v,u},
 \]
-Assim:
 \[
-\prin{T(u),T(v)}=\prin{u,v}.
+\prin{T(u),T(v)}-\prin{T(v),T(u)}=\prin{u,v}-\prin{v,u},
+\]
+assim, somando as duas equações acima e simplificando, obtemos:
+\[
+\prin{T(u),T(v)}=\prin{u,v};
 \]
 \end{itemize}
-Logo (a).
+logo (a).
 \end{itemize}
 }
 \exercicio{12} Uma matriz $A \in \mathcal{M}_n(K)$ é chamada \emph{ortogonal} se $AA^t = I_n$ e \emph{unitária} se $AA^{*} = I_n.$ Encontre um exemplo de uma matriz complexa unitária que não é ortogonal e um exemplo de uma matriz que é ortogonal e não é unitária.
@@ -6906,7 +7137,62 @@ Logo, $\prin{T(v),v} = 0$ para todo $v \in V,$ mas claramente $T \neq 0.$
 }
 \exercicio{20} Sejam $V$ um espaço vetorial sobre $\mathbb{C}$ e $T$ uma função de $V$ em $V$ tal que, para todos $u, v \in V,$ $\norm{T(u) - T(v)} = \norm{u-v}$ e $T(iv) = iT(v).$ Prove que $T$ é linear e que $\norm{T(v)} = \norm{v},$ para todo $v \in V.$
 
-\solucao{}
+\solucao{
+Temos:
+\[
+T(0)=T(i\cdot0)=iT(0)\quad\Rightarrow\quad T(0)=0.
+\]
+Assim para todo $x$ temos:
+\[
+\norm{T(x)-T(0)}=\norm{x-0}\quad\Rightarrow\quad\norm{T(x)}=\norm{x}.
+\]
+Agora para todo $x,y$, então para todo $a\in\{1,i\}$ temos $T(ax)=aT(x)$, aí:
+\[
+\begin{array}{cl}
+&\norm{T(ax)-T(y)}=\norm{ax-y}\\\Rightarrow&\norm{T(ax)-T(y)}^2=\norm{ax-y}^2\\
+\Rightarrow&\prin{T(ax)-T(y),T(ax)-T(y)}=\prin{ax-y,ax-y}\\
+\Rightarrow&\norm{T(ax)}^2-\prin{T(ax),T(y)}-\prin{T(y),T(ax)}+\norm{T(y)}^2
+=\norm{ax}^2-\prin{ax,y}-\prin{y,ax}+\norm{y}^2\\
+\Rightarrow&\prin{T(ax),T(y)}+\prin{T(y),T(ax)}=\prin{ax,y}+\prin{y,ax}\\
+\Rightarrow&a\prin{T(x),T(y)}+\overline{a}\prin{T(y),T(x)}=a\prin{x,y}+\overline{a}\prin{y,x},
+\end{array}
+\]
+assim, pondo $a=1$ e $a=i$ e simplificando, obtemos respectivamente:
+\[
+\prin{T(x),T(y)}+\prin{T(y),T(x)}=\prin{x,y}+\prin{y,x},
+\]
+\[
+\prin{T(x),T(y)}-\prin{T(y),T(x)}=\prin{x,y}-\prin{y,x},
+\]
+aí somando as equações e simplificando obtemos:
+\[
+\prin{T(x),T(y)}=\prin{x,y}.
+\]
+Para finalizar, para todo $x,y\in V$ e $a,b\in\mathbb{C}$, então:
+\[
+\begin{array}{cl}
+&\prin{T(ax+by)-aT(x)-bT(y),T(ax+by)-aT(x)-bT(y)}\\
+&\\
+=&\prin{T(ax+by),T(ax+by)}-\prin{T(ax+by),aT(x)}-\prin{T(ax+by),bT(y)}\\
+-&\prin{aT(x),T(ax+by)}+\prin{aT(x),aT(x)}+\prin{aT(x),bT(y)}\\
+-&\prin{bT(y),T(ax+by)}+\prin{bT(y),aT(x)}+\prin{bT(y),bT(y)}\\
+&\\
+=&\prin{T(ax+by),T(ax+by)}-\overline{a}\prin{T(ax+by),T(x)}-\overline{b}\prin{T(ax+by),T(y)}\\
+-&a\prin{T(x),T(ax+by)}+a\overline{a}\prin{T(x),T(x)}+a\overline{b}\prin{T(x),T(y)}\\
+-&b\prin{T(y),T(ax+by)}+b\overline{a}\prin{T(y),T(x)}+b\overline{b}\prin{T(y),T(y)}\\
+&\\
+=&\prin{ax+by,ax+by}-\overline{a}\prin{ax+by,x}-\overline{b}\prin{ax+by,y}\\
+-&a\prin{x,ax+by}+a\overline{a}\prin{x,x}+a\overline{b}\prin{x,y}\\
+-&b\prin{y,ax+by}+b\overline{a}\prin{y,x}+b\overline{b}\prin{y,y}\\
+&\\
+=&0,
+\end{array}
+\]
+portanto:
+\[
+T(ax+by)-aT(x)-bT(y)=0.
+\]
+}
 \exercicio{21} Seja $T$ um operador linear em $V$ tal que $T$ admite um adjunto. Prove que se $T^{*}T = 0$ então $T = 0.$
 
 \solucao{
@@ -6918,7 +7204,10 @@ aí $T(x)=0$.
 }
 
 \exercicio{22} Seja $A \in \mathcal{M}_n(\mathbb{C}).$ Mostre que $A$ se escreve de modo único como $A = B + iC,$ onde $B$ e $C$ são matrizes autoadjuntas.
-\solucao{Façamos 
+\solucao{
+\dividiritens{
+\task[\pers{a}]
+Façamos 
 \[
 B = \frac{A + A^{*}}{2} \quad \mbox{e} \quad C = \frac{A - A^{*}}{2i}.
 \]
@@ -6935,6 +7224,24 @@ e
 C^{*} = \left( \frac{A - A^{*}}{2i} \right)^{*} =  \frac{A^{*} - A^{**}}{\overline{2i}} =  - \frac{A^{*} - A}{2i} =  \frac{A - A^{*}}{2i} = C, 
 \]
 ou seja, $B$ e $C$ são matrizes auto-adjuntas.
+\task[\pers{b}] Se $A=X+iY$ com $X^*=X$ e $Y^*=Y$, então $B+iC=X+iY$, aí:
+\[
+\begin{array}{rcl}
+B+iC=X+iY&\Rightarrow&(B+iC)^*=(X+iY)^*\\
+&\Rightarrow&B^*-iC^*=X^*-iY^*\\
+&\Rightarrow&B-iC=X-iY,
+\end{array}
+\]
+assim:
+\[
+2B=(B+iC)+(B-iC)=(X+iY)+(X-iY)=2X,
+\]
+logo $B=X$, aí:
+\[
+iC=(B+iC)-C=(X+iY)-X=iY,
+\]
+portanto $C=Y$.
+}
 }
 \exercicio{23}
 Sejam $S, T \in \mathcal{L}(V).$ Suponha que $S$ e $T$ admitem adjuntas.
@@ -6948,32 +7255,25 @@ Sejam $S, T \in \mathcal{L}(V).$ Suponha que $S$ e $T$ admitem adjuntas.
 }
 
 \solucao{\dividiritens{
-\task[\pers{a}] Se $S$ e $T$ são autoadjuntas, então $S = S^{*}$ e $T = T^{*}.$ 
-\newline
-$(\Rightarrow)$ Se $ST$ é autoadjunta, então \[(ST)^{*} = \textcolor{Red}{S}\textcolor{Magenta}{T} = \textcolor{Red}{S^{*}}\textcolor{Magenta}{T^{*}} (TS)^{*}
-\]
-Portanto, da unicidade do operador adjunto, temos
+\task[\pers{a}] Se $S$ e $T$ são autoadjuntas, então $S = S^{*}$ e $T = T^{*},$ aí:
 \[
-(ST)^* - (TS)^{*} = 0 \Rightarrow (ST - TS)^{*} = 0 \Rightarrow ST - TS = 0 \Rightarrow ST = TS. 
+ST=(ST)^*\Leftrightarrow ST=T^*S^*\Leftrightarrow ST=TS,
 \]
-
-$(\Leftrightarrow)$ Se $ST = TS,$ então
-\[
-(ST)^{*} = (TS)^{*} \Rightarrow (ST)^{*} = \textcolor{Red}{S^{*}}\textcolor{Magenta}{T^{*}} \Rightarrow  (ST)^{*} = \textcolor{Red}{S}\textcolor{Magenta}{T}.
-\]
-Portanto, $ST$ é autoadjunta.
+ou seja, $ST$ é autoajdunta se e só se $ST=TS$.
 \task[\pers{b}] Considere
 \[
 S = \begin{bmatrix}
 1 & 0 \\ 0 & 0
 \end{bmatrix} \quad \mbox{e} \quad T = \begin{bmatrix}
-1 & 0 \\ 0 & 1 
+0 & 1 \\ 0 & 0 
 \end{bmatrix} 
 \]
 Então $ST = \begin{bmatrix}
 0 &1 \\ 0 & 0
 \end{bmatrix}$ não é autoadjunta.
-\newline
+
+\bigskip
+\noindent
 Outro exemplo: Sejam $T, S \in \mathcal{L}(\mathbb{R}^2),$ dadas por
 \[
 T(x,y) = (x+2y, 2x) \quad \mbox{e} \quad S(x,y)  = (y, x+y)
@@ -6994,36 +7294,26 @@ AB = \begin{bmatrix}
 2 &3 \\ 0 & 2
 \end{bmatrix}.
 \]
-Essa matriz não é hermitiana. Como a base canônica é ortonormal, então $TS$ não é autoadjunta.
+Essa matriz não é hermitiana. Como a base canônica é ortonormal, então concluímos que $TS$ não é autoadjunta.
 
-\task[\pers{c}] Se $T$ é autoadjunta, então
+\task[\pers{c}] Temos o seguinte:
 \[
-T^{*}T = TT^{*}
+(T^*T)^*=T^*T^{**}=T^*T,
 \]
-Pelo item (a), tomando $S = T^{*},$ segue que $T^{*}T$ é autoadjunta.
+logo $T^*T$ é autoajdunta.
+
 \task[\pers{d}] Se $T$ é autoadjunta, então $T^{*} = T.$ Logo,
 \[
-\left(S^*TS\right)^{*} = \left(S^*(TS)\right)^{*} = (TS)^{*} S^{**} = S^{*}\textcolor{Green}{T^{*}}S = S^{*}\textcolor{Green}{T}S.
+\left(S^*TS\right)^{*} = S^* T^* S^{**} = S^{*}\textcolor{Green}{T^{*}}S = S^{*}\textcolor{Green}{T}S,
 \]
+ou seja, $S^*TS$ é autoajdunta.
 
-\task[\pers{e}] Vamos provar $ST + TS$ é autoadjunta pela definição, ou seja, mostraremos que para todo $u,v \in V,$ 
-\[
-\prin{(ST + TS)(u), v} = \prin{u, (ST + TS)(v)}
-\]
+\task[\pers{e}] Se $S$ e $T$ são autoadjuntas, então $S = S^{*}$ e $T = T^{*},$ aí:
 Para isso, lembrando que $T^{*} = T$ e $S^{*} = S,$ vemos que
 \[
-\begin{array}{rcl}
-\prin{(ST+TS)(u),v} & = & \prin{(ST)(u),v} + \prin{(TS)(u), v} \\
-& =&  \prin{S(\textcolor{Mahogany}{T(u)}),v} + \prin{T(\textcolor{Mahogany}{S(u)}), v} \\
-& =&  \prin{\textcolor{Mahogany}{T(v)},\textcolor{Green}{S^{*}}(v)} + \prin{\textcolor{Mahogany}{S(u)}, \textcolor{Blue}{T^{*}}(v)} \\
-& =&  \prin{T(v),\textcolor{Green}{S}(v)} + \prin{S(u), \textcolor{Blue}{T(v)}} \\
-&=& \prin{u,  \textcolor{Blue}{T^{*}}(S(v))} + \prin{u, \textcolor{Green}{S^{*}}(T(v))} \\
-&=& \prin{u,  \textcolor{Blue}{T}(S(v))} + \prin{u, \textcolor{Green}{S}(T(v))} \\
-&=& \prin{u,(TS)(v)} + \prin{u, (ST)(v)} \\
-& = & \prin{u, (ST + TS)(v)}
-\end{array}
+(ST+TS)^*=(ST)^*+(TS)^*=T^*S^*+S^*T^*=TS+ST=ST+TS,
 \]
-Portanto, $\prin{(ST+TS)(u),v} =  \prin{u, (ST + TS)(v)},$ e $ST + TS$ é autoadjunta.
+ou seja, $ST + TS$ é autoadjunta.
 }
 }
 
@@ -7077,64 +7367,930 @@ T^*=(T^*T)^*=T^*T^{**}=T^*T=T.
 }
 }
 
-\exercicio{25} Seja $T$ um operador qualquer de um espaço com produto interno complexo $V$ de dimensão finita. Então $T$ pode ser representado por uma matriz triangular em relação a alguma base ortonormal de $V.$
+\exercicio{25} Um operador linear $T \in \mathcal{L}(V)$ é \emph{não negativo} (resp. \emph{positivo}) se e só se $T$ é autoadjunto e $\prin{T(v), v} \ge 0$ (resp. $\prin{T(v), v} > 0$) para todo $v\neq 0$. 
+\dividiritens{
+\task[\pers{a}] Se $T$ é não negativo (resp. positivo), mostre que os autovalores de $T$ são números reais não negativos (resp. positivos).
 
-\solucao{ Vamos utilizar indução na dimensão $n$ de $V.$ Se $\dim V = 1,$ é claro que a afirmação do teorema é válida. Suponhaentão, que $\dim V  = n > 1$ e que o teorema seja válido para operadores de espaços complexos de dimensão $n - 1.$
+\task[\pers{b}] Se a dimensão de $V$ é finita, então mostre que $T$ é não negativo (resp positivo) se, e somente se, existe $S \in \mathcal{L}(V)$ (resp. inversível) tal que $T = S^{*}S.$
+}
+
+\solucao{
+\dividiritens{
+\task[\pers{a}] Se $T$ é não negativo (resp. positivo), então para todo autovalor $\lambda$, existe um $v\neq 0$ tal que $T(v)=\lambda v$, aí $\prin{v,v}>0$, de modo que:
+\[
+\prin{T(v),v}=\prin{v,T(v)}\Rightarrow\prin{\lambda v,v}=\prin{v,\lambda v}\Rightarrow\lambda\prin{v,v}=\overline{\lambda}\prin{v,v}\Rightarrow\lambda=\overline{\lambda}\Rightarrow\lambda\in\mathbb{R},
+\]
+portanto, concluímos que:
+\[
+0\leq\prin{T(v),v}=\prin{\lambda v,v}=\lambda\prin{v,v}\Rightarrow0\leq\lambda.
+\]
+\[
+\left(0<\prin{T(v),v}=\prin{\lambda v,v}=\lambda\prin{v,v}\Rightarrow0<\lambda.\right)
+\]
+
+\task[\pers{b}]
+$(\Leftarrow)$ Se existe um $S$ (resp. inversível) tal que $T=S^*S$, então:
+\[
+T^*=(S^*S)^*=S^*S^{**}=S^*S=S,
+\]
+de modo que $T$ é autoadjunto, e além disso para $v\neq 0$ (resp. então $S(v)\neq 0$, aí) temos:
+\[
+\prin{T(v),v}=\prin{S^*S(v),v}=\prin{S(v),S(v)}\geq 0;
+\]
+\[
+\left(\prin{T(v),v}=\prin{S^*S(v),v}=\prin{S(v),S(v)}> 0;\right)
+\]
+logo $T$ é não negativo (resp. positivo).
+
+\bigskip
+\noindent
+$(\Rightarrow)$ Se $T$ é não-negativo (resp. positivo), então $T^{*} = T$ e $\prin{T(v), v} \ge 0$ (resp. $\prin{T(v), v} > 0$) para todo $v\neq 0$. Como $T$ é autoadjunto, existe uma base ortonormal $B=\{u_1, \ldots, u_n\}$ tal que:
+\[
+T=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
+\]
+aí para cada $i$ temos:
+\[
+0 \le \prin{\textcolor{Green}{T(u_i)}, u_i} =  \prin{\textcolor{Green}{\lambda_i u_i}, u_i} = \lambda_i \prin{u_i, u_i},
+\]
+\[
+\left(0 \le \prin{\textcolor{Green}{T(u_i)}, u_i} =  \prin{\textcolor{Green}{\lambda_i u_i}, u_i} = \lambda_i \prin{u_i, u_i},\right)
+\]
+assim, $\prin{u_i, u_i} \ge 0$ (resp. $\prin{u_i, u_i} > 0$), o que acarreta $\lambda_i \ge 0$ (resp. $\lambda_i > 0$), aí seja:
+\[
+S=\begin{pmatrix}
+\sqrt{\lambda_1}&&\\&\ddots&\\&&\sqrt{\lambda_n}
+\end{pmatrix},
+\]
+então $S^*=S$ (resp. e também $S$ é inversível) e $T=S^2$, aí $T=S^*S$.
+}
+}
+
+\bigskip
+\noindent
+\textbf{\textcolor{red}{Comentário:}}
+
+\medskip
+\noindent
+Pelo exercício, podemos concluir que um operador num espaço com produto interno de dimensão finita é positivo se e somente se é não negativo e inversível.
+
+\exercicio{26} Suponha que a dimensão é finita. Prove que o produto de dois operadores lineares não negativos (resp. positivos) é não negativo (resp. positivo) se, e somente se, eles comutam. Mostre que a soma de dois operadores não negativos (resp. positivos) é um operador não negativo (resp. positivo).
+
+\solucao{
+\dividiritens{
+\task[\pers{a}] Se $S$ e $T$ são operadores autoadjuntos, então pelo Exercício 23 vimos que $ST$ é autoadjunto se e somente se $ST=TS$.
+
+\medskip
+\noindent
+Agora, se $T$ é um operador não negativo, então existe uma base ortonormal $B=(e_1,\dots,e_n)$ tal que:
+\[
+T=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
+\]
+com $\lambda_i\geq 0$ para todo $i$, assim, pelos polinômios de interpolação de Lagrange, existe um polinômio real $p$ tal que tenhamos $p(\lambda_i)=\sqrt{\lambda_i}$ para todo $i=1,\dots,n$, aí:
+\[
+p(T)=\begin{pmatrix}
+p(\lambda_1)&&\\&\ddots&\\&&p(\lambda_n)
+\end{pmatrix}=\begin{pmatrix}
+\sqrt{\lambda_1}&&\\&\ddots&\\&&\sqrt{\lambda_n}
+\end{pmatrix},
+\]
+e é fácil ver que $p(T)^2=T$.
+
+\medskip
+\noindent
+Se $S$ e $T$ são operadores não negativos e $ST=TS$, então existem polinômios reais $p$ e $q$ tais que $p(S)^2=S$ e $q(T)^2=T$, e é fácil ver que $p(S)$ e $q(T)$ são operadores autoadjuntos, aí $p(S)q(T)=q(T)p(S)$, de modo que $p(S)q(T)$ é operador autoadjunto, aí $ST=p(S)^2q(T)^2=(p(S)q(T))^2$, de modo que $ST$ é quadrado de um operador autoadjunto, aí $ST$ é não negativo.
+
+\medskip
+\noindent
+Se $S$ e $T$ são operadores positivos, então $S$ e $T$ são operadores não negativos e inversíveis, aí $ST$ é operador não negativo e inversível, aí $ST$ é operador positivo.
+
+\task[\pers{b}] Se $S$ e $T$ são operadores não negativos (resp. positivos), então $S$ e $T$ são autoadjuntos, de modo que $S+T$ é autoadjunto, e para $v\neq 0$ temos:
+\[
+\prin{(S+T)(v),v}=\prin{S(v)+T(v),v}=\prin{S(v),v}+\prin{T(v),v}\geq 0;
+\]
+\[
+\left(\prin{(S+T)(v),v}=\prin{S(v)+T(v),v}=\prin{S(v),v}+\prin{T(v),v}> 0;\right)
+\]
+assim $S+T$ é não negativo (resp. positivo).
+}
+}
+
+\exercicio{27} Prove que se a dimensão de $V$ é finita e $T\in\mathcal{L}(V)$ é um operador positivo e unitário, então $T=I$.
+\solucao{
+Nessas condições, então existe uma base ortonormal $B=(e_1,\dots,e_n)$ tal que:
+\[
+T=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
+\]
+com $\lambda_i\geq 0$ para todo $i$, assim, como $T$ é autoadjunto e unitário, então $T^2=I$, de modo que para todo $i$ temos $\lambda_i^2=1$, aí $\lambda_i=1$; logo $T=I$.
+}
+
+\exercicio{28}
+Suponha que a dimensão de $V$ é finita e $T\in\mathcal{L}(V)$ um operador linear não negativo (resp. positivo). Prove que se $V\in V$ é tal que $\prin{T(v),v}=0$, então $T(v)=0$ (resp. $v=0$).
+\solucao{
+Nessas condições, existe uma base ortonormal $B=(e_1,\dots,e_n)$ tal que:
+\[
+T=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix}
+\]
+com $\lambda_i\geq 0$ (resp. $\lambda_i>0$) para todo $i$, assim para todo $v$, sendo:
+\[
+v=\sum_{i=1}^na_ie_i,
+\]
+então temos:
+\[
+T(v)=\sum_{i=1}^n\lambda_ia_ie_i,
+\]
+assim:
+\[
+\prin{T(v),v}=\prin{\sum_{i=1}^n\lambda_ia_ie_i,\sum_{i=1}^na_ie_i}=\sum_{i=1}^n\lambda_ia_i\overline{a_i}=\sum_{i=1}^n\lambda_i\abs{a_i}^2,
+\]
+aí se $\prin{T(v),v}=0$, então para todo $i$ temos $\lambda_i\abs{a_i}^2=0$, aí $\lambda_ia_i=0$ (resp. $a_i=0$); logo $T(v)=0$ (resp. $v=0$).
+}
+
+\exercicio{29}
+Seja $V$ um $K$-espaço vetorial de dimensão finita e seja $B=\{v_1,\dots,v_n\}$ uma base qualquer de $V$. Seja $a_{ij}=\prin{v_j,v_i}$, $i,j=1,\dots,n.$ Mostre que a matriz $A=(a_{i,j})\in\m{n}{K}$ é uma matriz positiva. Mostre que vale a ``recíproca'', isto é, se $A\in\m{n}{K}$ é uma matriz positiva então $\prin{X,Y}=Y^*AX$ define um produto interno no espaço $\m{n\times 1}{K}$.
+\solucao{
+É fácil ver que, sendo $A=(a_{i,j})$, então para todo $x,y\in\m{n\times 1}{K}$ temos:
+\[
+\prin{Ax,y}_{\mbox{can}}=y^*Ax,
+\]
+de modo que $A$ é positivo se e só se $A$ é autoadjunto e para todo $x\neq 0$ temos $x^*Ax>0$.
+\dividiritens{
+\task[\pers{a}] Se $a_{ij}=\prin{v_j,v_i}$, então é fácil ver que $A$ é autoadjunta, e para $x\neq 0$ temos:
+\[
+x^*Ax=\sum_{i,j=1}^n\overline{x_i}\prin{v_j,v_i}x_j=\prin{\sum_{j=1}x_jv_j,\sum_{i=1}x_iv_i}>0;
+\]
+assim $A$ é positiva.
+
+\task[\pers{b}] Se $A$ é positiva, então consideremos a função $\prin{X,Y}=Y^*AX$.
+\begin{itemize}
+\item A função é linear no primeiro argumento.
+\item Para $X,Y$ temos:
+\[
+\overline{\prin{Y,X}}=(X^*AY)^*=Y^*A^*X^{**}=Y^*AX=\prin{X,Y}.
+\]
+\item Para $X\neq 0$ temos:
+\[
+\prin{X,X}=X^*AX>0.
+\]
+\end{itemize}
+Portanto a função define um produto interno.
+}
+}
+
+\exercicio{30}
+Prove que a matriz
+\[
+A=\begin{pmatrix}
+1&\frac{1}{2}&\cdots&\frac{1}{n}\\\frac{1}{2}&\frac{1}{3}&\cdots&\frac{1}{n+1}\\\vdots&\vdots&&\vdots\\\frac{1}{n}&\frac{1}{n+1}&\cdots&\frac{1}{2n-1}
+\end{pmatrix}
+\]
+é uma matriz positiva.
+\solucao{
+É fácil ver que $A$ é autoadjunta. Além disso, para:
+\[
+x=\begin{pmatrix}
+x_0\\x_1\\\vdots\\x_{n-1}
+\end{pmatrix},
+\]
+então:
+\[
+x^*Ax=\sum_{i,j=0}^{n-1}\overline{x_i}x_j\frac{1}{i+j+1}=\sum_{i,j=0}^{n-1}\overline{x_i}x_j\int_0^1t^{i+j}\dif t=\int_0^1\sum_{i,j=0}^{n-1}\overline{x_i}x_jt^{i+j}\dif t=\int_0^1\sum_{i,j=0}^{n-1}\overline{x_i}t^ix_jt^j\dif t=
+\]
+\[
+=\int_0^1\left(\sum_{i=0}^{n-1}\overline{x_i}t^i\right)\left(\sum_{j=0}^{n-1}x_jt^j\right)\dif t=\int_0^1\overline{\left(\sum_{i=0}^{n-1}x_it^i\right)}\left(\sum_{j=0}^{n-1}x_jt^j\right)\dif t=\int_0^1\abs{\sum_{k=0}^{n-1}x_kt^k}^2\dif t>0.
+\]
+Portanto $A$ é positiva.
+}
+
+\exercicio{31}
+Seja
+\[
+A =\begin{pmatrix}
+1& 2& 3\\
+2& 3& 4\\
+3& 4& 5
+\end{pmatrix}
+\in \m{3}{\mathbb{R}}.
+\]
+Ache uma matriz ortogonal $P\in\m{3}{\mathbb{R}}$ tal que $P^tAP$ é diagonal.
+\solucao{
+Ao calcularmos o polinômio característico, obtemos:
+\[
+p_A(x)=\det(xI-A)=x^3-9x^2-6x,
+\]
+de modo que suas raízes são:
+\[
+\lambda_1=0,\quad\quad\lambda_2=\frac{9-\sqrt{105}}{2},\quad\quad\lambda_3=\frac{9+\sqrt{105}}{2}.
+\]
+Assim $\dim \ \Ker(A-\lambda_iI)=1$ para $i=1,2,3$, assim basta encontrar um vetor não nulo $v_i\in\Ker(A-\lambda_iI)$ e considerar $e_i=\frac{v_i}{\norm{v_i}}$ para $i=1,2,3$, e depois considerar:
+\[
+P=\begin{pmatrix}
+e_1&e_2&e_3
+\end{pmatrix}.
+\]
+Então $P$ é inversível e $P^{-1}AP$ é diagonal. Além disso, como $A^t=A$, então autovetores associados a autovalores diferentes são ortogonais, assim, como as colunas de $P$ têm norma $1$ e são autovetores associados a autovalores diferentes, então $P$ é ortogonal.
+}
+
+\exercicio{32} Lembre que uma matriz $A \in \m{n}{K}$ é positiva se o operador linear $T_A \in \mathcal{L}(K^n)$ tal que $[T]_{\mbox{can}} = A$ é positivo com o produto interno usual de $K^n$.
+\dividiritens{
+\task[\pers{a}] Prove que toda matriz positiva é quadrado de uma matriz também positiva.
+\task[\pers{b}] Seja $A \in \m{n}{K}$ tal que $A^*= A$. Mostre que existe um número real positivo $c$ tal que
+$A + cI$ é positiva.
+}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Se $A$ é uma matriz positiva, então existe uma matriz unitária $P$ tal que:
+\[
+A=P\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix}P^*
+\]
+com $\lambda_i>0$ para todo $i$, aí sendo:
+\[
+B=P\begin{pmatrix}
+\sqrt{\lambda_1}&&\\&\ddots&\\&&\sqrt{\lambda_n}
+\end{pmatrix}P^*
+\]
+então $B$ é uma matriz positiva e $A=B^2$.
+
+\task[\pers{b}] Se $A$ é uma matriz autoadjunta, então existe uma matriz unitária $P$ tal que:
+\[
+A=P\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix}P^*
+\]
+com $\lambda_i\in\mathbb{R}$ para todo $i$, aí sendo:
+\[
+c=1-\min\{0,\lambda_1,\dots,\lambda_n\},
+\]
+então $c>0$ e $\lambda_i+c>0$ para todo $i$, aí:
+\[
+A+cI=P\begin{pmatrix}
+\lambda_1+c&&\\&\ddots&\\&&\lambda_n+c
+\end{pmatrix}P^*
+\]
+é uma matriz positiva.
+}
+}
+
+\exercicio{33} Seja $A\in\m{n}{\mathbb{R}}$ uma matriz simétrica. Prove que existe uma matriz real $C$ tal que $C^3 = A$.
+\solucao{
+Como a matriz é real e simétrica, então existe uma matriz real ortogonal $P$ tal que:
+\[
+A=P\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix}P^t,
+\]
+aí seja:
+\[
+C=P\begin{pmatrix}
+\sqrt[3]{\lambda_1}&&\\&\ddots&\\&&\sqrt[3]{\lambda_n}
+\end{pmatrix}P^t,
+\]
+então $C$ é uma matriz real e $C^3=A$.
+}
+
+\exercicio{34} Sejam $A_1, A_2, \dots , A_k \in \m{n}{\mathbb{R}}$ matrizes simétricas tais que $A^2_1
++ A^2_2
++ \dots + A^2_k
+= 0.$ Prove
+que $A_i = 0$, para todo $i = 1, 2, \dots, k.$
+\solucao{
+Consideremos $\m{n\times 1}{\mathbb{R}}$ munido com o produto interno usual e seja $(e_1,\dots,e_n)$ a base ortonormal canônica. Para todo $i$, então para todo $j$ temos:
+\[
+0=\prin{\left(\sum_{l=1}^kA^2_l\right)e_j,e_j}=\sum_{l=1}^k\prin{A^2_le_j,e_j}=\sum_{l=1}^k\prin{A_le_j,A_le_j}\geq\prin{A_ie_j,A_ie_j}\geq 0,
+\]
+aí $\prin{A_ie_j,A_ie_j}=0$, aí $A_ie_j=0$; logo $A_i=0$.
+}
+
+\exercicio{35}
+Seja $O(n) = \{A\in\m{n}{\mathbb{R}} \mid A\text{ é ortogonal}\}.$
+\dividiritens{
+\task[\pers{a}] Mostre que $O(n)$ é um grupo com o produto de matrizes.
+\task[\pers{b}] Mostre que $\abs{\det(A)} = 1$ para toda $A \in O(n)$.
+\task[\pers{c}] Mostre que $\abs{\tr(A)}\leq n$ para toda $A \in O(n)$.
+}
+\solucao{\dividiritens{
+\task[\pers{a}] Temos o seguinte:
+\begin{itemize}
+\item Temos $II^t=T$ e $I^tI=I$, aí $I\in O(n)$.
+\item Para $A,B\in O(n)$, então $AA^t=I$ e $A^tA=I$ e $BB^t=I$ e $B^tB=I$, aí:
+\[
+(AB)(AB)^t=ABB^tA^t=AA^t=I,\quad\quad(AB)^t(AB)=B^tA^tAB=B^tB=I,
+\]
+aí $AB\in O(n)$.
+\item Para $A\in O(n)$, então $AA^t=I$ e $A^tA=I$, aí:
+\[
+A^tA^{tt}=A^tA=I,\quad\quad A^{tt}A^t=AA^t=I,
+\]
+aí $A^t\in O(n)$ e $AA^t=I$ e $A^tA=I$, aí $A^t$ é inversa de $A$ em $O(n)$.
+\end{itemize}
+Portanto $O(n)$ é um grupo em relação ao produto de matrizes.
+\task[\pers{b}] Se $A\in O(n)$ então $AA^t=I$, aí $\det(AA^t)=\det(I)$, aí $\det(A)\det(A^t)=1$, aí $\det(A)^2=1$, aí $\abs{\det(A)}=1$.
+\task[\pers{c}] Se $A\in O(n)$, então $AA^t=I=A^tA$, aí $A$ é normal, aí existe uma matriz ortogonal $P$ tal que:
+\[
+P^tAP=(\lambda_1)\oplus\dots\oplus(\lambda_k)\oplus\begin{pmatrix}
+a_1&-b_1\\b_1&a_1
+\end{pmatrix}\oplus\dots\oplus\begin{pmatrix}
+a_l&-b_l\\b_l&a_l
+\end{pmatrix},
+\]
+mas $AA^t=I$, aí para $i=1,\dots,k$ temos $\lambda_k^2=1$, aí $\abs{\lambda_k}=1$; e para $j=1,\dots,l$ temos:
+\[
+\begin{pmatrix}
+a_j&-b_j\\b_j&a_j
+\end{pmatrix}\begin{pmatrix}
+a_j&b_j\\-b_j&a_j
+\end{pmatrix}=\begin{pmatrix}
+1&0\\0&1
+\end{pmatrix},
+\]
+ou seja,
+\[
+\begin{pmatrix}
+a_j^2+b_j^2&0\\0&a_j^2+b_j^2
+\end{pmatrix}=\begin{pmatrix}
+1&0\\0&1
+\end{pmatrix},
+\]
+aí $a_j^2+b_j^2=1$, de modo que:
+\[
+2\abs{a_j}\leq a_j^2+1\leq a_j^2+b_j^2+1=2;
+\]
+logo:
+\[
+\abs{\tr(A)}=\abs{\tr(P^tAP)}=\abs{\tr(\lambda_1)+\dots+\tr(\lambda_k)+\tr\begin{pmatrix}
+a_1&-b_1\\b_1&a_1
+\end{pmatrix}+\dots+\tr\begin{pmatrix}
+a_l&-b_l\\b_l&a_l
+\end{pmatrix}}=
+\]
+\[
+=\abs{\lambda_1+\dots+\lambda_k+2a_1+\dots+2a_l}
+\leq\abs{\lambda_1}+\dots+\abs{\lambda_k}+2\abs{a_1}+\dots+2\abs{a_l}\leq k+2l=n,
+\]
+ou seja, $\abs{\tr(A)}\leq n$.
+}
+}
+
+\exercicio{36} Sejam $A, B \in \m{n}{\mathbb{R}}$, $n \geq 2$ matrizes simétricas tais que $A^5 = B^5$. Prove que $A = B$.
+
+\exercicio{37} Seja $A \in \m{n}{\mathbb{C}}$ $(A \in \m{n}{\mathbb{R}})$ uma matriz inversível. Prove que $A = BC,$ onde $B$ é unitária
+(ortogonal) e $C$ é positiva. Mostre também que esta decomposição é única.
+(Sugestão: Escreva $A^*A = D^2$ e considere $B = D^{-1}A.$)
+
+\exercicio{38} Sejam $V$ de dimensão finita, $K = \mathbb{C}$ e $T \in \mathcal{L}(V)$. Mostre que existe $B$ base ortonormal de $V$ tal que $[T]_B$ é triangular superior.
+
+\solucao{Vamos utilizar indução na dimensão $n$ de $V.$ Se $\dim V = 1,$ é claro que a afirmação do teorema é válida. Suponhaentão, que $\dim V  = n > 1$ e que o teorema seja válido para operadores de espaços complexos de dimensão $n - 1.$
 Dado que $V$ é um espaço vetorial complexo, $T$ tem, ao menos, um autovalor e, portanto, um autovetor não nulo $v$. Seja $W = \prin{v}$ o
 subespaço de $V$ gerado por $v$ e seja $u_1$ um vetor unitário de $W.$ Então $u_1$ é um autovetor de $T$ e temos $T(u_1) = a_{11}u_1.$ Sabemos que $V = W \oplus W^{\perp}.$ Denotemos por $E_{W^{\perp}}$ a projeção ortogonal de $V$ sobre $W^{\perp}$. Claramente, é invariante
 pelo operador $ET.$\footnote{Não é o Eduardo Tengan!} Por indução, existe uma base ortonormal $\{u_2, \ldots, u_n\}$ de $W^{\perp}$ tal que, para $i =  2, \ldots, n,$
 \[
 ET(u_i) = a_{i2}u_2 + a_{i3}u_3 + \ldots + a_{ii}u_i = \sum\limits_{j = 2}^i a_{ij}u_j 
 \]
-Observe que $\{u_1, u_2, \ldots, u_n\}$ é uma base ortonormal de $V.$ Como $E$ é a projeção ortogonal de $V$ sobre $W^{\perp},$ decorre que
+Observe que $\{u_1, u_2, \ldots, u_n\}$ é uma base ortonormal de $V.$ Como $E$ é a projeção ortogonal de $V$ sobre $W^{\perp},$ decorre que existe um $a_{i1}\in\mathbb{C}$ tal que:
 \[
 T(u_i) = a_{i1}u_1 + a_{i2}u_2 + a_{i3}u_3 + \ldots + a_{ii}u_i = \sum\limits_{j = 1}^i a_{ij}u_j 
 \]
 para $i=  2, \ldots, n.$ Como já temos que $T(u_1) = a_{11} u_1,$ temos que $T$ pode ser representado por uma matriz triangular em relação a alguma base ortonormal de $V.$
 }
 
-
-\exercicio{26} Um operador linear $T \in \mathcal{L}(V)$ é \emph{não negativo} (\emph{positivo}) se $T$ é autoadjunto e $\prin{T(v), v} \ge 0$ ($\prin{T(v), v} > 0$), para todo $v \in V.$ 
-\dividiritens{
-\task[\pers{a}] Se a dimensão de $V$ é finita e $T$ é não negativo, mostre que as autovalores de $T$ são números reais não negativos. 
-
-\task[\pers{b}] Mostre que $T$ é não negativo se, e somente se, existe $S \in \mathcal{L}(V)$ não-singular tal que $T = S^{*}S.$
-}
-
+\exercicio{39} Dê exemplo de uma matriz $A$ tal que $A^2$ é normal, mas $A$ não é normal.
 \solucao{
+Consideremos a matriz:
+\[
+A=\begin{pmatrix}
+0&1\\0&0
+\end{pmatrix}.
+\]
+Então:
+\[
+AA^t=\begin{pmatrix}
+0&1\\0&0
+\end{pmatrix}\begin{pmatrix}
+0&0\\1&0
+\end{pmatrix}=\begin{pmatrix}
+1&0\\0&0
+\end{pmatrix},
+\]
+porém:
+\[
+A^tA=\begin{pmatrix}
+0&0\\1&0
+\end{pmatrix}\begin{pmatrix}
+0&1\\0&0
+\end{pmatrix}=\begin{pmatrix}
+0&0\\0&1
+\end{pmatrix},
+\]
+de modo que $A$ não é normal, mas:
+\[
+A^2=\begin{pmatrix}
+0&0\\1&0
+\end{pmatrix}\begin{pmatrix}
+0&0\\1&0
+\end{pmatrix}=\begin{pmatrix}
+0&0\\0&0
+\end{pmatrix},
+\]
+que é normal.
+}
+
+\exercicio{40} Sejam $A, B \in \m{n}{\mathbb{C}}$ matrizes autoadjuntas. Prove que $A + iB$ é normal se, e somente se,
+$AB = BA$.
+\solucao{
+Temos $A^*=A$ e $B^*=B$, aí:
+\[
+(A+iB)^*=A^*-iB^*=A-iB,
+\]
+aí temos:
+\[
+\begin{array}{cl}
+&(A+iB)^*(A+iB)=(A+iB)(A+iB)^*\\
+\Leftrightarrow&(A-iB)(A+iB)=(A+iB)(A-iB)\\
+\Leftrightarrow&A^2+iAB-iBA+B^2=A^2-iAB+iBA+B^2\\
+\Leftrightarrow&iAB-iBA=-iAB+iBA\\
+\Leftrightarrow&2iAB-2iBA=0\\
+\Leftrightarrow&2i(AB-BA)=0\\
+\Leftrightarrow&AB-BA=0\\
+\Leftrightarrow&AB=BA,
+\end{array}
+\]
+ou seja, $A+iB$ é normal se e somente se $AB=BA$.
+}
+
+\exercicio{41} Sejam $V$ de dimensão finita, $K = \mathbb{C}$ e $T \in \mathcal{L}(V)$ um operador normal. Prove que:
 \dividiritens{
-\task[\pers{a}]
-
-Vamos 
-\task[\pers{b}] $(\Rightarrow)$ Se $T$ é não-negativo (positivo), então $T^{*} = T$ e $\prin{T(v), v} \ge 0$ ($\prin{T(v), v} > 0$), para todo $v \in V.$
-
-Como $T$ é autoadjunto, existe uma base ortonormal $\{e_1, \ldots, e_n\}$ consistindo de autovetores de $T.$ Escrevamos $T(e_i) = \lambda_ie_1.$ Pelo Exercício 25, $\lambda_i$ são reais para $i = 1, \ldots, n.$ Vejamos que $\lambda_i$ não podem ser negativos. Para cada $i,$ temos que
+\task[\pers{a}] $T$ é autoadjunto se, e somente se, todo autovalor de $T$ é um número real.
+\task[\pers{b}] $T$ é unitário se, e somente se, todo autovalor de $T$ é um número complexo de módulo
+igual a $1.$
+\task[\pers{c}] $T$ é o operador nulo se, e somente se, todos os autovalores de $T$ são nulos.
+\task[\pers{d}] $T^* = -T$ se, e somente se, os autovalores de $T$ são nulos ou números complexos imaginários
+puros.
+}
+\solucao{
+Se $K=\mathbb{C}$ e $T$ é um operador normal, então existe uma base ortonormal $B=(e_1,\dots,e_n)$ tal que:
 \[
-0 \le \prin{\textcolor{Green}{T(u_i)}, u_i} =  \prin{\textcolor{Green}{\lambda_i u_i}, u_i} = \lambda_i \prin{u_i, u_i}
+T=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
 \]
+assim:
 \[
-(0 \le \prin{\textcolor{Green}{T(u_i)}, u_i} =  \prin{\textcolor{Green}{\lambda_i u_i}, u_i} = \lambda_i \prin{u_i, u_i})
+T^*=\begin{pmatrix}
+\overline{\lambda_1}&&\\&\ddots&\\&&\overline{\lambda_n}
+\end{pmatrix}.
 \]
-Assim, $\prin{u_i, u_i} \ge 0$ ($\prin{u_i, u_i} > 0$), o que acarreta $\lambda_i \ge 0$ ($\lambda_i > 0$).
-
-
-$(\Leftarrow)$ Se existe $S \in \mathcal{L}(V)$ não-singular tal que $T = S^{*}S,$ então $S(v) \neq 0.$ Logo, $\prin{S(u), S(u)}$ é não-negativo (positivo). Vamos mostrar que os autovalores de $T$ são reais e positivos, o que implica $T$ não-negativo (positivo). 
-
-Para tanto, seja $\lambda$ um autovalor de $T$ e $v$ um autovetor associado. Então, $T(v) = \lambda v.$ Daí, temos que
+\dividiritens{
+\task[\pers{a}] A propriedade de $T$ ser autoadjunto equivale a $T^*=T$, o que equivale a:
 \[
-\prin{\textcolor{RawSienna}{T(v)},v} = \prin{\textcolor{RawSienna}{\lambda v},v} = \lambda \prin{v,v},
+\begin{pmatrix}
+\overline{\lambda_1}&&\\&\ddots&\\&&\overline{\lambda_n}
+\end{pmatrix}=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
 \]
-mas também
+o que equivale a $\overline{\lambda_k}=\lambda_k$ para todo $k$, o que equivale a $\lambda_k$ ser real para todo $k$.
+\task[\pers{b}] A propriedade de $T$ ser unitário equivale a $TT^*=I$, o que equivale a:
 \[
-\prin{\textcolor{Blue}{T}(v),v} = \prin{\textcolor{Blue}{S^{*}S}(v),v} = \prin{S(v), S(v)}
+\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix}\begin{pmatrix}
+\overline{\lambda_1}&&\\&\ddots&\\&&\overline{\lambda_n}
+\end{pmatrix}=\begin{pmatrix}
+1&&\\&\ddots&\\&&1
+\end{pmatrix},
 \]
-Como $\prin{v,v}$ e $\prin{S(v), S(v)}$ são não-negativos (positivos), temos que $\lambda$ é não-negativo (positivo), pois $\lambda = \frac{\prin{S(v), S(v)}}{\prin{v,v}}.$
+o que equivale a:
+\[
+\begin{pmatrix}
+\lambda_1\overline{\lambda_1}&&\\&\ddots&\\&&\lambda_n\overline{\lambda_n}
+\end{pmatrix}=\begin{pmatrix}
+1&&\\&\ddots&\\&&1
+\end{pmatrix},
+\]
+o que equivale a $\lambda_k\overline{\lambda_k}=1$ para todo $k$, o que equivale a $\abs{\lambda_k}^2=1$ para todo $k$, o que equivale a $\abs{\lambda_k}=1$ para todo $k$.
+\task[\pers{c}] A propriedade de $T$ é o operador nulo equivale a:
+\[
+\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix}=\begin{pmatrix}
+0&&\\&\ddots&\\&&0
+\end{pmatrix},
+\]
+o que equivale a $\lambda_k=0$ para todo $k$.
+\task[\pers{d}] A propriedade de que $T^*=-T$ equivale a:
+\[
+\begin{pmatrix}
+\overline{\lambda_1}&&\\&\ddots&\\&&\overline{\lambda_n}
+\end{pmatrix}=-\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
+\]
+que equivale a:
+\[
+\begin{pmatrix}
+\overline{\lambda_1}&&\\&\ddots&\\&&\overline{\lambda_n}
+\end{pmatrix}=\begin{pmatrix}
+-\lambda_1&&\\&\ddots&\\&&-\lambda_n
+\end{pmatrix},
+\]
+o que equivale a $\overline{\lambda_k}=-\lambda_k$ para todo $k$, o que equivale a $\lambda_k$ ser nulo ou imaginário puro para todo $k$.
 }
 }
 
-\textcolor{Red}{Questões Suplementares}
+\exercicio{42}
+Sejam $V$ de dimensão finita, $K = \mathbb{C}$ e $T \in \mathcal{L}(V)$. Mostre que as seguintes afirmações são
+equivalentes:
+\dividiritens{
+\task[\pers{a}] $T$ é normal.
+\task[\pers{b}] $\norm{T(v)} = \norm{T^*(v)}$, para todo $v \in V.$
+\task[\pers{c}] $T = T_1 + iT_2$ onde $T_1, T_2 \in L(V)$ são autoadjuntos e $T_1T_2 = T_2T_1.$
+\task[\pers{d}] Sejam $\lambda \in \mathbb{C}$ e $v \in V$. Então $T(v) = \lambda v$ se, e somente se, $T^*(v) = \overline{\lambda}v.$
+\task[\pers{e}] Existe $E$ base ortonormal de $V$ tal que $[T]_E$ é diagonal.
+\task[\pers{f}] Existe $g \in \mathbb{C}[t]$ tal que $T^* = g(T)$.
+\task[\pers{g}] Todo subespaço de $V$ invariante sob $T$ também é invariante sob $T^*$.
+\task[\pers{h}] $T = PF$ onde $P$ é não negativo, $F$ é unitário e $PF = FP$.
+\task[\pers{i}] $T = \lambda_1E_1 + \dots + \lambda_kE_k$, em que $I = E_1 + \dots + E_k$, $E_iE_j = 0$ se $i \neq j$ e $E^2_i = E_i = E^*_i.$
+}
+\solucao{
+(1) Temos as seguintes equivalências:
+\[
+\begin{array}{rcl}
+T^*T=TT^*&
+\Leftrightarrow&\forall x:T^*T(x)=TT^*(x)\\
+&\Leftrightarrow&\forall x:\forall y:\prin{T^*T(x),y}=\prin{TT^*(x),y}\\
+&\Leftrightarrow&\forall x:\forall y:\prin{T(x),T(y)}=\prin{T^*(x),T^*(y)}.
+\end{array}
+\]
 
-\exercicio{31} Considere o seguinte subespaço de $\mathbb{R}^3:$
+\bigskip
+\noindent
+(2) Se $T$ é normal, então para todo $x$ temos:
+\[
+\prin{T(x),T(x)}=\prin{T^*(x),T^*(x)}\quad\Rightarrow\quad\norm{T(x)}=\norm{T^*(x)}.
+\]
+
+\bigskip
+\noindent
+(3) Se $\forall x:\norm{T(x)}=\norm{T^*(x)}$, então, para $x,y$, então para $a\in\mathbb{C}$ temos:
+\[
+\begin{array}{cl}
+&\norm{T(ax+y)}^2=\norm{T^*(ax+y)}\\&\\\Rightarrow&\prin{T(ax+y),T(ax+y)}=\prin{T^*(ax+y),T^*(ax+y)}\\&\\
+\Rightarrow&\norm{T(ax)}^2+\prin{T(ax),T(y)}+\prin{T(y),T(ax)}+\norm{T(y)}^2\\
+=&\norm{T^*(ax)}^2+\prin{T^*(ax),T^*(y)}+\prin{T^*(y),T^*(ax)}+\norm{T^*(y)}^2\\&\\
+\Rightarrow&\prin{T(ax),T(y)}+\prin{T(y),T(ax)}=\prin{T^*(ax),T^*(y)}+\prin{T^*(y),T^*(ax)}\\&\\
+\Rightarrow&a\prin{T(x),T(y)}+\overline{a}\prin{T(y),T(x)}=a\prin{T^*(x),T^*(y)}+\overline{a}\prin{T^*(y),T^*(x)},
+\end{array}
+\] 
+assim pondo $a=1$ e $a=i$ e simplificando temos:
+\[
+\prin{T(x),T(y)}+\prin{T(y),T(x)}=\prin{T^*(x),T^*(y)}+\prin{T^*(y),T^*(x)}
+\]
+\[
+\prin{T(x),T(y)}-\prin{T(y),T(x)}=\prin{T^*(x),T^*(y)}-\prin{T^*(y),T^*(x)}
+\]
+aí somando as duas equações acima e simplificando temos:
+\[
+\prin{T(x),T(y)}=\prin{T^*(x),T^*(y)};
+\]
+logo $T$ é normal.
+
+\bigskip
+\noindent
+(4) Se $T$ é normal, então, sendo:
+\[
+T_1=\frac{T+T^*}{2},\quad\quad T_2=\frac{T-T^*}{2i},
+\]
+então $T_1$ e $T_2$ são autoadjuntos, $T_1T_2=T_2T_1$ e $T=T_1+iT_2$.
+
+\bigskip
+\noindent
+(5) Se $T = T_1 + iT_2$ onde $T_1, T_2 \in L(V)$ são autoadjuntos e $T_1T_2 = T_2T_1,$ então pelo Exercício 40 podemos inferir que $T$ seja normal.
+
+\bigskip
+\noindent
+(6) Se $T$ é normal, então para $\lambda\in\mathbb{C}$ temos $(T-\lambda I)^*=T^*-\overline{\lambda}I$, aí é fácil ver que o operador $T-\lambda I$ é normal, aí para todo $x$ temos:
+\[
+\norm{(T-\lambda I)(x)}=\norm{(T^*-\overline{\lambda}I)(x)},
+\]
+aí inferimos que:
+\[
+T(x)=\lambda x\Leftrightarrow T^*(x)=\overline{\lambda}x.
+\]
+
+\bigskip
+\noindent
+(7) Provaremos por indução na dimensão de $V$ que para $T\in\mathcal{L}(V)$, se para todo $\lambda\in\mathbb{C}$ e $x\in V$ tivermos:
+\[
+T(x)=\lambda x\Leftrightarrow T^*(x)=\overline{\lambda}x,
+\]
+então existirá uma base ortonormal $B$ tal que $[T]_B$ seja diagonal. De fato, se $V\neq 0$, então existe um autovalor $\lambda$ de $T$, aí consideremos $W=\Ker(T-\lambda I)$, então para $x\in W$ temos $T(x)=\lambda x$, aí:
+\[
+T(T(x))=T(\lambda x)=\lambda T(x),
+\]
+de modo que $T(x)\in W$, mas $T^*(x)=\overline{\lambda}x$, aí:
+\[
+TT^*(x)=T(\overline{\lambda}x)=\overline{\lambda}T(x)=\overline{\lambda}\lambda x=\lambda\overline{\lambda}x=\lambda T^*(x),
+\]
+de modo que $T^*(x)\in W$; logo $W$ é $T$-invariante e $T^*$-invariante, assim $W^\perp$ é $T$-invariante e $T^*$-invariante, de modo que:
+\[
+(T\upharpoonright_{W^\perp})^*=T^*\upharpoonright_{W^\perp},
+\]
+aí para todo $\lambda\in\mathbb{C}$ e $x\in W^\perp$ temos:
+\[
+T\upharpoonright_{W^\perp}(x)=\lambda x\Leftrightarrow(T\upharpoonright_{W^\perp})^*(x)=\overline{\lambda}x,
+\]
+mas $\dim(W^\perp)<\dim(V)$, aí, por hipótese de indução, existe uma base ortonormal $D$ de $W^\perp$ tal que $[T\upharpoonright_{W^\perp}]_D$ seja diagonal, além disso, se $C$ é uma base ortonormal qualquer de $W$, então é fácil ver que $[T\upharpoonright_W]_C$ é diagonal, aí, se $B=C\cup D$, então $B$ é base ortonormal de $V$ e $[T]_B$ é diagonal.
+
+\bigskip
+\noindent
+(8) Se existe uma base ortonormal $B$ tal que $[T]_B$ seja diagonal, digamos:
+\[
+[T]_B=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
+\]
+então:
+\[
+[T^*]_B=\begin{pmatrix}
+\overline{\lambda_1}&&\\&\ddots&\\&&\overline{\lambda_n}
+\end{pmatrix},
+\]
+mas pelo polinômio de interpolação de Lagrange existe um polinômio $g$ tal que para todo $i$ tenhamos $g(\lambda_i)=\overline{\lambda_i}$, assim:
+\[
+[g(T)]_B=\begin{pmatrix}
+g(\lambda_1)&&\\&\ddots&\\&&g(\lambda_n)
+\end{pmatrix}=\begin{pmatrix}
+\overline{\lambda_1}&&\\&\ddots&\\&&\overline{\lambda_n}
+\end{pmatrix}=[T^*]_B,
+\]
+aí $T^*=g(T)$.
+
+\bigskip
+\noindent
+(9) Se existe um polinômio $g$ tal que $T^*=g(T)$, então para todo subespaço $W$, se $W$ é $T$-invariante, então para todo $x\in W$, por indução podemos mostrar que para todo $k$ temos $T^k(x)\in W$, aí tomando uma combinação linear apropriada de $(x,T(x),T^2(x),\dots)$ obtemos $g(T)(x)\in W$; logo $W$ é $g(T)$-invariante, aí $W$ é $T^*$-invariante.
+
+\bigskip
+\noindent
+(10) Mostraremos por indução em $\dim(V)$ que, para todo $T\in\mathcal{L}(V)$, se todo subespaço $T$-invariante é $T^*$-invariante, então existirá uma base ortonormal $B$ tal que $[T]_B$ seja diagonal. De fato, se $V\neq 0$, então existe um autovalor $\lambda$ de $T$, aí consideremos $W=\Ker(T-\lambda I)$, então para $x\in W$ temos $T(x)=\lambda x$, aí:
+\[
+T(T(x))=T(\lambda x)=\lambda T(x),
+\]
+de modo que $T(x)\in W$; logo $W$ é $T$-invariante, aí $W$ é $T^*$-invariante, assim $W^\perp$ é $T$-invariante e $T^*$-invariante, de modo que:
+\[
+(T\upharpoonright_{W^\perp})^*=T^*\upharpoonright_{W^\perp},
+\]
+aí todo subespaço $T\upharpoonright_{W^\perp}$-invariante de $W^\perp$ é $(T\upharpoonright_{W^\perp})^*$-invariante, mas $\dim(W^\perp)<\dim(V)$, aí, por hipótese de indução, existe uma base ortonormal $D$ de $W^\perp$ tal que $[T\upharpoonright_{W^\perp}]_D$ seja diagonal, além disso, se $C$ é uma base ortonormal qualquer de $W$, então é fácil ver que $[T\upharpoonright_W]_C$ é diagonal, assim, se $B=C\cup D$, então $B$ é base ortonormal de $V$ e $[T]_B$ é diagonal.
+
+\bigskip
+\noindent
+(11) Se existe uma base ortonormal $B$ tal que:
+\[
+T=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix},
+\]
+então para $i$ seja $\lambda_i=\abs{\lambda_i}\mu_i$ com $\abs{\mu_i}=1$, aí sejam:
+\[
+P=\begin{pmatrix}
+\abs{\lambda_1}&&\\&\ddots&\\&&\abs{\lambda_n}
+\end{pmatrix},\quad\quad F=\begin{pmatrix}
+\mu_1&&\\&\ddots&\\&&\mu_n
+\end{pmatrix},
+\]
+então $P$ é não negativo, $F$ é unitário e $PF=FP$.
+
+\bigskip
+\noindent
+(12) Se $T=PF$ em que $P$ é não negativo e $F$ é unitário e $PF=FP$, então:
+\[
+T^*=(PF)^*=F^*P=F^{-1}P,
+\]
+aí é fácil ver que $TT^*=T^*T$, aí $T$ é normal.
+
+\bigskip
+\noindent
+(13) Se existe base ortonormal $B$ tal que $T$ seja diagonal, então sejam $\lambda_1,\dots,\lambda_n$ os autovalores, aí para todo $i$ seja $B_i=B\cap\Ker(T-\lambda_iI)$ e seja $E_i$ a projeção ortogonal de $V$ sobre $\Ker(T-\lambda_iI)$; então é fácil ver que $T = \lambda_1E_1 + \dots + \lambda_kE_k$, $I = E_1 + \dots + E_k$, $E_iE_j = 0$ se $i \neq j$ e $E^2_i = E_i = E^*_i.$
+
+\bigskip
+\noindent
+(14) Se $T = \lambda_1E_1 + \dots + \lambda_kE_k$, em que $I = E_1 + \dots + E_k$, $E_iE_j = 0$ se $i \neq j$ e $E^2_i = E_i = E^*_i,$ então é fácil ver que $TT^*$ e $T^*T$ são ambos iguais a:
+\[
+\abs{\lambda_1}E_1+\dots+\abs{\lambda_n}E_n,
+\]
+assim $T$ é normal.
+}
+
+\exercicio{43} Seja $V$ um $\mathbb{R}$-espaço vetorial de dimensão finita. Seja $T \in\mathcal{L}(V)$ um operador simétrico de
+traço nulo. Mostre que existe uma base ortonormal $B$ de $V$ tal que todos os elementos da
+diagonal principal da matriz de $T$ na base $B$ são nulos.
+\solucao{
+Utilizaremos indução na dimensão de $V$. Se $T$ é um operador simétrico, então existe uma base ortonormal $B=(e_1,\dots,e_n)$ tal que:
+\[
+[T]_B=\begin{pmatrix}
+\lambda_1&&\\&\ddots&\\&&\lambda_n
+\end{pmatrix}
+\]
+e aí:
+\[
+\lambda_1+\dots+\lambda_n=0.
+\]
+Se $T\neq 0$, então existem $i$ e $j$ tais que $\lambda_i<0$ e $\lambda_j>0$, aí seja:
+\[
+v=\sqrt{\lambda_j}e_i+\sqrt{-\lambda_i}e_j,
+\]
+então:
+\[
+T(v)=\lambda_i\sqrt{\lambda_j}e_i+\lambda_j\sqrt{-\lambda_i}e_j,
+\]
+de modo que $\prin{T(v),v}=0$, aí existem $u_3,\dots,u_n$ tais que:
+\[
+C=(v,T(v),u_3,\dots,u_n)
+\]
+seja uma base ortonormal de $V$, de modo que temos uma matriz da forma:
+\[
+[T]_C=\begin{pmatrix}
+0&X\\Y&Z
+\end{pmatrix}
+\]
+aí o traço de $Z$ é nulo, assim, por hipótese de indução, existe matriz ortogonal $P$ tal que todas as entradas da diagonal principal de $P^tZP$ valham $0$, aí:
+\[
+\begin{pmatrix}
+1&0\\0&P
+\end{pmatrix}
+\]
+é uma matriz ortogonal e todas as entradas da diagonal principal da matriz:
+\[
+\begin{pmatrix}
+1&0\\0&P
+\end{pmatrix}^t\begin{pmatrix}
+0&X\\Y&Z
+\end{pmatrix}\begin{pmatrix}
+1&0\\0&P
+\end{pmatrix}=\begin{pmatrix}
+0&XP\\P^tY&P^tZP
+\end{pmatrix}
+\]
+valem $0$.
+}
+
+\exercicio{44} Seja $V = \mathbb{R}^4$ com o produto interno usual. Seja $T \in\mathcal{L}(V)$ um operador ortogonal tal que $T$
+admite apenas $1$ autovalor real e ele é positivo. Determine a forma racional de $T$ em função
+de $1$ parâmetro.
+\solucao{
+Como $T$ é ortogonal, então $T$ é normal, aí temos as seguintes possibilidades para a representação canônica do operador $T$:
+\begin{itemize}
+\item
+\[
+\begin{pmatrix}
+a&&&\\&b&&\\&&c&\\&&&d
+\end{pmatrix}
+\]
+com $a,b,c,d$ reais quaisquer.
+\item
+\[
+\begin{pmatrix}
+a&0&&\\0&b&&\\&&s\cos\varphi&-s\sin\varphi\\&&s\sin\varphi&s\cos\varphi
+\end{pmatrix}
+\]
+com $a,b$ reais quaisquer, $s>0$ e $\varphi\in(-\pi,\pi)\setminus\{0\}$.
+\item
+\[
+\begin{pmatrix}
+r\cos\theta&-r\sin\theta&&\\r\sin\theta&r\cos\theta&&\\&&s\cos\varphi&-s\sin\varphi\\&&s\sin\varphi&s\cos\varphi
+\end{pmatrix}
+\]
+com $r,s>0$ e $\theta,\varphi\in(-\pi,\pi)\setminus\{0\}$.
+\end{itemize}
+Como $T$ deve ter algum autovalor, excluímos a terceira possibilidade.
+
+\dividiritens{
+\task[\pers{a}] Para a primeira possibilidade:
+\[
+T=\begin{pmatrix}
+a&&&\\&b&&\\&&c&\\&&&d
+\end{pmatrix}
+\]
+com $a,b,c,d$ reais, como deve haver um único autovalor real e ele deve ser positivo, então $a=b=c=d>0$ e a ortogonalidade, que implica $TT^t=I$, nos faz inferir que $a=b=c=d=1$, de modo que:
+\[
+T=\begin{pmatrix}
+1&&&\\&1&&\\&&1&\\&&&1
+\end{pmatrix}
+\]
+assim:
+\[
+p_T(x)=(x-1)^4,\quad\quad m_T(x)=(x-1),
+\]
+de modo que a forma racional é:
+\[
+R=\begin{pmatrix}
+1&&&\\&1&&\\&&1&\\&&&1
+\end{pmatrix}.
+\]
+
+\task[\pers{b}] Para a segunda possibilidade:
+\[
+\begin{pmatrix}
+a&0&&\\0&b&&\\&&s\cos\varphi&-s\sin\varphi\\&&s\sin\varphi&s\cos\varphi
+\end{pmatrix}
+\]
+com $a,b$ reais quaisquer, $s>0$ e $\varphi\in(-\pi,\pi)\setminus\{0\}$, como deve haver um único autovalor real e ele deve ser positivo, então $a=b>0$ e a ortogonalidade, que implica $TT^t=I$, nos faz inferir que $a=b=1$ e $s=1$, de modo que:
+\[
+T=\begin{pmatrix}
+1&&&\\&1&&\\&&\cos\varphi&-\sin\varphi\\&&\sin\varphi&\cos\varphi
+\end{pmatrix}
+\]
+assim:
+\[
+p_T(x)=(x-1)^2(x^2-2x\cos\varphi+1),\quad\quad m_T(x)=(x-1)(x^2-2x\cos\varphi+1),
+\]
+de modo que a forma racional é:
+\[
+R=\begin{pmatrix}
+0&&1&\\1&0&-1-2\cos\varphi&\\&1&1+2\cos\varphi&\\&&&1
+\end{pmatrix}.
+\]
+}
+}
+
+\exercicio{45} Seja $A \in M_5(\mathbb{R})$ uma matriz ortogonal com polinômio minimal $m_A(t) = (t^2 -1)(t^2 +t+1).$ Determine todas as possibilidades para a forma racional de $A$ e as correspondentes formas
+canônicas de operadores ortogonais de $A$.
+\solucao{
+Como a dimensão é $5$ e $m_A(t) = (t-1)(t+1)(t^2 +t+1)$, então as possibilidade para o polinômio característico são:
+\begin{itemize}
+\item $p_A(t)=(t-1)^2(t+1)(t^2+t+1)$.
+\item $p_A(t)=(t-1)(t+1)^2(t^2+t+1)$.
+\end{itemize}
+A primeira possibilidade nos fornece as seguintes formas:
+\[
+R=\begin{pmatrix}
+0&&&1&\\1&0&&1&\\&1&0&&\\&&1&-1&\\&&&&1
+\end{pmatrix},\quad\quad Q=\begin{pmatrix}
+1&&&&\\&1&&&\\&&-1&&\\&&&-\frac{1}{2}&-\frac{\sqrt{3}}{2}\\&&&\frac{\sqrt{3}}{2}&-\frac{1}{2}
+\end{pmatrix}.
+\]
+A segunda possibilidade nos fornece as seguintes formas:
+\[
+R=\begin{pmatrix}
+0&&&1&\\1&0&&1&\\&1&0&&\\&&1&-1&\\&&&&-1
+\end{pmatrix},\quad\quad Q=\begin{pmatrix}
+1&&&&\\&-1&&&\\&&-1&&\\&&&-\frac{1}{2}&-\frac{\sqrt{3}}{2}\\&&&\frac{\sqrt{3}}{2}&-\frac{1}{2}
+\end{pmatrix}.
+\]
+}
+
+\exercicio{46} Seja $V$ um espaço vetorial complexo, de dimensão finita $n$. Seja $T : V \rightarrow V$ um operador
+linear tal que $T^* = T^k$, para algum inteiro $k > 1$. Mostre que existe uma base ortonormal de
+$V$ tal que a matriz de $T$ nessa base é:
+\[
+\begin{pmatrix}
+\lambda_1&&0\\&\ddots&\\0&&\lambda_n
+\end{pmatrix},
+\]
+onde, para cada $j = 1, \dots, n$, ou $\lambda_j = 0$ ou $\lambda_j$ é uma raiz $k + 1$-ésima da unidade.
+\solucao{
+Como $T^*=T^k$, então $T$ é normal, aí existe uma base ortonormal $B=(e_1,\dots,e_n)$ tal que:
+\[
+T=\begin{pmatrix}
+\lambda_1&&0\\&\ddots&\\0&&\lambda_n
+\end{pmatrix},
+\]
+aí:
+\[
+T^*=\begin{pmatrix}
+\overline{\lambda_1}&&0\\&\ddots&\\0&&\overline{\lambda_n}
+\end{pmatrix},
+\]
+e também:
+\[
+T^k=\begin{pmatrix}
+\lambda_1^k&&0\\&\ddots&\\0&&\lambda_n^k
+\end{pmatrix},
+\]
+assim:
+\[
+\begin{pmatrix}
+\overline{\lambda_1}&&0\\&\ddots&\\0&&\overline{\lambda_n}
+\end{pmatrix}=\begin{pmatrix}
+\lambda_1^k&&0\\&\ddots&\\0&&\lambda_n^k
+\end{pmatrix},
+\]
+assim para todo $l$ temos $\overline{\lambda_l}=\lambda_l^k$, aí $\abs{\lambda_l}=\abs{\lambda_l}^k$, aí $\abs{\lambda_l}=0$ ou $\abs{\lambda_l}^{k-1}=1$, aí $\lambda_l=0$ ou $\abs{\lambda_l}=1$, aí se $\lambda_l\neq 0$ então $\abs{\lambda_l}=1$, aí $\overline{\lambda_l}=\lambda_l^{-1}$, aí $\lambda_l^{-1}=\lambda^k$, aí $\lambda_l^{k+1}=1$.
+}
+
+\bigskip
+\noindent
+\textbf{\textcolor{Red}{Questões Suplementares}}
+
+\exercicio{47} Considere o seguinte subespaço de $\mathbb{R}^3:$
 \[
 W = \{ (x,y,z) \in \mathbb{R}^3 |x + 2y - 3z = 0, x - 2y + z = 0 \}
 \]
@@ -7143,7 +8299,7 @@ W = \{ (x,y,z) \in \mathbb{R}^3 |x + 2y - 3z = 0, x - 2y + z = 0 \}
 \task[\pers{b}] Verifique que $\mathbb{R}^3 = W \oplus W^{\perp}.$ 
 }
 \solucao{}
-\exercicio{32} Seja $\mathcal{F}$ o espaço vetorial das funções reais com o produto interno usual, e considere os conjuntos
+\exercicio{48} Seja $\mathcal{F}$ o espaço vetorial das funções reais com o produto interno usual, e considere os conjuntos
 %https://www.ime.unicamp.br/~marcia/AlgebraLinear/Arquivos%20PDF/exemplos_subespacos.pdf
 \[
 S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-x) \}
@@ -7158,7 +8314,7 @@ S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-
 
 \solucao{}
 
-\exercicio{33} (Decomposição QR) A \emph{Decomposição QR} de uma matriz $A \in \mathcal{M}_n(K)$ consiste em escrever a matriz $A$ como um produto $QR,$ onde $Q$ é uma matriz ortogonal (se $K = \mathbb{R}$) ou unitária (se $K = \mathbb{C}$) e $R$ é uma matriz triangular superior. Tal decomposição é importante para o método dos mínimos quadrados e é base para algoritmos computacionais de cálculo de autovalores de uma matriz. 
+\exercicio{49} (Decomposição QR) A \emph{Decomposição QR} de uma matriz $A \in \mathcal{M}_n(K)$ consiste em escrever a matriz $A$ como um produto $QR,$ onde $Q$ é uma matriz ortogonal (se $K = \mathbb{R}$) ou unitária (se $K = \mathbb{C}$) e $R$ é uma matriz triangular superior. Tal decomposição é importante para o método dos mínimos quadrados e é base para algoritmos computacionais de cálculo de autovalores de uma matriz. 
 \dividiritens{
 \task[\pers{a}] Prove que toda matriz $A \in \mathcal{M}_n(K)$ admite uma decomposição $QR.$
 \task[\pers{b}] Encontre a decomposição QR das seguintes matrizes:
@@ -7175,7 +8331,7 @@ S_p = \{ f \mid f(x) = f(-x) \} \quad \mbox{e} \quad S_i = \{ f \mid f(x) = -f(-
 %https://www.ufrgs.br/reamat/AlgebraLinear/livro/s13-o_processo_de_ortogonalizax00e7x00e3o_de_gramx2013schmidt.html
 \solucao{}
 
-\exercicio{34} Considere  $T_2 \in \mathcal{L}(\mathbb{R}^2)$ e $T_3 \in \mathcal{L}(\mathbb{R}^3),$ dadas respectivamente por
+\exercicio{50} Considere  $T_2 \in \mathcal{L}(\mathbb{R}^2)$ e $T_3 \in \mathcal{L}(\mathbb{R}^3),$ dadas respectivamente por
 \[
 T_2(x,y) = (x+3y, 3x+2y) \quad \mbox{e} \quad T_3(x,y,z) = (2x+7y+8z, 7x+3y+7z, 8x+7y+5z.
 \]
@@ -7191,7 +8347,7 @@ Sabe-se que $\mathcal{B}_2 = \{ (1,1), (1,0) \}$ é uma base para $\mathbb{R}^2,
 }
 \solucao{}
 
-\exercicio{35} Suponha que $T$ é um operador normal em $V$ e $3$ e $4$ são seus autovalores. Prove que existe um vetor $v \in V$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5.$
+\exercicio{51} Suponha que $T$ é um operador normal em $V$ e $3$ e $4$ são seus autovalores. Prove que existe um vetor $v \in V$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5.$
 \solucao{Sejam $u$ e $v$ os autovetores de $T$ com respeito aos autovalores $3$ e $4,$ respectivamente. Então,
 \[
 T(u) = 3u \quad \mbox{e} \quad T(w) = 4w.
@@ -7208,12 +8364,14 @@ e também
 \]
 Tomando $v = u + w,$ obtemos um vetor $v$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5,$ como pedido pelo enunciado.
 }
+
 \newpage
+
 \section{\textcolor{Floresta}{Lista 5,5}}
 
 \subsection*{Espaços com produto interno}
 
-   \exercicio{1} Determine quais das funções $\prin{,} \colon \mathbb{R}^4 \to \mathbb{R}$ abaixo definem um produto interno em $\mathbb{R}^4:$ 
+\exercicio{1} Determine quais das funções $\prin{,} \colon \mathbb{R}^4 \to \mathbb{R}$ abaixo definem um produto interno em $\mathbb{R}^4:$ 
 \dividiritens{
 \task[\pers{a}] $\prin{(a,b,c,d), (x,y,z,w)} = ax + 2by + 5cz + dw;$
 \task[\pers{b}] $\prin{(a,b,c,d), (x,y,z,w)} = ax - by + cz + 3dw;$
@@ -8430,12 +9588,12 @@ que $(M_{\gamma})^{*} = M_{\overline{\gamma}}.$
 
 \solucao{
 \dividiritens{
-\task[\pers{a}] Vaamos verificar os axiomas de produto interno:
+\task[\pers{a}] Vamos verificar os axiomas de produto interno:
 \begin{itemize}
     \item[$\clubsuit$] $\prin{\alpha+\beta, \gamma} = \prin{\alpha, \gamma} + \prin{\beta, \gamma}.$
     Sejam $\alpha = \alpha_1 + i \alpha_2, \beta = \beta_1 + \beta_2 i, \gamma = \gamma_1 + \gamma_2 i \in \mathbb{C}.$ Então
     \[
-    \prin{\alpha+\beta, \gamma} =  \mbox{Re}((\alpha+\beta) \overline{\gamma}) =  \mbox{Re}((\alpha_1 + i \alpha_2+\beta_1 + \beta_2 i) \overline{ \gamma_1 + \gamma_2 i}) =  \mbox{Re}(((\alpha_1 + \beta_1) + i (\alpha_2+\beta_2))(\gamma_1 - \gamma_2 i))
+    \prin{\alpha+\beta, \gamma} =  \mbox{Re}((\alpha+\beta) \overline{\gamma}) =  \mbox{Re}((\alpha_1 + i \alpha_2+\beta_1 + \beta_2 i) \overline{ \gamma_1 + \gamma_2 i}) = \]\[ \mbox{Re}(((\alpha_1 + \beta_1) + i (\alpha_2+\beta_2))(\gamma_1 - \gamma_2 i)) = (\alpha_1 + \beta_1)\gamma_1 + (\alpha_2+\beta_2)\gamma_2 = 
     \]
     \item[$\textcolor{Red}{\varheart}$]
     \item[$\spadesuit$]
