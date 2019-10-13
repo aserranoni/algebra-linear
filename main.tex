@@ -2704,7 +2704,7 @@ As formas racionais, seja para divisores elementares ou para fatores invariantes
 
 \medskip
 \noindent
-Quando o polinômio minimal $m_T(x)$ de $T$ se decompõe sobre $K$, ou seja:
+Quando $V$ tem dimensão finita e o polinômio minimal $m_T(x)$ de $T$ se decompõe sobre $K$, ou seja:
 \[
 m_T(x)=(x-c_1)^{r_1}\dots(x-c_k)^{r_k},
 \]
@@ -2717,7 +2717,7 @@ têm a forma:
 \[
 B_{i,j}=(v_{i,j},T(v_{i,j}),\dots,T^{d_{i,j}-1}(v_{i,j})),
 \]
-em que $d_{i,j}=\mathrm{deg}(p_i)\cdot(e_{i,j})$. Com essa base, toda complexidade no final quando tentamos expressar:
+em que $d_{i,j}=\mathrm{deg}(p_i)\cdot e_{i,j}$. Com essa base, toda complexidade no final quando tentamos expressar:
 \[
 T(T^{d_{i,j}-1}(v_{i,j}))=T^{d_{i,j}}(v_{i,j})
 \]
@@ -2735,7 +2735,7 @@ então qualquer sequência da forma:
 \]
 em que $\mathrm{deg}(p_k)=k$ será uma base de $Z(v_{i,j},T)$. Em particular, quando $m_T(x)$ se decompõe sobre $K$, os divisores elementares são:
 \[
-p_i^{e_{i,j}}(x)=(x-c_i)^{e^{i,j}}
+p_i^{e_{i,j}}(x)=(x-c_i)^{e_{i,j}}
 \]
 e assim a sequência:
 \[
@@ -2745,22 +2745,13 @@ C_{i,j}=(v_{i,j},(T-c_iI)(v_{i,j}),\dots,(T-c_iI)^{e_{i,j}-1}(v_{i,j}))
 
 \medskip
 \noindent
-Se temporariamente denotarmos o $k$-ésimo vetor da base $C_{i,j}$ por $b_k$, então para $k=0,\dots,e_{i,j}-2$ temos:
+Para $0\leq k<e_{i,j}$ temos:
 \[
 \begin{array}{rcl}
-T(b_k)&=&T((T-c_iI)^k(v_{i,j}))\\
+T((T-c_iI)^k(v_{i,j}))
 &=&(T-c_iI+c_iI)((T-c_iI)^k(v_{i,j}))\\
-&=&(T-c_iI)^{k+1}(v_{i,j})+c_i(T-c_i)^k(v_{i,j})\\
-&=&b_{k+1}+c_ib_k.
+&=&(T-c_iI)^{k+1}(v_{i,j})+c_i(T-c_i)^k(v_{i,j}).
 \end{array}
-\]
-Para $k=e_{i,j}-1$, usando o fato de que:
-\[
-(T-c_iI)^{k+1}(v_{i,j})=(T-c_iI)^{e_{i,j}}(v_{i,j})=0,
-\]
-obtemos:
-\[
-T(b_{e_{i,j}-1})=c_ib_{e_{i,j}-1}.
 \]
 Logo, para esta base, a complexidade se espalha melhor, e a matriz de $T\upharpoonright_{Z(v_{i,j},T)}$ em relação a $C_{i,j}$ é a matriz de tamanho $e_{i,j}$:
 \[
@@ -2773,7 +2764,7 @@ Assim apresentaremos o conceito das formas de Jordan.
 \begin{definicao}
 Um \textbf{bloco de Jordan} é uma matriz do tipo:
 \[
-J(c,n)=\begin{pmatrix}
+J_{c,n}=\begin{pmatrix}
 c&0&\ldots&\ldots&0\\1&c&\ddots&&\vdots\\0&1&\ddots&\ddots&\vdots\\\vdots&\ddots&\ddots&\ddots&0\\0&\ldots&0&1&c
 \end{pmatrix},
 \]
@@ -2784,14 +2775,14 @@ em que $c\in K$ e a matriz tem tamanho $n$. Dizemos que uma matriz está na \tex
 Com a discussão anterior, então temos as conhecidas formas de Jordan.
 
 \begin{teorema}[Forma de Jordan]
-Suponhamos que o polinômio minimal de $T\in\mathcal{L}(V)$ se decomponha sobre o corpo $K$, ou seja:
+Seja $V$ um espaço vetorial de dimensão finita sobre um corpo $K$ e seja $T\in\mathcal{L}(V)$. Suponhamos que o polinômio minimal de $T\in\mathcal{L}(V)$ se decomponha sobre o corpo $K$, ou seja:
 \[
 m_T(x)=(x-c_1)^{e_1}\dots(x-c_n)^{e_n},
 \]
 em que $c_i\in K$. Então existe uma base $B$ tal que a matriz de $T$ seja:
 \[
 \begin{pmatrix}
-J(c_1,e_{1,1})&&&&&&\\&\ddots&&&&&\\&&J(c_1,e_{1,k_1})&&&&\\&&&\ddots&&&\\&&&&J(c_n,e_{n,1})&&\\&&&&&\ddots&\\&&&&&&J(c_n,e_{n,k_n})
+J_{c_1,e_{1,1}}&&&&&&\\&\ddots&&&&&\\&&J_{c_1,e_{1,k_1}}&&&&\\&&&\ddots&&&\\&&&&J_{c_n,e_{n,1}}&&\\&&&&&\ddots&\\&&&&&&J_{c_n,e_{n,k_n}}
 \end{pmatrix},
 \]
 em que os polinômios $(x-c_i)^{e_{i,j}}$ são os divisores elementares de $T$.
@@ -2803,7 +2794,111 @@ Se $K$ é algebricamente fechado, então, a menos de ordem dos blocos na diagona
 
 \subsection{Forma de Jordan Generalizada}
 
+Vimos que, para $T$ possuir uma forma canônica de Jordan, o polinômio minimal $m_T(x)$ deve ser um produto de fatores lineares. Agora apresentaremos uma forma canônica de Jordan generalizada para lidarmos com as demais situações. Começaremos com o caso de um espaço vetorial de dimensão finita primário para um operador linear $T$.
+
+\begin{definicao}
+Seja $p$ polinômio mônico de grau $d$. Um
+\textbf{bloco de Jordan generalizado} é uma matriz do tipo:
+\[
+\mathfrak{J}_{p,n} =
+\begin{pmatrix}
+C[p]&0&\ldots&0&0\\N&C[p]&\ldots&0&0\\0&N&\ldots&0&0\\\vdots&\vdots&\ddots&\vdots&\vdots\\0&0&\ldots&C[p]&0\\0&0&\ldots&N&C[p]
+\end{pmatrix},
+\]
+em que:
+\[
+N=\begin{pmatrix}
+0&0&\ldots&0&1\\0&0&\ldots&0&0\\\vdots&\vdots&\ddots&\vdots&\vdots\\0&0&\ldots&0&0\\0&0&\ldots&0&0\\
+\end{pmatrix},
+\]
+que é a matriz valendo $1$ na entrada $(1,d)$ e $0$ nas outras entradas.
+Dizemos que $\mathfrak{J}_{p,n}$ é \textbf{irredutível} se e só se $p$ é um polinômio irredutível. Dizemos que uma matriz está na \textbf{forma de Jordan generalizada} se e só se é uma soma direta de blocos de Jordan generalizados \emph{irredutíveis}. Note, em particular, que o bloco de Jordan usual $J_{c,n}$ é a mesma coisa que o bloco de Jordan generalizado irredutível $\mathfrak{J}_{x-c,n}$.
+\end{definicao}
+
+\begin{proposicao}
+Seja $V$ um espaço vetorial de dimensão finita sobre um corpo $K$ e seja $T\in\mathcal{L}(V)$, e assuma
+que $m_T=p^n$, em que $p$ é um polinômio de grau $d$, e que $T$ tenha um vetor cíclico $v$. Defina $B$ assim:
+\[
+B = \left(v,\dots,T^{d-1}(v), p(T)(v),...,T^{d-1}p(T)(v),\dots,p(T)^{n-1}(v),\dots,T^{d-1}p(T)^{n-1}(v)\right).
+\]
+Então $B$ é uma base de $V$ sobre $K$ e $[T]_B=\mathfrak{J}_{p,n}$.
+\end{proposicao}
+\begin{proof}
+Seja:
+\[
+p(x)=x^d+a_{d-1}x^{d-1}+\dots+a_1x+a_0.
+\]
+Para $0\leq k<n$ temos:
+\[
+\begin{array}{rcl}
+T(T^{d-1}p(T)^k(v))
+&=&T^dp(T)^k(v)\\
+&=&\left(p(T)-\left(a_{d-1}T^{d-1}+\dots+a_1T+a_0\right)\right)p(T)^k(v)\\
+&=&\left(p(T)\right)^{k+1}(v)-\left(a_{d-1}T^{d-1}p(T)^k(v)+\dots+a_1Tp(T)^k(v)+a_0p(T)^k(v)\right).
+\end{array}
+\]
+Logo é fácil ver que $[T]_B=\mathfrak{J}_{p,n}$.
+\end{proof}
+
+\begin{teorema}[Forma de Jordan Generalizada]
+Seja $V$ um espaço vetorial de dimensão finita sobre um corpo $K$ e seja $T\in\mathcal{L}(V)$.
+Então existe uma base $B$ tal que a matriz de $T$ seja:
+\[
+\mathfrak{J}=\begin{pmatrix}
+\mathfrak{J}_{p_1,e_{1,1}}&&&&&&\\&\ddots&&&&&\\&&\mathfrak{J}_{p_1,e_{1,k_1}}&&&&\\&&&\ddots&&&\\&&&&\mathfrak{J}_{p_n,e_{n,1}}&&\\&&&&&\ddots&\\&&&&&&\mathfrak{J}_{p_n,e_{n,k_n}}
+\end{pmatrix},
+\]
+em que os polinômios $p_i^{e_{i,j}}$ são os divisores elementares de $T$.
+\end{teorema}
+
 \subsection{Forma de Jordan Real}
+
+Agora seja $K=\mathbb{R}$ o corpo dos números reais. Produziremos uma outra versão
+da forma canônica de Jordan que é válida para todas as matrizes
+com entradas em $\mathbb{R}$. Essa forma canônica será de alguma forma diferente da
+forma de Jordan generalizada.
+
+\medskip
+\noindent
+Lembremo-nos de que um operador linear $T\in\mathcal{L}(V)$, em que
+$V$ é um espaço vetorial de dimensão finita sobre um corpo $K$, tem uma forma canônica de Jordan se e somente se o polinômio minimal $m_T$ é um produto de fatores lineares, não necessariamente distintas. Essa condição
+será satisfeita para todos os polinômios sobre $K$ se e somente se o corpo $K$ for
+algebricamente fechado. O corpo $\mathbb{C}$ dos números complexos é algebricamente fechado
+(embora não apresentaremos uma prova desse fato nestas notas de aula), mas o corpo
+$\mathbb{R}$ dos números reais não é. De fato, $x^2+1$ é um polinômio sobre $\mathbb{R}$ que não possui raízes em $\mathbb{R}$. Portanto, nenhum operador linear $T\in\mathcal{L}_{\mathbb{R}}(\mathbb{R}^2)$
+tal que $m_T(x) = x^2 + 1$ pode possuir uma forma canônica de Jordan. Não obstante, há uma variante bem simples da forma canônica de Jordan que é válida sobre $\mathbb{R}$ e dá conta da natureza especial de $\mathbb{R}$ e de sua relação com os números complexos.
+
+\begin{definicao}
+Um
+\textbf{bloco de Jordan real} é um bloco de Jordan usual ou uma matriz do tipo:
+\[
+J_{a+bi,n} =
+\begin{pmatrix}
+C_{a+bi}&0&\ldots&0&0\\I&C_{a+bi}&\ldots&0&0\\0&I&\ldots&0&0\\\vdots&\vdots&\ddots&\vdots&\vdots\\0&0&\ldots&C_{a+bi}&0\\0&0&\ldots&I&C_{a+bi}
+\end{pmatrix},
+\]
+em que $a$ e $b$ são reais com $b\neq 0$ e:
+\[
+C_{a+bi}=\begin{pmatrix}
+a&-b\\b&a
+\end{pmatrix}.
+\]
+Dizemos que uma matriz está na \textbf{forma de Jordan real} se e só se é uma soma direta de blocos de Jordan reais.
+\end{definicao}
+
+\begin{proposicao}
+Seja $V$ um espaço vetorial de dimensão finita sobre $\mathbb{R}$ e seja $T\in\mathcal{L}(V)$, e assuma
+que:
+\[
+m_T(x)=\left((x-a)^2+b^2\right)^n,
+\]
+em que $a$ e $b$ são reais e $b\neq 0$, e que $T$ tenha um vetor cíclico $v$. Então existe uma base $B$ de $V$ sobre $\mathbb{R}$ tal que $[T]_B=J_{a+bi,n}$.
+\end{proposicao}
+
+\begin{teorema}[Forma de Jordan Real]
+Seja $V$ um espaço vetorial de dimensão finita sobre $\mathbb{R}$ e seja $T\in\mathcal{L}(V)$.
+Então existe uma base $B$ tal que a matriz de $T$ seja uma soma direta de blocos de Jordan reais.
+\end{teorema}
 
 \section{Espaços Indecomponíveis}
 
