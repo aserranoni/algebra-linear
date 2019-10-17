@@ -6197,9 +6197,132 @@ J= \left[\begin{array}{cc:c:c:c:c}
 }
 }
 \begin{exercicio}
-Considere $J_n(\lambda)$ o bloco de Jordan de ordem $n$ associado ao autovalor $\lambda.$
-\end{exercicio}
+Considere $J_m(\lambda)$ o bloco de Jordan de ordem $m$ associado ao autovalor $\lambda.$%http://ief.ita.br/~rrpela/downloads/MAT27-2011-Aula-Jordan.pdf
+\dividiritens{
+\task[\pers{a}] Calcule $J_2(\lambda)^n.$
+\task[\pers{b}] Calcule $J_m(\lambda)^n.$
+\task[\pers{c}] Seja $f \colon \mathbb{R} \to \mathbb{R}$ uma função continuamente diferenciável. Prove que
+\[
+f(J_n(\lambda)) = \begin{bmatrix}
+f(\lambda) & \frac{f^{\prime}(\lambda)}{1!} & \cdots & \frac{f^{(p-2)}(\lambda)}{(p-2)!} & \frac{f^{(p-1)}(\lambda)}{(p-1)!} \\
+0 & f(\lambda) & \cdots & \frac{f^{(p-3)}(\lambda)}{(p-3)!} & \frac{f^{(p-2)}(\lambda)}{(p-2)!}  \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & \cdots & f(\lambda) & f^{\prime}(\lambda) \\
+0 & 0 & \cdots & 0 & f(\lambda)
+\end{bmatrix}
+\]
 
+}
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+Considere a matriz
+\[
+A = \begin{bmatrix}
+2 & 1 & 0 & 1 \\
+1 & 3 & -1 & 3 \\
+0 & 1 & 2 & 1\\
+1 & -1 & -1 & -1
+\end{bmatrix}.
+\]
+\dividiritens{
+\task[\pers{a}] Encontre a forma de Jordan $J$ de $A$ e a matriz $M$ tal que  $A = MJM^{-1}.$
+
+Para os próximos itens, considere as funções $f_1(X) = X^3,$ $f_2(X) = e^X,$ $f_3(X) = \log_2(X)$ e $f_4(X) = X^t.$
+\task[\pers{b}] Calcule $f_1(A), f_2(A), f_3(A)$ e $f_4(A).$
+\task[\pers{c}] Para $J$ encontrada no item (a), calcule $f_1(J), f_2(J), f_3(J)$ e $f_4(J).$
+\task[\pers{d}] Para quais valores de $n$ temos que $f_n(A) = Mf_n(J)M^{-1}?$ Porquê isso não é válido para todos?
+}
+%http://www.ief.ita.br/~rrpela/downloads/MAT27-2011-Aula-Jordan.pdf
+\end{exercicio}
+\solucao{
+\dividiritens{
+\task[\pers{a}] 
+\task[\pers{b}] 
+\task[\pers{c}] 
+\task[\pers{d}] $f_n(A) = Mf_n(J)M^{-1}$ para $n = 1, 2$ ou $3.$ Temos que $f(A) = Mf(J)M^{-1},$ apenas se $f$ é uma função polinomial ou se pode ser escrita como uma série de potências convergente. Isso ocorre com $f_1, f_2$ e $f_3,$ mas não com $f_4.$
+}
+}
+
+\begin{exercicio}
+Considere o operador $T \in \mathcal{L}(\mathbb{R}^7)$ cuja matriz em relação à base canônica é
+\[
+\begin{pmatrix}
+1 &0 &0 &0 &0 &−2& 1 \\
+−1& 2 &0 &−1 &1 &1& −1 \\
+−1 &0 &1 &1 &0 &−1 &1 \\
+−1 &0 &1 &1& 0 &0& −1 \\
+−1 &0 &−1 &1 &2 &2& 1 \\
+0 &0 &0 &0 &0 &−1& 0 \\
+−1& 0& 0& 2& 0 &1 &1
+\end{pmatrix}
+\]
+\dividiritens{
+\task[\pers{a}] Encontre a forma de Jordan real de $T.$
+\task[\pers{b}] Encontre a forma de Jordan para $T \in \mathcal{L}(\mathbb{C}^7).$
+}
+\end{exercicio}
+\solucao{
+Pode-se verificar que o polinômio minimal e o característico de $T$ coincidem, e temos
+\[
+p_T(\lambda) = m_T(\lambda) = - (\lambda + 1)(\lambda - 2)^2(\lambda^2 - 2 \lambda + 2)^2 =  - (\lambda + 1)(\lambda - 2)^2(\lambda - (1+i))^2(\lambda + (1+i))^2
+\]
+Agora, podemos resolver os itens.
+\dividiritens{
+\task[\pers{a}] Considerando $W_1 = \Ker(T + I), W_2 = \Ker(T-2I)^2$ e $Z = \Ker(T^2 - 2T  + 2I)^2,$ temos que
+\[
+\mathbb{R}^7 = W_1 \oplus W_2 \oplus Z.
+\]
+Além disso, $\dim W_1 = 1, \dim W_2 = 2$ e $\dim Z = 4.$ Para $W_1$ e $W_2,$ como os autovalores são reais, calculamos os blocos de Jordan normalmente. Para $Z,$ seja $S = T\upharpoonright_{Z}.$ Então, tomando $S \in \mathcal{L}(\mathbb{C}^4),$ temos que seus polinômios característico e minimal coincidem, sendo $p_S(\lambda) = m_S(\lambda) = (\lambda - (1+i))^2(\lambda + (1+i))^2.$ Logo, sua forma canônica de Jordan será
+\[
+\left(\begin{array}{cc:cc}
+1+i & 0 & 0 & 0 \\
+1 & 1+i & 0 & 0 \\ \hdashline
+0 & 0 & 1-i & 0 \\
+0 &  0 & 1 & 1-i 
+\end{array} \right)
+\]
+Isso significa que existe uma base $\{z_1,z_2, \overline{z_1}, \overline{z_2} \}$ tal que a matriz de $S$ é a que está apresentada acima. Escrevendo $z_1 = u_1 + iv_1$ e $z_2 = u_2 + iv_2,$ temos que $B = \{u_1, u_2, v_1,v_2 \}$ é uma base de $Z.$ Encontremos a repreentação de $S$ nessa base. Para $j \in \{1,2\},$ sejam $\mu_j = \alpha_j + i \beta_j$ os elementos que se encontram nas diagonais da matriz de Jordan de $S.$ Temos portanto que
+\[
+[S]_B = \left(\begin{array}{cc:cc}
+\alpha_1 & -\beta_1 & 0 & 0 \\
+\beta_1 & \alpha_1 & 0 & 0 \\ \hdashline
+1 & 0 & \alpha_2 & -\beta_2 \\
+0 &  1 & \beta_2 &\alpha_1
+\end{array} \right) \Rightarrow [S]_B = \left(\begin{array}{cc:cc}
+1 & -1 & 0 & 0 \\
+1 & 1 & 0 & 0 \\ \hdashline
+1 & 0 & 1 & -1 \\
+0 &  1 & 1 &1
+\end{array} \right)
+\]%https://docs.ufpr.br/~eidam/2012/1/CM053/CM053_Jordan.pdf
+Assim, concluímos que a forma canônica de Jordan real de $T$ é
+\[
+\left(\begin{array}{c:cc:cccc}
+-1 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hdashline 
+ 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & 2 & 0 & 0 & 0 & 0 \\  \hdashline 
+ 0 & 0 & 0 & 1 & -1& 0 & 0  \\
+  0 & 0 & 0 & 1 & 1& 2 & 0  \\
+  0 & 0 & 0 & 1 & 0& 1 & -1  \\
+  0 & 0 & 0 &0 & 0& 1 & 1  \\
+\end{array} \right).
+\]
+\task[\pers{b}] Pelo que foi exposto, a forma de Jordan de $T$ será
+\[
+\left(\begin{array}{c:cc:cc:cc}
+-1 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hdashline 
+ 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & 2 & 0 & 0 & 0 & 0 \\  \hdashline 
+ 0 & 0 & 0 & 1+i & 0& 0 & 0  \\
+  0 & 0 & 0 & 1 & 1+i& 0 & 0  \\ \hdashline
+  0 & 0 & 0 & 1 & 0& 1-i & 0  \\
+  0 & 0 & 0 &0 & 0& 1 & 1-i  \\
+\end{array} \right).
+\]
+}
+}
 \exercicio{29} Seja $V$ um espaço vetorial de dimensão finita $n$ sobre o corpo K e seja $T \in \mathcal{L}(V).$ Seja $f \in K[t]$ um polinômio mônico, irredutível e de grau $d \ge 1.$
 \dividiritens{
 \task[\pers{a}] Suponha que $d \mid n.$ Prove que existe $T \in \mathcal{L}(V)$ tal que o polinômio minimal de $T$ é $f.$
@@ -7640,6 +7763,17 @@ A+cI=P\begin{pmatrix}
 }
 }
 
+\begin{exercicio}
+Para cada uma das matrizes autoadjuntas abaixo, encontre sua raiz quadrada positiva:
+\dividiritens{
+\task[\pers{a}] $A = \begin{bmatrix}
+1 & \frac{1}{2} & \frac{1}{3} \\
+\frac{1}{2} & \frac{1}{3} & \frac{1}{4}\\
+\frac{1}{3} & \frac{1}{4} & \frac{1}{5}
+\end{bmatrix}$
+\task[\pers{b}] $B =$ 
+}
+\end{exercicio}
 \exercicio{33} Seja $A\in\m{n}{\mathbb{R}}$ uma matriz simétrica. Prove que existe uma matriz real $C$ tal que $C^3 = A$.
 \solucao{
 Como a matriz é real e simétrica, então existe uma matriz real ortogonal $P$ tal que:
@@ -7740,11 +7874,186 @@ ou seja, $\abs{\tr(A)}\leq n$.
 }
 }
 
+\begin{exercicio}
+Seja $V$ um espaço com produto interno e seja $T\in\mathcal{L}(V)$ operador normal e sejam:
+\[
+\lambda_1,\dots,\lambda_m,\mu_1,\dots,\mu_n
+\]
+números complexos tais que:
+\[
+\mathrm{Ker}(T-\lambda_1I)\oplus\dots\oplus\mathrm{Ker}(T-\lambda_mI)=\mathrm{Ker}(T-\mu_1I)\oplus\dots\oplus\mathrm{Ker}(T-\mu_nI).
+\]
+e também:
+\[
+\mathrm{Ker}(T-\lambda_1I),\dots,\mathrm{Ker}(T-\lambda_mI),\mathrm{Ker}(T-\mu_1I),\dots,\mathrm{Ker}(T-\mu_nI)\neq 0.
+\]
+Mostre que existe uma bijeção $\sigma:\{1,\dots,m\}\rightarrow\{1,\dots,n\}$ tal que:
+\[
+\left(\lambda_1,\dots,\lambda_m\right)=\left(\mu_{\sigma(1)},\dots,\mu_{\sigma(m)}\right).
+\]
+\end{exercicio}
+\solucao{
+Resolveremos o exercício por indução em $n$. Como uma soma direta não vazia de subespaços não nulos é um subespaço não nulo, então o caso $n=0$ já está resolvido, aí podemos supor sem perder generalidade que $n>0$. Então existe um $e\neq 0$ tal que $e\in\mathrm{Ker}(T-\lambda_nI)$, aí existem $v_1,\dots,v_n$ tais que para todo $i$ tenhamos $e=v_1+\dots+v_n$ e $v_i\in\mathrm{Ker}(T-\lambda_iI).$ Assim:
+\[
+0<\prin{e,e}=\prin{v_1,e}+\dots+\prin{v_n,e},
+\]
+aí existe um $k$ tal que $\prin{v_k,e}\neq 0$, mas $T$ é normal, então autovetores correspondentes a autovalores diferentes são ortogonais, aí $\lambda_k=\mu_n$ e também temos:
+\[
+\bigoplus_{i\neq k}\mathrm{Ker}(T-\lambda_iI)=\bigoplus_{j}\mathrm{Ker}(T-\mu_jI),
+\]
+aí por hipótese de indução existe uma bijeção $\sigma:\{1,\dots,m\}\setminus\{k\}\rightarrow\{1,\dots,n-1\}$ tal que:
+\[
+\left(\lambda_1,\dots,\lambda_{k-1},\lambda_{k+1},\dots,\lambda_m\right)=\left(\mu_{\sigma(1)},\dots,\mu_{\sigma(k-1)},\mu_{\sigma(k+1)},\dots,\mu_{\sigma(m)}\right),
+\]
+aí se fizermos $\sigma(k)=n$ teremos uma bijeção $\sigma:\{1,\dots,m\}\rightarrow\{1,\dots,n\}$ tal que:
+\[
+\left(\lambda_1,\dots,\lambda_m\right)=\left(\mu_{\sigma(1)},\dots,\mu_{\sigma(m)}\right).
+\]
+}
+
+\bigskip
+\noindent
+\textcolor{red}{Comentário:} Na verdade o exercício é válido para qualquer espaço vetorial sobre um corpo $K$ qualquer e para qualquer $T\in\mathcal{L}(V)$, devido à unicidade da decomposição primária para minimais. Apenas apresentamos o exercício para uma solução alternativa, mesmo que ela sirva apenas para espaços com produto interno e operadores normais.
+
+\begin{exercicio}\label{blah}
+Seja $K$ um domínio de integridade, seja $E\subseteq K$ um subconjunto e seja $f:E\rightarrow K$ uma função. Seja:
+\[
+P=\begin{pmatrix}
+p_{11}&&p_{1n}\\&\ddots&\\p_{n1}&&p_{nn}
+\end{pmatrix},
+\]
+e sejam $a_1,\dots,a_n,b_1,\dots,b_n\in E$. Se a seguinte igualdade ocorre:
+\[
+\begin{pmatrix}
+a_1&&\\&\ddots&\\&&a_n
+\end{pmatrix}
+\begin{pmatrix}
+p_{11}&&p_{1n}\\&\ddots&\\p_{n1}&&p_{nn}
+\end{pmatrix}=
+\begin{pmatrix}
+p_{11}&&p_{1n}\\&\ddots&\\p_{n1}&&p_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+b_1&&\\&\ddots&\\&&b_n
+\end{pmatrix},
+\]
+então a seguinte igualdade ocorre:
+\[
+\begin{pmatrix}
+f(a_1)&&\\&\ddots&\\&&f(a_n)
+\end{pmatrix}
+\begin{pmatrix}
+p_{11}&&p_{1n}\\&\ddots&\\p_{n1}&&p_{nn}
+\end{pmatrix}=
+\begin{pmatrix}
+p_{11}&&p_{1n}\\&\ddots&\\p_{n1}&&p_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+f(b_1)&&\\&\ddots&\\&&f(b_n)
+\end{pmatrix}.
+\]
+\end{exercicio}
+\solucao{
+A primeira identidade equivale a dizer que para cada $(i,j)$ temos:
+\[
+a_ip_{i,j}=b_jp_{i,j},
+\]
+mas isso implica:
+\[
+a_i=b_j\quad\quad\text{ou}\quad\quad p_{i,j}=0,
+\]
+porém $a_i,b_j\in E$, aí:
+\[
+f(a_i)=f(b_j)\quad\quad\text{ou}\quad\quad p_{i,j}=0,
+\]
+e isso por sua vez implica que:
+\[
+f(a_i)p_{i,j}=f(b_j)p_{i,j},
+\]
+ou seja, temos a segunda identidade.
+}
+
 \exercicio{36} Sejam $A, B \in \m{n}{\mathbb{R}}$, $n \geq 2$ matrizes simétricas tais que $A^5 = B^5$. Prove que $A = B$.
+\solucao{
+Se $A$ e $B$ são matrizes reais simétricas tais que $A^5=B^5$, então existem matrizes ortogonais $P$ e $Q$ e matrizes diagonais $D$ e $E$ tais que:
+\[
+P^tAP=D,\quad\quad Q^tBQ=E,
+\]
+assim:
+\[
+P^tA^5P=D^5,\quad\quad Q^tB^5Q=E^5,
+\]
+e as matrizes $D^5$ e $E^5$ são diagonais, assim:
+\[
+PD^5P^t=A^5=B^5=QE^5Q^t,
+\]
+assim:
+\[
+D^5P^tQ=P^tQE^5,
+\]
+aí extraindo a raiz quinta das entradas nas diagonais principais de $D^5$ e $E^5$, pelo exercício \ref{blah} obtemos:
+\[
+DP^tQ=P^tQE,
+\]
+assim:
+\[
+A=PDP^t=QEQ^t=B.
+\]
+}
 
 \exercicio{37} Seja $A \in \m{n}{\mathbb{C}}$ $(A \in \m{n}{\mathbb{R}})$ uma matriz inversível. Prove que $A = BC,$ onde $B$ é unitária
 (ortogonal) e $C$ é positiva. Mostre também que esta decomposição é única.
 (Sugestão: Escreva $A^*A = D^2$ e considere $B = D^{-1}A.$)
+\solucao{
+\dividiritens{
+\task[\pers{a}] Mostraremos que toda matriz não negativa $A$ tem uma raiz quadrada não negativa $B$, ou seja, $B^2=A$. De fato, nessas condições, existe uma matriz unitária $P$ tal que:
+\[
+P^*AP=\begin{pmatrix}
+c_1&&\\&\ddots&\\&&c_n
+\end{pmatrix}
+\]
+em que $c_1,\dots,c_n$ são reais não negativos, aí sendo:
+\[
+B=P\begin{pmatrix}
+\sqrt{c_1}&&\\&\ddots&\\&&\sqrt{c_n}
+\end{pmatrix}P^*,
+\]
+então $B$ é uma matriz não negativa e $B^2=A$.
+
+\task[\pers{b}] Primeiro mostraremos que, se $A$ e $B$ são matrizes não negativas tais que $A^2=B^2$, então $A=B$. De fato, nessas condições, existem matrizes unitárias $P$ e $Q$ e matrizes diagonais $D$ e $E$ de entradas reais não negativas tais que:
+\[
+P^*AP=D,\quad\quad Q^*BQ=E,
+\]
+assim:
+\[
+P^*A^2P=D^2,\quad\quad Q^*B^2Q=E^2,
+\]
+e as matrizes $D^2$ e $E^2$ são diagonais, assim:
+\[
+PD^2P^*=A^2=B^2=QE^2Q^*,
+\]
+assim:
+\[
+D^2P^*Q=P^*QE^2,
+\]
+aí extraindo a raiz quadrada das entradas nas diagonais principais de $D^2$ e $E^2$, pelo exercício \ref{blah} obtemos:
+\[
+DP^*Q=P^*QE,
+\]
+assim:
+\[
+A=PDP^*=QEQ^*=B.
+\]
+
+\task[\pers{c}] Agora mostraremos que a decomposição polar, se existe, é única. De fato, se $B$ é ortogonal e $C$ é positiva e $A=BC$, então $A^*=CB^*$ e aí:
+\[
+A^*A=CB^*BC=C^2,
+\]
+aí $C$ está unicamente determinada por $A$, mas $C$ é inversível, aí $B=AC^{-1}$ está unicamente determinada por $A$.
+
+\task[\pers{d}] Agora mostraremos que existe a decomposição polar. De fato, a matriz $A^*A$ é não negativa, aí possui uma raiz quadrada não negativa $C$, mas $\det(C)^2=\det(A)\neq 0$, aí $\det(C)\neq 0$, aí $C$ é inversível, aí $C$ é positiva, assim, sendo $B=AC^{-1}$, então $B$ é produto de duas matrizes unitárias, aí $B$ é unitária.
+}
+}
 
 \exercicio{38} Sejam $V$ de dimensão finita, $K = \mathbb{C}$ e $T \in \mathcal{L}(V)$. Mostre que existe $B$ base ortonormal de $V$ tal que $[T]_B$ é triangular superior.
 
@@ -8365,6 +8674,10 @@ e também
 Tomando $v = u + w,$ obtemos um vetor $v$ tal que $\norm{v} = \sqrt{2}$ e $\norm{T(v)} = 5,$ como pedido pelo enunciado.
 }
 
+\begin{exercicio}Forma de Smith e Forma de Smith-McMillan
+
+%http://www.pee.ufrj.br/index.php/pt/producao-academica/dissertacoes-de-mestrado/2006-1/2006073101-2006073101/file
+\end{exercicio}
 \newpage
 
 \section{\textcolor{Floresta}{Lista 5,5}}
@@ -8506,6 +8819,43 @@ Podemos provar que, para quaisquer $x,y,z\geq 0$ tais que no máximo um deles se
 \]
 Hmmm... Parece que com Cauchy-Bunyakovski-Schwarz o problema sai facilmente, certo? Só que não... Veja qualquer coisa relacionada com ``Iran 1996 Inequality''.
 
+\begin{exercicio}
+Sejam $a,b,c,d$ números reais positivos tais que $a+b+c+d = abc+abd+acd+bcd.$ Prove que
+\[
+\sqrt{\frac{a^2 + 1}{2}} + \sqrt{\frac{b^2 + 1}{2}} + \sqrt{\frac{c^2 + 1}{2}} + \sqrt{\frac{d^2 + 1}{2}} \le a + b + c + d
+\]
+\end{exercicio}
+\solucao{
+Podemos reescrever a desigualdade como
+\[
+\sum\limits \sqrt{\frac{a^2 + 1}{2}} \le \sum\limits a
+\]
+Observe que, da condição do enunciado, temos que
+\[
+a+b+c+d = abc+abd+acd+bcd \Rightarrow \frac{abc+abd+acd+bcd}{a+b+c+d} = 1.
+\]
+Substituindo no lado esquerdo da desigualdade, obtemos
+\[
+\sum\limits \sqrt{\frac{a^2 + \textcolor{Green}{1}}{2}} = \sum\limits \sqrt{\frac{a^2 + \textcolor{Green}{ \frac{abc+abd+acd+bcd}{a+b+c+d}}}{2}} =\sum\limits \sqrt{\frac{a^3 + a^2b+a^2c+a^2d + abc + abd + acd + bcd}{2(a+b+c+d)}}=  \sum\limits \sqrt{\frac{(a+b)(a+c)(a+d)}{2(a+b+c+d)}}
+\]
+Utilizando a desigualdade de Cauchy-Schwarz, temos que
+\[
+\sqrt{\frac{(a+b)(a+c)(a+d)}{2(a+b+c+d)}} \le \sqrt{\left( \sum\limits (a+b)(a+c) \right) \left( \sum\limits \frac{a+d}{2(a+b+c+d)} \right)}
+\]
+ou
+\[
+\sqrt{\frac{(a+b)(a+d)(a+c)}{2(a+b+c+d)}} \le \sqrt{\left( \sum\limits (a+b)(a+c) \right) \left( \sum\limits \frac{a+d}{2(a+b+c+d)} \right)}
+\]
+ou
+\[
+\sqrt{\frac{(a+b)(a+d)(a+c)}{2(a+b+c+d)}} \le \sqrt{\left( \sum\limits (a+c)(a+d) \right) \left( \sum\limits \frac{a+b}{2(a+b+c+d)} \right)}
+\]
+Observe então que
+\[
+\sqrt{\left( \sum\limits (a+b)(a+c) \right) \left( \sum\limits \frac{a+d}{2(a+b+c+d)} \right)} = \sqrt{(a+b+c+d)^2} = a + b + c +d
+\]
+Em qualquer caso, obtemos a desigualdade desejada.
+}
 \exercicio{4} Seja $V = \mathcal{M}_{m \times n}(\mathbb{R}).$ Mostre que \[\prin{A,B} = \tr(B^tA) \] define um produto interno em $V.$
 
 \solucao{}
@@ -8828,13 +9178,53 @@ $10$ &  $\frac{1}{128} \left( 46189t^{10} - 109395t^8 + 90090t^6 -30030t^4 + 346
 
 }
 
+\begin{exercicio}
+Ao aplicarmos o processo de ortogonalização de Gramm-Schmidt a uma certa base $\{v_1,v_2, v_3 \}$ de um subespaço $U$ de $\mathbb{R}^4,$ obtivemos a base ortogonal $\left\{ (1,1,1,1), (-1,-1,0,2), \left(\frac{1}{2}, \frac{3}{2}, -3,1 \right) \right\}.$ Encontre os vetores $v_1,v_2$ e $v_3.$
+\end{exercicio}
+\solucao{Sejam $w_1 = (1,1,1,1),$ $w_2 = (-1,-1,0,2)$ e $w_3 = \left(\frac{1}{2}, \frac{3}{2}, -3,1 \right).$ Pelo processo de ortogonalização de Gramm-Schmidt, sabemos que
+\[
+w_1 = v_1
+\]
+\[
+w_2 = v_2 - \frac{\prin{v_2,w_1}}{\norm{w_1}^2}w_1
+\]
+\[
+w_3 = v_3 - \frac{\prin{v_3,w_1}}{\norm{w_1}^2}w_1 - \frac{\prin{v_3,w_2}}{\norm{w_2}^2}w_2
+\]
+Portanto, $v_1 = w_1 = (1,1,1,1)$. Além disso, sendo $v_2 = (x,y,z,w),$
+\[
+(-1,-1,0,2) = v_2 - \frac{\prin{v_2,w_1}}{\norm{w_1}^2}w_1 \Rightarrow (-1,-1,0,2) = (x,y,z,w) - \frac{\prin{(x,y,z,w),(1,1,1,1)}}{\norm{(1,1,1,1)}^2}(1,1,1,1) \Rightarrow
+(-1,-1,0,2) = (x,y,z,w) - \frac{x+y+z+w}{2}(1,1,1,1) \Rightarrow \begin{cases}
+x - y - z - w = -2 \\
+-x + y - z - w = -2 \\
+-x - y + z - w = 0 \\
+-x-y-z+w = 4
+\end{cases}
+\]
+$(1,1,1,1), (1,1,2,4),(1,2,-4,-3) 328$
+}
 \exercicio{16} Calcule o volume do paralelepípedo formado pelos vetores
 \dividiritens{
 \task[\pers{a}] $(1,-1,1,-1), (1,1,1,1),(1,0,-1,0),(0,1,0,-1).$
 \task[\pers{b}] $(1,1,1,1),(1,-1,-1,1), (2,1,1,3),(0,1,-1,0).$
 }
 
-\solucao{}
+\solucao{O volume do paralelepípedo irá corresponder ao valor absoluto do determinante da matriz cujas linhas são os vetores que o formam. Assim:
+\dividiritens{ 
+\task[\pers{a}] $V = \left| \begin{array}{cccc}  
+1 & -1 &1 & -1 \\
+1 & 1 & 1 & 1 \\
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & -1
+\end{array} \right| = 8;$
+\task[\pers{b}] $V = \left| \begin{array}{cccc}  
+1 & 1 & 1 & 1 \\
+1 & -1 &-1 & 1 \\
+2 & 1 & 1 & 3 \\
+0 & 1 & -1 & 0
+\end{array} \right| = \abs{-4} = 4.$
+}
+}
 \exercicio{17} No espaço euclidiano $\mathcal{P}_n(\mathbb{R})$ com o produto interno $\displaystyle\int\limits_{-1}^1 f(x)g(x) \dif x,$ calcule
 \dividiritens{
 \task[\pers{a}] o volume do paralelepípedo $P[1,x, \ldots, x^n];$
@@ -8846,7 +9236,30 @@ $10$ &  $\frac{1}{128} \left( 46189t^{10} - 109395t^8 + 90090t^6 -30030t^4 + 346
 \solucao{
 }
 
-
+\begin{exercicio}
+Considere $V = \mathcal{P}_2(\mathbb{R})$ com o produto interno $\prin{f,g} = \displaystyle\int\limits_{-1}^1 f(x) g(x) \dif x.$ Ache a matriz do produto interno em relação à base $\{1, t, t^2 \}$ de $V.$
+\end{exercicio}
+\solucao{
+Observe que, se $r + s = n,$ então
+\[
+\prin{t^r, t^s} = \displaystyle\int\limits_{-1}^1 t^n \dif t = \frac{t^{n+1}}{n+1} \Bigg\rvert_{-1}^1 = \begin{cases}
+\frac{2}{n+1}, & \mbox{ se n é par}\\
+0, & \mbox{ se n é par}\\
+\end{cases}
+\]
+Obtém-se então que $\prin{1,1} = 2, \prin{1,t} = 0, \prin{1,t^2} = \frac{2}{3}, \prin{t,t} = \frac{2}{3}, \prin{t,t^2} = 0, \prin{t^2, t^2} = \frac{2}{3}.$ Logo,
+\[
+A = \begin{pmatrix}
+\prin{1,1} & \prin{1,t} & \prin{1,t^2} \\
+\prin{t,1} & \prin{t,t} & \prin{t,t^2} \\
+\prin{t^2,1} & \prin{t^2,t} & \prin{t^2,t^2} \\
+\end{pmatrix} = \begin{pmatrix}
+2 & 0 & \frac{2}{3} \\
+0 & \frac{2}{3} & 0 \\
+\frac{2}{3} & 0 & \frac{2}{5} \\
+\end{pmatrix} 
+\]
+}
 \exercicio{18} Considere $\mathcal{C}([0, 2 \pi], \mathbb{R})$ munido do produto interno
 \[
 \prin{f,g} = \displaystyle\int\limits_{0}^{2 \pi} f(x)g(x) \dif x.
@@ -9602,7 +10015,295 @@ que $(M_{\gamma})^{*} = M_{\overline{\gamma}}.$
 }
 
 }
+\begin{exercicio} Para cada uma das seguintes matrizes $A,$ encontre uma matriz ortogonal $T$ tal que a matriz $T^tAT$ seja diagonal.
+\dividiritens{
+\task[\pers{a}] $A = \begin{bmatrix}
+11 & 2 & -8 \\
+2 & 2 & 10 \\
+-8 & 10 & 5
+\end{bmatrix}$
+\task[\pers{b}] $A = \begin{bmatrix}
+5 & -1 & -1 \\
+-1 & 5 & -1 \\
+-1 & -1 & 5
+\end{bmatrix}$
+\task[\pers{c}] $A = \begin{bmatrix}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0
+\end{bmatrix}$
+}
+\end{exercicio}
+\solucao{
+\dividiritens{
+\task[\pers{a}]
+\task[\pers{b}]
+\task[\pers{c}] Vamos encontrar os autovalores de $A.$ Observe que o polinômio característico de $A$ será $p_A(\lambda) = \lambda^3 - \lambda^2 - \lambda + 1 = (\lambda - 1)^2(\lambda + 1).$ Logo, os autovalores são $\lambda_1 = 1$ e $\lambda_2 = -1.$ Encontremos os respectivos autovetores associados:
+\begin{itemize}
+    \item Para $\lambda_1 = 1$ e $v = (x,y,z),$ temos
+    \[
+    (A - I)v = 0 \Rightarrow \begin{bmatrix}
+-1 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & -1
+\end{bmatrix}\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} = \begin{bmatrix}
+0\\
+0 \\
+0
+\end{bmatrix} \Rightarrow \begin{cases}
+-x+z = 0 \\
+x - z = 0
+\end{cases} \Rightarrow v = x(1,0,1) + y(0,1,0)
+    \]
+    Logo, temos que $\Ker(A - I) = \langle (1,0,1), (0,1,0) \rangle,$ e $(1,0,1)$ e $(0,1,0)$ são autovetores associados a $\lambda_1 = 1.$
+      \item Para $\lambda_2 = -1$ e $v = (x,y,z),$ temos
+    \[
+    (A + I)v = 0 \Rightarrow \begin{bmatrix}
+1 & 0 & 1 \\
+0 & 2 & 0 \\
+1 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} = \begin{bmatrix}
+0\\
+0 \\
+0
+\end{bmatrix} \Rightarrow \begin{cases}
+x+z = 0 \\
+2y = 0 \\
+x+z=0
+\end{cases} \Rightarrow v = x(1,0,-1)
+    \]
+    Logo, temos que $\Ker(A + I) = \langle (1,0,-1) \rangle,$ e $(1,0,-1)$é um autovetor associado a $\lambda_2 = -1.$
+\end{itemize}
+Logo, a matriz $T$ procurada é 
+\[
+T = \begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & -1
+\end{bmatrix}
+\]
+Assim, segue que
+\[
+D = T^tAT \Rightarrow \begin{bmatrix}
+1 & 0 & 0 \\
+0 &  1 & 0\\
+0 & 0 & -1
+\end{bmatrix} = \begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & -1
+\end{bmatrix}\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0
+\end{bmatrix}\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & -1
+\end{bmatrix}
+\]
+Observe que $T$ é ortogonal, pois $A$ é simétrica.
+}
+}
 
+\begin{exercicio}
+Para cada uma das seguintes matrizes $A,$ mostre que ela é uma matriz normal e ache uma matriz unitária $P$ tal que $\overline{P^t}AP$ seja diagonal.
+\dividiritensdiv{2}{
+\task[\pers{a}] 
+}
+\end{exercicio}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Veja que $A$ é normal, pois
+\[AA^{*} = \begin{bmatrix}
+1 & 1 \\
+i & 3+2i
+\end{bmatrix} \begin{bmatrix}
+1 & -i \\
+1 & 3-2i
+\end{bmatrix} =
+\begin{bmatrix}
+2 & 3-3i \\
+3+3i & 14
+\end{bmatrix}\]
+\[A^{*}A =  \begin{bmatrix}
+1 & -i \\
+1 & 3-2i
+\end{bmatrix} \begin{bmatrix}
+1 & 1 \\
+i & 3+2i
+\end{bmatrix} =
+\begin{bmatrix}
+2 & 3-3i \\
+3+3i & 14
+\end{bmatrix}
+\]
+Vamos encontrar os autovalores de $A.$ Observe que o polinômio característico de $A$ é $p_A(\lambda) = \lambda^2 - (4+2i)\lambda + (3+i),$ e os autovalores são $\lambda_1 = (2+i) + (1+i) \sqrt{\frac{3}{2}}$ e $\lambda_2 = (2+i) - (1+i) \sqrt{\frac{3}{2}}.$ Vamos agora encontrar os autovetores. Como $A$ é normal, os autovalores que encontrarmos já serão ortogonais, bastando apenas normalizá-los para encontrar a matriz $P.$
+\begin{itemize}
+    \item Para $\lambda_1 = (2+i) + (1+i) \sqrt{\frac{3}{2}}, $ sendo $v = (x,y),$
+    \[
+    Av = \lambda_1v \Rightarrow \begin{bmatrix}
+1 & 1 \\
+i & 3+2i
+\end{bmatrix} \begin{bmatrix}
+x \\
+y
+\end{bmatrix} = \begin{bmatrix}
+\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right) x \\
+\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right)y
+\end{bmatrix} \Rightarrow \begin{cases}
+x + y =\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right) x\\
+ix+(3+2i)y = \left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right)y
+\end{cases}
+    \]
+\end{itemize}
+}
+}
+\begin{exercicio}
+Mostre que se $T$ é normal, então $\Ker T = \Ker T^{*}$ e $\mbox{Im } T = \mbox{Im } T^{*}.$
+\end{exercicio}
+\solucao{Lembrando que, como $T$ é normal, então $TT^{*} = T^{*}T:$
+\begin{itemize}
+    \item $\Ker T = \Ker T^{*}:$ Seja $v \in \Ker T.$ Então, $T(v) = 0.$ Logo,
+    \[
+    T(T^{*}(v)) = T^{*}(\textcolor{Green}{T(v)}) = T^{*}(\textcolor{Green}{0}) = 0 \Rightarrow T^{*}(v) = 0.
+    \]
+    Assim, $v \in \Ker T^{*}.$ Assim, $\Ker T \subset \Ker T^{*}.$ Analogamente, verifica-se que $\Ker T^{*} \subset \Ker T.$
+    \item $\mbox{Im } T = \mbox{Im } T^{*}:$ Mostremos equivalentemente que $\mbox{Im }(TT^{*}) = \mbox{Im }(T).$ Se $TT^{*}(x) = 0,$ então
+    \[
+    \prin{TT^{*}(x),x} = \prin{T^{*}T(x),x} = \prin{T(x),T(x)} = 0 \Rightarrow T(x) = 0
+    \]
+    Logo $\Ker(TT^{*}) \subset \Ker(T),$ e temos que $T(x) = 0$ implica $T^{*}(T(x)) = T(T^{*}(x)) = 0,$ de onde segue que $\Ker(T) \subset \Ker(TT^{*})$ e assim $\Ker(T) = \Ker(TT^{*}).$ Logo, $\dim(\mbox{Im }(T)) = \dim(\mbox{Im }(TT^{*})).$ Assim, concluímos que $\mbox{Im } T = \mbox{Im } T^{*}.$
+    
+\end{itemize}
+}
+\begin{exercicio}
+Mostre que $T \in \mathcal{L}(V)$ é normal se, e somente se, $\norm{T(v)} = \norm{T^{*}(v)} \ \forall v \in V.$
+\end{exercicio}
+\solucao{
+}
+\begin{exercicio}
+Seja $V = \mathcal{P}_n(\mathbb{R})$ com produto interno $\prin{f,g} = \displaystyle\int\limits_{-1}^1 f(x)g(x) \dif x.$ Prove que o operador $T \in \mathcal{L}(V)$ dado por
+\[
+(T(f))(x) = (x^2 - 1)f^{\prime \prime}(x) + 2x f^{\prime} (x)
+\]
+é autoadjunto e os polinômios de Legendre $P_n(x)$ formam uma base ortonormal de autovetores para $T.$
+\end{exercicio}
+\solucao{
+Vamos encontrar $T^{*}.$ Vamos escrever a matriz que representa $T$ na base canônica $\{1, x, x^2, \ldots, x^n \}.$ Veja que
+\[
+(T(1))(x) = (x^2 - 1)(1)^{\prime \prime} + 2x(1)^{\prime} = 0,
+\]
+\[
+(T(x))(x) = (x^2 - 1)(x)^{\prime \prime} + 2x(x)^{\prime} = 2x,
+\]
+\[
+(T(x^2))(x) = (x^2 - 1)(x^2)^{\prime \prime} + 2x(x^2)^{\prime} = 6x^2 - 2,
+\]
+\[
+(T(x^3))(x) = (x^2 - 1)(x^3)^{\prime \prime} + 2x(x^3)^{\prime} = 12x^3 - 6x,
+\]
+\[
+(T(x^4))(x) = (x^2 - 1)(x^4)^{\prime \prime} + 2x(x^4)^{\prime} = 20x^4 - 12x^2,
+\]
+\[
+(T(x^5))(x) = (x^2 - 1)(x^5)^{\prime \prime} + 2x(x^5)^{\prime} = 30x^5 - 20x^3, 
+\]
+Logo, temos que
+\[
+[T]_{\mbox{can}} = \begin{bmatrix}
+0 & 0 & -2& 0 & 0 & \ldots &  0 & 0 & 0 \\
+0 & 2 & 0 &-6 & 0 & \ldots &  0 & 0 & 0 \\
+0 & 0 & 6 & 0 &-12& \ldots &  0 & 0 & 0 \\
+0 & 0 & 0 &12 & 0 & \ldots &  0 & 0 & 0 \\
+0 & 0 & 0 & 0 &20 & \ldots & 0 & 0 & 0 \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots\\
+0 & 0 & 0 & 0 & 0 & \ldots & (n-2)(n-1) & 0 & -(n-1)n \\
+0 & 0 & 0 & 0 & 0 & \ldots & 0 & (n-1)n & 0 \\
+0 & 0 & 0 & 0 & 0 & \ldots & 0 & 0 & n(n+1) \\
+\end{bmatrix}
+\]
+}
+\begin{exercicio}
+Um operador $S$ chama-se antiauto-adjunto se $S^{∗} = -S.$ Mostre que um operador $T$ é autoadjunto se, e somente se, o operador $iT$ é antiautoadjunto.
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Seja $V$ um espaço euclidiano e $T \in \mathcal{L}(V)$ é um operador antiauto-. Prove que se $\dim_{\mathbb{R}}(V)$ é ímpar então $T$ é degenerado.
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+Seja $V$ um espaço euclidiano e $T \in \mathcal{L}(V).$ Prove que $T$ é antiautoadjunto se, e somente se, $\prin{T(v), v} = 0 \ \forall v \in V.$
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+Um operador auto-adjunto $T \in \mathcal{L}(V)$ chama-se \emph{positivo definido} (\emph{positivo semidefinido}) se $\prin{T(v), v} > 0$ (equivalentemente, $\prin{T(v), v} \ge 0$) para qualquer vetor $v \in V.$ De maneira semelhante, uma matriz $A \in \mathcal{M}_n(K)$ chama-se \emph{positiva definida} (\emph{positiva semidefinida}) se o operador $A \in \mathcal{L}(K^n)$ cuja matriz na base canônica de $K^n$
+é A, é positiva (não negativo).
+\textcolor{Red}{NAÕ EXISTE PERGUNTA! CRIAR DEPOIS}
+\end{exercicio}
+\solucao{}
+\begin{exercicio} Determine quais das seguintes matrizes são positivo definidas (semidefinidas):
+\dividiritens{
+\task[\pers{a}] $\begin{pmatrix}
+1 & 1 \\
+1 & 1
+\end{pmatrix}$
+\task[\pers{b}] $\begin{pmatrix}
+0 & i \\
+-i & 0
+\end{pmatrix}$
+\task[\pers{c}] $\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}$
+\task[\pers{d}] $\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}$
+\task[\pers{e}] $\begin{pmatrix}
+2 & 1 \\
+1 & 2
+\end{pmatrix}$
+\task[\pers{f}] $\begin{pmatrix}
+1 & 2 \\
+2 & 1
+\end{pmatrix}$
+}
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Decomponha num produto $T = SU$ de um operador auto-adjunto positivo definido $S$ e um operador ortogonal $U$ cada um dos operadores $T$ representados numa base ortonormal pelas seguintes matrizes:
+\dividiritens{
+\task[\pers{a}] $\begin{pmatrix}
+2 & -1 \\
+2 & 1
+\end{pmatrix}$
+\task[\pers{b}] $\begin{pmatrix}
+1 & -4 \\
+1 & 4
+\end{pmatrix}$
+\task[\pers{c}] $\begin{pmatrix}
+4 & -2 &2 \\
+4 & 4 & 1 \\
+-2 & 4 & 2
+\end{pmatrix}$
+}
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+
+\end{exercicio}
 \textcolor{white}{oi}
 \newline
 \textcolor{Red}{Questões Suplementares}
@@ -9631,14 +10332,128 @@ arestas opostas do tetraedro.
 Suponha que $T$ seja um operador normal.
 \dividiritens{
 \task[\pers{a}] Prove que $\overline{\mbox{Spec }(T)} \subseteq \mbox{Spec }(T^{*}).$
-\task[\pers{b}] Seja $T \colon \mathbb{C}^2 \to \mathbb{C}^2$ dado por $T(1,0) = (1,1)$ e $T(0,1) = (1, 3+2i).$ Encontre os autovalores de $T^{*}.$
+\task[\pers{b}] Seja $T \colon \mathbb{C}^2 \to \mathbb{C}^2$ dado por $T(1,0) = (1,i)$ e $T(0,1) = (1, 3+2i).$ Encontre os autovalores de $T^{*}.$
+}
+\solucao{
+\dividiritens{
+\task[\pers{a}] 
+\task[\pers{b}] Observe que 
+\[
+A = [T]_{\mbox{can}} = \begin{bmatrix}
+1 & 1 \\
+i & 3+2i
+\end{bmatrix}
+\]
+Veja que $A$ é normal, pois
+\[
+AA^{*} = \begin{bmatrix}
+1 & 1 \\
+i & 3+2i
+\end{bmatrix} \begin{bmatrix}
+1 & -i \\
+1 & 3-2i
+\end{bmatrix} =
+\begin{bmatrix}
+2 & 3-3i \\
+3+3i & 14
+\end{bmatrix}
+\]
+\[
+A^{*} =  \begin{bmatrix}
+1 & -i \\
+1 & 3-2i
+\end{bmatrix} \begin{bmatrix}
+1 & 1 \\
+i & 3+2i
+\end{bmatrix} =
+\begin{bmatrix}
+2 & 3-3i \\
+3+3i & 14
+\end{bmatrix}
+\]
+Calculando o polinômio característico de $A,$ encontramos $p_A(\lambda) = \lambda^2 - (4-2i) \lambda + (3-3i).$ Os autovalores são portanto $\lambda_1 = (2-i)-\sqrt{1-2i}$ e $\lambda_2 = (2-i)+\sqrt{1-2i},$ que serão os mesmo de $T^{*}$ pelo item anterior.
+}
 }
 \newpage
 \section{\textcolor{Floresta}{Lista 6}}
 
-   \exercicio{1}
-   
-   
+\begin{exercicio}
+Encontre um exemplo de uma aplicação bilinear $\varphi \colon U \times V \to W$ tal que $\mbox{Im }(\varphi) = \{\varphi(u, v) \colon u \in U, v \in V\}$ não é um subespaço de $W.$
+\end{exercicio}
+\solucao{
+}
+\begin{exercicio} Sejam $U,$ $V$ e $W$ $K$-espaços vetoriais. Mostre que
+\dividiritens{
+\task[\pers{a}] $K \otimes V \cong V;$
+\task[\pers{b}] $U \otimes V \cong V \otimes U;$
+\task[\pers{c}] $(U \otimes V) \otimes W \cong U \otimes (V \otimes W).$
+}
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $U$ e $V$ $K$-espaços vetoriais e $u, u^{\prime} \in U,$ $v, v^{\prime} \in V$ tais que $u \otimes v \neq 0.$ Mostre que $u \otimes v = u^{\prime} \otimes v^{\prime}$ se, e somente se, $u^{\prime} = \lambda u$ e $v^{\prime} = \lambda^{-1}v,$ para algum $\lambda \in K.$
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $U$ e $V$ $K$-espaços vetoriais. Sejam $u_1, \ldots u_n \in U$ vetores linearmente independentes e $v_1, \ldots, v_n \in V$ vetores arbitrários. Mostre que se $\sum\limits_{i=1}^n u_i \otimes v_i = 0,$ então $v_i = 0,$ para todo $i = 1, \ldots, n.$
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $U$ e $V$ $K$-espaços vetoriais com bases $\{u_i : i \in I\}$ e $\{v_j : j \in J\},$ respectivamente. Seja $z \in U \otimes V.$
+\dividiritens{
+\task[\pers{a}] Mostre que existem $y_i \in V,$ únicos, tais que $z = \sum\limits_{i \in I} u_i \oplus y_i.$
+\task[\pers{b}] Mostre que existem $x_j \in U,$ únicos, tais que $z = \sum\limits_{j \in J} x_j \oplus v_j.$
+\task[\pers{c}] Mostre que existem $x_1, \ldots, x_n \in U, y_1, \ldots, y_n \in V,$ linearmente independentes, tais que $z = \sum\limits_{i=1}^n x_i \oplus y_i.$
+}
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $U, V, W$ $K$-espaços vetoriais e seja $B(U, V; W)$ o espaço vetorial das funções bilineares de $U \times V$ em $W.$ Prove que $B(U, V; W) \cong \mathcal{L}(U \oplus V, W).$
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $U$ e $V$ $K$-espaços vetoriais. Denote por $B(U, V; K)$ o $K$-espaço vetorial das formas bilineares $f \colon U \times V \to K.$
+\dividiritens{
+\task[\pers{a}] Mostre que existe uma transformação linear injetora $\varphi \colon U \otimes V \to B(U^{*},V^{*}; K)$ que satisfaz
+\[
+\varphi(u \otimes v) (\alpha, \beta) = \alpha(u) \beta(v),
+\]
+para todos $u \in U, v \in V, \alpha \in U^{*}, v \in V^{*}.$
+\task[\pers{b}] Conclua que se $U$ e $V$ são espaços de dimensão finita, então $\varphi$ estabelece um isomorfismo $B(U^{*}, V^{*};K) \cong U \otimes V.$
+}
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $U$ e $V$ $K$-espaços vetoriais.
+\dividiritens{
+\task[\pers{a}]  Mostre que existe uma transformação linear $\lambda_{U,V} \colon V \times U^{*} \to \Hom(U, V)$ que satisfaz
+\[\lambda_{U,V}(v \otimes \alpha)(u) = \alpha(u)v, \ \forall u \in U, v \in V, \alpha \in U^{∗}\]
+\task[\pers{b}]  Mostre que $\lambda_{U,V}$ é um isomorfismo se $U$ e $V$ tiverem dimensão finita e conclua que se $V$ é um espaço de dimensão finita, então $\lambda_{V,V}$ estabelece um isomorfismo $V \otimes V^{*} \cong \End(V).$
+}
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $U, V, W$ $K$-espaços vetoriais. Mostre que
+\[
+\Hom_K(U, \Hom_K(V,W)) \cong \Hom_K(U \otimes V,W).
+\]
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+ Sejam $U, U^{\prime}, V, V^{\prime}$ $K$-espaços vetoriais de dimensão finita. Mostre que existe um único isomorfismo
+ \[
+ \Phi \colon \Hom_K(U, U^{\prime}) \otimes  \Hom_K(V, V^{\prime}) \to \Hom_K(U \otimes V, U^{prime} \otimes V^{\prime})
+ \]
+ tal que $\Phi(T \times S)(u \times v) = T(u) \otimes S(v),$ para todos $T \in \Hom_K(U, U^{\prime}), S \in \Hom_K(V, V^{\prime}), u \in U$ e $v \in V.$ Em particular, 
+ \[
+ U^{*} \otimes V^{*} \cong (U \otimes V)^{*}
+ \]
+ e
+ \[
+ \End_K(U) \otimes \End(K)_V \cong \End_K(U \otimes V).
+ \]
+\end{exercicio}
+\solucao{}
    \textcolor{Red}{Questões Suplementares}
 
 \exercicio{31} 
@@ -9653,3 +10468,4 @@ Suponha que $T$ seja um operador normal.
 %http://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2033-19.pdf
 
 %http://correio.fdvmg.edu.br/downloads/DET142/alglin_UFF.pdf
+%https://www.math3ma.com/categories/category-theory
