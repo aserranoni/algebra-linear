@@ -20,8 +20,6 @@
     "estilosexercicios")
    (LaTeX-add-labels
     "0.12.1"
-    "0.12.2"
-    "u+v"
-    "u-v"))
+    "0.12.2"))
  :latex)
 
