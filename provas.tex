@@ -20,7 +20,7 @@
 
 \section{\textcolor{Floresta}{Prova 1}}
 
-\exercicio{1} Sejam $a,b,c,d \in \mathbb{R}.$ Encontre o valor de
+\begin{exercicio} Sejam $a,b,c,d \in \mathbb{R}.$ Encontre o valor de
 \[
 \det \begin{bmatrix}
 a & b & c & d\\
@@ -29,6 +29,7 @@ a & b & c & d\\
 2020 & 2018 & 2017 & 2016
 \end{bmatrix}
 \]
+\end{exercicio}
 \solucao{
 Como o determinante é uma forma $3$-linear nas linhas da matriz, podemos notar que
 \[
@@ -94,13 +95,16 @@ a & b & c & d\\
 \]
 }
 
-\exercicio{2} Seja $V$ um $K$-espaço vetorial e $T \in \mathcal{L}(V).$ Seja $W \subseteq V$ um subespaço $T$-invariante de $V.$
+\begin{exercicio}
+ Seja $V$ um $K$-espaço vetorial e $T \in \mathcal{L}(V).$ Seja $W \subseteq V$ um subespaço $T$-invariante de $V.$
 \dividiritens{
 \task[\pers{a}] Mostre que, se $T$ é diagonalizável, então a restrição $T \upharpoonleft_W$ é diagonalizável.
 \task[\pers{b}] Seja $\mbox{Spec } T = \{ \lambda_1, \ldots, \lambda_n \}$ o conjunto de autovalores de $T,$ onde $\lambda_i \neq \lambda_j$ para $i \neq j.$ Quantos subespaços $T$-invariantes o espaço vetorial $V$ possui?
 }
+\end{exercicio}
 \solucao{}
-\exercicio{3} Encontre o polinômio característico e o polinômio minimal da matriz
+\begin{exercicio}
+Encontre o polinômio característico e o polinômio minimal da matriz
 \[
 \begin{bmatrix}
 1 & -1 & 1 & -1 & 1 & -1 \\
@@ -111,8 +115,11 @@ a & b & c & d\\
 1 & -1 & 1 & -1 & 1 & -1
 \end{bmatrix} \in \mathcal{M}_6(K)
 \]
+ 
+\end{exercicio}
 \solucao{}
-\exercicio{4} Dentre as três matrizes abaixos, quais delas são semelhantes?
+\begin{exercicio}
+ Dentre as três matrizes abaixos, quais delas são semelhantes?
 \[
 A = \begin{pmatrix}
 1 & 1 & 1 \\
@@ -128,8 +135,9 @@ A = \begin{pmatrix}
 -1& -2 &-3
 \end{pmatrix}
 \]
+\end{exercicio}
 \solucao{}
-\exercicio{5} Seja $V = \mathcal{P}_3(\mathbb{R})$ o espaço vetorial formado por todos os polinômios de grau menor ou igual a $3.$ Considere o operador $T \in \mathcal{L}(V)$ dado por
+\begin{exercicio} Seja $V = \mathcal{P}_3(\mathbb{R})$ o espaço vetorial formado por todos os polinômios de grau menor ou igual a $3.$ Considere o operador $T \in \mathcal{L}(V)$ dado por
 \[
 T(f(x)) = (x-1) f^{\prime}(x)
 \]
@@ -137,6 +145,7 @@ T(f(x)) = (x-1) f^{\prime}(x)
 \task[\pers{a}] Encontre o polinômio característico e o polinômio minimal de $T.$
 \task[\pers{b}] $T$ é diagonalizável? Em caso afirmativo, apresente uma base de autovetores para $V.$
 }
+\end{exercicio}
 \solucao{
 \dividiritens{
 \task[\pers{a}] Considere a base canônica $B = \{1, x, x^2, x^3 \}$ de $V.$ Vamos encontrar a matriz que representa $T$ nessa base. Para tanto, note que
@@ -165,7 +174,68 @@ Logo,
 \section{\textcolor{Floresta}{Prova 2}}
 
 \begin{exercicio}
- 
+ Suponha que $\mathbb{C}^2$ esteja munido de um produto interno $\prin{,}$ e que a base $\mathcal{B} = \{ (1,1), (1,i) \}$ seja ortonormal em relação a $\prin{,}.$
+ \dividiritens{
+ \task[\pers{a}] Calcule os seguintes produtos: $\prin{(i,1),(-i,i)}, \prin{(-1,1),(1,1)}$ e $\prin{(1,0),(0,1)}.$
+  \task[\pers{b}] Seja $T \in \mathcal{L}(\mathbb{C}^2)$ um operador linear cuja matriz em relação à base canônica de $\mathbb{C}^2$ é
+  \[
+  [T]_{\mbox{can}} = \begin{pmatrix}
+  i+1 & -1 \\
+  i & 0
+  \end{pmatrix}.
+  \]
+  
+  Determine o operador adjunto $T^{*}$ (relativamente ao produto interno $\prin{,}$ acima) e verifique se $T$ é normal.
+ }
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+Determine o polinômio de grau $2$ cujo gráfico melhor se ajusta aos pontos $(-1,-1), (0,0), (1,1)$ e $(-1,1).$
+\end{exercicio}
+\solucao{
+
+
+
+}
+
+\begin{exercicio}
+Sejam $U$ e $V$ espaços com produto interno, $T \in \mathcal{L}(U,V)$ uma aplicação linear de $U$ a $V$ e $T^{*} \in \mathcal{L}(V,U)$ a aplicação adjunta. Considere as afirmações abaixo e assinale quais delas são corretas:
+\dividiritens{
+\task[\pers{a}] $T$ é sobrejetora se, e somente se, $T^{*}$ é sobrejetora;
+\task[\pers{b}] $T$ é injetora se, e somente se, $T^{*}$ é injetora;
+\task[\pers{c}] $T$ é injetora se, e somente se, $T^{*}$ é sobrejetora;
+\task[\pers{d}] $T$ é bijetora se, e somente se, $T^{*}$ é bijetora.
+}
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Encontre as formas de Jordan e racional do operador $T \in \mathcal{L}(\mathbb{R}^n)$ se a matriz de $T$ na base canônica do $\mathbb{R}^n$ é a seguinte:
+\[
+\begin{bmatrix}
+1 & 1 & \cdots & 1 \\
+2 & 2 & \cdots & 2 \\
+\vdots & \vdots & \ddots & \vdots \\
+n & n & \cdots & n
+\end{bmatrix}
+\]
+\end{exercicio}
+\solucao{
+}
+\begin{exercicio}
+Encontre as formas de Jordan e racional do operador $T \in \mathcal{L}(\mathbb{R}^4)$ e as bases correspondentes se a matriz de $T$ na base canônica do $\mathbb{R}^4$ é a seguinte:
+\[
+\begin{pmatrix}
+-5 & -6 & -15 & 14 \\
+4 & 5 & 9 & -6 \\
+0 & 0 & 2 & -4 \\
+0 & 0 & 1 & -2
+\end{pmatrix}
+\]
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Sejam $V$ um $K$-espaço vetorial com produto interno, $T \in \mathcal{L}(V)$ e $W \subseteq V$ um subespaço $T$-invariante. Mostre que se $T$ é normal, então $W$ também é $T^{*}$-invariante.
 \end{exercicio}
 \solucao{}
  \end{document}
