@@ -6249,13 +6249,13 @@ Para os próximos itens, considere as funções $f_1(X) = X^3,$ $f_2(X) = e^X,$ 
 Considere o operador $T \in \mathcal{L}(\mathbb{R}^7)$ cuja matriz em relação à base canônica é
 \[
 \begin{pmatrix}
-1 &0 &0 &0 &0 &−2& 1 \\
-−1& 2 &0 &−1 &1 &1& −1 \\
-−1 &0 &1 &1 &0 &−1 &1 \\
-−1 &0 &1 &1& 0 &0& −1 \\
-−1 &0 &−1 &1 &2 &2& 1 \\
-0 &0 &0 &0 &0 &−1& 0 \\
-−1& 0& 0& 2& 0 &1 &1
+1 &0 &0 &0 &0 &-2& 1 \\
+-1& 2 &0 &-1 &1 &1& -1 \\
+-1 &0 &1 &1 &0 &-1 &1 \\
+-1 &0 &1 &1& 0 &0& -1 \\
+-1 &0 &-1 &1 &2 &2& 1 \\
+0 &0 &0 &0 &0 &-1& 0 \\
+-1& 0& 0& 2& 0 &1 &1
 \end{pmatrix}
 \]
 \dividiritens{
@@ -10117,7 +10117,14 @@ Observe que $T$ é ortogonal, pois $A$ é simétrica.
 \begin{exercicio}
 Para cada uma das seguintes matrizes $A,$ mostre que ela é uma matriz normal e ache uma matriz unitária $P$ tal que $\overline{P^t}AP$ seja diagonal.
 \dividiritensdiv{2}{
-\task[\pers{a}] 
+\task[\pers{a}] $\begin{bmatrix}
+1 & 1 \\
+i & 3+2i
+\end{bmatrix}$
+\task[\pers{b}] $\begin{bmatrix}
+2 & i \\
+i & 2
+\end{bmatrix}$
 }
 \end{exercicio}
 \solucao{
@@ -10233,7 +10240,7 @@ Logo, temos que
 \]
 }
 \begin{exercicio}
-Um operador $S$ chama-se antiauto-adjunto se $S^{∗} = -S.$ Mostre que um operador $T$ é autoadjunto se, e somente se, o operador $iT$ é antiautoadjunto.
+Um operador $S$ chama-se antiauto-adjunto se $S^{*} = -S.$ Mostre que um operador $T$ é autoadjunto se, e somente se, o operador $iT$ é antiautoadjunto.
 \end{exercicio}
 \solucao{}
 \begin{exercicio}
@@ -10427,7 +10434,7 @@ para todos $u \in U, v \in V, \alpha \in U^{*}, v \in V^{*}.$
 Sejam $U$ e $V$ $K$-espaços vetoriais.
 \dividiritens{
 \task[\pers{a}]  Mostre que existe uma transformação linear $\lambda_{U,V} \colon V \times U^{*} \to \Hom(U, V)$ que satisfaz
-\[\lambda_{U,V}(v \otimes \alpha)(u) = \alpha(u)v, \ \forall u \in U, v \in V, \alpha \in U^{∗}\]
+\[\lambda_{U,V}(v \otimes \alpha)(u) = \alpha(u)v, \ \forall u \in U, v \in V, \alpha \in U^{*}\]
 \task[\pers{b}]  Mostre que $\lambda_{U,V}$ é um isomorfismo se $U$ e $V$ tiverem dimensão finita e conclua que se $V$ é um espaço de dimensão finita, então $\lambda_{V,V}$ estabelece um isomorfismo $V \otimes V^{*} \cong \End(V).$
 }
 \end{exercicio}
