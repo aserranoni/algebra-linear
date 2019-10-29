@@ -3885,14 +3885,248 @@ A_i=\begin{pmatrix}
 a_i
 \end{pmatrix},\quad\quad a_i\in\mathbb{R}
 \]
-\item
 \[
 A_i=r_i\begin{pmatrix}
 \cos(\varphi_i)&-\sin(\varphi_i)\\\sin(\varphi_i)&\cos(\varphi_i)
-\end{pmatrix},\quad\quad r_i\neq 0,0<\varphi<\pi
+\end{pmatrix},\quad\quad r_i\neq 0,\quad\quad0<\varphi<\pi
 \]
 \end{itemize}
 \end{teorema}
+
+\section{Matriz de Gram}
+
+\begin{definicao}
+Seja $V$ um espaço sobre $K$ com produto interno. Sejam $v_1,\dots,v_m\in V$. A matriz:
+\[
+G(v_1,\dots,v_n)=\left(\langle v_i,v_j\rangle\right)\in\m{n}{K}
+\]
+chama-se a \textbf{matriz de Gram} do sistema $\{v_1,\dots,v_n\}$.
+\end{definicao}
+
+\noindent
+A matriz $G(v_1,\dots,v_n)$ é Hermitiana, ou seja:
+\[
+G(v_1,\dots,v_n)^*=G(v_1,\dots,v_n),
+\]
+pois para todo $i,j$ temos:
+\[
+\overline{\langle v_i,v_j\rangle}=\langle v_j,v_i\rangle.
+\]
+
+\begin{proposicao}
+Seja $\dim(V)=n$, $B=(e_1,\dots,e_n)$ uma base de $V$. Se $C=(f_1,\dots,f_n)$ é outra base de $V$, então:
+\[
+G(f_1,\dots,f_n)=P^t_{B,C}G(e_1,\dots,e_n)\overline{P_{B,C}}.
+\]
+\end{proposicao}
+\begin{proof}
+Observemos que para todo $x,y\in V$ temos:
+\[
+\langle x,y\rangle=[x]^t_BG_B\overline{[y]_B}=(x_1,\dots,x_n)\left(\langle e_i,e_j\rangle\right)\begin{pmatrix}
+\overline{y_1}\\\vdots\\\overline{y_n},
+\end{pmatrix}
+\]
+em que:
+\[
+x=\sum_i x_ie_i,\quad\quad y=\sum_i y_ie_i,
+\]
+pois:
+\[
+\langle x,y\rangle=\sum_{i,j}x_i\overline{y_j}\langle e_i,e_j\rangle.
+\]
+Agora temos:
+\[
+[x]_B=[x]_CP_{B,C}^t,
+\]
+aí sendo:
+\[
+P=(a_{ij}),
+\]
+temos:
+\[
+f_i=\sum_{j=1}^na_{ji}e_j,
+\]
+aí:
+\[
+x=x_1e_1+\dots+x_ne_n=\sum_{i=1}^nx'_if_i=\sum_{i,j}x'_ia_{ji}e_j=
+\]
+\end{proof}
+
+\begin{corolario}
+Se $B=(e_1,\dots,e_n)$ é uma base de $V$ então $\det G(e_1,\dots,e_n)>0$.
+\end{corolario}
+\begin{proof}
+Seja $C$ uma base de $V$. Então:
+\[
+G_C=P^t_{B,C}G_B\overline{P_{B,C}},
+\]
+então, sendo $\det(P_{B,C})=\alpha$, temos:
+\[
+1=\det(G_C)=\det(P^t_{B,C})\det(G_B)\det(\overline{P_{B,C}})=\alpha\det(G_B)\overline{\alpha}=\abs{\alpha}^2\det(G_B).
+\]
+\end{proof}
+
+\begin{corolario}
+Seja $V$ um espaço com produto interno, $v_1,\dots,v_n\in V$ que são linearmente independentes. Então:
+\[
+\det G(v_1,\dots,v_n)>0
+\]
+\end{corolario}
+\begin{proof}
+Seja $V_0=\langle v_1,\dots,v_n\rangle$, então $V_0$ é um espaço com produto interno e $\dim(V_0)=n$ e $(v_1,\dots,v_n)$ é uma base de $V_0$. Assim, pelo corolário anterior, temos $G(v_1,\dots,v_n)>0$.
+\end{proof}
+
+\begin{proposicao}
+Se $v_1,\dots,v_n$ são linearmente dependentes, então $G(v_1,\dots,v_n)$ é degenerada; em particular $\det G(v_1,\dots,v_n)=0$.
+\end{proposicao}
+\begin{proof}
+Seja $B=\{e_1,\dots,e_n\}$ uma base e $C=\{f_1,\dots,f_n\}$ um conjunto arbitrário. Seja:
+\[
+P_{B,C}=\left([f_1]_B,\dots,[f_n]_B\right),
+\]
+a matriz de coordenadas de $\{f_1,\dots,f_n\}$ na base $B$. Então para $x$, sendo:
+\[
+x=x'_1f_1+\dots+x'_nf_n,
+\]
+então:
+\[
+[x]_B=\left(x'_1,\dots,x'_n\right)P^t_{B,C}.
+\]
+\end{proof}
+
+\begin{proposicao}
+Seja $U\subseteq V$ um subespaço, e seja $U=\langle u_1,\dots,u_m\rangle$ com $u_i$ linearmente independentes, e seja $v\in V$. Então:
+\[
+d(v,U)=\sqrt{\frac{\det G(u_1,\dots,u_m,v)}{\det G(u_1,\dots,u_m)}}.
+\]
+\end{proposicao}
+\begin{proof}
+Seja $v=u+w$ com $u\in U$ e $w\perp U$. Então para $i=1,\dots,m$ temos:
+\[
+\langle u_i,v\rangle=\langle u_i,u\rangle;
+\]
+assim temos:
+\[
+G(u_1,\dots,u_m,v)=\begin{pmatrix}
+G(u_1,\dots,u_m)&\begin{matrix}\langle u_1,u\rangle\\\vdots\\\langle u_m,u\rangle\end{matrix}\\\begin{matrix}\langle u,u_1\rangle&\ldots&\langle u,u_m\rangle\end{matrix}&\langle u,u\rangle+\langle w,w\rangle
+\end{pmatrix},
+\]
+assim:
+\[
+\det G(u_1,\dots,u_m,v)=\det G(u_1,\dots,u_m,u)+\det\begin{pmatrix}
+G(u_1,\dots,u_m)&\begin{matrix}0\\\vdots\\0\end{matrix}\\\begin{matrix}\langle u,u_1\rangle&\ldots&\langle u,u_m\rangle\end{matrix}&\norm{w}^2
+\end{pmatrix},
+\]
+aí:
+\[
+\det G(u_1,\dots,u_n,v)=\det G(u_1,\dots,u_n)\cdot\norm{w}^2.
+\]
+\end{proof}
+
+\begin{proposicao}
+Seja $V$ um espaço sobre $K$ com uma base $B=(v_1,\dots,v_n)$. Se $V$ possui um produto interno então $G(v_1,\dots,v_n)>0$. Reciprocamente, seja $A=(a_{ij})\in\m{n}{K}$ uma matriz positiva definida, aí definamos em $V$ o produto escalar $\langle v_i,v_j\rangle=a_{ij}$, então $V$ é um espaço com produto interno.
+\end{proposicao}
+
+\begin{teorema}
+Seja $A=(a_{ij})\in\m{n}{K}$ uma matriz hermitiana. Então são equivalentes:
+\begin{itemize}
+\item $A$ é positiva definida.
+\item $\mathrm{Spec}(A)=\{\lambda_1,\dots,\lambda_n\}$ com $\lambda_i>0$ para todo $i=1,\dots,n$
+\item $A=B^2$ para alguma matriz $B$ tal que $B=B^*$ e $\det B\neq 0$. De modo mais geral $A=TT^*$ com $\det T\neq 0$.
+\item Todos os menores principais de $A$ são positivos.
+\end{itemize}
+\end{teorema}
+\begin{proof}
+$(1)\Rightarrow(4)$ Se $A$ é positiva definida, então existe um produto interno tal que $G(e_1,\dots,e_n)=A$. Em particular, sendo:
+\[
+A_i=\begin{pmatrix}
+a_{11}&&a_{1i}\\&\ddots&\\a_{i1}&&a_{ii}
+\end{pmatrix},
+\]
+então $A_i=G(e_1,\dots,e_i)$, aí $\det(A_i)>0$.
+
+\medskip
+\noindent
+$(4)\Rightarrow(1)$ Indução sobre $n$. Seja $\mathrm{Spec}(A)=\{\lambda_1,\dots,\lambda_n\}$ ($\lambda_i\in\mathbb{R}$ com repetição). Sabemos que $\det(A)=\lambda_1\dots>0$. Se $A$ não é positiva definida, então existem $i$ e $j$ tais que $\lambda_i\lambda_j<0$, aí sejam $u,v$ autovetores não nulos associados aos autovalores $\lambda_i,\lambda_j$. Escolhamos $\alpha,\beta\in K$ tais que $x=\alpha u+\beta v\in\langle e_1,\dots,e_{n-1}\rangle$, então:
+\[
+\begin{array}{rcl}
+\langle Ax,x\rangle&=&\langle \alpha Au+\beta Av,\alpha u+\beta v\rangle\\
+&=&\langle \lambda_i\alpha u+\lambda)j\beta v,\alpha u+\beta v\rangle\\
+&=&\lambda_i\norm{\alpha u}^2+\lambda_j\norm{\beta v}^2+\lambda_i\alpha\overline{\beta}\langle u,v\rangle+\lambda_j\beta\overline{\alpha}\langle v,u\rangle\\
+&=&\lambda_i\norm{\alpha u}^2+\lambda_j\norm{\beta v}^2,
+\end{array}{rcl}
+\]
+assim:
+\[
+\lambda_i\norm{\alpha u}^2+\lambda_j\norm{\beta v}^2<0,
+\]
+contradizendo a hipótese de indução.
+\end{proof}
+
+\chapter{Formas Bilineares}
+
+\section{Definições e Exemplos}
+
+\begin{definicao}
+Sejam $U,V,W$ espaços vetoriais sobre $K$. Uma \textbf{função bilinear} de $U$ e $V$ em $W$ é uma função $f:U\times V\rightarrow W$ que satisfaz o seguinte:
+\begin{itemize}
+\item $f(\alpha_1u_1+\alpha_2u_2,v)=\alpha_1f(u_1,v)+\alpha_2f(u_2,v)$.
+\item $f(u,\beta_1v_1+\beta_2v_2)=\beta_1f(u,v_1)+\beta_2f(u,v_2)$.
+\end{itemize}
+Denotamos o conjunto das funções bilineares de $U$ e $V$ em $W$ por $B(U,V;W)$.
+\end{definicao}
+
+\begin{definicao}
+Se $U=V=W$, cada $f\in B(U,V;W)$ determina em $U$ um produto:
+\[
+u\cdot v=f(u,v).
+\]
+Neste caso, $A=(U,f)$ chama-se uma \textbf{álgebra} sobre o corpo $K$.
+\end{definicao}
+
+\begin{exemplo}
+Seja $A=(\mathbb{R}^3,\times)$, em que $\times$ é o produto vetorial usual, então $A$ é uma $\mathbb{R}$-álgebra.
+\end{exemplo}
+
+\begin{exemplo}
+A estrutura dos complexos $\mathbb{C}$ é uma $\mathbb{R}$-álgebra de dimensão $2$.
+\end{exemplo}
+
+\begin{exemplo}
+$K$ é uma $K$-álgebra de dimensão $1$.
+\end{exemplo}
+
+\begin{exemplo}
+O conjunto das matrizes $\m{n}{K}$ é uma $K$-álgebra com:
+\[
+f(A,B)=AB.
+\]
+\end{exemplo}
+
+\begin{exemplo}
+Seja:
+\[
+H_n(\mathbb{R})=\{A\in\m{n}{K}\mid A^t=A\},
+\]
+e definamos:
+\[
+f(A,B)=AB+BA,
+\]
+então $H_n(\mathbb{R})$ é uma $\mathbb{R}$-álgebra, chamada \textbf{álgebra de Jordan}.
+\end{exemplo}
+
+\begin{definicao}
+Uma \textbf{forma bilinear} entre dois espaços vetoriais $U$ e $V$ sobre $K$ é uma função bilinear de $U$ e $V$ em $K$. Denotamos o conjunto das formas bilineares entre $U$ e $V$ por $B(U,V)$.
+\end{definicao}
+
+\begin{exemplo}
+Alguns exemplos são:
+\begin{itemize}
+\item Um produto interno sobre um espaço vetorial \textit{real}.
+\item $(A,B)\mapsto\mathrm{tr}(AB)$.
+\item Sejam $\varphi\in U^*$ e $\psi\in V^*$, então definamos $(\varphi\otimes\psi)(u,v)=\varphi(u)\psi(v)$, o \textbf{produto tensorial} de $\varphi$ e $\psi$.
+\end{itemize}
+\end{exemplo}
 
 \printindex
 
