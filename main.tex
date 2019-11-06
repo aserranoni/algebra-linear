@@ -4128,6 +4128,224 @@ Alguns exemplos são:
 \end{itemize}
 \end{exemplo}
 
+\section{Formas Não Degeneradas}
+
+\begin{definicao}
+Seja $(V,f)$ um espaço com uma forma bilinear $f$. Um subespaço $U\subseteq V$ chama-se \textbf{não-degenerado} se e só se a restrição $f\upharpoonright_U$ é não degenerada, e chama-se \textbf{isotrópico} se e só se $f\upharpoonright_U=0$.
+\end{definicao}
+
+\noindent
+Por exemplo, num espaço simplético todo subespaço de dimensão $1$ é simplético.
+
+\begin{proposicao}
+Seja $(V,f)$ de dimensão finita.
+\begin{itemize}
+\item Se $U\subseteq V$ é não degenerado, então $V=U\oplus U^\perp$.
+\item Se os dois $U$ e $U^\perp$ são não degenerados, então $U^{\perp\perp}=U$.
+\end{itemize}
+\end{proposicao}
+\begin{proof}
+\begin{itemize}
+\item Seja $B=(u_1,\dots,u_m)$ uma base de $U$ e completemos a uma base $C=(v_1,\dots,v_m)$ de $V$. Consideremos $f'\in B(U,V)$ e $f''\in B(U,U)$ que são restrições de $f$ sobre $U\times V$ e $U\times U$. Sejam $A=[f']_{B,C}\in\m{m,n}{K}$ e $B=[f'']_{B,B}\in\m{n}{K}$. É claro que a matriz $B$ é formada pelas $m$ primeiras colunas da matriz $A$. Como $f\upharpoonright_U$ é não degenerada, então a matriz $B$ é não degenerada. Assim $\mathrm{posto}(B)=\mathrm{posto}(A)=m$. Agora consideremos:
+\[
+U^\perp=\{v\in V\mid[f']_{B,C}[v]^t_C=A[v]^t_C=0\},
+\]
+então:
+\[
+\begin{array}{rcl}
+v\in U^\perp&\Leftrightarrow&\forall u\in U:f(u,v)=0\\
+&\Leftrightarrow&\forall u\in U:[u]_B[f]_{B,C}[v]^t_C=0\\
+&\Leftrightarrow&[f]_{B,C}[v]^t_C=0\\
+&\Leftrightarrow&A[v]^t_C=0.
+\end{array}
+\]
+Assim, como $A\in\m{m,n}{K}$, então $\dim(U^\perp)=n-m.$ Como $U$ é não degenerado, então $U\cap U^\perp=0$, portanto $V=U\oplus U^\perp.$
+\item É claro que $U^{\perp\perp}.$ Se $U^\perp$ é não degenerado então $\dim(U^{\perp\perp})=n-\dim(U^\perp)=n-(n-m)=m=\dim(U),$ portanto $\dim(U^{\perp\perp})=U$.
+\end{itemize}
+\end{proof}
+
+\begin{teorema}
+Seja $(V,f)$ um espaço com uma forma bilinear $f$ simétrica ou antissimétrica. Então $V$ se decompõe numa soma ortogonal de subespaços:
+\[
+V=V_1\oplus\dots\oplus V_m,
+\]
+em que $\dim(V_i)=1$ no caso simétrico e $\dim(V_i)=1,2$ no caso antissimétrico, sendo $\dim(V_i)=1$ com $V_i$ isotrópico e $\dim(V_i)=2$ com $V_i$ não degenerado.
+\end{teorema}
+\begin{proof}
+Indução sobre $\dim(V).$
+\begin{itemize}
+\item[1)] Caso simétrico. Se $f=0$, então $V=Ke_1\oplus\dots\oplus Ke_n$ para qualquer base $B=(e_1,\dots,e_n)$ é a soma desejada. Agora suponhamos que $f\neq 0$. Se $\forall v:f(v,v)=0$, então já vimos que para $u$ e $v$ temos $f(u,v)=-f(v,u)=f(v,u)$, aí $f(u,v)=0$, contradição. Assim existe $v$ tal que $f(v,v)\neq0.$ Agora tomemos $V_1=\langle v\rangle,$ então $V_1$ é não degenerado, portanto $V=V_1\oplus V_1^\perp$. Por indução, $V_1^\perp=V_2\oplus\dots\oplus V_m$, aí $V=V_1\oplus\dots\oplus V_m.$
+\item[2)] Caso antissimétrico. Se $f=0$, então tudo é evidente. Se $f\neq 0$, então existem $u$ e $v$ tais que $f(u,v)=\alpha\neq0.$ Seja $V_1=\langle u,v\rangle,$ então $B=(u,v)$ é uma base de $V_1.$ Temos:
+\[
+[f\upharpoonright_{V_1}]_B=\begin{pmatrix}
+0&\alpha\\-\alpha&0
+\end{pmatrix},
+\]
+então $f\upharpoonright_{V_1}$ é não degenerada, aí $V_1$ é não degenerado e $V=V_1\oplus V_1^\perp.$
+\end{itemize}
+\end{proof}
+
+\begin{corolario}
+Seja $A\in\m{n}{K}$ uma matriz simétrica ou antissimétrica. Então existe $P\in\m{n}{K}$ não degenerada tal que:
+\begin{itemize}
+\item[1)] No caso simétrico:
+\[
+P^tAP=\begin{pmatrix}
+\alpha_1&&0\\&\ddots&\\0&&\alpha_n
+\end{pmatrix}
+\]
+em que $\alpha_i\in K.$
+\item[2)] No caso antissimétrico:
+\[
+P^tAP=\begin{pmatrix}
+A_1&&&&&\\&\ddots&&&&\\&&A_m&&&\\&&&0&&\\&&&&\ddots&\\&&&&&0
+\end{pmatrix}
+\]
+em que:
+\[
+A_i=\begin{pmatrix}
+0&1\\-1&0
+\end{pmatrix}.
+\]
+\end{itemize}
+\end{corolario}
+
+\begin{corolario}[Teorema da Inversão]
+Se $K=\mathbb{R}$ e $f\in B(V,\mathbb{R})$, então existe uma base $B$ de $V$ tal que:
+\[
+[f]_B=\begin{pmatrix}
+I_r&0&0\\0&-I_s&0\\0&0&0_t
+\end{pmatrix},
+\]
+em que $I_m$ é a matriz identidade de tamanho $m$ e $0_m$ é a matriz quadrada nula de tamanho $m.$ O trio $(r,s,t)$ se chama \textbf{assinatura} da forma $f$ e está unicamente determinada.
+\end{corolario}
+\begin{proof}
+Temos $V=V_+\oplus V_-\oplus V_0$, em que $\dim(V_+)=r$ e $\dim(V_-)=s$ e $\dim(V_0)=t$, e também $r+s=\mathrm{posto}[f]_B$, assim $t=n-\mathrm{posto}[f]_B$ está determinado unicamente.
+
+\medskip
+\noindent
+Agora seja $V=V'_+\oplus V'_-\oplus V'_0,$ e seja $\dim(V'_+)=r$ e $\dim(V'_-)=s'$. Basta provar que $r=r'.$ Suponhamos que $r>r'.$ Consideremos a projeção:
+\[
+\begin{array}{rcl}
+\pi:V&\rightarrow&V'_+\\
+v=v'_++v'_-+v'_0\mapsto v'_+
+\end{array}
+\]
+Seja $\pi_+=\pi\upharpoonright_{V_+},$ então $\pi_+:V_+\rightarrow V'_+.$ Como $r>r'$ então $\dim(V_+)>\dim(V'_+),$ portanto existe $v\in V_+$ tal que $v\neq 0$ e $\pi_+(v)=0,$ aí $v\in V_+$ e $v\in V'_-\oplus V'_0$, pois $v'_+=0,$ aí:
+\[
+0<f(v,v)=f(v'_-+v'_0,v'_-+v'_0)=f(v'_-,v'_-)+f(v'_0,v'_0)\leq 0,
+\]
+chegando a contradição.
+\end{proof}
+
+\begin{observacao}
+A forma bilinear de assinatura $(3,1,0)$ no espaço $\mathbb{R}^4$ determina a \textbf{geometria do espaço de Minkowski}, associada com a teoria da relatividade.
+\end{observacao}
+
+\section{Formas Quadráticas}
+
+\begin{definicao}
+Um polinômio homogêneo nas variáveis $x_1,\dots,x_n$ de grau $2$ com coeficientes no corpo $K$ chama-se uma \textbf{forma quadrática} nas variáveis $x_1,\dots,x_n,$ e sua aparência genérica é assim:
+\[
+q(x_1,\dots,x_n)=\sum_{i,j=1}^na_{ij}x_ix_j.
+\]
+A matriz $A=(a_{ij})$ chama-se matriz da forma quadrática $q.$
+\end{definicao}
+
+\noindent
+Então a matriz $A^t=A$ e para $x\in K^n$ temos $a(x)=[x]A[x]^t.$
+
+\medskip
+\noindent
+Associemos com $q$ a forma bilinear simétrica:
+\[
+f(x,y)=[x]A[y]^t,
+\]
+de modo que $q(x)=f(x,x).$
+
+\medskip
+\noindent
+Se $\mathrm{Char}(K)\neq 2,$ então:
+\[
+f(x,y)=\frac{1}{2}\left(q(x+y)-q(x)-q(y)\right).
+\]
+
+\begin{definicao}
+Uma aplicação $q:V\rightarrow K$ é chamada uma \textbf{forma quadrática} sobre $V$ se e só se existe uma forma bilinear $f$ simétrica tal que:
+\[
+\forall x\in V:q(x)=f(x,x).
+\]
+A forma $f$ chama-se a forma bilinear associada com a forma quadrática $q.$ A forma $q$ é dita \textbf{não degenerada} se e só se a $f$ é uma forma não degenerada.
+\end{definicao}
+
+\begin{teorema}
+Temos o seguinte:
+\begin{itemize}
+\item Seja $V$ um espaço vetorial sobre $K$ de dimensão $n$ e $q:V\rightarrow K$ uma forma quadrática. Então exsite uma base $B$ de $V$ e $\lambda_1,\dots,\lambda_n\in K$ tais que:
+\[
+q(x)=\lambda_1x_1^2+\dots+\lambda_nx_n^2,
+\]
+em que $(x_1,\dots,x_n)=[x]_B.$
+\item Se $K=\mathbb{R}$ então no caso anterior existe uma base $B$ de $V$ tal que nesta base:
+\[
+q(x)=x_1^2+\dots+x_r^2-x_{r+1}^2-\dots-x_{r+s}^2,
+\]
+em que os números $r$ e $s$ estão unicamente determinados.
+\end{itemize}
+\end{teorema}
+
+\section{Produto Tensorial}
+
+\begin{definicao}
+Sejam $U$ e $V$ espaços vetoriais sobre $K.$ Um espaço $W$ junto com uma função bilinear $\iota$ de $U$ e $V$ a $W$ formam um \textbf{produto tensorial} de $U$ e $V$ se e só se para qualquer espaço $L$ e função bilinear $\varphi$ de $U$ e $V$ a $L$ existe uma única aplicação linear $\overline{\varphi}:W\rightarrow L$ tal que $\varphi=\overline{\varphi}\circ\iota.$
+\end{definicao}
+
+\begin{proposicao}
+O par $(W,\iota)$ é únicamente determinado sob isomorfismo.
+\end{proposicao}
+\begin{proof}
+Seja $(W',\iota')$ um outro produto tensorial. Então:
+\begin{itemize}
+\item Existe uma função linear $\varphi:W\rightarrow W'$ tal que $\iota'=\varphi\circ\iota.$
+\item Existe uma função linear $\varphi':W'\rightarrow W$ tal que $\iota=\varphi'\circ\iota'.$
+\end{itemize}
+Assim:
+\begin{itemize}
+\item $(\varphi'\circ\varphi)\circ\iota=\iota,$ mas $I_W\circ\iota=\iota,$ aí $\varphi'\circ\varphi=I_W.$
+\item $(\varphi\circ\varphi')\circ\iota'=\iota',$ mas $I_{W'}\circ\iota'=\iota',$ aí $\varphi\circ\varphi'=I_{W'}.$
+\end{itemize}
+\end{proof}
+
+\begin{proposicao}
+Para $U$ e $V$ existe um produto tensorial $(W,\iota).$
+\end{proposicao}
+\begin{proof}
+Consideremos o espaço vetorial $X$ com base $U\times V.$ Seja $E$ a reunião do conjunto dos elementos de $X$ da forma:
+\[
+(a_1u_1+a_2u_2,v)-a_1(u_1,v)-a_2(u_2,v),\quad\quad a_1,a_2\in K,\quad u_1,u_2,v\in V
+\]
+com o conjunto dos elementos de $X$ da forma:
+\[
+(u,a_1v_1+a_2v_2)-a_1(u,v_1)-a_2(u,v_2),\quad\quad a_1,a_2\in K,\quad u,v_1,v_2\in V
+\]
+e seja $Y$ o subespaço gerado por $E$. Agora consideremos $W=X/Y$ juntamente com a projeção canônica $\iota:X\rightarrow W.$ Então podemos mostrar que $(W,\iota)$ é um produto tensorial \textcolor{red}{(Completar detalhes)}.
+\end{proof}
+
+\begin{definicao}
+Denotamos o par $(W,\iota)$ definido na demonstração por $(U\otimes V,\otimes).$
+\end{definicao}
+
+\begin{proposicao}
+Sejam $U$ e $V$ espaços. Então a imagem de $\langle\mathrm{Im}(\otimes)\rangle=U\otimes V$.
+\end{proposicao}
+\begin{proof}
+Seja $L=(U\otimes V)/\langle\mathrm{Im}(\otimes)\rangle,$ e consideremos a projeção canônica $\pi:U\times V\rightarrow L.$ Então $\pi\circ\otimes=0$ e $0\circ\otimes=0$, assim $\pi=0$, aí $\langle\mathrm{Im}(\otimes)\rangle=U\otimes V.$
+\end{proof}
+
+\begin{teorema}
+Sejam $U$ e $V$ espaços, $(e_i)_{i\in I}$ uma base de $U$ e $(f_j)_{j\in J}$ uma base de $V.$ Então a família $(e_i\otimes f_j)_{(i,j)\in I\times J}$ é uma base de $U\otimes V.$
+\end{teorema}
+
 \printindex
 
 \end{document}
