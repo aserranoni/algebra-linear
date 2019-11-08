@@ -3885,12 +3885,27 @@ A_i=\begin{pmatrix}
 a_i
 \end{pmatrix},\quad\quad a_i\in\mathbb{R}
 \]
+\item
 \[
 A_i=r_i\begin{pmatrix}
 \cos(\varphi_i)&-\sin(\varphi_i)\\\sin(\varphi_i)&\cos(\varphi_i)
 \end{pmatrix},\quad\quad r_i\neq 0,\quad\quad0<\varphi<\pi
 \]
 \end{itemize}
+\end{teorema}
+
+\section{Operadores Positivos}
+
+\begin{definicao}
+Um operador $T$ é dito \textbf{positivo semidefinido} se e só se para todo $x\in V$ temos $\langle T(x),x\rangle\geq 0.$ Nesse caso, denotamos a propriedade por $T\geq 0.$
+\end{definicao}
+
+\begin{definicao}
+Um operador $T$ é dito \textbf{positivo definido} se e só se para todo $x\in V$ tal que $x\neq 0$ temos $\langle T(x),x\rangle>0.$ Nesse caso, denotamos a propriedade por $T\rhd 0.$
+\end{definicao}
+
+\begin{teorema}
+Um operador $T$ é positivo semidefinido se e só se $T*=T$ e para todo $\alpha\in\mathrm{Spec}(T)$ temos $\alpha\geq 0.$
 \end{teorema}
 
 \section{Matriz de Gram}
@@ -4345,6 +4360,207 @@ Seja $L=(U\otimes V)/\langle\mathrm{Im}(\otimes)\rangle,$ e consideremos a proje
 \begin{teorema}
 Sejam $U$ e $V$ espaços, $(e_i)_{i\in I}$ uma base de $U$ e $(f_j)_{j\in J}$ uma base de $V.$ Então a família $(e_i\otimes f_j)_{(i,j)\in I\times J}$ é uma base de $U\otimes V.$
 \end{teorema}
+
+\begin{proposicao}
+Sejam $U$ e $V$ espaços vetoriais sobre $K.$ Seja $w=\sum_{i=1}^n u_i\otimes v_i\in U\otimes V$, em que $(v_1,\dots,v_n)$ é linearmente independente. Então os elementos $(u_1,\dots,u_n)$ estão determinados unicamente, isto é, se $w=\sum_{i=1}^nu'_i\otimes v_i,$ então $u'_i=u_i$ para todo $i=1,\dots,n.$ O mesmo é válido quando o $(u_1,\dots,u_n)$ é linearmente independente.
+\end{proposicao}
+\begin{proof}
+Suponhamos que $\sum_{i=1}^nu_i\otimes v_i=\sum_{i=1}^nu'_i\otimes v_i,$ então:
+\[
+0=\sum_{i=1}^n\left(u_i\otimes v_i-u'_i\otimes v_i\right)=\sum_{i=1}^n(u_i-u'_i)\otimes v_i.
+\]
+Assim basta provar que, se:
+\[
+\sum_{i=1}^nu_i\otimes v_i=0
+\]
+então:
+\[
+u_1=\dots=u_n=0.
+\]
+\end{proof}
+
+\section{Extensão Escalar}
+
+\begin{definicao}
+Para corpo $F$ e subcorpo $K$ e espaço $V$ sobre $K$, então uma \textbf{extensão escalar} de $V$ por $F$ é um espaço vetorial sobre $F$ munido de uma função $K$-linear $i:V\rightarrow W$ tal que para todo espaço $U$ sobre $F$ e para todo $\varphi\in\mathcal{L}_K(V,U)$ exista um único $\overline{\varphi}\in\mathcal{L}_F(W,U)$ tal que $\overline{\varphi}\circ i=\varphi.$
+\end{definicao}
+
+\begin{proposicao}
+Para corpo $F$ e subcorpo $K$ e espaço $V$ sobre $K$, então uma extensão escalar de $V$ por $F$ é determinado unicamente sob isomorfismo.
+\end{proposicao}
+
+\begin{proposicao}
+Se $V$ é um espaço vetorial sobre $\mathbb{R}$, então a complexificação $V_\mathbb{C}$ munida da função $i:V\rightarrow V_\mathbb{C}$ dada por $\forall x\in V:i(x)=(x,0)$ é uma extensão escalar de $V$ por $\mathbb{C}.$
+\end{proposicao}
+
+\begin{proposicao}
+Para corpo $F$ e subcorpo $K$ e espaço $V$ sobre $K$, então $F\otimes V$ munido da função $i:V\rightarrow F\otimes V$ dada por $\forall x\in V:i(x)=1\otimes x$ é uma extensão escalar de $V$ por $F.$
+\end{proposicao}
+
+\begin{definicao}
+Para corpo $F$ e subcorpo $K$ e espaço $V$ sobre $K$, definimos $V_F=F\otimes V$ e definimos $\iota_F:V\rightarrow F\otimes V$ por $\forall x\in V:\iota_F(x)=1\otimes x.$
+\end{definicao}
+
+\begin{proposicao}
+Propriedades da extensão escalar.
+\begin{itemize}
+\item $\dim_F(V_F)=\dim_K(V).$
+\item Para qualquer base $(e_i)_{i\in I}$ de $V$ sobre $K$, então $(\iota(e_i))_{i\in I}$ é uma base de $V_F$ sobre $F.$
+\end{itemize}
+\end{proposicao}
+
+\begin{proposicao}[\textbf{Isomorfismos Canônicos}]
+Temos os seguintes isomorfismos canônicos:
+\begin{itemize}
+\item Se $V$ é um espaço sobre $K$ então:
+\[
+\begin{array}{rcl}
+K\otimes V&\cong&V\\
+\alpha\otimes v&\mapsto&v.
+\end{array}
+\]
+\item Se $U$ e $V$ são espaços sobre $K$, então:
+\[
+\begin{array}{rcl}
+U\otimes V&\cong&V\otimes U\\
+u\otimes v&\mapsto&v\otimes u.
+\end{array}
+\]
+\item Se $U$ e $V$ e $W$ são espaços sobre $K$ então:
+\[
+\begin{array}{rcl}
+(U\otimes V)\otimes W&\cong&U\otimes(V\otimes W)\\
+(u\otimes v)\otimes w&\mapsto&u\otimes(v\otimes w).
+\end{array}
+\]
+\end{itemize}
+\end{proposicao}
+
+\chapter{Mecânica Quântica}
+
+\section{Postulados}
+
+Apresentaremos alguns postulados.
+
+\begin{postulado}
+O estado de um sistema quântico num espaço $X$ (em geral $X=\mathbb{R}^n$ ou afins) está completamente determinado por uma função de onda $\psi:X\rightarrow\mathbb{C}$ tal que:
+\[
+\int_{X}\abs{\psi(x)}^2\dif x=1.
+\]
+Além disso, interpretamos $\abs{\psi(x)}^2$ como a distribuição de probabilidade de encontrarmos a partícula na posição $x.$
+\end{postulado}
+
+\begin{postulado}
+Toda grandeza física $\alpha$ de um estado quântico está associado a um operador linear autoadjunto $\hat{\alpha}$ em $L^2.$ Para algumas grandezas podemos mostrar mais especificamente seus operadores correspondentes.
+\begin{itemize}
+\item Cada coordenada cartesiana de posição $x_i$ em $\mathbb{R}^n$ corresponde ao operador $\hat{x}_i$ dado pela multiplicação por $x_i$, ou seja:
+\[
+(\hat{x}_if)(x_1,\dots,x_n)=x_if(x_1,\dots,x_n).
+\]
+\item Cada coordenada cartesiana de momento linear $p_i$ corresponde ao operador $\hat{p}_i$ dado por:
+\[
+\hat{p}_i(f)=\frac{\hslash}{i}\pd{f}{x_i},
+\]
+em que $\hslash$ é a \textbf{constante reduzida de Planck}:
+\[
+\hslash=\frac{h}{2\pi},\quad\quad\quad h\cong 6,62607015\cdot10^{-34}J\cdot s,
+\]
+e $h$ é a \textbf{constante de Planck}.
+\item Para a energia cinética $K_i$ na coordenada $i$, temos as seguintes contas:
+\[
+K_i=\frac{mv_i^2}{2}=\frac{m^2v_i^2}{2m}=\frac{p_i^2}{2m},
+\]
+pois o momento linear na coordenada $i$ é dado por:
+\[
+p_i=mv_i.
+\]
+Por enquanto desconsideramos efeitos relativísticos, assim a massa $m$ é uma constante, de modo que podemos associar $K_i$ ao operador:
+\[
+\hat{K}_i=\frac{\hat{p}_i^2}{2m}=-\frac{\hslash^2}{2m}\pd{}{x_i}.
+\]
+\item Para a energia cinética $K$, lembrando que:
+\[
+K=K_1+\dots+K_n,
+\]
+então associamos $K$ ao operador
+\[
+\hat{K}=\hat{K}_1+\dots+\hat{K}_n=-\frac{\hslash^2}{2m}\left(\pd[2]{}{x_1}+\dots+\pd[2]{}{x_n}\right)=-\frac{\hslash^2}{2m}\nabla^2.
+\]
+\item Para a energia potencial $V$, consideramos o operador $\hat{V}$ dado pela multiplicação por $V$, ou seja:
+\[
+(\hat{V}f)(x_1,\dots,x_n)=V(x_1,\dots,x_n)f(x_1,\dots,x_n).
+\]
+\item A energia total $E$ é dada por:
+\[
+E=K+V,
+\]
+assim associamos $E$ ao \textbf{operador Hamiltoniano}:
+\[
+\hat{H}=\hat{K}+\hat{V}=-\frac{\hslash^2}{2m}\nabla^2+V.
+\]
+\item Em $\mathbb{R}^3$, o momento angular $\bm{L}=(L_x,L_y,L_z)$ é dado pelo seguinte:
+\[
+\begin{array}{rcl}
+L_x&=&yp_z-zp_y\\
+L_y&=&zp_x-xp_z\\
+L_z&=&xp_y-yp_x\\
+\end{array}
+\]
+assim associamos os componentes de $\bm{L}$ aos seguintes operadores:
+\[
+\begin{array}{rclcl}
+\hat{L}_x&=&\hat{y}\hat{p}_z-\hat{z}\hat{p}_y=\frac{\hslash}{i}\left(y\pd{}{z}-z\pd{}{y}\right)\\
+\hat{L}_y&=&\hat{z}\hat{p}_x-\hat{x}\hat{p}_z=\frac{\hslash}{i}\left(z\pd{}{x}-x\pd{}{z}\right)\\
+\hat{L}_z&=&\hat{x}\hat{p}_y-\hat{y}\hat{p}_x=\frac{\hslash}{i}\left(x\pd{}{y}-y\pd{}{x}\right)\\
+\end{array}
+\]
+\item Também associamos o quadrado da magnitude de $\bm{L}$, que é:
+\[
+L^2=L_x^2+L_y^2+L_z^2
+\]
+ao seguinte operador:
+\[
+\hat{L}^2=\hat{L}_x^2+\hat{L}_y^2+\hat{L}_z^2.
+\]
+\end{itemize}
+\end{postulado}
+
+\begin{postulado}
+Em qualquer medição de uma grandeza física $\alpha$ num sistema quântico, os únicos possíveis valores que serão observados são os autovalores $(\alpha_i)_{i\in I}$ do operador correspondente $\hat{\alpha}$, ou seja, que satisfazem a seguinte equação:
+\[
+\hat{\alpha}\psi_i=\alpha_i\psi_i.
+\]
+Além disso, se $\psi_i$ é um autovetor de $\hat{\alpha}$ com autovalor $\alpha_i$, então uma medição de $\alpha$ sobre $\psi_i$ sempre retornará o valor $\alpha_i$.
+\end{postulado}
+
+\begin{postulado}
+Se um sistema quântico é descrito por uma função de onda $\psi$, então o valor esperado de uma grandeza física $\alpha$ é dado por:
+\[
+\langle\alpha\rangle=\int_{\mathbb{R}^n}\psi^*\hat{\alpha}\psi\dif x.
+\]
+\end{postulado}
+
+\begin{postulado}
+Um sistema quântico temporal:
+\[
+\begin{array}{rcl}
+\Psi:\mathbb{R}^n\times\mathbb{R}&\rightarrow&\mathbb{C}\\
+(x,t)&\mapsto&\Psi(x,t)
+\end{array}
+\]
+evolui no tempo de acordo com a \textbf{equação de Schrödinger temporal}:
+\[
+\hat{H}\Psi(x,t)=-\frac{\hslash}{i}\pd{\Psi(x,t)}{t},
+\]
+em que $\hat{H}$ é o operador Hamiltoniano:
+\[
+\hat{H}=-\frac{\hslash^2}{2m}\nabla^2+V(x,t).
+\]
+\end{postulado}
+
+\section{Princípio da Incerteza}
+
+Postulamos que, se uma função de onda $\psi$ é um autovetor de um operador $\hat{\alpha}$ com autovalor $a$, então uma medição da grandeza física $\alpha$ sempre retornará o valor $a$. Assim, se $\psi$ é simultaneamente um autovetor de dois operadores $\hat{\alpha}$ e $\hat{\beta}$, ou seja, se $\hat{\alpha}(\psi)=a\psi$ e $\hat{\beta}\psi=b\psi$, então podemos associar simultaneamente as grandezas físicas $\alpha$ e $\beta$ aos valores definitivos $a$ e $b$. Portanto, seria interessante saber quando podemos encontrar um ``conjunto completo''\footnote{Se o espaço tem dimensão finita, podemos simplesmente definir um conjunto completo como uma base. Em alguns outros casos, podemos definir um conjunto completo como uma base de Schauder.} $(e_i)_{i\in I}$ de autovetores simultâneos de $\hat{\alpha}$ e $\hat{\beta}$. Sabemos que, num espaço dimensional de dimensão finita, uma família de operadores é simultaneamente diagonalizável se e somente se eles são diagonalizáveis e se comutam um com outro.
 
 \printindex
 
