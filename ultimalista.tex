@@ -595,109 +595,7 @@ i & 2
 \end{exercicio}
 \solucao{
 \dividiritens{
-\task[\pers{a}] Veja que $A$ é normal, pois
-\[AA^{*} = \begin{bmatrix}
-1 & 1 \\
-i & 3+2i
-\end{bmatrix} \begin{bmatrix}
-1 & -i \\
-1 & 3-2i
-\end{bmatrix} =
-\begin{bmatrix}
-2 & 3-3i \\
-\begin{exercicio}
-Para cada uma das seguintes matrizes $A,$ mostre que ela é uma matriz normal e ache uma matriz unitária $P$ tal que $\overline{P^t}AP$ seja diagonal.
-\dividiritensdiv{2}{
-\task[\pers{a}] $\begin{bmatrix}
-1 & 1 \\
-i & 3+2i
-\end{bmatrix}$
-\task[\pers{b}] $\begin{bmatrix}
-2 & i \\
-i & 2
-\end{bmatrix}$
-}
-\end{exercicio}
-\solucao{
-\dividiritens{
-\task[\pers{a}] Veja que $A$ é normal, pois
-\[AA^{*} = \begin{bmatrix}
-1 & 1 \\
-i & 3+2i
-\end{bmatrix} \begin{bmatrix}
-1 & -i \\
-1 & 3-2i
-\end{bmatrix} =
-\begin{bmatrix}
-2 & 3-3i \\
-3+3i & 14
-\end{bmatrix}\]
-\[A^{*}A =  \begin{bmatrix}
-1 & -i \\
-1 & 3-2i
-\end{bmatrix} \begin{bmatrix}
-1 & 1 \\
-i & 3+2i
-\end{bmatrix} =
-\begin{bmatrix}
-2 & 3-3i \\
-3+3i & 14
-\end{bmatrix}
-\]
-Vamos encontrar os autovalores de $A.$ Observe que o polinômio característico de $A$ é $p_A(\lambda) = \lambda^2 - (4+2i)\lambda + (3+i),$ e os autovalores são $\lambda_1 = (2+i) + (1+i) \sqrt{\frac{3}{2}}$ e $\lambda_2 = (2+i) - (1+i) \sqrt{\frac{3}{2}}.$ Vamos agora encontrar os autovetores. Como $A$ é normal, os autovalores que encontrarmos já serão ortogonais, bastando apenas normalizá-los para encontrar a matriz $P.$
-\begin{itemize}
-    \item Para $\lambda_1 = (2+i) + (1+i) \sqrt{\frac{3}{2}}, $ sendo $v = (x,y),$
-    \[
-    Av = \lambda_1v \Rightarrow \begin{bmatrix}
-1 & 1 \\
-i & 3+2i
-\end{bmatrix} \begin{bmatrix}
-x \\
-y
-\end{bmatrix} = \begin{bmatrix}
-\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right) x \\
-\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right)y
-\end{bmatrix} \Rightarrow \begin{cases}
-x + y =\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right) x\\
-ix+(3+2i)y = \left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right)y
-\end{cases}
-    \]
-\end{itemize}
-}
-}
-3+3i & 14
-\end{bmatrix}\]
-\[A^{*}A =  \begin{bmatrix}
-1 & -i \\
-1 & 3-2i
-\end{bmatrix} \begin{bmatrix}
-1 & 1 \\
-i & 3+2i
-\end{bmatrix} =
-\begin{bmatrix}
-2 & 3-3i \\
-3+3i & 14
-\end{bmatrix}
-\]
-Vamos encontrar os autovalores de $A.$ Observe que o polinômio característico de $A$ é $p_A(\lambda) = \lambda^2 - (4+2i)\lambda + (3+i),$ e os autovalores são $\lambda_1 = (2+i) + (1+i) \sqrt{\frac{3}{2}}$ e $\lambda_2 = (2+i) - (1+i) \sqrt{\frac{3}{2}}.$ Vamos agora encontrar os autovetores. Como $A$ é normal, os autovalores que encontrarmos já serão ortogonais, bastando apenas normalizá-los para encontrar a matriz $P.$
-\begin{itemize}
-    \item Para $\lambda_1 = (2+i) + (1+i) \sqrt{\frac{3}{2}}, $ sendo $v = (x,y),$
-    \[
-    Av = \lambda_1v \Rightarrow \begin{bmatrix}
-1 & 1 \\
-i & 3+2i
-\end{bmatrix} \begin{bmatrix}
-x \\
-y
-\end{bmatrix} = \begin{bmatrix}
-\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right) x \\
-\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right)y
-\end{bmatrix} \Rightarrow \begin{cases}
-x + y =\left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right) x\\
-ix+(3+2i)y = \left( (2+i) + (1+i) \sqrt{\frac{3}{2}} \right)y
-\end{cases}
-    \]
-\end{itemize}
+\task[\pers{a}]
 }
 }
 
@@ -727,7 +625,7 @@ Mostre que $T \in \mathcal{L}(V)$ é normal se, e somente se, $\norm{T(v)} = \no
 \[
 \prin{T(v), T(v)} = \prin{v, T^{*}T(v)} = \prin{v, TT^{*}(v)} = \prin{T^{*}(v), T^{*}(v)}.
 \]
-Como $\norm{T(v)} = \sqrt{\print{T(v), T(v)}}$ e $\norm{T^{*}(v)} = \sqrt{\print{T^{*}(v), T^{*}(v)}},$ segue o resultado desejado. 
+Como $\norm{T(v)} = \sqrt{\prin{T(v), T(v)}}$ e $\norm{T^{*}(v)} = \sqrt{\prin{T^{*}(v), T^{*}(v)}},$ segue o resultado desejado. 
 }
 
 \begin{exercicio}
