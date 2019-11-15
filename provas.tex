@@ -142,8 +142,9 @@ A = \begin{pmatrix}
 T(f(x)) = (x-1) f^{\prime}(x)
 \]
 \dividiritens{
-\task[\pers{a}] Encontre o polinômio característico e o polinômio minimal de $T.$
-\task[\pers{b}] $T$ é diagonalizável? Em caso afirmativo, apresente uma base de autovetores para $V.$
+\task[\pers{a}] Determine a matriz do operador $T$ em $\mathcal{P}_3(\mathbb{R})$ em relação à base canônica desse espaço.
+\task[\pers{b}] Encontre o polinômio característico e o polinômio minimal de $T.$
+\task[\pers{c}] $T$ é diagonalizável? Em caso afirmativo, apresente uma base de autovetores para $V.$
 }
 \end{exercicio}
 \solucao{
@@ -166,11 +167,39 @@ Logo,
 \]
 
 
-\task[\pers{b}]
+\task[\pers{b}] %Para encontrar os autovalores e autovetores de $T,$ precisamos encontrar a matriz que representa $T$ 
+Encontremos os autovalores de $[T]_B:$
+\[
+p_{[T]_B}(\lambda) = \det([T]_B - \lambda I) = \det \begin{pmatrix}
+-\lambda & 0 & 0 & 0 \\
+-1 & 1-\lambda & 0 & 0 \\
+0 & -2 & 2-\lambda & 0 \\
+0 & 0 & -3 & 3-\lambda
+\end{pmatrix} = \lambda^4 - 6\lambda^3 + 11 \lambda^2 - 6 \lambda = \lambda (\lambda - 1)(\lambda - 2)( \lambda - 3).
+\]
+Assim, os autovalores são $0, 1, 2$ e $3.$ Agora, vejamos os autovetores:
+\[
+v = (a, b, c, d) \in \Ker([T]_B - 0 I) \Rightarrow \begin{pmatrix}
+0  & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+0 & -2 & 2 & 0 \\
+0 & 0 & -3 & 3
+\end{pmatrix}\begin{pmatrix}
+a \\
+b \\
+c \\
+d
+\end{pmatrix} = 0 \Rightarrow \begin{cases}
+a + b = 0 \\
+-2b + 2c = 0 \\
+-3c + 3d = 0
+\end{cases} \Rightarrow v = a(1,-1,-1,-1)
+\]
 }
 
 }
 
+\newpage
 \section{\textcolor{Floresta}{Prova 2}}
 
 \begin{exercicio}
@@ -188,7 +217,16 @@ Logo,
   Determine o operador adjunto $T^{*}$ (relativamente ao produto interno $\prin{,}$ acima) e verifique se $T$ é normal.
  }
 \end{exercicio}
-\solucao{}
+\solucao{
+\dividiritens{
+\task[\pers{a}] Sejam $e_1 = (1,1)$ e $e_2 = (1,i).$ Como $\mathcal{B}$ é ortonormal, então $\prin{e_i, e_j} = \delta_{ij}.$ Com base nisso, vamos calcular cada um dos produtos requisitados:
+\begin{itemize}
+    \item $\prin{(i,1),(-i,i)}:$
+\end{itemize}
+
+}
+
+}
 
 \begin{exercicio}
 Determine o polinômio de grau $2$ cujo gráfico melhor se ajusta aos pontos $(-1,-1), (0,0), (1,1)$ e $(-1,1).$
@@ -208,7 +246,16 @@ Sejam $U$ e $V$ espaços com produto interno, $T \in \mathcal{L}(U,V)$ uma aplic
 \task[\pers{d}] $T$ é bijetora se, e somente se, $T^{*}$ é bijetora.
 }
 \end{exercicio}
-\solucao{}
+\solucao{Observe que 
+\[
+\mbox{Im }(T^{*}) = (\Ker T)^{\perp} \quad \mbox{e} \quad (\mbox{Im } T)^{\perp} = \Ker (T^{*})
+\]
+Suponha então que $T$ seja injetora. Logo, $\mbox{Im }(T^{*}) = \{ 0 \}^{\perp} = V.$ Assim, $T^{*}$ é sobrejetora. 
+
+Se $T^{*}$ é injetora, então $\Ker T^{*} = \{ 0 \},$ acarretando $\mbox{Im }T = V.$ Assim, $T$ é injetora. 
+
+Logo, as alternativas corretas são a $T$ e a $T.$
+}
 \begin{exercicio}
 Encontre as formas de Jordan e racional do operador $T \in \mathcal{L}(\mathbb{R}^n)$ se a matriz de $T$ na base canônica do $\mathbb{R}^n$ é a seguinte:
 \[
@@ -236,6 +283,331 @@ Encontre as formas de Jordan e racional do operador $T \in \mathcal{L}(\mathbb{R
 \solucao{}
 \begin{exercicio}
 Sejam $V$ um $K$-espaço vetorial com produto interno, $T \in \mathcal{L}(V)$ e $W \subseteq V$ um subespaço $T$-invariante. Mostre que se $T$ é normal, então $W$ também é $T^{*}$-invariante.
+\end{exercicio}
+\solucao{}
+
+\newpage
+\section{\textcolor{Floresta}{Prova 2}}
+
+
+\begin{exercicio}
+(3,0) Verifique quais das afirmações abaixo são falsas, justificando cada item adequadamente:
+\dividiritens{
+\task[\pers{a}] Se $A \in \mathcal{M}_n(\mathbb{C})$ é normal, então $A^t$ é normal;
+\task[\pers{b}] Se $A = (a_{ij}) \in \mathcal{M}_n(\mathbb{C})$ é normal, então $\overline{A} = (\overline{a_{ij}})$ é normal;
+\task[\pers{c}] Seja $A \in \mathcal{M}_n(\mathbb{C}),$ e considere matrizes $B, C \in \mathcal{M}_n(\mathbb{R}),$ tais que $A = B + iC.$ Se $A$ é normal, então $B$ e $C$ são normais;
+\task[\pers{d}] No item anterior, se $B$ e $C$ são normais, então $A = B + iC$ é normal;
+
+\task[\pers{e}] Para qualquer matriz $A \in \mathcal{M}_n(\mathbb{R}),$ a amtriz $A + iA^t \in \mathcal{M}_n(\mathbb{C})$ é normal; 
+
+\task[\pers{f}] Existe um operador normal $T \in \mathcal{L}(\mathbb{R}^3)$ tal que
+\[
+T(1,2,3) = (1,2,3) \quad \mbox{e} \quad T(1,1,1) = (0,0,0).
+\]
+}
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+(2,0) Decomponha a matriz
+\[
+A = \begin{bmatrix}
+0 & 2 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix}
+\]
+num produto de uma matriz positiva $S$ e uma matriz unitária (que nesse caso será ortogonal) $U$.
+\end{exercicio}
+\solucao{Vamos encontrar os valores singulares e autovetores de $A.$ Temos que
+\[
+AA^{*} = \begin{bmatrix}
+0 & 2 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix}\begin{bmatrix}
+0 & 1 & 0 \\
+2 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix} = \begin{bmatrix}
+4 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\]
+Como $AA^{*}$ já está na forma diagonal, temos diretamente que os autovalores de $AA^{*}$ são $\lambda_1 = 4$ e $\lambda_2 = 1.$ Daí, os valores singulares de $A$ são $r_1 = \sqrt{\lambda_1} = \sqrt{4} = 2$ e $r_2 = \sqrt{\lambda_2} = \sqrt{1} = 1.$
+
+Encontremos agora autovetores de $AA^{*}.$
+
+Seja $v = (x,y,z) \in \Ker(AA^{*} - 4I).$ Então
+\[
+(AA^{*} - 4I)v = 0 \Rightarrow \begin{bmatrix}
+0 & 0 & 0 \\
+0 & -3 & 0 \\
+0 & 0 & -3
+\end{bmatrix} \begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} = 0 \Rightarrow v = x(1,0,0)
+\]
+Logo, $\Ker(AA^{*} - 4I) = \langle (1,0,0) \rangle.$
+
+Seja $v = (x,y,z) \in \Ker(AA^{*} - I).$ Então
+\[
+(AA^{*} - I)v = 0 \Rightarrow \begin{bmatrix}
+3 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix} \begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} = 0 \Rightarrow v = y(0,1,0) + z(0,0,1)
+\]
+Logo, $\Ker(AA^{*} - 4I) = \langle (0,1,0), (0,0,1) \rangle.$
+
+Assim, $e_1 = (1,0,0), e_2 = (0,1,0)$ e $e_3 = (0, 0, 1)$ são autovetores de $AA^{*}.$ 
+Para obter $S$ e $U$, podemos proceder de duas maneiras distintas:
+
+\begin{itemize}
+    \item Sabemos que $A(e_i) = r_if_i.$ Com base nisso, é possível encontrar os elementos da base $C = \{f_1, f_2, f_3 \}.$ Realizando os cálculos, vem:
+    \[
+    \begin{array}{l}
+    A(e_1) = r_1f_1 \Rightarrow f_1 = \frac{1}{2} \begin{bmatrix}
+0 & 2 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix} \begin{pmatrix}
+1 \\
+0 \\
+0 \\
+\end{pmatrix} \Rightarrow f_1 = \left(0, \frac{1}{2}, 0 \right)    \\
+              A(e_2) = r_2f_2 \Rightarrow f_2 = \frac{1}{1} \begin{bmatrix}
+0 & 2 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix} \begin{pmatrix}
+0 \\
+1 \\
+0 \\
+\end{pmatrix} \Rightarrow f_2 = \left(2, 0 , 0 \right)  \\
+         A(e_3) = r_3f_3 \Rightarrow f_3 = \frac{1}{1} \begin{bmatrix}
+0 & 2 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & -1
+\end{bmatrix} \begin{pmatrix}
+0 \\
+0 \\
+1 \\
+\end{pmatrix} \Rightarrow f_3 = \left(0, 0 , -1 \right)  \\
+    \end{array}
+    \]
+
+Para encontrar $U,$ façamos
+\[
+\left(\begin{array}{c|c}
+e_1 & f_1 \\
+e_2 & f_2 \\
+e_3 & f_3
+\end{array} \right) = \left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & 0 & \frac{1}{2} & 0  \\
+0 & 1 & 0 & 2 & 0 & 0  \\
+0 & 0 & 1 & 0 & 0 & -1
+\end{array} \right) \Rightarrow U =  \left(\begin{array}{ccc}
+0 & \frac{1}{2} & 0  \\
+2 & 0 & 0  \\
+0 & 0 & -1
+\end{array} \right)^t =  \left(\begin{array}{ccc}
+0 & 2 & 0  \\
+\frac{1}{2} & 0 & 0  \\
+0 & 0 & -1
+\end{array} \right)
+\]
+Calculemos agora a matriz $S.$ Temos que
+\[
+\left(\begin{array}{c|c}
+f_1 & r_1f_1 \\
+f_2 & r_2f_2 \\
+f_3 & r_3f_3
+\end{array} \right) = \left(\begin{array}{ccc|ccc}
+0 & \frac{1}{2} & 0 & 0 & 1 & 0 \\
+2 & 0 & 0 & 2 & 0 & 0  \\
+0 0 & -1 & 0 & 0 & -1
+\end{array} \right) \sim \left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 0 & 0  \\
+0 & 1 & 0 & 0 & 2 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1
+\end{array} \right) \Rightarrow S =  \left(\begin{array}{ccc}
+1 & 0 & 0  \\
+0 & 2 & 0  \\
+0 & 0 & 1
+\end{array} \right)
+\]
+Assim, a matriz positiva procurada é $S = \left(\begin{array}{ccc}
+1 & 0 & 0  \\
+0 & 2 & 0  \\
+0 & 0 & 1
+\end{array} \right),$ e a matriz unitária(?) é $U = \left(\begin{array}{ccc}
+0 & 2 & 0  \\
+\frac{1}{2} & 0 & 0  \\
+0 & 0 & -1
+\end{array} \right).$ De fato, é fácil ver que
+\[
+SU =  \left(\begin{array}{ccc}
+1 & 0 & 0  \\
+0 & 2 & 0  \\
+0 & 0 & 1
+\end{array} \right) \left(\begin{array}{ccc}
+0 & 2 & 0  \\
+\frac{1}{2} & 0 & 0  \\
+0 & 0 & -1
+\end{array} \right) = \left(\begin{array}{ccc}
+0 & 2 & 0  \\
+1 & 0 & 0  \\
+0 & 0 & -1
+\end{array} \right) = A.
+\]
+\item  Como $e_1 = (1,0,0), e_2 = (0,1,0)$ e $e_3 = (0, 0, 1)$ são autovetores de $AA^{*},$ temos que
+\[
+P = \begin{bmatrix}
+e_1 & e_2 & e_3
+\end{bmatrix} = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\]
+Já que $P = I, $ obviamente $P^{*} = I^{*} = I = P.$ Desse modo,
+\[
+S = P\begin{bmatrix}
+r_1 & 0 ¨& 0 \\
+0 & r_2 & 0 \\
+0 & 0 & r_3
+\end{bmatrix}P^{*} =  \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+2 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} =  \begin{bmatrix}
+2 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\]
+Então, sabemos que $A = SU \Rightarrow U = S^{-1}A.$ Vemos que
+\[
+S^{-1} = PD^{-1}P^{*} = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+\frac{1}{2} & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} =  \begin{bmatrix}
+\frac{1}{2} & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\]
+Daí,
+\[
+U = \begin{bmatrix}
+\frac{1}{2} & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix} \left(\begin{array}{ccc}
+0 & 2 & 0  \\
+1 & 0 & 0  \\
+0 & 0 & -1
+\end{array} \right) =  \left(\begin{array}{ccc}
+0 & 1 & 0  \\
+1 & 0 & 0  \\
+0 & 0 & -1
+\end{array} \right)
+\]
+Logo, $S$ é a matriz positiva procurada e $U$ é a matriz ortogonal.
+\end{itemize}
+Salientamos que a resposta não é única, o que pode ser claramente visto ao se adotar métodos distintos para encontrar as matrizes $S$ e $U.$
+}
+
+\begin{exercicio}
+Dada a matriz simétrica positiva
+\[
+A = \begin{bmatrix}
+11 & 7 & 7 \\
+7 & 11 & 7 \\
+7 & 7 & 11
+\end{bmatrix},
+\]
+ache a raiz quadrada de $A,$ ou seja, encontre uma matriz simétrica positiva $B \in \mathcal{M}_3(\mathbb{R})$ tal que $B^2 = A.$
+\end{exercicio}
+\solucao{
+Observe que como $A$ é uma matriz simétrica, então $A$ é diagonalizável. Assim, existem uma matriz $P$ e uma matriz diagonal $D$ tais que $A = PDP^{-1}.$ Sendo $A$ positiva, então todos os seus autovalores são positivos, o que implica que $B = P \sqrt{D}P^{-1}.$ Vamos encontrar $P$ e $D.$
+O polinômio característico de $A$ é
+\[
+p_A(\lambda) = \det(A - \lambda I) = \det \begin{bmatrix}
+11 - \lambda & 7 & 7 \\
+7 & 11 - \lambda & 7 \\
+7 & 7 & 11- \lambda
+\end{bmatrix} = \lambda^3 - 33\lambda^2 + 216 \lambda - 400 = (\lambda - 25)(\lambda - 4)^2
+\]
+Daí, $\lambda_1 = 25$ e $\lambda_2 = 4$ são os autovalores. 
+\[
+(A - 25I)v = 0 \Rightarrow \begin{bmatrix}
+-14 & 7 & 7 \\
+7 & -14 & 7 \\
+7 & 7 & -14
+\end{bmatrix}\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} \Rightarrow v = x(1,1,1)
+\]
+Logo, 
+\[
+\Ker(A - 25I) = \langle (1,1,1) \rangle
+\]
+Também,
+\[
+(A - 4I)v = 0 \Rightarrow \begin{bmatrix}
+7 & 7 & 7 \\
+7 & 7 & 7 \\
+7 & 7 & 7
+\end{bmatrix}\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix} \Rightarrow v = x(-1,1,0) + y(-1,0,1)
+\]
+Logo, 
+\[
+\Ker(A - 4I) = \langle (-1,1,0), (-1,0,1) \rangle
+\]
+Assim, os autovetores
+}
+\begin{exercicio}
+(2,0) Prove que um operador $T \in \mathcal{L}(\mathbb{R}^n)$ é diagonalizável se e somente se o espaço $\mathbb{R}^n$ pode ser mundio com um produto interno tal que o operador $T$ seja simétrico relativamente a este produto. Qual é a matriz de Gram que define este produto na base canônica do $\mathbb{R}^n?$
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+(1,0) Fazendo uma troca ortogonal de variáveis conveniente, transforme a forma quadrática
+\[
+q(x) = x^2 + y^2 +5z^2 - 6xy - 2xz + 2yz
+\]
+para uma forma diagonal.
 \end{exercicio}
 \solucao{}
  \end{document}
