@@ -1,68 +1,79 @@
 \babel@toc {portuguese}{}
-\contentsline {section}{\nameref {sec:intro}}{5}{chapter*.2}% 
-\contentsline {chapter}{\numberline {1}Espa\IeC {\c c}os vetoriais}{7}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Defini\IeC {\c c}\IeC {\~o}es Iniciais}{7}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}Base e Dimens\IeC {\~a}o}{8}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Subespa\IeC {\c c}os}{12}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Coordenadas}{15}{section.1.4}% 
-\contentsline {chapter}{\numberline {2}Transforma\IeC {\c c}\IeC {\~o}es Lineares}{17}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Defini\IeC {\c c}\IeC {\~o}es}{17}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Espa\IeC {\c c}o Dual}{18}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}Espa\IeC {\c c}o Bidual}{19}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Anuladores}{20}{section.2.4}% 
-\contentsline {section}{\numberline {2.5}Transpostas}{21}{section.2.5}% 
-\contentsline {section}{\numberline {2.6}Espa\IeC {\c c}os Quocientes}{22}{section.2.6}% 
-\contentsline {chapter}{\numberline {3}Determinantes}{25}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Formas Multilineares}{25}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Determinantes}{27}{section.3.2}% 
-\contentsline {chapter}{\numberline {4}Formas Can\IeC {\^o}nicas}{31}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Espectro de um Operador}{31}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}Autovalores e Autovetores}{31}{subsection.4.1.1}% 
-\contentsline {subsection}{\numberline {4.1.2}Polin\IeC {\^o}mio Caracter\IeC {\'\i }stico}{31}{subsection.4.1.2}% 
-\contentsline {subsection}{\numberline {4.1.3}Polin\IeC {\^o}mio Minimal}{35}{subsection.4.1.3}% 
-\contentsline {section}{\numberline {4.2}Restri\IeC {\c c}\IeC {\~o}es de Operadores}{36}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Subespa\IeC {\c c}os Invariantes}{36}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Subespa\IeC {\c c}os C\IeC {\'\i }clicos}{38}{subsection.4.2.2}% 
-\contentsline {section}{\numberline {4.3}Teoremas de Cayley-Hamilton}{39}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Teorema de Cayley-Hamilton Usual}{39}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Teorema de Cayley Hamilton ao Avesso}{39}{subsection.4.3.2}% 
-\contentsline {section}{\numberline {4.4}Decomposi\IeC {\c c}\IeC {\~o}es Prim\IeC {\'a}rias}{40}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}Decomposi\IeC {\c c}\IeC {\~a}o Prim\IeC {\'a}ria Geral}{40}{subsection.4.4.1}% 
-\contentsline {subsection}{\numberline {4.4.2}Decomposi\IeC {\c c}\IeC {\~a}o Prim\IeC {\'a}ria para Minimais}{41}{subsection.4.4.2}% 
-\contentsline {subsection}{\numberline {4.4.3}Decomposi\IeC {\c c}\IeC {\~a}o Prim\IeC {\'a}ria para Caracter\IeC {\'\i }sticos}{42}{subsection.4.4.3}% 
-\contentsline {section}{\numberline {4.5}Crit\IeC {\'e}rios de Diagonaliza\IeC {\c c}\IeC {\~a}o}{43}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Diagonaliza\IeC {\c c}\IeC {\~a}o Usual}{43}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Diagonaliza\IeC {\c c}\IeC {\~a}o Simult\IeC {\^a}nea de V\IeC {\'a}rios Operadores}{43}{subsection.4.5.2}% 
-\contentsline {section}{\numberline {4.6}Triangulariza\IeC {\c c}\IeC {\~a}o de Matrizes}{43}{section.4.6}% 
-\contentsline {subsection}{\numberline {4.6.1}Triangulariza\IeC {\c c}\IeC {\~a}o Usual}{43}{subsection.4.6.1}% 
-\contentsline {subsection}{\numberline {4.6.2}Triangulariza\IeC {\c c}\IeC {\~a}o Simult\IeC {\^a}nea de V\IeC {\'a}rios Operadores}{44}{subsection.4.6.2}% 
-\contentsline {subsection}{\numberline {4.6.3}Quase Triangulariza\IeC {\c c}\IeC {\~a}o}{45}{subsection.4.6.3}% 
-\contentsline {section}{\numberline {4.7}Decomposi\IeC {\c c}\IeC {\~o}es C\IeC {\'\i }clicas}{45}{section.4.7}% 
-\contentsline {subsection}{\numberline {4.7.1}Espa\IeC {\c c}os Prim\IeC {\'a}rios}{45}{subsection.4.7.1}% 
-\contentsline {subsection}{\numberline {4.7.2}Decomposi\IeC {\c c}\IeC {\~a}o C\IeC {\'\i }clica em Divisores Elementares}{48}{subsection.4.7.2}% 
-\contentsline {subsection}{\numberline {4.7.3}Decomposi\IeC {\c c}\IeC {\~a}o C\IeC {\'\i }clica em Fatores Invariantes}{49}{subsection.4.7.3}% 
-\contentsline {section}{\numberline {4.8}Formas Racionais de Matrizes}{50}{section.4.8}% 
-\contentsline {subsection}{\numberline {4.8.1}Matrizes Companheiras}{50}{subsection.4.8.1}% 
-\contentsline {subsection}{\numberline {4.8.2}Forma Racional para Divisores Elementares}{50}{subsection.4.8.2}% 
-\contentsline {subsection}{\numberline {4.8.3}Forma Racional para Fatores Invariantes}{51}{subsection.4.8.3}% 
-\contentsline {section}{\numberline {4.9}Formas de Jordan de Matrizes}{52}{section.4.9}% 
-\contentsline {subsection}{\numberline {4.9.1}Forma de Jordan Usual}{52}{subsection.4.9.1}% 
-\contentsline {subsection}{\numberline {4.9.2}Forma de Jordan Generalizada}{54}{subsection.4.9.2}% 
-\contentsline {subsection}{\numberline {4.9.3}Forma de Jordan Real}{55}{subsection.4.9.3}% 
-\contentsline {section}{\numberline {4.10}Espa\IeC {\c c}os Indecompon\IeC {\'\i }veis}{56}{section.4.10}% 
-\contentsline {subsection}{\numberline {4.10.1}Espa\IeC {\c c}os C\IeC {\'\i }clicos}{56}{subsection.4.10.1}% 
-\contentsline {subsection}{\numberline {4.10.2}Espa\IeC {\c c}os Indecompon\IeC {\'\i }veis}{56}{subsection.4.10.2}% 
-\contentsline {subsection}{\numberline {4.10.3}Teorema de Cauchy}{57}{subsection.4.10.3}% 
-\contentsline {chapter}{\numberline {5}Espa\IeC {\c c}os com Produto Interno}{59}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Defini\IeC {\c c}\IeC {\~o}es e Exemplos}{59}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Matriz de Gramm}{60}{section.5.2}% 
-\contentsline {section}{\numberline {5.3}Espa\IeC {\c c}os Normados}{61}{section.5.3}% 
-\contentsline {section}{\numberline {5.4}Ortogonalidade}{62}{section.5.4}% 
-\contentsline {section}{\numberline {5.5}Funcionais Lineares}{62}{section.5.5}% 
-\contentsline {section}{\numberline {5.6}Transforma\IeC {\c c}\IeC {\~a}o Adjunta}{64}{section.5.6}% 
-\contentsline {section}{\numberline {5.7}Operadores Unit\IeC {\'a}rios}{65}{section.5.7}% 
-\contentsline {section}{\numberline {5.8}Operadores Normais}{68}{section.5.8}% 
-\contentsline {section}{\numberline {5.9}Formas Can\IeC {\^o}nicas}{69}{section.5.9}% 
-\contentsline {subsection}{\numberline {5.9.1}Caso dos N\IeC {\'u}meros Complexos}{69}{subsection.5.9.1}% 
-\contentsline {subsection}{\numberline {5.9.2}Caso dos N\IeC {\'u}meros Reais}{69}{subsection.5.9.2}% 
+\contentsline {section}{\nameref {sec:intro}}{5}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Espa\IeC {\c c}os vetoriais}{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}Defini\IeC {\c c}\IeC {\~o}es Iniciais}{7}{section.1.1}
+\contentsline {section}{\numberline {1.2}Base e Dimens\IeC {\~a}o}{8}{section.1.2}
+\contentsline {section}{\numberline {1.3}Subespa\IeC {\c c}os}{12}{section.1.3}
+\contentsline {section}{\numberline {1.4}Coordenadas}{15}{section.1.4}
+\contentsline {chapter}{\numberline {2}Transforma\IeC {\c c}\IeC {\~o}es Lineares}{17}{chapter.2}
+\contentsline {section}{\numberline {2.1}Defini\IeC {\c c}\IeC {\~o}es}{17}{section.2.1}
+\contentsline {section}{\numberline {2.2}Espa\IeC {\c c}o Dual}{18}{section.2.2}
+\contentsline {section}{\numberline {2.3}Espa\IeC {\c c}o Bidual}{19}{section.2.3}
+\contentsline {section}{\numberline {2.4}Anuladores}{20}{section.2.4}
+\contentsline {section}{\numberline {2.5}Transpostas}{21}{section.2.5}
+\contentsline {section}{\numberline {2.6}Espa\IeC {\c c}os Quocientes}{22}{section.2.6}
+\contentsline {chapter}{\numberline {3}Determinantes}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}Formas Multilineares}{25}{section.3.1}
+\contentsline {section}{\numberline {3.2}Determinantes}{27}{section.3.2}
+\contentsline {chapter}{\numberline {4}Formas Can\IeC {\^o}nicas}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Espectro de um Operador}{31}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Autovalores e Autovetores}{31}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Polin\IeC {\^o}mio Caracter\IeC {\'\i }stico}{31}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Polin\IeC {\^o}mio Minimal}{35}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Restri\IeC {\c c}\IeC {\~o}es de Operadores}{36}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Subespa\IeC {\c c}os Invariantes}{36}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Subespa\IeC {\c c}os C\IeC {\'\i }clicos}{38}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Teoremas de Cayley-Hamilton}{39}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Teorema de Cayley-Hamilton Usual}{39}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Teorema de Cayley Hamilton ao Avesso}{39}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Decomposi\IeC {\c c}\IeC {\~o}es Prim\IeC {\'a}rias}{40}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Decomposi\IeC {\c c}\IeC {\~a}o Prim\IeC {\'a}ria Geral}{40}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Decomposi\IeC {\c c}\IeC {\~a}o Prim\IeC {\'a}ria para Minimais}{41}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Decomposi\IeC {\c c}\IeC {\~a}o Prim\IeC {\'a}ria para Caracter\IeC {\'\i }sticos}{42}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Crit\IeC {\'e}rios de Diagonaliza\IeC {\c c}\IeC {\~a}o}{43}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Diagonaliza\IeC {\c c}\IeC {\~a}o Usual}{43}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Diagonaliza\IeC {\c c}\IeC {\~a}o Simult\IeC {\^a}nea de V\IeC {\'a}rios Operadores}{43}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Triangulariza\IeC {\c c}\IeC {\~a}o de Matrizes}{43}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Triangulariza\IeC {\c c}\IeC {\~a}o Usual}{43}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Triangulariza\IeC {\c c}\IeC {\~a}o Simult\IeC {\^a}nea de V\IeC {\'a}rios Operadores}{44}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Quase Triangulariza\IeC {\c c}\IeC {\~a}o}{45}{subsection.4.6.3}
+\contentsline {section}{\numberline {4.7}Decomposi\IeC {\c c}\IeC {\~o}es C\IeC {\'\i }clicas}{45}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Espa\IeC {\c c}os Prim\IeC {\'a}rios}{45}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Decomposi\IeC {\c c}\IeC {\~a}o C\IeC {\'\i }clica em Divisores Elementares}{48}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Decomposi\IeC {\c c}\IeC {\~a}o C\IeC {\'\i }clica em Fatores Invariantes}{49}{subsection.4.7.3}
+\contentsline {section}{\numberline {4.8}Formas Racionais de Matrizes}{50}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Matrizes Companheiras}{50}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Forma Racional para Divisores Elementares}{50}{subsection.4.8.2}
+\contentsline {subsection}{\numberline {4.8.3}Forma Racional para Fatores Invariantes}{51}{subsection.4.8.3}
+\contentsline {section}{\numberline {4.9}Formas de Jordan de Matrizes}{52}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Forma de Jordan Usual}{52}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.2}Forma de Jordan Generalizada}{54}{subsection.4.9.2}
+\contentsline {subsection}{\numberline {4.9.3}Forma de Jordan Real}{55}{subsection.4.9.3}
+\contentsline {section}{\numberline {4.10}Espa\IeC {\c c}os Indecompon\IeC {\'\i }veis}{56}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Espa\IeC {\c c}os C\IeC {\'\i }clicos}{56}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Espa\IeC {\c c}os Indecompon\IeC {\'\i }veis}{56}{subsection.4.10.2}
+\contentsline {subsection}{\numberline {4.10.3}Teorema de Cauchy}{57}{subsection.4.10.3}
+\contentsline {chapter}{\numberline {5}Espa\IeC {\c c}os com Produto Interno}{59}{chapter.5}
+\contentsline {section}{\numberline {5.1}Defini\IeC {\c c}\IeC {\~o}es e Exemplos}{59}{section.5.1}
+\contentsline {section}{\numberline {5.2}Matriz de Gramm}{60}{section.5.2}
+\contentsline {section}{\numberline {5.3}Espa\IeC {\c c}os Normados}{61}{section.5.3}
+\contentsline {section}{\numberline {5.4}Ortogonalidade}{62}{section.5.4}
+\contentsline {section}{\numberline {5.5}Funcionais Lineares}{62}{section.5.5}
+\contentsline {section}{\numberline {5.6}Transforma\IeC {\c c}\IeC {\~a}o Adjunta}{64}{section.5.6}
+\contentsline {section}{\numberline {5.7}Operadores Unit\IeC {\'a}rios}{65}{section.5.7}
+\contentsline {section}{\numberline {5.8}Operadores Normais}{68}{section.5.8}
+\contentsline {section}{\numberline {5.9}Formas Can\IeC {\^o}nicas}{69}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Caso dos N\IeC {\'u}meros Complexos}{69}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}Caso dos N\IeC {\'u}meros Reais}{69}{subsection.5.9.2}
+\contentsline {section}{\numberline {5.10}Operadores Positivos}{71}{section.5.10}
+\contentsline {section}{\numberline {5.11}Matriz de Gram}{71}{section.5.11}
+\contentsline {chapter}{\numberline {6}Formas Bilineares}{75}{chapter.6}
+\contentsline {section}{\numberline {6.1}Defini\IeC {\c c}\IeC {\~o}es e Exemplos}{75}{section.6.1}
+\contentsline {section}{\numberline {6.2}Formas N\IeC {\~a}o Degeneradas}{76}{section.6.2}
+\contentsline {section}{\numberline {6.3}Formas Quadr\IeC {\'a}ticas}{78}{section.6.3}
+\contentsline {section}{\numberline {6.4}Produto Tensorial}{78}{section.6.4}
+\contentsline {section}{\numberline {6.5}Extens\IeC {\~a}o Escalar}{79}{section.6.5}
+\contentsline {chapter}{\numberline {7}Mec\IeC {\^a}nica Qu\IeC {\^a}ntica}{81}{chapter.7}
+\contentsline {section}{\numberline {7.1}Postulados}{81}{section.7.1}
+\contentsline {section}{\numberline {7.2}Princ\IeC {\'\i }pio da Incerteza}{83}{section.7.2}
 \contentsfinish 
