@@ -438,12 +438,50 @@ T(0,1) = \begin{pmatrix}
 \]
 Do item anterior, sabemos que 
 \[
-(1,0) = \left(\frac{1 - i}{2}\right)e_1 + \left(\frac{1+i}{2} \right)e_2 \quad \mbox{e} \quad (0,1) =  \left(\frac{i - 1}{2}\right)e_1 - \left(\frac{1+i}{2} \right)e_2.
+(1,0) = \left(\frac{1 - i}{2}\right)e_1 + \left(\frac{1+i}{2} \right)e_2 \quad \mbox{e} \quad (0,1) =  \left(\frac{i + 1}{2}\right)e_1 - \left(\frac{1+i}{2} \right)e_2.
 \]
 Além disso, 
 \[
 (i+1,i) = \left(\frac{i+3}{2}\right)e_1 + \left(\frac{i-1}{2} \right)e_2 \quad \mbox{e} \quad (-1,0) =  \left(\frac{i - 1}{2}\right)e_1 - \left(\frac{1+i}{2} \right)e_2.
 \]
+Logo,
+\[
+\begin{cases}
+T\left(\left(\frac{1 - i}{2}\right)e_1 + \left(\frac{1+i}{2} \right)e_2  \right) = \left(\frac{i+3}{2}\right)e_1 + \left(\frac{i-1}{2} \right)e_2 \\
+T\left( \left(\frac{i + 1}{2}\right)e_1 - \left(\frac{1+i}{2} \right)e_2  \right) =  \left(\frac{i - 1}{2}\right)e_1 - \left(\frac{1+i}{2} \right)e_2 
+\end{cases}
+\Rightarrow \]\[
+\begin{cases}
+\left(\frac{1 - i}{2}\right)T(e_1) + \left(\frac{1+i}{2} \right)T(e_2) = \left(\frac{i+3}{2}\right)e_1 + \left(\frac{i-1}{2} \right)e_2 \\
+\left(\frac{i + 1}{2}\right) T(e_1) - \left(\frac{1+i}{2} \right) T(e_2) =  \left(\frac{i - 1}{2}\right)e_1 - \left(\frac{1+i}{2} \right)e_2
+\end{cases}
+\]
+Resolvendo o sistema formado em $T(e_1)$ e $T(e_2):$
+\[
+\begin{cases}
+\left(\frac{1 - i}{2}\right)T(e_1) + \left(\frac{1+i}{2} \right)T(e_2) = \left(\frac{i+3}{2}\right)e_1 + \left(\frac{i-1}{2} \right)e_2 \\
+\left(\frac{i + 1}{2}\right) T(e_1) - \left(\frac{1+i}{2} \right) T(e_2) =  \left(\frac{i - 1}{2}\right)e_1 - \left(\frac{1+i}{2} \right)e_2
+\end{cases} \Rightarrow \]\[
+T(e_1) = \left(\frac{i + 1}{2}\right)e_1 - e_2 \quad \mbox{e} \quad T(e_2) = e_1 
+\]
+Assim, 
+\[
+A = [T]_B = \begin{pmatrix}
+\frac{i + 1}{2} & 1 \\
+-1 & 0
+\end{pmatrix}
+\]
+Observe que
+\[
+AA^{*} = \left(\begin{matrix}
+\frac{3}{2} & \frac{-1-i}{2} \\
+\frac{-1+i}{2} & 1
+\end{matrix}\right) \neq \left(\begin{matrix}
+\frac{3}{2} & \frac{1-i}{2} \\
+\frac{1+i}{2} & 1
+\end{matrix}\right) = A^{*}A
+\]
+Logo, $T$ não é normal.
 }
 
 }
@@ -726,7 +764,7 @@ pois o polinômio minimal será o polinômio anulador de $Z(v_1,T),$ de onde $\d
 0 & 0 & 1 & 0
 \end{pmatrix}
 \]
-Vamos encontrar agora a matriz $P$ tal que $T = PRP^{-1}.$ Como $\dim(Z(v_1, T)) = 4,$ uma base para $Z(v_1, T)$ é $\{ v_1, T(v_1), T^2(v_1), T^3(v_1) \}.$ Falta agora encontrar o vetor $v_1.$ Como o $T$-anulador de $v_1$ é o polinômio minimal, devemos escolher um vetor de cada um dos autoespaços associados aos respectivos autovalores.\textcolor{Red}{Sejam então $u_1 = (-8,4,2,1), u_2 = (-1,1,0,0)$ e $u_3 = \left( - \frac{3}{2}, 1, 0, 0 \right).$ Daí, tomemos $v_1 = u_1 + u_2 + u_3 = \left(-\frac{21}{2}, 6, 2, 1 \right).$ } Agora, estamos aptos a encontrar uma base para $Z(v_1, T):$
+Vamos encontrar agora a matriz $P$ tal que $T = PRP^{-1}.$ Como $\dim(Z(v_1, T)) = 4,$ uma base para $Z(v_1, T)$ é $\{ v_1, T(v_1), T^2(v_1), T^3(v_1) \}.$ Falta agora encontrar o vetor $v_1.$ Como o $T$-anulador de $v_1$ é o polinômio minimal, devemos escolher um vetor de cada um dos autoespaços associados aos respectivos autovalores. Sejam então $u_1 = (-5,3,1,0), u_2 = (-1,1,0,0)$ e $u_3 = \left( - \frac{3}{2}, 1, 0, 0 \right).$ Daí, tomemos $v_1 = u_1 + u_2 + u_3 = \left(-\frac{15}{2}, 5, 1, 0 \right).$  Agora, estamos aptos a encontrar uma base para $Z(v_1, T):$
 \[
 T(v_1) = \begin{pmatrix}
 -5 & -6 & -15 & 14 \\
@@ -734,16 +772,16 @@ T(v_1) = \begin{pmatrix}
 0 & 0 & 2 & -4 \\
 0 & 0 & 1 & -2
 \end{pmatrix} \begin{pmatrix}
+-\frac{15}{2} \\
+5 \\
 1 \\
-0 \\
-0 \\
 0
-\end{pmatrix} = \begin{pmatrix}
--4 \\
+\end{pmatrix} = \left(\begin{matrix}
+\frac{-15}{2} \\
 4 \\
-0 \\
-0
-\end{pmatrix};
+2 \\
+1
+\end{matrix}\right);
 \]
 \[
 T^2(v_1) = \left(\begin{matrix}
@@ -752,16 +790,16 @@ T^2(v_1) = \left(\begin{matrix}
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0
 \end{matrix}\right) \begin{pmatrix}
+-\frac{15}{2} \\
+5 \\
 1 \\
-0 \\
-0 \\
 0
-\end{pmatrix} = \begin{pmatrix}
--\frac{5}{2} \\
+\end{pmatrix} = \left(\begin{matrix}
+\frac{-5}{2} \\
 2 \\
 0 \\
 0
-\end{pmatrix};
+\end{matrix}\right);
 \]
 \[
 T^3(v_1) = \left(\begin{matrix}
@@ -770,10 +808,10 @@ T^3(v_1) = \left(\begin{matrix}
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0
 \end{matrix}\right) \begin{pmatrix}
--\frac{21}{2} \\
-6 \\
-2 \\
-1
+-\frac{15}{2} \\
+5 \\
+1 \\
+0
 \end{pmatrix} = \begin{pmatrix}
 \frac{1}{2} \\
 0 \\
@@ -781,9 +819,35 @@ T^3(v_1) = \left(\begin{matrix}
 0
 \end{pmatrix}.
 \]
-Portanto, a base procurada é $\left\{ \left(-\frac{21}{2},6,2,1\right), \left(\frac{1}{2},0,0,0\right), \left(-\frac{5}{2},2,0,0\right), \left(\frac{1}{2},0,0,0\right) \right\},$ e segue que
-%\[P = \begin{pmatrix}- \frac{21}{2} & \frac{1}{2} & - \frac{5}{2} & \frac{1}{2} \\6 & 0 & 2 & 0 \\2 & 0 & 0 & 0 \\1 & 0 & 0 & 0\end{pmatrix} \]
-
+Portanto, a base procurada é $\left\{ \left(-\frac{15}{2},5,1,0\right), \left(-\frac{15}{2},4,2,1\right), \left(-\frac{5}{2},2,0,0\right), \left(\frac{1}{2},0,0,0\right) \right\},$ e segue que
+\[P = \begin{pmatrix}
+-\frac{15}{2} & -\frac{15}{2}& -\frac{5}{2} & \frac{1}{2} \\
+5 & 4 & 2 & 0 \\ 
+1 & 2 & 0 & 0 \\
+0 & 1 & 0 & 0\end{pmatrix} \]
+De fato, é fácil ver que
+\[
+PRP^{-1} = \begin{pmatrix}
+-\frac{15}{2} & -\frac{15}{2}& -\frac{5}{2} & \frac{1}{2} \\
+5 & 4 & 2 & 0 \\ 
+1 & 2 & 0 & 0 \\
+0 & 1 & 0 & 0\end{pmatrix}\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{pmatrix}\left(\begin{matrix}
+0 & 0 & 1 & -2 \\
+0 & 0 & 0 & 1 \\
+0 & \frac{1}{2} & \frac{-5}{2} & 3 \\
+2 & \frac{5}{2} & \frac{5}{2} & 0
+\end{matrix}\right) = \begin{pmatrix}
+-5 & -6 & -15 & 14 \\
+4 & 5 & 9 & -6 \\
+0 & 0 & 2 & -4 \\
+0 & 0 & 1 & -2
+\end{pmatrix}.
+\]
 }
 \begin{exercicio}
 Sejam $V$ um $K$-espaço vetorial com produto interno, $T \in \mathcal{L}(V)$ e $W \subseteq V$ um subespaço $T$-invariante. Mostre que se $T$ é normal, então $W$ também é $T^{*}$-invariante.
@@ -1258,9 +1322,9 @@ Assim, temos que
 0 & 0 & \sqrt{4} 
 \end{bmatrix}\begin{bmatrix}
  \frac{\sqrt{3}}{3} &  \frac{\sqrt{3}}{3}  &  \frac{\sqrt{3}}{3} \\
-- \frac{\sqrt{2}}{2} &\frac{\sqrt{2}}{2} & 0 
+- \frac{\sqrt{2}}{2} &\frac{\sqrt{2}}{2} & 0 \\
 - \frac{\sqrt{6}}{6} & - \frac{\sqrt{6}}{6}&  \frac{\sqrt{6}}{3}  
-\end{bmatrix} = \begin{bmatrix}
+\end{bmatrix} = \]\[ \begin{bmatrix}
  \frac{\sqrt{3}}{3} & - \frac{\sqrt{2}}{2} & - \frac{\sqrt{6}}{6} \\
  \frac{\sqrt{3}}{3} & \frac{\sqrt{2}}{2} & - \frac{\sqrt{6}}{6} \\
  \frac{\sqrt{3}}{3} & 0 &  \frac{\sqrt{6}}{3}  
@@ -1351,10 +1415,36 @@ Assim, a forma diagonal de  $q(x,y,z)$ é
 \[
 q(x^{\prime}, y^{\prime}, z^{\prime}) = (x^{\prime})^2 - 8 (y^{\prime})^2 - \frac{9}{2}(z^{\prime})^2.
 \]
-
-
-
-
-
 }
+
+\newpage
+\section{\textcolor{Floresta}{Prova Substitutiva}}
+\begin{exercicio}
+Determine, a menos de semelhança, todas as matrizes $A \in \mathcal{M}_5(\mathbb{R})$ cujo polinômio minimal é $m_A(t) = (t+1)^2(t-2).$
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Prove que um operador $T \in \mathcal{L}(V)$ possui um vetor cíclico em $V$ se e somente se $p_T(t) = m_T(t),$ isto é, os polinômios característico e minimal do operador $T$ coincidem.
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Achar uma base ortonormal no espaço $\mathcal{P}_2(\mathbb{R})$ de polinômios reais de grau menor que $3,$ com produto interno dado por
+\[
+\prin{f,g} = \int\limits_{-1}^1 f(t) g(t) \dif t
+\]
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Decida se cada uma das afirmações abaixo é verdadeira ou falsa, apresentando uma demonstração ou um contraexemplo. Aqui $V$ é um espaço vetorial complexo de dimensão finita com um produto interno.
+\dividiritens{
+\task[\pers{a}] Se $E \in \mathcal{L}(V)$ é uma projeção, então $\Ker E \perp \mbox{Im} E.$
+\task[\pers{b}] Se $T \in \mathcal{L}(V)$ é um operador normal tal que $T^3 = T^2,$ então $T^{*} = T.$
+\task[\pers{c}] Se $T \in \mathcal{L}(V)$ é um operador autoadjunto que satisfaz $(T^2 + I)^2(T-I)^3 = 0,$ então $T = I.$
+\task[\pers{d}] Se $\Ker T \perp \mbox{Im} T,$ então $T$ é normal.
+}
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Ver exercício 5 da Prova 3.
+\end{exercicio}
  \end{document}

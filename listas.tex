@@ -16,7 +16,7 @@
 \large\textbf{\textcolor{Floresta}{Lista 1}}\\
 \end{center}
 
-\end{comment}
+\end{comment5 }
 
 \section{\textcolor{Floresta}{Lista 0}}
 
@@ -5610,6 +5610,7 @@ Ou seja, obtemos as colunas $p_1,p_2,p_3,p_4,p_5,p_6$:
 1\\0\\0\\0\\0\\0
 \end{pmatrix}.
 \]
+
 É fácil ver que $p_1,p_2,p_3,p_4,p_5,p_6$ são linearmente independentes. Assim encontramos um exemplo de matriz:
 \[
 P=\begin{pmatrix}
@@ -6628,7 +6629,15 @@ Para os próximos itens, considere as funções $f_1(X) = X^3,$ $f_2(X) = e^X,$ 
 \end{exercicio}
 \solucao{
 \dividiritens{
-\task[\pers{a}] 
+\task[\pers{a}] Encontremos primeiramente o polinômio característico de $A:$
+\[
+p_A(\lambda)  =\det(A - \lambda I) = \det \begin{bmatrix}
+2-\lambda & 1 & 0 & 1 \\
+1 & 3-\lambda & -1 & 3 \\
+0 & 1 & 2-\lambda & 1\\
+1 & -1 & -1 & -1-\lambda
+\end{bmatrix} = 
+\]
 \task[\pers{b}] 
 \task[\pers{c}] 
 \task[\pers{d}] $f_n(A) = Mf_n(J)M^{-1}$ para $n = 1, 2$ ou $3.$ Temos que $f(A) = Mf(J)M^{-1},$ apenas se $f$ é uma função polinomial ou se pode ser escrita como uma série de potências convergente. Isso ocorre com $f_1, f_2$ e $f_3,$ mas não com $f_4.$
@@ -8875,14 +8884,18 @@ assim para todo $l$ temos $\overline{\lambda_l}=\lambda_l^k$, aí $\abs{\lambda_
 \subsection*{\textcolor{Red}{Questões Suplementares}}
 
 \begin{exercicio}
-Para cada uma das matrizes autoadjuntas abaixo, encontre sua raiz quadrada positiva:
+Para cada uma das matrizes abaixo, encontre sua raiz quadrada positiva:
 \dividiritens{
 \task[\pers{a}] $A = \begin{bmatrix}
 1 & \frac{1}{2} & \frac{1}{3} \\
 \frac{1}{2} & \frac{1}{3} & \frac{1}{4}\\
 \frac{1}{3} & \frac{1}{4} & \frac{1}{5}
 \end{bmatrix}$
-\task[\pers{b}] $B =$ 
+\task[\pers{b}] $B = \begin{bmatrix}
+\frac{13}{2} & -\frac{5}{2} & \frac{5}{2} \\
+-\frac{5}{2} & \frac{13}{2} & -\frac{5}{2} \\
+0 & 0 & 4
+\end{bmatrix}$ 
 }
 \end{exercicio}
 
@@ -11701,6 +11714,24 @@ e
 \end{exercicio}
 \solucao{}
 
+\begin{exercicio}
+Schur decomposição %http://web.math.ucsb.edu/~padraic/ucsb_2013_14/math108b_w2014/math108b_w2014_lecture5.pdf
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+Fatoração de Cholesky %https://pt.wikipedia.org/wiki/Fatora%C3%A7%C3%A3o_de_Cholesky
+\end{exercicio}
+\solucao{}
+
+\begin{exercicio}
+Método de Doolittle fatoração LU %https://www.math.tecnico.ulisboa.pt/~calves/courses/sis-lin/capii12.html
+\end{exercicio}
+\solucao{}
+\begin{exercicio}
+Método de Castilho res sist lin
+\end{exercicio}
+\solucao{}
 \end{document} 
 
 %Interessante:
