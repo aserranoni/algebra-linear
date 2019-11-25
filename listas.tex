@@ -3496,7 +3496,7 @@ A = \begin{bmatrix} 6 & -3 & -2 \\
 \]
 Seja $T \in \mathcal{L}(\mathbb{R}^3)$ tal que $[T]_{can} = A.$ Encontre a decomposição primária de $T.$
 \solucao{
-Para encontrar a decomposição primária de $T,$ precisamos encontrar seu polinômio característico, escrevê-lo na forma $p(t) = p_1^{n_1} \cdot p_2^{n_2} \cdot \ldots \cdot p_k^{n_k},$ com $p_1,\dots,p_k$ irredutíveis mônicos distintos. %e teremos $V = \bigoplus\limits_{i=1}^k p_i^{n_i}.$
+Para encontrar a decomposição primária de $T,$ precisamos encontrar seu polinômio minimal, escrevê-lo na forma $p(t) = p_1^{n_1} \cdot p_2^{n_2} \cdot \ldots \cdot p_k^{n_k},$ com $p_1,\dots,p_k$ irredutíveis mônicos distintos. %e teremos $V = \bigoplus\limits_{i=1}^k p_i^{n_i}.$
 
 \dividiritens{
 \task[\pers{a}] Encontrando o polinômio característico de $A:$
@@ -3517,9 +3517,10 @@ p(\lambda) &=& \det\left( \lambda I - A \right) \\
 &=& \lambda^3 - 2\lambda^2  + \lambda - 2 \\
 &=& (\lambda-2)(\lambda^2 + 1)
 \end{array}
-\]
+.\]
 
-\task[\pers{b}] Decompondo $V = \mathbb{R}^3$ em soma direta:
+\task[\pers{b}] Note que o polinômio minimal de \(A\) é igual ao característico.
+Daí, pelo Teorema da Decomposição Primária, podemos decompor  $V = \mathbb{R}^3$ em soma direta:
 Como $p(\lambda) = (\lambda-2)(\lambda^2 + 1),$ podemos escrever
 \[
 \mathbb{R}^{3} = V_1 \oplus V_2,
